@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'patient-portal-app';
+  title = 'Patient Portal';
+  patientFormData = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    age: new FormControl(''),
+  });
+
+
+
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.patientFormData.value);
+  }
+
+
+
 }
