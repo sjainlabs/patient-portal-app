@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {ReactiveFormsModule, FormsModule} from "@angular/forms";
+import { PatientSearchComponent } from './patient-search/patient-search.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PatientSearchComponent
   ],
   imports: [
     BrowserModule,
