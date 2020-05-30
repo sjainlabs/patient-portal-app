@@ -1,135 +1,35 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div  style="background-color: mintcream">
-<div style="text-align:center" xmlns="http://www.w3.org/1999/html">
-  <h1>
-   {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="../assets/patient-image.jpeg">
-</div>
-
-<form [formGroup]="patientFormData"  (ngSubmit)="onSubmit(patientFormData.value)">
-
-  <div>
-    <label>
-      First Name:
-      <input type="text" formControlName="firstName">
-    </label>
+<div>
+  <div style="text-align:center" xmlns="http://www.w3.org/1999/html">
+    <h1 class="mat-title">
+      {{ title }}
+    </h1>
   </div>
-  <div></div>
-  <div>
-    <label>
-      Last Name:
-      <input type="text" formControlName="lastName">
-    </label>
+<!--  <div style="text-align:center;">-->
+<!--    <button type="button" class="btn btn-primary alignButton">Register Patient</button>-->
+<!--  </div>-->
+<!--  <div style="text-align:center;">-->
+<!--    <a routerLink = "search">-->
+<!--      <button type="button" class="btn btn-primary">Search Patient</button>-->
+<!--    </a>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <a routerLink = "search">New component</a>-->
+<!--  </div>-->
+
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink="register" class="nav-link">Patient Registration</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="search" class="nav-link" routerLinkActive="active">Patient Search</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div style="text-align:center" >
+    <img width="300" alt="Angular Logo" src="../assets/patient-image.jpeg">
   </div>
-
-  <div></div>
-  <div>
-    <label>
-      Age:
-      <input type="number" formControlName="age">
-    </label>
-  </div>
-
-  <div>
-    <label>
-      Address:
-      <input type="text" formControlName="age">
-    </label>
-  </div>
-
-  <div>
-    <label>
-      City:
-      <input type="text" formControlName="city">
-    </label>
-  </div>
-
-  <div>
-    <label>
-      State:
-      <input type="text" formControlName="state">
-    </label>
-  </div>
-
-  <div>
-    <label>
-      zipCode:
-      <input type="number" formControlName="zipCode">
-    </label>
-  </div>
-
-  <div>
-    <label>
-      Contact:
-      <input type="number" formControlName="contact">
-    </label>
-  </div>
-
-  <div>
-    <label>
-      Emeregency Contact:
-      <input type="number" formControlName="emergencyContact">
-    </label>
-  </div>
-
-  <div>
-    <label>
-      Care of:
-      <input type="text" formControlName="careOf">
-    </label>
-  </div>
-
-  <div>
-    <label>
-      Email:
-      <input type="text" formControlName="email">
-    </label>
-  </div>
-
-  <div>
-    <label>
-      Wieght:
-      <input type="number" formControlName="weight">
-    </label>
-  </div>
-
-  <div>
-    <label>
-      Height:
-      <input type="text" formControlName="height">
-    </label>
-  </div>
-
-
-
-
-  <div>
-    <label>
-      Symptoms:
-      <input type="text" formControlName="symptoms">
-    </label>
-  </div>
-
-
-  <div>
-    <label>
-      Prescription:
-      <input type="text" formControlName="prescription">
-    </label>
-  </div>
-
-  <div>
-    <label>
-      Additional Notes:
-      <input type="text" formControlName="additonalNotes">
-    </label>
-  </div>
-
-
-
-  <button class="button" type="submit">Submit</button>
-
-</form>
-
+  <router-outlet></router-outlet>
 </div>
