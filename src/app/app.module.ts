@@ -8,6 +8,7 @@ import { PatientRegistrationComponent } from './patient-registration/patient-reg
 import {RouterModule} from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { PatientInfoPrintComponent } from './patient-info-print/patient-info-print.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PatientInfoPrintComponent } from './patient-info-print/patient-info-pri
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: 'register',

@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {PatientData} from '../model/PatientData';
 import {SearchDataServiceService} from '../service/search-data-service.service';
 import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {SearchService} from '../service/search.service';
 
 @Component({
   selector: 'app-patient-search',
@@ -14,7 +16,8 @@ export class PatientSearchComponent implements OnInit {
   // searchDataService: SearchDataServiceService;
 
   constructor( private router: Router,
-               private searchDataService: SearchDataServiceService) {
+               private searchDataService: SearchDataServiceService,
+               private searchService: SearchService) {
     this.patientData = new PatientData();
     // this.searchDataService = new SearchDataServiceService();
   }
@@ -29,9 +32,16 @@ export class PatientSearchComponent implements OnInit {
   }
 
   searchPatientData() {
-    const patientData1 = this.populateSearchData();
-    this.searchDataService.setSearchData( patientData1);
-    this.router.navigate(['print']);
+    this.searchService.searchPatient(1)
+      .subscribe(data => {
+        console.log(data);
+        this.patientData = data;
+        // this.patientData.firstName = data.firstName;
+        // this.patientData.lastName = data.lastName;
+        // const patientData2 = this.populateSearchData();
+        this.searchDataService.setSearchData( this.patientData);
+        this.router.navigate(['print']);
+      });
   }
 
 }
