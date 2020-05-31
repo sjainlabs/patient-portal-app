@@ -1,118 +1,83 @@
-<p>
-  Patient-Search
-</p>
+<!--<form action="/action_page.php" style="text-align:center;">-->
+<!--  <div class="form-group">-->
+<!--    <label for="firstName">First Name:</label>-->
+<!--    <input type="text" id="firstName">-->
+<!--    <label for="lastName">Last name:</label>-->
+<!--    <input type="text" id="lastName">-->
+<!--    <label for="firstName">Patient ID:</label>-->
+<!--    <input type="text" id="patientId">-->
+<!--  </div>-->
+<!--  <div class="checkbox">-->
+<!--    <label><input type="checkbox">Prescribe</label>-->
+<!--  </div>-->
+<!--  <button type="submit" class="btn btn-primary">Search</button>-->
+<!--</form>-->
 
+<!--<table class="table">-->
+<!--  <tbody>-->
+<!--  <tr>-->
+<!--    <td>-->
+<!--      <label for="firstName">First Name:</label>-->
+<!--    </td>-->
+<!--    <td>-->
+<!--      <input type="text" id="firstName">-->
+<!--    </td>-->
+<!--&lt;!&ndash;  </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;  <tr>&ndash;&gt;-->
+<!--    <td>-->
+<!--      <label for="lastName">Last name:</label>-->
+<!--    </td>-->
+<!--    <td>-->
+<!--      <input type="text" id="lastName">-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>-->
+<!--      <label for="patientId">Patient ID:</label>-->
+<!--    </td>-->
+<!--    <td>-->
+<!--      <input type="text" id="patientId">-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
 
-<div>
-  <label>
-    First Name : {{firstName}}
-  </label>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+      <label for="firstName">First Name:</label>
+    </div>
+    <div class="col-sm-3">
+      <input type="text" id="firstName">
+    </div>
+    <div class="col-sm-2">
+      <label for="lastName">Last name:</label>
+    </div>
+    <div class="col-sm-4">
+      <input type="text" id="lastName">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <label for="patientId">Patient ID:</label>
+    </div>
+    <div class="col-sm-4">
+      <input type="text" id="patientId">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label>
+        <input type="checkbox"> Prescribe
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+<!--      <a routerLink="print" class="nav-link">-->
+        <button type="submit" class="btn btn-primary" (click)="searchPatientData()" >Search</button>
+<!--      </a>-->
+    </div>
+  </div>
 </div>
-<div>
-  <label>
-    Last Name : {{lastName}}
-  </label>
-</div>
 
-<div></div>
-<div>
-  <label>
-    Age : {{age}}
-
-  </label>
-</div>
-
-<!--<div>-->
-  <!--<label>-->
-    <!--Address:-->
-    <!--<input type="text" formControlName="age">-->
-  <!--</label>-->
-<!--</div>-->
-
-<!--<div>-->
-  <!--<label>-->
-    <!--City:-->
-    <!--<input type="text" formControlName="city">-->
-  <!--</label>-->
-<!--</div>-->
-
-<!--<div>-->
-  <!--<label>-->
-    <!--State:-->
-    <!--<input type="text" formControlName="state">-->
-  <!--</label>-->
-<!--</div>-->
-
-<!--<div>-->
-  <!--<label>-->
-    <!--zipCode:-->
-    <!--<input type="number" formControlName="zipCode">-->
-  <!--</label>-->
-<!--</div>-->
-
-<!--<div>-->
-  <!--<label>-->
-    <!--Contact:-->
-    <!--<input type="number" formControlName="contact">-->
-  <!--</label>-->
-<!--</div>-->
-
-<!--<div>-->
-  <!--<label>-->
-    <!--Emeregency Contact:-->
-    <!--<input type="number" formControlName="emergencyContact">-->
-  <!--</label>-->
-<!--</div>-->
-
-<!--<div>-->
-  <!--<label>-->
-    <!--Care of:-->
-    <!--<input type="text" formControlName="careOf">-->
-  <!--</label>-->
-<!--</div>-->
-
-<!--<div>-->
-  <!--<label>-->
-    <!--Email:-->
-    <!--<input type="text" formControlName="email">-->
-  <!--</label>-->
-<!--</div>-->
-
-<!--<div>-->
-  <!--<label>-->
-    <!--Wieght:-->
-    <!--<input type="number" formControlName="weight">-->
-  <!--</label>-->
-<!--</div>-->
-
-<!--<div>-->
-  <!--<label>-->
-    <!--Height:-->
-    <!--<input type="text" formControlName="height">-->
-  <!--</label>-->
-<!--</div>-->
-
-
-
-
-<!--<div>-->
-  <!--<label>-->
-    <!--Symptoms:-->
-    <!--<input type="text" formControlName="symptoms">-->
-  <!--</label>-->
-<!--</div>-->
-
-
-<!--<div>-->
-  <!--<label>-->
-    <!--Prescription:-->
-    <!--<input type="text" formControlName="prescription">-->
-  <!--</label>-->
-<!--</div>-->
-
-<!--<div>-->
-  <!--<label>-->
-    <!--Additional Notes:-->
-    <!--<input type="text" formControlName="additonalNotes">-->
-  <!--</label>-->
-<!--</div>-->
