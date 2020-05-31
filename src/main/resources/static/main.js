@@ -493,7 +493,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var SearchService = /** @class */ (function () {
     function SearchService(http) {
         this.http = http;
-        this.patientApiUrl = 'http://localhost:11333/patient/v1';
+        this.patientApiUrl = '/patient/v1';
     }
     SearchService.prototype.searchPatient = function (id) {
         var url = this.patientApiUrl + '?id=' + id;

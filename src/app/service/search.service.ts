@@ -10,7 +10,7 @@ export class SearchService {
 
   constructor(private http: HttpClient) { }
 
-  private patientApiUrl = 'http://localhost:11333/patient/v1';
+  private patientApiUrl = '/patient/v1';
 
   searchPatient(id: number): Observable<PatientData> {
     const url = this.patientApiUrl + '?id=' + id;
