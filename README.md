@@ -1,4 +1,19 @@
+
+
 # PatientPortalApp
+
+To push the app for Prod or lower environment
+- Build UI Projects - ng build
+  Build backend  - mvn clean install
+  
+Push the artifact to Server.
+  
+To Run the App locally 
+  springboot run 
+    Java -jar <artifact-name>
+
+
+UI Local setup:
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
 
