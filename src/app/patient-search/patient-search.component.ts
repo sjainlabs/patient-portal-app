@@ -13,6 +13,7 @@ import {SearchService} from '../service/search.service';
 export class PatientSearchComponent implements OnInit {
 
   patientData: PatientData;
+  patientId: number;
   // searchDataService: SearchDataServiceService;
 
   constructor( private router: Router,
@@ -32,7 +33,7 @@ export class PatientSearchComponent implements OnInit {
   }
 
   searchPatientData() {
-    this.searchService.searchPatient(1)
+    this.searchService.searchPatient(this.patientId)
       .subscribe(data => {
         console.log(data);
         this.patientData = data;
@@ -40,7 +41,8 @@ export class PatientSearchComponent implements OnInit {
         // this.patientData.lastName = data.lastName;
         // const patientData2 = this.populateSearchData();
         this.searchDataService.setSearchData( this.patientData);
-        this.router.navigate(['print']);
+        window.location.href = '/print';
+        // this.router.navigate(['print']);
       });
   }
 
