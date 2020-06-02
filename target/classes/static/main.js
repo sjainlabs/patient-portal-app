@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <h1 class=\"siteTitle\">\r\n      {{ title }}\r\n    </h1>\r\n  </div>\r\n<!--  <div style=\"text-align:center;\">-->\r\n<!--    <button type=\"button\" class=\"btn btn-primary alignButton\">Register Patient</button>-->\r\n<!--  </div>-->\r\n<!--  <div style=\"text-align:center;\">-->\r\n<!--    <a routerLink = \"search\">-->\r\n<!--      <button type=\"button\" class=\"btn btn-primary\">Search Patient</button>-->\r\n<!--    </a>-->\r\n<!--  </div>-->\r\n<!--  <div>-->\r\n<!--    <a routerLink = \"search\">New component</a>-->\r\n<!--  </div>-->\r\n\r\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\r\n    <!-- Links -->\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"register\" class=\"nav-link\">Patient Registration</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"search\" class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div style=\"text-align:center\" >\r\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\r\n  </div>\r\n  <router-outlet></router-outlet>\r\n</div>\r\n"
+module.exports = "<div>\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\n    <h1 class=\"siteTitle\">\n      {{ title }}\n    </h1>\n  </div>\n<!--  <div style=\"text-align:center;\">-->\n<!--    <button type=\"button\" class=\"btn btn-primary alignButton\">Register Patient</button>-->\n<!--  </div>-->\n<!--  <div style=\"text-align:center;\">-->\n<!--    <a routerLink = \"search\">-->\n<!--      <button type=\"button\" class=\"btn btn-primary\">Search Patient</button>-->\n<!--    </a>-->\n<!--  </div>-->\n<!--  <div>-->\n<!--    <a routerLink = \"search\">New component</a>-->\n<!--  </div>-->\n\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\n    <!-- Links -->\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item\">\n        <a routerLink=\"register\" class=\"nav-link\">Patient Registration</a>\n      </li>\n      <li class=\"nav-item\">\n        <a routerLink=\"search\" class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\n      </li>\n    </ul>\n  </nav>\n\n  <div style=\"text-align:center\" >\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\n  </div>\n  <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -198,7 +198,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n  <div class=\"col-6\">  {{searchData1.firstName}}</div>\r\n  <div class=\"col-4\">{{searchData1.lastName}}</div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-6\">{{searchData1.age}}</div>\r\n  <div class=\"col-2\">{{searchData1.height}}</div>\r\n  <div class=\"col-2\">{{searchData1.weight}}</div>\r\n</div>\r\n"
+module.exports = "<div class=\"row\">\n  <div class=\"col-6\">  {{searchData1.firstName}}</div>\n  <div class=\"col-4\">{{searchData1.lastName}}</div>\n</div>\n<div class=\"row\">\n  <div class=\"col-6\">{{searchData1.age}}</div>\n  <div class=\"col-2\">{{searchData1.height}}</div>\n  <div class=\"col-2\">{{searchData1.weight}}</div>\n</div>\n"
 
 /***/ }),
 
@@ -268,7 +268,7 @@ var PatientInfoPrintComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "input[type=text] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n\ninput[type=number] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n"
 
 /***/ }),
 
@@ -279,7 +279,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  patient-registration works!\r\n</p>\r\n"
+module.exports = "<div class=\"container\">\n<!--<div  style=\"background-color: mintcream\">-->\n  <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\n    <!--<h1>-->\n      <!--{{ title }}!-->\n    <!--</h1>-->\n    <!--<img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\n  <!--</div>-->\n\n  <form [formGroup]=\"patientFormData\"  (ngSubmit)=\"onSubmit(patientFormData.value)\">\n\n    <div>\n      <label>\n        First Name:\n        <input type=\"text\" formControlName=\"firstName\">\n      </label>\n    </div>\n    <div></div>\n    <div>\n      <label>\n        Last Name:\n        <input type=\"text\" formControlName=\"lastName\">\n      </label>\n    </div>\n\n    <div></div>\n    <div>\n      <label>\n        Age:\n        <input type=\"number\" formControlName=\"age\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Address:\n        <input type=\"text\" formControlName=\"age\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        City:\n        <input type=\"text\" formControlName=\"city\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        State:\n        <input type=\"text\" formControlName=\"state\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        zipCode:\n        <input type=\"number\" formControlName=\"zipCode\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Contact:\n        <input type=\"number\" formControlName=\"contact\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Emeregency Contact:\n        <input type=\"number\" formControlName=\"emergencyContact\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Care of:\n        <input type=\"text\" formControlName=\"careOf\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Email:\n        <input type=\"text\" formControlName=\"email\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Wieght:\n        <input type=\"number\" formControlName=\"weight\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Height:\n        <input type=\"text\" formControlName=\"height\">\n      </label>\n    </div>\n\n\n\n\n    <div>\n      <label>\n        Symptoms:\n        <input type=\"text\" formControlName=\"symptoms\">\n      </label>\n    </div>\n\n\n    <div>\n      <label>\n        Prescription:\n        <input type=\"text\" formControlName=\"prescription\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Additional Notes:\n        <input type=\"text\" formControlName=\"additonalNotes\">\n      </label>\n    </div>\n\n\n\n    <button class=\"button\" type=\"submit\">Submit</button>\n\n  </form>\n\n<!--</div>-->\n</div>\n"
 
 /***/ }),
 
@@ -294,28 +294,47 @@ module.exports = "<p>\r\n  patient-registration works!\r\n</p>\r\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientRegistrationComponent", function() { return PatientRegistrationComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
+
 
 var PatientRegistrationComponent = /** @class */ (function () {
     function PatientRegistrationComponent() {
+        this.title = 'Patient Portal';
+        this.patientFormData = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
+            firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            lastName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            age: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            address: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            city: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            state: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            zipCode: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            contact: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            emergencyContact: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            careOf: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            email: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            weight: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            height: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            symptoms: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            prescription: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            additonalNotes: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+        });
     }
-    PatientRegistrationComponent.prototype.ngOnInit = function () {
+    PatientRegistrationComponent.prototype.onSubmit = function () {
+        // TODO: Use EventEmitter with form value
+        console.warn(this.patientFormData.value);
     };
     PatientRegistrationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-patient-registration',
             template: __webpack_require__(/*! ./patient-registration.component.html */ "./src/app/patient-registration/patient-registration.component.html"),
             styles: [__webpack_require__(/*! ./patient-registration.component.css */ "./src/app/patient-registration/patient-registration.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], PatientRegistrationComponent);
     return PatientRegistrationComponent;
 }());
@@ -342,7 +361,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--<form action=\"/action_page.php\" style=\"text-align:center;\">-->\r\n<!--  <div class=\"form-group\">-->\r\n<!--    <label for=\"firstName\">First Name:</label>-->\r\n<!--    <input type=\"text\" id=\"firstName\">-->\r\n<!--    <label for=\"lastName\">Last name:</label>-->\r\n<!--    <input type=\"text\" id=\"lastName\">-->\r\n<!--    <label for=\"firstName\">Patient ID:</label>-->\r\n<!--    <input type=\"text\" id=\"patientId\">-->\r\n<!--  </div>-->\r\n<!--  <div class=\"checkbox\">-->\r\n<!--    <label><input type=\"checkbox\">Prescribe</label>-->\r\n<!--  </div>-->\r\n<!--  <button type=\"submit\" class=\"btn btn-primary\">Search</button>-->\r\n<!--</form>-->\r\n\r\n<!--<table class=\"table\">-->\r\n<!--  <tbody>-->\r\n<!--  <tr>-->\r\n<!--    <td>-->\r\n<!--      <label for=\"firstName\">First Name:</label>-->\r\n<!--    </td>-->\r\n<!--    <td>-->\r\n<!--      <input type=\"text\" id=\"firstName\">-->\r\n<!--    </td>-->\r\n<!--&lt;!&ndash;  </tr>&ndash;&gt;-->\r\n<!--&lt;!&ndash;  <tr>&ndash;&gt;-->\r\n<!--    <td>-->\r\n<!--      <label for=\"lastName\">Last name:</label>-->\r\n<!--    </td>-->\r\n<!--    <td>-->\r\n<!--      <input type=\"text\" id=\"lastName\">-->\r\n<!--    </td>-->\r\n<!--  </tr>-->\r\n<!--  <tr>-->\r\n<!--    <td>-->\r\n<!--      <label for=\"patientId\">Patient ID:</label>-->\r\n<!--    </td>-->\r\n<!--    <td>-->\r\n<!--      <input type=\"text\" id=\"patientId\">-->\r\n<!--    </td>-->\r\n<!--  </tr>-->\r\n<!--  </tbody>-->\r\n<!--</table>-->\r\n\r\n<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-sm-2\">\r\n      <label for=\"firstName\">First Name:</label>\r\n    </div>\r\n    <div class=\"col-sm-3\">\r\n      <input type=\"text\" id=\"firstName\">\r\n    </div>\r\n    <div class=\"col-sm-2\">\r\n      <label for=\"lastName\">Last name:</label>\r\n    </div>\r\n    <div class=\"col-sm-4\">\r\n      <input type=\"text\" id=\"lastName\">\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-sm-2\">\r\n      <label for=\"patientId\">Patient ID:</label>\r\n    </div>\r\n    <div class=\"col-sm-4\">\r\n      <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\">\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col\">\r\n      <label>\r\n        <input type=\"checkbox\"> Prescribe\r\n      </label>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col\">\r\n<!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\" >Search</button>\r\n<!--      </a>-->\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n"
+module.exports = "<!--<form action=\"/action_page.php\" style=\"text-align:center;\">-->\n<!--  <div class=\"form-group\">-->\n<!--    <label for=\"firstName\">First Name:</label>-->\n<!--    <input type=\"text\" id=\"firstName\">-->\n<!--    <label for=\"lastName\">Last name:</label>-->\n<!--    <input type=\"text\" id=\"lastName\">-->\n<!--    <label for=\"firstName\">Patient ID:</label>-->\n<!--    <input type=\"text\" id=\"patientId\">-->\n<!--  </div>-->\n<!--  <div class=\"checkbox\">-->\n<!--    <label><input type=\"checkbox\">Prescribe</label>-->\n<!--  </div>-->\n<!--  <button type=\"submit\" class=\"btn btn-primary\">Search</button>-->\n<!--</form>-->\n\n<!--<table class=\"table\">-->\n<!--  <tbody>-->\n<!--  <tr>-->\n<!--    <td>-->\n<!--      <label for=\"firstName\">First Name:</label>-->\n<!--    </td>-->\n<!--    <td>-->\n<!--      <input type=\"text\" id=\"firstName\">-->\n<!--    </td>-->\n<!--&lt;!&ndash;  </tr>&ndash;&gt;-->\n<!--&lt;!&ndash;  <tr>&ndash;&gt;-->\n<!--    <td>-->\n<!--      <label for=\"lastName\">Last name:</label>-->\n<!--    </td>-->\n<!--    <td>-->\n<!--      <input type=\"text\" id=\"lastName\">-->\n<!--    </td>-->\n<!--  </tr>-->\n<!--  <tr>-->\n<!--    <td>-->\n<!--      <label for=\"patientId\">Patient ID:</label>-->\n<!--    </td>-->\n<!--    <td>-->\n<!--      <input type=\"text\" id=\"patientId\">-->\n<!--    </td>-->\n<!--  </tr>-->\n<!--  </tbody>-->\n<!--</table>-->\n\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-sm-2\">\n      <label for=\"firstName\">First Name:</label>\n    </div>\n    <div class=\"col-sm-3\">\n      <input type=\"text\" id=\"firstName\">\n    </div>\n    <div class=\"col-sm-2\">\n      <label for=\"lastName\">Last name:</label>\n    </div>\n    <div class=\"col-sm-4\">\n      <input type=\"text\" id=\"lastName\">\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-sm-2\">\n      <label for=\"patientId\">Patient ID:</label>\n    </div>\n    <div class=\"col-sm-4\">\n      <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\">\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col\">\n      <label>\n        <input type=\"checkbox\"> Prescribe\n      </label>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col\">\n<!--      <a routerLink=\"print\" class=\"nav-link\">-->\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\" >Search</button>\n<!--      </a>-->\n    </div>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -401,8 +420,8 @@ var PatientSearchComponent = /** @class */ (function () {
             // this.patientData.lastName = data.lastName;
             // const patientData2 = this.populateSearchData();
             _this.searchDataService.setSearchData(_this.patientData);
-            window.location.href = '/print';
-            // this.router.navigate(['print']);
+            // window.location.href = '/print';
+            _this.router.navigate(['print']);
         });
     };
     PatientSearchComponent = __decorate([
@@ -574,7 +593,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Smita\Personal\PatientPortal\patient-portal-app\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/smita/SmitaWorkspace/myProjects/patient-portal-app/src/main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -20,9 +20,11 @@ public class PatientPersistence {
         this.patientRepository = patientRepository;
     }
 
-//    public String savePatient(Patient patient){
-//        PatientEntity patientEntity= PatientEntity.builder()
-//    }
+    public String savePatient(PatientEntity patientEntity){
+
+      final PatientEntity save = patientRepository.save(patientEntity);
+      return String.valueOf(save.getId());
+    }
 
     public List<Patient> findAllPatient(){
         List<PatientEntity> patientEntityList = patientRepository.findAll();
@@ -35,6 +37,7 @@ public class PatientPersistence {
         return Patient.builder()
                 .firstName(patientEntity.getFirstName())
                 .lastName(patientEntity.getLastName())
+                 .age(patientEntity.getAge())
                 .build();
     }
 

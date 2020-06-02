@@ -41,8 +41,8 @@ export class PatientSearchComponent implements OnInit {
         // this.patientData.lastName = data.lastName;
         // const patientData2 = this.populateSearchData();
         this.searchDataService.setSearchData( this.patientData);
-        window.location.href = '/print';
-        // this.router.navigate(['print']);
+        // window.location.href = '/print';
+        this.router.navigate(['print']);
       });
   }
 

@@ -7,6 +7,8 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
+//@Builder(toBuilder = true)
+//@NoArgsConstructor
 @Table(name = "PATIENT")
 public class PatientEntity {
 
