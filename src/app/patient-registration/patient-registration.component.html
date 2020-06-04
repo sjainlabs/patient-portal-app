@@ -7,8 +7,10 @@
     <!--<img width="300" alt="Angular Logo" src="../assets/patient-image.jpeg">-->
   <!--</div>-->
 
-  <div *ngIf="patientAdded"> Patient is added . Patient Id : {{patientIdCreated}} </div>
+  <div *ngIf="show"> Registration Completed! Patient Id : {{patientIdCreated}} <button (click)="addNewPatientAgain()"> Click here to Add a new Patient </button>
+  </div>
 
+  <div  *ngIf="!show">
   <form [formGroup]="patientFormData"  (ngSubmit)="onSubmit(patientFormData.value)">
 
     <div>
@@ -135,4 +137,5 @@
   </form>
 
 <!--</div>-->
+</div>
 </div>

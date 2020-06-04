@@ -268,7 +268,7 @@ var PatientInfoPrintComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "input[type=text] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n\ninput[type=number] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n"
+module.exports = "input[type=text] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n\ninput[type=number] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n\ninput:invalid {\n  border: 2px dashed red;\n}\n"
 
 /***/ }),
 
@@ -279,7 +279,7 @@ module.exports = "input[type=text] {\n  width: 100%;\n  padding: 12px 20px;\n  m
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n<!--<div  style=\"background-color: mintcream\">-->\n  <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\n    <!--<h1>-->\n      <!--{{ title }}!-->\n    <!--</h1>-->\n    <!--<img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\n  <!--</div>-->\n\n  <div *ngIf=\"patientAdded\"> Patient is added . Patient Id : {{patientIdCreated}} </div>\n\n  <form [formGroup]=\"patientFormData\"  (ngSubmit)=\"onSubmit(patientFormData.value)\">\n\n    <div>\n      <label>\n        First Name:\n        <input id=\"firstName\" type=\"text\" formControlName=\"firstName\" class=\"form-control\" required>\n      </label>\n    </div>\n    <!--<div *ngIf=\"firstName.errors.required\"> First Name is required</div>-->\n    <div>\n      <label>\n        Last Name:\n        <input type=\"text\" formControlName=\"lastName\">\n      </label>\n    </div>\n\n    <div></div>\n    <div>\n      <label>\n        Age:\n        <input type=\"number\" formControlName=\"age\" required>\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Address:\n        <input type=\"text\" formControlName=\"address\" >\n      </label>\n    </div>\n\n    <div>\n      <label>\n        City:\n        <input type=\"text\" formControlName=\"city\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        State:\n        <input type=\"text\" formControlName=\"state\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        zipCode:\n        <input type=\"number\" formControlName=\"zipCode\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Contact:\n        <input type=\"number\" formControlName=\"contact\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Emeregency Contact:\n        <input type=\"number\" formControlName=\"emergencyContact\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Care of:\n        <input type=\"text\" formControlName=\"careOf\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Email:\n        <input type=\"text\" formControlName=\"email\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Wieght:\n        <input type=\"number\" formControlName=\"weight\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Height:\n        <input type=\"text\" formControlName=\"height\">\n      </label>\n    </div>\n\n\n\n\n    <div>\n      <label>\n        Symptoms:\n        <input type=\"text\" formControlName=\"symptoms\">\n      </label>\n    </div>\n\n\n    <div>\n      <label>\n        Prescription:\n        <input type=\"text\" formControlName=\"prescription\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Additional Notes:\n        <input type=\"text\" formControlName=\"additonalNotes\">\n      </label>\n    </div>\n\n\n\n    <button class=\"button\" type=\"submit\">Submit</button>\n\n  </form>\n\n<!--</div>-->\n</div>\n"
+module.exports = "<div class=\"container\">\n<!--<div  style=\"background-color: mintcream\">-->\n  <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\n    <!--<h1>-->\n      <!--{{ title }}!-->\n    <!--</h1>-->\n    <!--<img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\n  <!--</div>-->\n\n  <div *ngIf=\"show\"> Registration Completed! Patient Id : {{patientIdCreated}} <button (click)=\"addNewPatientAgain()\"> Click here to Add a new Patient </button>\n  </div>\n\n  <div  *ngIf=\"!show\">\n  <form [formGroup]=\"patientFormData\"  (ngSubmit)=\"onSubmit(patientFormData.value)\">\n\n    <div>\n      <label>\n        First Name:\n        <input id=\"firstName\" type=\"text\" formControlName=\"firstName\" class=\"form-control\" required>\n      </label>\n    </div>\n    <!--<div *ngIf=\"firstName.errors.required\"> First Name is required</div>-->\n    <div>\n      <label>\n        Last Name:\n        <input type=\"text\" formControlName=\"lastName\">\n      </label>\n    </div>\n\n    <div></div>\n    <div>\n      <label>\n        Age:\n        <input type=\"number\" formControlName=\"age\" required>\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Address:\n        <input type=\"text\" formControlName=\"address\" >\n      </label>\n    </div>\n\n    <div>\n      <label>\n        City:\n        <input type=\"text\" formControlName=\"city\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        State:\n        <input type=\"text\" formControlName=\"state\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        zipCode:\n        <input type=\"number\" formControlName=\"zipCode\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Contact:\n        <input type=\"number\" formControlName=\"contact\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Emeregency Contact:\n        <input type=\"number\" formControlName=\"emergencyContact\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Care of:\n        <input type=\"text\" formControlName=\"careOf\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Email:\n        <input type=\"text\" formControlName=\"email\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Wieght:\n        <input type=\"number\" formControlName=\"weight\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Height:\n        <input type=\"text\" formControlName=\"height\">\n      </label>\n    </div>\n\n\n\n\n    <div>\n      <label>\n        Symptoms:\n        <input type=\"text\" formControlName=\"symptoms\">\n      </label>\n    </div>\n\n\n    <div>\n      <label>\n        Prescription:\n        <input type=\"text\" formControlName=\"prescription\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Additional Notes:\n        <input type=\"text\" formControlName=\"additonalNotes\">\n      </label>\n    </div>\n\n\n\n    <button class=\"button\" type=\"submit\">Submit</button>\n\n  </form>\n\n<!--</div>-->\n</div>\n</div>\n"
 
 /***/ }),
 
@@ -311,7 +311,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var PatientRegistrationComponent = /** @class */ (function () {
     function PatientRegistrationComponent(patientRegistrationService) {
         this.patientRegistrationService = patientRegistrationService;
-        this.patientAdded = false;
+        this.show = false;
         this.title = 'Patient Portal';
         this.patientFormData = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
             firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
@@ -331,6 +331,7 @@ var PatientRegistrationComponent = /** @class */ (function () {
             prescription: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             additonalNotes: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
         });
+        this.show = false;
     }
     PatientRegistrationComponent.prototype.onSubmit = function () {
         var _this = this;
@@ -340,8 +341,12 @@ var PatientRegistrationComponent = /** @class */ (function () {
             .subscribe(function (s) {
             console.log(s);
             _this.patientIdCreated = s;
-            _this.patientAdded = true;
+            _this.show = true;
         });
+        // this.show = true;
+    };
+    PatientRegistrationComponent.prototype.addNewPatientAgain = function () {
+        this.show = false;
     };
     PatientRegistrationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

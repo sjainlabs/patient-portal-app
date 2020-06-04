@@ -101,12 +101,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _patient_info_print_patient_info_print_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./patient-info-print/patient-info-print.component */ "./src/app/patient-info-print/patient-info-print.component.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pagenotfound/pagenotfound.component */ "./src/app/pagenotfound/pagenotfound.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -126,7 +128,8 @@ var AppModule = /** @class */ (function () {
                 _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"],
                 _patient_search_patient_search_component__WEBPACK_IMPORTED_MODULE_4__["PatientSearchComponent"],
                 _patient_registration_patient_registration_component__WEBPACK_IMPORTED_MODULE_5__["PatientRegistrationComponent"],
-                _patient_info_print_patient_info_print_component__WEBPACK_IMPORTED_MODULE_8__["PatientInfoPrintComponent"]
+                _patient_info_print_patient_info_print_component__WEBPACK_IMPORTED_MODULE_8__["PatientInfoPrintComponent"],
+                _pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_10__["PagenotfoundComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -146,7 +149,10 @@ var AppModule = /** @class */ (function () {
                     {
                         path: 'print',
                         component: _patient_info_print_patient_info_print_component__WEBPACK_IMPORTED_MODULE_8__["PatientInfoPrintComponent"]
-                    }
+                    },
+                    { path: '', redirectTo: '/register', pathMatch: 'full' },
+                    // { path: '**', component: PatientRegistrationComponent },
+                    { path: '**', component: _pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_10__["PagenotfoundComponent"] },
                 ])
             ],
             providers: [],
@@ -174,6 +180,69 @@ var PatientData = /** @class */ (function () {
     function PatientData() {
     }
     return PatientData;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pagenotfound/pagenotfound.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/pagenotfound/pagenotfound.component.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/pagenotfound/pagenotfound.component.html":
+/*!**********************************************************!*\
+  !*** ./src/app/pagenotfound/pagenotfound.component.html ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  Page not Found\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/pagenotfound/pagenotfound.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/pagenotfound/pagenotfound.component.ts ***!
+  \********************************************************/
+/*! exports provided: PagenotfoundComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PagenotfoundComponent", function() { return PagenotfoundComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PagenotfoundComponent = /** @class */ (function () {
+    function PagenotfoundComponent() {
+    }
+    PagenotfoundComponent.prototype.ngOnInit = function () {
+    };
+    PagenotfoundComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-pagenotfound',
+            template: __webpack_require__(/*! ./pagenotfound.component.html */ "./src/app/pagenotfound/pagenotfound.component.html"),
+            styles: [__webpack_require__(/*! ./pagenotfound.component.css */ "./src/app/pagenotfound/pagenotfound.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], PagenotfoundComponent);
+    return PagenotfoundComponent;
 }());
 
 
@@ -268,7 +337,7 @@ var PatientInfoPrintComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "input[type=text] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n\ninput[type=number] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n"
+module.exports = "input[type=text] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n\ninput[type=number] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n\ninput:invalid {\n  border: 2px dashed red;\n}\n"
 
 /***/ }),
 
@@ -279,7 +348,7 @@ module.exports = "input[type=text] {\n  width: 100%;\n  padding: 12px 20px;\n  m
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n<!--<div  style=\"background-color: mintcream\">-->\n  <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\n    <!--<h1>-->\n      <!--{{ title }}!-->\n    <!--</h1>-->\n    <!--<img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\n  <!--</div>-->\n\n  <div *ngIf=\"patientAdded\"> Patient is added . Patient Id : {{patientIdCreated}} </div>\n\n  <form [formGroup]=\"patientFormData\"  (ngSubmit)=\"onSubmit(patientFormData.value)\">\n\n    <div>\n      <label>\n        First Name:\n        <input id=\"firstName\" type=\"text\" formControlName=\"firstName\" class=\"form-control\" required>\n      </label>\n    </div>\n    <!--<div *ngIf=\"firstName.errors.required\"> First Name is required</div>-->\n    <div>\n      <label>\n        Last Name:\n        <input type=\"text\" formControlName=\"lastName\">\n      </label>\n    </div>\n\n    <div></div>\n    <div>\n      <label>\n        Age:\n        <input type=\"number\" formControlName=\"age\" required>\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Address:\n        <input type=\"text\" formControlName=\"address\" >\n      </label>\n    </div>\n\n    <div>\n      <label>\n        City:\n        <input type=\"text\" formControlName=\"city\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        State:\n        <input type=\"text\" formControlName=\"state\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        zipCode:\n        <input type=\"number\" formControlName=\"zipCode\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Contact:\n        <input type=\"number\" formControlName=\"contact\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Emeregency Contact:\n        <input type=\"number\" formControlName=\"emergencyContact\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Care of:\n        <input type=\"text\" formControlName=\"careOf\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Email:\n        <input type=\"text\" formControlName=\"email\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Wieght:\n        <input type=\"number\" formControlName=\"weight\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Height:\n        <input type=\"text\" formControlName=\"height\">\n      </label>\n    </div>\n\n\n\n\n    <div>\n      <label>\n        Symptoms:\n        <input type=\"text\" formControlName=\"symptoms\">\n      </label>\n    </div>\n\n\n    <div>\n      <label>\n        Prescription:\n        <input type=\"text\" formControlName=\"prescription\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Additional Notes:\n        <input type=\"text\" formControlName=\"additonalNotes\">\n      </label>\n    </div>\n\n\n\n    <button class=\"button\" type=\"submit\">Submit</button>\n\n  </form>\n\n<!--</div>-->\n</div>\n"
+module.exports = "<div class=\"container\">\n<!--<div  style=\"background-color: mintcream\">-->\n  <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\n    <!--<h1>-->\n      <!--{{ title }}!-->\n    <!--</h1>-->\n    <!--<img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\n  <!--</div>-->\n\n  <div *ngIf=\"show\"> Registration Completed! Patient Id : {{patientIdCreated}} <button (click)=\"addNewPatientAgain()\"> Click here to Add a new Patient </button>\n  </div>\n\n  <div  *ngIf=\"!show\">\n  <form [formGroup]=\"patientFormData\"  (ngSubmit)=\"onSubmit(patientFormData.value)\">\n\n    <div>\n      <label>\n        First Name:\n        <input id=\"firstName\" type=\"text\" formControlName=\"firstName\" class=\"form-control\" required>\n      </label>\n    </div>\n    <!--<div *ngIf=\"firstName.errors.required\"> First Name is required</div>-->\n    <div>\n      <label>\n        Last Name:\n        <input type=\"text\" formControlName=\"lastName\">\n      </label>\n    </div>\n\n    <div></div>\n    <div>\n      <label>\n        Age:\n        <input type=\"number\" formControlName=\"age\" required>\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Address:\n        <input type=\"text\" formControlName=\"address\" >\n      </label>\n    </div>\n\n    <div>\n      <label>\n        City:\n        <input type=\"text\" formControlName=\"city\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        State:\n        <input type=\"text\" formControlName=\"state\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        zipCode:\n        <input type=\"number\" formControlName=\"zipCode\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Contact:\n        <input type=\"number\" formControlName=\"contact\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Emeregency Contact:\n        <input type=\"number\" formControlName=\"emergencyContact\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Care of:\n        <input type=\"text\" formControlName=\"careOf\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Email:\n        <input type=\"text\" formControlName=\"email\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Wieght:\n        <input type=\"number\" formControlName=\"weight\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Height:\n        <input type=\"text\" formControlName=\"height\">\n      </label>\n    </div>\n\n\n\n\n    <div>\n      <label>\n        Symptoms:\n        <input type=\"text\" formControlName=\"symptoms\">\n      </label>\n    </div>\n\n\n    <div>\n      <label>\n        Prescription:\n        <input type=\"text\" formControlName=\"prescription\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Additional Notes:\n        <input type=\"text\" formControlName=\"additonalNotes\">\n      </label>\n    </div>\n\n\n\n    <button class=\"button\" type=\"submit\">Submit</button>\n\n  </form>\n\n<!--</div>-->\n</div>\n</div>\n"
 
 /***/ }),
 
@@ -311,7 +380,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var PatientRegistrationComponent = /** @class */ (function () {
     function PatientRegistrationComponent(patientRegistrationService) {
         this.patientRegistrationService = patientRegistrationService;
-        this.patientAdded = false;
+        this.show = false;
         this.title = 'Patient Portal';
         this.patientFormData = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
             firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
@@ -331,6 +400,7 @@ var PatientRegistrationComponent = /** @class */ (function () {
             prescription: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             additonalNotes: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
         });
+        this.show = false;
     }
     PatientRegistrationComponent.prototype.onSubmit = function () {
         var _this = this;
@@ -340,8 +410,12 @@ var PatientRegistrationComponent = /** @class */ (function () {
             .subscribe(function (s) {
             console.log(s);
             _this.patientIdCreated = s;
-            _this.patientAdded = true;
+            _this.show = true;
         });
+        // this.show = true;
+    };
+    PatientRegistrationComponent.prototype.addNewPatientAgain = function () {
+        this.show = false;
     };
     PatientRegistrationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

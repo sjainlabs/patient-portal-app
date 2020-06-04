@@ -9,7 +9,7 @@ import {PatientRegistrationService} from "../service/patient-registration.servic
 })
 export class PatientRegistrationComponent  {
 
-  patientAdded: boolean = false;
+  show: boolean = false;
   patientIdCreated: string
   title = 'Patient Portal';
   patientFormData = new FormGroup({
@@ -33,6 +33,7 @@ export class PatientRegistrationComponent  {
 
 
   constructor(private patientRegistrationService: PatientRegistrationService) {
+    this.show = false;
   }
 
   onSubmit() {
@@ -41,7 +42,14 @@ export class PatientRegistrationComponent  {
     this.patientRegistrationService.addPatient(this.patientFormData.value)
       .subscribe(s => {console.log(s);
         this.patientIdCreated = s;
-        this.patientAdded = true });
+        this.show= true
+      });
+        // this.show = true;
+  }
+
+
+  addNewPatientAgain(){
+    this.show = false;
   }
 
 
