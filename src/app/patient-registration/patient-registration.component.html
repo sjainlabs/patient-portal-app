@@ -7,15 +7,17 @@
     <!--<img width="300" alt="Angular Logo" src="../assets/patient-image.jpeg">-->
   <!--</div>-->
 
+  <div *ngIf="patientAdded"> Patient is added . Patient Id : {{patientIdCreated}} </div>
+
   <form [formGroup]="patientFormData"  (ngSubmit)="onSubmit(patientFormData.value)">
 
     <div>
       <label>
         First Name:
-        <input type="text" formControlName="firstName">
+        <input id="firstName" type="text" formControlName="firstName" class="form-control" required>
       </label>
     </div>
-    <div></div>
+    <!--<div *ngIf="firstName.errors.required"> First Name is required</div>-->
     <div>
       <label>
         Last Name:
@@ -27,14 +29,14 @@
     <div>
       <label>
         Age:
-        <input type="number" formControlName="age">
+        <input type="number" formControlName="age" required>
       </label>
     </div>
 
     <div>
       <label>
         Address:
-        <input type="text" formControlName="age">
+        <input type="text" formControlName="address" >
       </label>
     </div>
 

@@ -279,7 +279,7 @@ module.exports = "input[type=text] {\n  width: 100%;\n  padding: 12px 20px;\n  m
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n<!--<div  style=\"background-color: mintcream\">-->\n  <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\n    <!--<h1>-->\n      <!--{{ title }}!-->\n    <!--</h1>-->\n    <!--<img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\n  <!--</div>-->\n\n  <form [formGroup]=\"patientFormData\"  (ngSubmit)=\"onSubmit(patientFormData.value)\">\n\n    <div>\n      <label>\n        First Name:\n        <input type=\"text\" formControlName=\"firstName\">\n      </label>\n    </div>\n    <div></div>\n    <div>\n      <label>\n        Last Name:\n        <input type=\"text\" formControlName=\"lastName\">\n      </label>\n    </div>\n\n    <div></div>\n    <div>\n      <label>\n        Age:\n        <input type=\"number\" formControlName=\"age\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Address:\n        <input type=\"text\" formControlName=\"age\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        City:\n        <input type=\"text\" formControlName=\"city\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        State:\n        <input type=\"text\" formControlName=\"state\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        zipCode:\n        <input type=\"number\" formControlName=\"zipCode\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Contact:\n        <input type=\"number\" formControlName=\"contact\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Emeregency Contact:\n        <input type=\"number\" formControlName=\"emergencyContact\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Care of:\n        <input type=\"text\" formControlName=\"careOf\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Email:\n        <input type=\"text\" formControlName=\"email\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Wieght:\n        <input type=\"number\" formControlName=\"weight\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Height:\n        <input type=\"text\" formControlName=\"height\">\n      </label>\n    </div>\n\n\n\n\n    <div>\n      <label>\n        Symptoms:\n        <input type=\"text\" formControlName=\"symptoms\">\n      </label>\n    </div>\n\n\n    <div>\n      <label>\n        Prescription:\n        <input type=\"text\" formControlName=\"prescription\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Additional Notes:\n        <input type=\"text\" formControlName=\"additonalNotes\">\n      </label>\n    </div>\n\n\n\n    <button class=\"button\" type=\"submit\">Submit</button>\n\n  </form>\n\n<!--</div>-->\n</div>\n"
+module.exports = "<div class=\"container\">\n<!--<div  style=\"background-color: mintcream\">-->\n  <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\n    <!--<h1>-->\n      <!--{{ title }}!-->\n    <!--</h1>-->\n    <!--<img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\n  <!--</div>-->\n\n  <div *ngIf=\"patientAdded\"> Patient is added . Patient Id : {{patientIdCreated}} </div>\n\n  <form [formGroup]=\"patientFormData\"  (ngSubmit)=\"onSubmit(patientFormData.value)\">\n\n    <div>\n      <label>\n        First Name:\n        <input id=\"firstName\" type=\"text\" formControlName=\"firstName\" class=\"form-control\" required>\n      </label>\n    </div>\n    <!--<div *ngIf=\"firstName.errors.required\"> First Name is required</div>-->\n    <div>\n      <label>\n        Last Name:\n        <input type=\"text\" formControlName=\"lastName\">\n      </label>\n    </div>\n\n    <div></div>\n    <div>\n      <label>\n        Age:\n        <input type=\"number\" formControlName=\"age\" required>\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Address:\n        <input type=\"text\" formControlName=\"address\" >\n      </label>\n    </div>\n\n    <div>\n      <label>\n        City:\n        <input type=\"text\" formControlName=\"city\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        State:\n        <input type=\"text\" formControlName=\"state\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        zipCode:\n        <input type=\"number\" formControlName=\"zipCode\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Contact:\n        <input type=\"number\" formControlName=\"contact\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Emeregency Contact:\n        <input type=\"number\" formControlName=\"emergencyContact\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Care of:\n        <input type=\"text\" formControlName=\"careOf\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Email:\n        <input type=\"text\" formControlName=\"email\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Wieght:\n        <input type=\"number\" formControlName=\"weight\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Height:\n        <input type=\"text\" formControlName=\"height\">\n      </label>\n    </div>\n\n\n\n\n    <div>\n      <label>\n        Symptoms:\n        <input type=\"text\" formControlName=\"symptoms\">\n      </label>\n    </div>\n\n\n    <div>\n      <label>\n        Prescription:\n        <input type=\"text\" formControlName=\"prescription\">\n      </label>\n    </div>\n\n    <div>\n      <label>\n        Additional Notes:\n        <input type=\"text\" formControlName=\"additonalNotes\">\n      </label>\n    </div>\n\n\n\n    <button class=\"button\" type=\"submit\">Submit</button>\n\n  </form>\n\n<!--</div>-->\n</div>\n"
 
 /***/ }),
 
@@ -295,19 +295,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientRegistrationComponent", function() { return PatientRegistrationComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _service_patient_registration_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/patient-registration.service */ "./src/app/service/patient-registration.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 
 var PatientRegistrationComponent = /** @class */ (function () {
-    function PatientRegistrationComponent() {
+    function PatientRegistrationComponent(patientRegistrationService) {
+        this.patientRegistrationService = patientRegistrationService;
+        this.patientAdded = false;
         this.title = 'Patient Portal';
         this.patientFormData = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
-            firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
             lastName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             age: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             address: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
@@ -326,15 +333,23 @@ var PatientRegistrationComponent = /** @class */ (function () {
         });
     }
     PatientRegistrationComponent.prototype.onSubmit = function () {
+        var _this = this;
         // TODO: Use EventEmitter with form value
         console.warn(this.patientFormData.value);
+        this.patientRegistrationService.addPatient(this.patientFormData.value)
+            .subscribe(function (s) {
+            console.log(s);
+            _this.patientIdCreated = s;
+            _this.patientAdded = true;
+        });
     };
     PatientRegistrationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-patient-registration',
             template: __webpack_require__(/*! ./patient-registration.component.html */ "./src/app/patient-registration/patient-registration.component.html"),
             styles: [__webpack_require__(/*! ./patient-registration.component.css */ "./src/app/patient-registration/patient-registration.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [_service_patient_registration_service__WEBPACK_IMPORTED_MODULE_2__["PatientRegistrationService"]])
     ], PatientRegistrationComponent);
     return PatientRegistrationComponent;
 }());
@@ -435,6 +450,51 @@ var PatientSearchComponent = /** @class */ (function () {
             _service_search_service__WEBPACK_IMPORTED_MODULE_4__["SearchService"]])
     ], PatientSearchComponent);
     return PatientSearchComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/patient-registration.service.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/service/patient-registration.service.ts ***!
+  \*********************************************************/
+/*! exports provided: PatientRegistrationService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientRegistrationService", function() { return PatientRegistrationService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PatientRegistrationService = /** @class */ (function () {
+    function PatientRegistrationService(http) {
+        this.http = http;
+        this.patientApiUrl = '/patient/v1';
+    }
+    PatientRegistrationService.prototype.addPatient = function (pateint) {
+        var url = this.patientApiUrl;
+        return this.http.post(url, pateint);
+    };
+    PatientRegistrationService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], PatientRegistrationService);
+    return PatientRegistrationService;
 }());
 
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {PatientRegistrationService} from "../service/patient-registration.service";
 
 @Component({
   selector: 'app-patient-registration',
@@ -8,9 +9,11 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class PatientRegistrationComponent  {
 
+  patientAdded: boolean = false;
+  patientIdCreated: string
   title = 'Patient Portal';
   patientFormData = new FormGroup({
-    firstName: new FormControl(''),
+    firstName: new FormControl( '',Validators.required),
     lastName: new FormControl(''),
     age: new FormControl(''),
     address: new FormControl(''),
@@ -29,10 +32,16 @@ export class PatientRegistrationComponent  {
   });
 
 
+  constructor(private patientRegistrationService: PatientRegistrationService) {
+  }
 
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.patientFormData.value);
+    this.patientRegistrationService.addPatient(this.patientFormData.value)
+      .subscribe(s => {console.log(s);
+        this.patientIdCreated = s;
+        this.patientAdded = true });
   }
 
 
