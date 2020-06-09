@@ -14,6 +14,7 @@ export class PatientSearchComponent implements OnInit {
 
   patientData: PatientData;
   patientId: number;
+  title = 'Patient Portal';
   // searchDataService: SearchDataServiceService;
 
   constructor( private router: Router,

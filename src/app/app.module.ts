@@ -40,7 +40,6 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
         component: PatientInfoPrintComponent
       },
       { path: '',   redirectTo: '/register', pathMatch: 'full' }, // redirect to `first-component`
-      // { path: '**', component: PatientRegistrationComponent },
       { path: '**', component: PagenotfoundComponent },
     ])
   ],

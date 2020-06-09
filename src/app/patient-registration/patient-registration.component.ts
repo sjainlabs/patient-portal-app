@@ -10,7 +10,7 @@ import {PatientRegistrationService} from "../service/patient-registration.servic
 export class PatientRegistrationComponent  {
 
   show: boolean = false;
-  patientIdCreated: string
+  patientIdCreated: string;
   title = 'Patient Portal';
   patientFormData = new FormGroup({
     firstName: new FormControl( '',Validators.required),
