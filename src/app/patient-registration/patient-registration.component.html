@@ -34,13 +34,24 @@
       <button (click)="addNewPatientAgain()"> Click here to Add a new Patient</button>
     </div>
 
-    <div *ngIf="!show">
-      <form [formGroup]="patientFormData" (ngSubmit)="onSubmit(patientFormData.value)">
+    <div *ngIf="error !== '' ">
+      <p style="color: red"> {{error}} </p>
+    </div>
+    <div *ngIf="!show && error === ''">
+      <form [formGroup]="patientFormData" (ngSubmit)="onSubmit(patientFormData.value)" novalidate>
 
         <div>
           <label>
-            First Name:
-            <input id="firstName" type="text" formControlName="firstName" class="form-control" required>
+           First Name:
+
+            <input id="firstName" type="text" formControlName="firstName" class="form-control" required="">
+
+            <div *ngIf="patientFormData.controls['firstName'].invalid && (patientFormData.controls['firstName'].dirty
+             || patientFormData.controls['firstName'].touched)" class="alert alert-danger">
+              <div *ngIf="patientFormData.controls['firstName'].errors.required">
+                First Name is required.
+              </div>
+            </div>
           </label>
         </div>
         <!--<div *ngIf="firstName.errors.required"> First Name is required</div>-->
@@ -55,7 +66,14 @@
         <div>
           <label>
             Age:
-            <input type="number" formControlName="age" required>
+            <input type="text" formControlName="age" required>
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Gender:
+            <input type="text" formControlName="gender" required>
           </label>
         </div>
 
@@ -90,7 +108,7 @@
         <div>
           <label>
             Contact:
-            <input type="number" formControlName="contact">
+            <input type="number" formControlName="contact" required="">
           </label>
         </div>
 
@@ -112,6 +130,26 @@
           <label>
             Email:
             <input type="text" formControlName="email">
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Personal Identification Type:
+            <select name="" id="" formControlName="identificationType">
+              <option value="1">Aadhar Card</option>
+              <option value="2">Driving License</option>
+              <option value="3">Passport</option>
+              <option value="4">Voter Id</option>
+              <option value="5">Pan Card</option>
+            </select>
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Personal Identification:
+            <input type="text" formControlName="identification">
           </label>
         </div>
 
@@ -153,7 +191,11 @@
         </div>
 
 
-        <button class="button" type="submit">Submit</button>
+        <button type="submit"
+                [disabled]="patientFormData.pristine || patientFormData.invalid" class="btn btn-success">
+          Submit
+        </button>
+        <!--<button class="button" type="submit">Submit</button>-->
 
       </form>
 

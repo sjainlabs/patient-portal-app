@@ -4,4 +4,9 @@ export class PatientData {
   age: number;
   height: number;
   weight: number;
+  consultantDoctor: string;
+  id: string;
+  phone: string;
+  city: string;
+
 }

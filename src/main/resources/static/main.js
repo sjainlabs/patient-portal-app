@@ -265,7 +265,7 @@ module.exports = "/*.firstRow{*/\r\n/*  border-top: 2px solid black;*/\r\n/*  bo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"margin-top: 25%\">\r\n  <div class=\"container\">\r\n    <div class=\"row firstRow\">\r\n      <div class=\"col-sm-1\">\r\n        <label>Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-6\">\r\n        {{searchData1.firstName + \" \" + searchData1.lastName}}\r\n      </div>\r\n    </div>\r\n    <div class=\"row secondRow\">\r\n      <div class=\"col-sm-1\">\r\n        <label>Age:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.age}}\r\n      </div>\r\n      <div class=\"col-sm-1\">\r\n        <label>Height:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.height}}\r\n      </div>\r\n      <div class=\"col-sm-1\">\r\n        <label>Weight:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.weight}}\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n"
+module.exports = "<div style=\"margin-top: 25%\">\r\n  <div class=\"container\">\r\n    <div class=\"row firstRow\">\r\n      <div class=\"col-sm-1\">\r\n        <label>Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-6\">\r\n        {{searchData1.firstName + \" \" + searchData1.lastName}}\r\n      </div>\r\n    </div>\r\n    <div class=\"row secondRow\">\r\n      <div class=\"col-sm-1\">\r\n        <label>Age:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.age}}\r\n      </div>\r\n      <div class=\"col-sm-1\">\r\n        <label>Height:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.height}}\r\n      </div>\r\n      <div class=\"col-sm-1\">\r\n        <label>Weight:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.weight}}\r\n      </div>\r\n    </div>\r\n    <div class=\"row \">\r\n      <div class=\"col-sm-1\">\r\n        <label>Consultant Doctor:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        <!--{{searchData1.firstName + \" \" + searchData1.lastName}}-->\r\n      </div>\r\n      <div class=\"col-sm-1\">\r\n        <label>Reference Number:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.id}}\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row \">\r\n      <div class=\"col-sm-1\">\r\n        <label>Gender:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.contact }}\r\n      </div>\r\n      <div class=\"col-sm-1\">\r\n        <label>Reference Number:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.id}}\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -346,7 +346,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <h1 class=\"siteTitle\">\r\n      {{ title }}\r\n    </h1>\r\n  </div>\r\n\r\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\r\n    <!-- Links -->\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\">Patient Registration</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"../search\" class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div style=\"text-align:center\">\r\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\r\n  </div>\r\n\r\n  <div class=\"container\">\r\n    <!--<div  style=\"background-color: mintcream\">-->\r\n    <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\r\n    <!--<h1>-->\r\n    <!--{{ title }}!-->\r\n    <!--</h1>-->\r\n    <!--<img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\r\n    <!--</div>-->\r\n\r\n    <div *ngIf=\"show\"> Registration Completed! Patient Id : {{patientIdCreated}}\r\n      <button (click)=\"addNewPatientAgain()\"> Click here to Add a new Patient</button>\r\n    </div>\r\n\r\n    <div *ngIf=\"!show\">\r\n      <form [formGroup]=\"patientFormData\" (ngSubmit)=\"onSubmit(patientFormData.value)\">\r\n\r\n        <div>\r\n          <label>\r\n            First Name:\r\n            <input id=\"firstName\" type=\"text\" formControlName=\"firstName\" class=\"form-control\" required>\r\n          </label>\r\n        </div>\r\n        <!--<div *ngIf=\"firstName.errors.required\"> First Name is required</div>-->\r\n        <div>\r\n          <label>\r\n            Last Name:\r\n            <input type=\"text\" formControlName=\"lastName\">\r\n          </label>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div>\r\n          <label>\r\n            Age:\r\n            <input type=\"number\" formControlName=\"age\" required>\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Address:\r\n            <input type=\"text\" formControlName=\"address\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            City:\r\n            <input type=\"text\" formControlName=\"city\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            State:\r\n            <input type=\"text\" formControlName=\"state\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            zipCode:\r\n            <input type=\"number\" formControlName=\"zipCode\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Contact:\r\n            <input type=\"number\" formControlName=\"contact\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Emeregency Contact:\r\n            <input type=\"number\" formControlName=\"emergencyContact\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Care of:\r\n            <input type=\"text\" formControlName=\"careOf\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Email:\r\n            <input type=\"text\" formControlName=\"email\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Wieght:\r\n            <input type=\"number\" formControlName=\"weight\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Height:\r\n            <input type=\"text\" formControlName=\"height\">\r\n          </label>\r\n        </div>\r\n\r\n\r\n        <div>\r\n          <label>\r\n            Symptoms:\r\n            <input type=\"text\" formControlName=\"symptoms\">\r\n          </label>\r\n        </div>\r\n\r\n\r\n        <div>\r\n          <label>\r\n            Prescription:\r\n            <input type=\"text\" formControlName=\"prescription\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Additional Notes:\r\n            <input type=\"text\" formControlName=\"additonalNotes\">\r\n          </label>\r\n        </div>\r\n\r\n\r\n        <button class=\"button\" type=\"submit\">Submit</button>\r\n\r\n      </form>\r\n\r\n      <!--</div>-->\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div>\r\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <h1 class=\"siteTitle\">\r\n      {{ title }}\r\n    </h1>\r\n  </div>\r\n\r\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\r\n    <!-- Links -->\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\">Patient Registration</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"../search\" class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div style=\"text-align:center\">\r\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\r\n  </div>\r\n\r\n  <div class=\"container\">\r\n    <!--<div  style=\"background-color: mintcream\">-->\r\n    <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\r\n    <!--<h1>-->\r\n    <!--{{ title }}!-->\r\n    <!--</h1>-->\r\n    <!--<img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\r\n    <!--</div>-->\r\n\r\n    <div *ngIf=\"show\"> Registration Completed! Patient Id : {{patientIdCreated}}\r\n      <button (click)=\"addNewPatientAgain()\"> Click here to Add a new Patient</button>\r\n    </div>\r\n\r\n    <div *ngIf=\"error !== '' \">\r\n      <p style=\"color: red\"> {{error}} </p>\r\n    </div>\r\n    <div *ngIf=\"!show && error === ''\">\r\n      <form [formGroup]=\"patientFormData\" (ngSubmit)=\"onSubmit(patientFormData.value)\" novalidate>\r\n\r\n        <div>\r\n          <label>\r\n           First Name:\r\n\r\n            <input id=\"firstName\" type=\"text\" formControlName=\"firstName\" class=\"form-control\" required=\"\">\r\n\r\n            <div *ngIf=\"patientFormData.controls['firstName'].invalid && (patientFormData.controls['firstName'].dirty\r\n             || patientFormData.controls['firstName'].touched)\" class=\"alert alert-danger\">\r\n              <div *ngIf=\"patientFormData.controls['firstName'].errors.required\">\r\n                First Name is required.\r\n              </div>\r\n            </div>\r\n          </label>\r\n        </div>\r\n        <!--<div *ngIf=\"firstName.errors.required\"> First Name is required</div>-->\r\n        <div>\r\n          <label>\r\n            Last Name:\r\n            <input type=\"text\" formControlName=\"lastName\">\r\n          </label>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div>\r\n          <label>\r\n            Age:\r\n            <input type=\"text\" formControlName=\"age\" required>\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Gender:\r\n            <input type=\"text\" formControlName=\"gender\" required>\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Address:\r\n            <input type=\"text\" formControlName=\"address\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            City:\r\n            <input type=\"text\" formControlName=\"city\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            State:\r\n            <input type=\"text\" formControlName=\"state\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            zipCode:\r\n            <input type=\"number\" formControlName=\"zipCode\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Contact:\r\n            <input type=\"number\" formControlName=\"contact\" required=\"\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Emeregency Contact:\r\n            <input type=\"number\" formControlName=\"emergencyContact\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Care of:\r\n            <input type=\"text\" formControlName=\"careOf\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Email:\r\n            <input type=\"text\" formControlName=\"email\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Personal Identification Type:\r\n            <select name=\"\" id=\"\" formControlName=\"identificationType\">\r\n              <option value=\"1\">Aadhar Card</option>\r\n              <option value=\"2\">Driving License</option>\r\n              <option value=\"3\">Passport</option>\r\n              <option value=\"4\">Voter Id</option>\r\n              <option value=\"5\">Pan Card</option>\r\n            </select>\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Personal Identification:\r\n            <input type=\"text\" formControlName=\"identification\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Wieght:\r\n            <input type=\"number\" formControlName=\"weight\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Height:\r\n            <input type=\"text\" formControlName=\"height\">\r\n          </label>\r\n        </div>\r\n\r\n\r\n        <div>\r\n          <label>\r\n            Symptoms:\r\n            <input type=\"text\" formControlName=\"symptoms\">\r\n          </label>\r\n        </div>\r\n\r\n\r\n        <div>\r\n          <label>\r\n            Prescription:\r\n            <input type=\"text\" formControlName=\"prescription\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Additional Notes:\r\n            <input type=\"text\" formControlName=\"additonalNotes\">\r\n          </label>\r\n        </div>\r\n\r\n\r\n        <button type=\"submit\"\r\n                [disabled]=\"patientFormData.pristine || patientFormData.invalid\" class=\"btn btn-success\">\r\n          Submit\r\n        </button>\r\n        <!--<button class=\"button\" type=\"submit\">Submit</button>-->\r\n\r\n      </form>\r\n\r\n      <!--</div>-->\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -376,14 +376,61 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var PatientRegistrationComponent = /** @class */ (function () {
-    function PatientRegistrationComponent(patientRegistrationService) {
+    // patientFormData = new FormGroup({
+    //   firstName: new FormControl( '',[Validators.required]),
+    //   lastName: new FormControl(''),
+    //   age: new FormControl(''),
+    //   address: new FormControl(''),
+    //   city: new FormControl(''),
+    //   state: new FormControl(''),
+    //   zipCode: new FormControl(''),
+    //   contact: new FormControl(''),
+    //   emergencyContact: new FormControl(''),
+    //   careOf: new FormControl(''),
+    //   email: new FormControl(''),
+    //   identificationType: new FormControl(''),
+    //   identification: new FormControl(''),
+    //   weight: new FormControl(''),
+    //   height: new FormControl(''),
+    //   symptoms: new FormControl(''),
+    //   prescription: new FormControl(''),
+    //   additonalNotes: new FormControl(''),
+    // });
+    function PatientRegistrationComponent(patientRegistrationService, fb) {
         this.patientRegistrationService = patientRegistrationService;
+        this.fb = fb;
         this.show = false;
         this.title = 'Patient Portal';
-        this.patientFormData = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
+        this.error = '';
+        this.ERRORMESSAGE = 'System is Temp unavailable';
+        this.show = false;
+        this.createForm();
+    }
+    PatientRegistrationComponent.prototype.onSubmit = function () {
+        var _this = this;
+        // TODO: Use EventEmitter with form value
+        console.log(this.patientFormData.value);
+        this.patientRegistrationService.addPatient(this.patientFormData.value)
+            .subscribe(function (s) {
+            console.log(s);
+            _this.patientIdCreated = s;
+            _this.show = true;
+            _this.error = '';
+        }, function (error1) {
+            _this.error = _this.ERRORMESSAGE;
+            _this.show = false;
+        });
+        // this.show = true;
+    };
+    PatientRegistrationComponent.prototype.addNewPatientAgain = function () {
+        this.show = false;
+    };
+    PatientRegistrationComponent.prototype.createForm = function () {
+        this.patientFormData = this.fb.group({
             firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
             lastName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             age: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            gender: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             address: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             city: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             state: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
@@ -392,28 +439,14 @@ var PatientRegistrationComponent = /** @class */ (function () {
             emergencyContact: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             careOf: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             email: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            identificationType: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            identification: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             weight: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             height: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             symptoms: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             prescription: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             additonalNotes: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
         });
-        this.show = false;
-    }
-    PatientRegistrationComponent.prototype.onSubmit = function () {
-        var _this = this;
-        // TODO: Use EventEmitter with form value
-        console.warn(this.patientFormData.value);
-        this.patientRegistrationService.addPatient(this.patientFormData.value)
-            .subscribe(function (s) {
-            console.log(s);
-            _this.patientIdCreated = s;
-            _this.show = true;
-        });
-        // this.show = true;
-    };
-    PatientRegistrationComponent.prototype.addNewPatientAgain = function () {
-        this.show = false;
     };
     PatientRegistrationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -421,7 +454,7 @@ var PatientRegistrationComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./patient-registration.component.html */ "./src/app/patient-registration/patient-registration.component.html"),
             styles: [__webpack_require__(/*! ./patient-registration.component.css */ "./src/app/patient-registration/patient-registration.component.css")]
         }),
-        __metadata("design:paramtypes", [_service_patient_registration_service__WEBPACK_IMPORTED_MODULE_2__["PatientRegistrationService"]])
+        __metadata("design:paramtypes", [_service_patient_registration_service__WEBPACK_IMPORTED_MODULE_2__["PatientRegistrationService"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
     ], PatientRegistrationComponent);
     return PatientRegistrationComponent;
 }());
@@ -726,7 +759,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Smita\Personal\PatientPortal\patient-portal-app\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\P2855416\Documents\git\personal\patient-portal-app\src\main.ts */"./src/main.ts");
 
 
 /***/ })
