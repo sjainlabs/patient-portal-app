@@ -1,4 +1,7 @@
+com\jlabs\model\PersonalIdentification.class
 com\jlabs\persistence\repository\PatientRepository.class
+com\jlabs\persistence\entity\PersonalIdentificationEntity.class
+com\jlabs\model\PersonalIdentification$PersonalIdentificationBuilder.class
 com\jlabs\model\Patient$PatientBuilder.class
 com\jlabs\service\transform\PatientEntityMapperImpl.class
 com\jlabs\config\SwaggerConfig.class

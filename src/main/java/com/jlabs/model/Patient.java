@@ -13,21 +13,23 @@ import lombok.*;
 @AllArgsConstructor
 public class Patient {
 
-    private int id;
-    private String firstName;
-    private String lastName;
-    private int age;
-    private String address;
-    private String city;
-    private String state;
-    private int zipCode;
-    private String contactNumber;
-    private String emergencyContactNumber;
-    private String careOf;
-    private String email;
-    private Double weight;
-    private Double height;
-    private String symptoms;
-    private String prescriptions;
-    private String additionalNotes;
+  private int id;
+  private String firstName;
+  private String lastName;
+  private String doctorName;
+  private int age;
+  private String address;
+  private String city;
+  private String state;
+  private int zipCode;
+  private String contactNumber;
+  private String emergencyContactNumber;
+  private String careOf;
+  private String email;
+  private Double weight;
+  private Double height;
+  private String symptoms;
+  private String prescriptions;
+  private int personalIdType;
+  private String personalIdTypeDesc;
 }

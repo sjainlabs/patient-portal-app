@@ -18,7 +18,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/patient/v1")
-public class PatientController {
+public class  PatientController {
 
     @Autowired
     PatientService patientService;

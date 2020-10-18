@@ -2,11 +2,12 @@ package com.jlabs.service.transform;
 
 import com.jlabs.model.Patient;
 import com.jlabs.persistence.entity.PatientEntity;
+import com.jlabs.persistence.entity.PersonalIdentificationEntity;
 import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-10-14T15:02:50-0500",
+    date = "2020-10-18T09:32:59-0500",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 13.0.2 (Oracle Corporation)"
 )
 public class PatientEntityMapperImpl implements PatientEntityMapper {
@@ -19,9 +20,11 @@ public class PatientEntityMapperImpl implements PatientEntityMapper {
 
         PatientEntity patientEntity = new PatientEntity();
 
+        patientEntity.setPersonalIdentificationEntity( patientToPersonalIdentificationEntity( patient ) );
         patientEntity.setId( patient.getId() );
         patientEntity.setFirstName( patient.getFirstName() );
         patientEntity.setLastName( patient.getLastName() );
+        patientEntity.setDoctorName( patient.getDoctorName() );
         patientEntity.setAge( patient.getAge() );
         patientEntity.setAddress( patient.getAddress() );
         patientEntity.setCity( patient.getCity() );
@@ -32,8 +35,20 @@ public class PatientEntityMapperImpl implements PatientEntityMapper {
         patientEntity.setWeight( patient.getWeight() );
         patientEntity.setHeight( patient.getHeight() );
         patientEntity.setSymptoms( patient.getSymptoms() );
-        patientEntity.setAdditionalNotes( patient.getAdditionalNotes() );
 
         return patientEntity;
+    }
+
+    protected PersonalIdentificationEntity patientToPersonalIdentificationEntity(Patient patient) {
+        if ( patient == null ) {
+            return null;
+        }
+
+        PersonalIdentificationEntity personalIdentificationEntity = new PersonalIdentificationEntity();
+
+        personalIdentificationEntity.setPersonalIdType( patient.getPersonalIdType() );
+        personalIdentificationEntity.setPersonalIdTypeDesc( patient.getPersonalIdTypeDesc() );
+
+        return personalIdentificationEntity;
     }
 }
