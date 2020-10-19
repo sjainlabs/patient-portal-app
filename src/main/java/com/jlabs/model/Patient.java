@@ -22,8 +22,8 @@ public class Patient {
   private String city;
   private String state;
   private int zipCode;
-  private String contactNumber;
-  private String emergencyContactNumber;
+  private String contact;
+  private String emergencyContact;
   private String careOf;
   private String email;
   private Double weight;
@@ -31,5 +31,5 @@ public class Patient {
   private String symptoms;
   private String prescriptions;
   private int personalIdType;
-  private String personalIdTypeDesc;
+  private String personalId;
 }

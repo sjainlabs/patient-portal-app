@@ -14,7 +14,7 @@ import org.mapstruct.Mapping;
 public interface PatientEntityMapper {
 
   @Mapping(source = "personalIdType", target = "personalIdentificationEntity.personalIdType")
-  @Mapping(source = "personalIdTypeDesc", target = "personalIdentificationEntity.personalIdTypeDesc")
+//  @Mapping(source = "personalIdTypeDesc", target = "personalIdentificationEntity.personalIdTypeDesc")
     PatientEntity PatientTOPatientEntity(Patient patient);
 
 

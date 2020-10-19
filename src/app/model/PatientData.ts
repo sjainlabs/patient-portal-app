@@ -8,5 +8,6 @@ export class PatientData {
   id: string;
   contact: string;
   city: string;
+  gender: string
 
 }

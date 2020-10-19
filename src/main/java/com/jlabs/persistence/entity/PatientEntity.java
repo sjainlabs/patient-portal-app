@@ -50,6 +50,8 @@ public class PatientEntity {
   private String prescription;
   @Column(name = "ADDITIONAL_NOTES")
   private String additionalNotes;
+  @Column(name = "personal_id")
+  private String personalId;
   @Column(name = "CREATED_AT")
   private String createdAt;
   @Column(name = "UPDATED_AT")
