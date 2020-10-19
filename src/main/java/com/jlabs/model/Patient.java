@@ -18,6 +18,7 @@ public class Patient {
   private String lastName;
   private String doctorName;
   private int age;
+  private String gender;
   private String address;
   private String city;
   private String state;
