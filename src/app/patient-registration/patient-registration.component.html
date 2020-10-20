@@ -58,7 +58,7 @@
         <div>
           <label>
             Last Name:
-            <input type="text" formControlName="lastName">
+            <input type="text" formControlName="lastName" class="form-control">
           </label>
         </div>
 
@@ -66,77 +66,82 @@
         <div>
           <label>
             Age:
-            <input type="text" formControlName="age" required>
+            <input type="text" (keypress)="numberOnly($event)" formControlName="age" required class="form-control">
           </label>
         </div>
 
         <div>
           <label>
-            Gender:
-            <input type="text" formControlName="gender" required>
+            <P>Gender:</P>
+            <input type="radio" id="male" formControlName="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" formControlName="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" formControlName="gender" value="other">
+            <label for="other">Other</label>
           </label>
         </div>
 
         <div>
           <label>
             Address:
-            <input type="text" formControlName="address">
+            <input type="text" formControlName="address" class="form-control" >
           </label>
         </div>
 
         <div>
           <label>
             City:
-            <input type="text" formControlName="city">
+            <input type="text" formControlName="city" class="form-control">
           </label>
         </div>
 
         <div>
           <label>
             State:
-            <input type="text" formControlName="state">
+            <input type="text" formControlName="state" class="form-control">
           </label>
         </div>
 
         <div>
           <label>
-            zipCode:
-            <input type="number" formControlName="zipCode">
+            ZipCode:
+            <input type="text" formControlName="zipCode" (keypress)="numberOnly($event)" class="form-control">
           </label>
         </div>
 
         <div>
           <label>
             Contact:
-            <input type="number" formControlName="contact" required="">
+            <input type="text" formControlName="contact" (keypress)="numberOnly($event)" required class="form-control">
           </label>
         </div>
 
         <div>
           <label>
             Emeregency Contact:
-            <input type="number" formControlName="emergencyContact">
+            <input type="text" formControlName="emergencyContact" (keypress)="numberOnly($event)" class="form-control">
           </label>
         </div>
 
         <div>
           <label>
             Care of:
-            <input type="text" formControlName="careOf">
+            <input type="text" formControlName="careOf" class="form-control">
           </label>
         </div>
 
         <div>
           <label>
             Email:
-            <input type="text" formControlName="email">
+            <input type="email" formControlName="email" class="form-control">
           </label>
         </div>
 
         <div>
           <label>
             Personal Identification Type:
-            <select name="" id="" formControlName="personalIdType">
+            <select name="personalIdType" id="personalIdType" formControlName="personalIdType" class="form-control">
               <option value="1">Aadhar Card</option>
               <option value="2">Driving License</option>
               <option value="3">Passport</option>
@@ -149,21 +154,21 @@
         <div>
           <label>
             Personal Identification:
-            <input type="text" formControlName="personalId">
+            <input type="text" formControlName="personalId" class="form-control">
           </label>
         </div>
 
         <div>
           <label>
-            Wieght:
-            <input type="number" formControlName="weight">
+            Weight:
+            <input type="text" formControlName="weight" (keypress)="numberOnly($event)" class="form-control">
           </label>
         </div>
 
         <div>
           <label>
             Height:
-            <input type="text" formControlName="height">
+            <input type="text" formControlName="height" class="form-control">
           </label>
         </div>
 
@@ -171,29 +176,29 @@
         <div>
           <label>
             Doctor Name:
-            <input type="text" formControlName="doctorName">
+            <input type="text" formControlName="doctorName" class="form-control">
           </label>
         </div>
 
         <div>
           <label>
-            Symptoms:
-            <input type="text" formControlName="symptoms">
+            <p> Symptoms: </p>
+            <textarea type="text" formControlName="symptoms" rows="4" cols="50" class="form-control"></textarea>
           </label>
         </div>
 
 
         <div>
           <label>
-            Prescription:
-            <input type="text" formControlName="prescription">
+            <p> Prescription: </p>
+            <textarea  formControlName="prescription" rows="4" cols="50" class="form-control"></textarea>
           </label>
         </div>
 
         <div>
           <label>
-            Additional Notes:
-            <input type="text" formControlName="additonalNotes">
+            <p> Additional Notes: </p>
+            <textarea type="text" formControlName="additionalNotes" rows="4" cols="50" class="form-control"></textarea>
           </label>
         </div>
 

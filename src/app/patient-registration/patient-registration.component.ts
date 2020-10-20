@@ -15,26 +15,7 @@ export class PatientRegistrationComponent  {
   patientFormData :  FormGroup;
   error='';
   ERRORMESSAGE= 'System is Temp unavailable'
-  // patientFormData = new FormGroup({
-  //   firstName: new FormControl( '',[Validators.required]),
-  //   lastName: new FormControl(''),
-  //   age: new FormControl(''),
-  //   address: new FormControl(''),
-  //   city: new FormControl(''),
-  //   state: new FormControl(''),
-  //   zipCode: new FormControl(''),
-  //   contact: new FormControl(''),
-  //   emergencyContact: new FormControl(''),
-  //   careOf: new FormControl(''),
-  //   email: new FormControl(''),
-  //   identificationType: new FormControl(''),
-  //   identification: new FormControl(''),
-  //   weight: new FormControl(''),
-  //   height: new FormControl(''),
-  //   symptoms: new FormControl(''),
-  //   prescription: new FormControl(''),
-  //   additonalNotes: new FormControl(''),
-  // });
+
 
 
   constructor(private patientRegistrationService: PatientRegistrationService, private fb: FormBuilder) {
@@ -86,7 +67,14 @@ export class PatientRegistrationComponent  {
       doctorName: new FormControl(''),
       symptoms: new FormControl(''),
       prescription: new FormControl(''),
-      additonalNotes: new FormControl(''),
+      additionalNotes: new FormControl(''),
     });
   }
+
+  numberOnly(event): boolean {
+  let patt = /^([0-9])$/;
+  let result = patt.test(event.key);
+  return result;
+}
+
 }

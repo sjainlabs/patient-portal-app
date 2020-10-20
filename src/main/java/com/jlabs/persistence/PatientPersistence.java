@@ -4,6 +4,7 @@ import com.jlabs.model.Patient;
 import com.jlabs.persistence.entity.PatientEntity;
 import com.jlabs.persistence.entity.PersonalIdentificationEntity;
 import com.jlabs.persistence.repository.PatientRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class PatientPersistence {
 
@@ -32,6 +34,7 @@ public class PatientPersistence {
        entityManager.find(PersonalIdentificationEntity.class, patientEntity.getPersonalIdentificationEntity().getPersonalIdType());
 //      patientEntity.setPersonalIdentificationEntity(personalIdentificationEntity);
       final PatientEntity save = patientRepository.save(patientEntity);
+      log.debug("Patient Entity Saved {}" , save);
       return String.valueOf(save.getId());
     }
 

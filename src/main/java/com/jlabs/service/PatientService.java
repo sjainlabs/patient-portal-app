@@ -4,6 +4,7 @@ import com.jlabs.model.Patient;
 import com.jlabs.persistence.PatientPersistence;
 import com.jlabs.persistence.entity.PatientEntity;
 import com.jlabs.service.transform.PatientEntityMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import java.util.Optional;
  * Created by sjain on 5/25/20.
  */
 
+@Slf4j
 @Service
 public class PatientService {
 
@@ -30,6 +32,7 @@ public class PatientService {
 
     public String savePatient(Patient patient){
       PatientEntity patientEntity= patientEntityMapper.PatientTOPatientEntity(patient);
+      log.debug("Patient Entity {}", patientEntity);
 //        new PatientEntity();
 //        patientEntity.setFirstName(patient.getFirstName());
 //      patientEntity.setLastName(patient.getLastName());

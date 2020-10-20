@@ -7,7 +7,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-10-19T00:47:29-0500",
+    date = "2020-10-20T09:53:49-0500",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 13.0.2 (Oracle Corporation)"
 )
 public class PatientEntityMapperImpl implements PatientEntityMapper {
@@ -25,6 +25,7 @@ public class PatientEntityMapperImpl implements PatientEntityMapper {
         patientEntity.setFirstName( patient.getFirstName() );
         patientEntity.setLastName( patient.getLastName() );
         patientEntity.setDoctorName( patient.getDoctorName() );
+        patientEntity.setGender( patient.getGender() );
         patientEntity.setAge( patient.getAge() );
         patientEntity.setAddress( patient.getAddress() );
         patientEntity.setCity( patient.getCity() );
@@ -37,6 +38,8 @@ public class PatientEntityMapperImpl implements PatientEntityMapper {
         patientEntity.setWeight( patient.getWeight() );
         patientEntity.setHeight( patient.getHeight() );
         patientEntity.setSymptoms( patient.getSymptoms() );
+        patientEntity.setPrescription( patient.getPrescription() );
+        patientEntity.setAdditionalNotes( patient.getAdditionalNotes() );
         patientEntity.setPersonalId( patient.getPersonalId() );
 
         return patientEntity;

@@ -3,6 +3,7 @@ package com.jlabs.controller;
 import com.jlabs.model.Patient;
 import com.jlabs.persistence.entity.PatientEntity;
 import com.jlabs.service.PatientService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.trace.http.HttpTrace;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/patient/v1")
+@Slf4j
 public class  PatientController {
 
     @Autowired
@@ -26,7 +28,8 @@ public class  PatientController {
     @PostMapping
     @ResponseBody
     public ResponseEntity<String> savePatient(@RequestBody Patient patient){
-
+        log.info("patient request");
+        log.debug("patient request {}", patient);
         final String patientResponse = patientService.savePatient(patient);
         return new ResponseEntity<>(patientResponse, HttpStatus.CREATED);
 

@@ -52,8 +52,10 @@ public class PatientEntity {
   private String additionalNotes;
   @Column(name = "personal_id")
   private String personalId;
+  @Transient
   @Column(name = "CREATED_AT")
   private String createdAt;
+  @Transient
   @Column(name = "UPDATED_AT")
   private String updatedAt;
 

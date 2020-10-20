@@ -30,7 +30,8 @@ public class Patient {
   private Double weight;
   private Double height;
   private String symptoms;
-  private String prescriptions;
+  private String prescription;
+  private String additionalNotes;
   private int personalIdType;
   private String personalId;
 }
