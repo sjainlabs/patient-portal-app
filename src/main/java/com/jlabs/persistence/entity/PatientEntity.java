@@ -1,5 +1,6 @@
 package com.jlabs.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
 import javax.persistence.*;
@@ -54,8 +55,10 @@ public class PatientEntity {
   private String personalId;
   @Transient
   @Column(name = "CREATED_AT")
+  @JsonInclude()
   private String createdAt;
   @Transient
+  @JsonInclude()
   @Column(name = "UPDATED_AT")
   private String updatedAt;
 

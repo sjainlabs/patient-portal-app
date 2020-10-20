@@ -9,5 +9,6 @@ export class PatientData {
   contact: string;
   city: string;
   gender: string
+  updatedAt: string
 
 }

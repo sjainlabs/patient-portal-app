@@ -41,7 +41,9 @@ public class PatientService {
     }
 
     public Optional<PatientEntity> searchPatient(int id) {
-        return patientPersistence.searchPatient(id);
+      final Optional<PatientEntity> patientEntity = patientPersistence.searchPatient(id);
+      log.debug("searched patient {}", patientEntity);
+      return patientEntity;
     }
 
     public List<Patient> searchAllPatient() {
