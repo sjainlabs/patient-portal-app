@@ -29,9 +29,9 @@ export class PatientInfoPrintComponent implements OnInit {
   getSearch() {
     const searchData = this.searchDataService.getSearchData();
     this.searchData1 = searchData;
-    this.firstName = searchData.firstName;
-    this.lastName = searchData.lastName;
-    this.age = searchData.age;
+    // this.firstName = searchData.firstName;
+    // this.lastName = searchData.lastName;
+    // this.age = searchData.age;
      // this.searchDataService.getSearchData();
     // console.log(this.patientData1);
   }
