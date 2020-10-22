@@ -32,7 +32,7 @@
     </appender>
 
     <!-- Send logs to console -->
-    <logger name="com.charter.pos.enterprise" level="debug"
+    <logger name="com.jlabs" level="debug"
             additivity="false">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE-AUDIT"/>
