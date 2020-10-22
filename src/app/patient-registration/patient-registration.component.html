@@ -21,6 +21,11 @@
     <img width="300" alt="Angular Logo" src="../assets/patient-image.jpeg">
   </div>
 
+  <div id="loadin">
+    <app-loader-spin></app-loader-spin>
+  </div>
+
+
   <div class="container">
     <!--<div  style="background-color: mintcream">-->
     <!--<div style="text-align:center" xmlns="http://www.w3.org/1999/html">-->
@@ -30,14 +35,14 @@
     <!--<img width="300" alt="Angular Logo" src="../assets/patient-image.jpeg">-->
     <!--</div>-->
 
-    <div *ngIf="show"> Registration Completed! Patient Id : {{patientIdCreated}}
+    <div *ngIf="show && processing"> Registration Completed! Patient Id : {{patientIdCreated}}
       <button (click)="addNewPatientAgain()"> Click here to Add a new Patient</button>
     </div>
 
     <div *ngIf="error !== '' ">
       <p style="color: red"> {{error}} </p>
     </div>
-    <div *ngIf="!show && error === ''">
+    <div *ngIf="!show && error === '' && !processing">
       <form [formGroup]="patientFormData" (ngSubmit)="onSubmit(patientFormData.value)" novalidate>
 
         <div>

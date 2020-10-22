@@ -10,30 +10,43 @@ import {PatientRegistrationService} from "../service/patient-registration.servic
 export class PatientRegistrationComponent  {
 
   show: boolean = false;
+  processing: boolean = false;
   patientIdCreated: string;
   title = 'Patient Portal';
   patientFormData :  FormGroup;
   error='';
-  ERRORMESSAGE= 'System is Temp unavailable'
+  ERRORMESSAGE= 'System is Temporary unavailable, Please Try Again!';
 
 
 
   constructor(private patientRegistrationService: PatientRegistrationService, private fb: FormBuilder) {
     this.show = false;
+    this.processing= false;
     this.createForm();
   }
 
+  ngOnInit() {
+    this.hideLoader()
+  }
+
+
   onSubmit() {
+    this.showLoader();
     // TODO: Use EventEmitter with form value
     console.log(this.patientFormData.value);
+    this.show=true;
     this.patientRegistrationService.addPatient(this.patientFormData.value)
-      .subscribe(s => {console.log(s);
+      .subscribe(s => {
+        console.log(s);
         this.patientIdCreated = s;
-        this.show= true
         this.error= '';
+        this.processing = true;
+          this.hideLoader();
       },
-        error1 => {this.error = this.ERRORMESSAGE
-          this.show= false
+        error1 => {this.error = this.ERRORMESSAGE;
+          this.show= false;
+          this.processing=false;
+          this.hideLoader();
       }
         );
         // this.show = true;
@@ -76,5 +89,15 @@ export class PatientRegistrationComponent  {
   let result = patt.test(event.key);
   return result;
 }
+
+  hideLoader() {
+
+    document.getElementById('loadin').style.display = 'none';
+  }
+
+  showLoader() {
+
+    document.getElementById('loadin').style.display = '';
+  }
 
 }

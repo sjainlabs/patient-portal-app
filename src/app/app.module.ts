@@ -10,6 +10,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { PatientInfoPrintComponent } from './patient-info-print/patient-info-print.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { LoaderSpinComponent } from './loader-spin/loader-spin.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     PatientSearchComponent,
     PatientRegistrationComponent,
     PatientInfoPrintComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    LoaderSpinComponent
   ],
   imports: [
     BrowserModule,

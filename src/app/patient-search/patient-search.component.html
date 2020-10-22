@@ -1,46 +1,4 @@
-<!--<form action="/action_page.php" style="text-align:center;">-->
-<!--  <div class="form-group">-->
-<!--    <label for="firstName">First Name:</label>-->
-<!--    <input type="text" id="firstName">-->
-<!--    <label for="lastName">Last name:</label>-->
-<!--    <input type="text" id="lastName">-->
-<!--    <label for="firstName">Patient ID:</label>-->
-<!--    <input type="text" id="patientId">-->
-<!--  </div>-->
-<!--  <div class="checkbox">-->
-<!--    <label><input type="checkbox">Prescribe</label>-->
-<!--  </div>-->
-<!--  <button type="submit" class="btn btn-primary">Search</button>-->
-<!--</form>-->
 
-<!--<table class="table">-->
-<!--  <tbody>-->
-<!--  <tr>-->
-<!--    <td>-->
-<!--      <label for="firstName">First Name:</label>-->
-<!--    </td>-->
-<!--    <td>-->
-<!--      <input type="text" id="firstName">-->
-<!--    </td>-->
-<!--&lt;!&ndash;  </tr>&ndash;&gt;-->
-<!--&lt;!&ndash;  <tr>&ndash;&gt;-->
-<!--    <td>-->
-<!--      <label for="lastName">Last name:</label>-->
-<!--    </td>-->
-<!--    <td>-->
-<!--      <input type="text" id="lastName">-->
-<!--    </td>-->
-<!--  </tr>-->
-<!--  <tr>-->
-<!--    <td>-->
-<!--      <label for="patientId">Patient ID:</label>-->
-<!--    </td>-->
-<!--    <td>-->
-<!--      <input type="text" id="patientId">-->
-<!--    </td>-->
-<!--  </tr>-->
-<!--  </tbody>-->
-<!--</table>-->
 <div>
   <div style="text-align:center" xmlns="http://www.w3.org/1999/html">
     <h1 class="siteTitle">
@@ -64,7 +22,11 @@
     <img width="300" alt="Angular Logo" src="../assets/patient-image.jpeg">
   </div>
 
-  <div class="container">
+  <div id="loadin">
+  <app-loader-spin></app-loader-spin>
+  </div>
+
+  <div class="container" *ngIf="!processing">
     <div class="row">
       <div class="col-sm-2">
         <label for="firstName">First Name:</label>
