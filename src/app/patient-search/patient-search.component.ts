@@ -18,6 +18,8 @@ export class PatientSearchComponent implements OnInit {
   processing:boolean;
   error='';
   ERRORMESSAGE= 'System is Temporary unavailable, Please Try Again!';
+  patientIdIsMandatory = "Patient Id is mandatory";
+
   // searchDataService: SearchDataServiceService;
 
   constructor( private router: Router,
@@ -39,29 +41,34 @@ export class PatientSearchComponent implements OnInit {
   }
 
   searchPatientData() {
-    this.showLoader();
-    this.processing = true;
-    this.searchService.searchPatient(this.patientId)
-      .subscribe(data => {
-        console.log(data);
-        this.patientData = data;
+    if(this.patientId === null || this.patientId === undefined || this.patientId.toString().trim().length === 0 ){
+      this.error = this.patientIdIsMandatory;
+    }
+  else {
+      this.showLoader();
+      this.processing = true;
+      this.searchService.searchPatient(this.patientId)
+        .subscribe(data => {
+            console.log(data);
+            this.patientData = data;
 
 
-        // this.patientData.firstName = data.firstName;
-        // this.patientData.lastName = data.lastName;
-        // const patientData2 = this.populateSearchData();
-        this.searchDataService.setSearchData( this.patientData);
-        this.hideLoader();
-        // window.location.href = '/print';
-        this.router.navigate(['print']);
-      }
-        ,
-        error1 => {
-        this.error = this.ERRORMESSAGE;
-          this.processing=false;
-          this.hideLoader();
-        }
+            // this.patientData.firstName = data.firstName;
+            // this.patientData.lastName = data.lastName;
+            // const patientData2 = this.populateSearchData();
+            this.searchDataService.setSearchData(this.patientData);
+            this.hideLoader();
+            // window.location.href = '/print';
+            this.router.navigate(['print']);
+          }
+          ,
+          error1 => {
+            this.error = this.ERRORMESSAGE;
+            this.processing = false;
+            this.hideLoader();
+          }
         );
+    }
   }
 
    hideLoader() {
