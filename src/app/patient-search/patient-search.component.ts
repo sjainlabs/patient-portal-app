@@ -50,13 +50,15 @@ export class PatientSearchComponent implements OnInit {
       this.searchService.searchPatient(this.patientId)
         .subscribe(data => {
             console.log(data);
-            this.patientData = data;
+            if (data.length == 1) {
+              this.patientData = data[0];
 
 
-            // this.patientData.firstName = data.firstName;
-            // this.patientData.lastName = data.lastName;
-            // const patientData2 = this.populateSearchData();
-            this.searchDataService.setSearchData(this.patientData);
+              // this.patientData.firstName = data.firstName;
+              // this.patientData.lastName = data.lastName;
+              // const patientData2 = this.populateSearchData();
+              this.searchDataService.setSearchData(this.patientData);
+            }
             this.hideLoader();
             // window.location.href = '/print';
             this.router.navigate(['print']);
