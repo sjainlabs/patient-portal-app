@@ -52,6 +52,25 @@
         <input type="text" [(ngModel)]="patientId" id="patientId">
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="patientId">First Name:</label>
+      </div>
+      <div class="col-sm-4">
+        <input type="text" [(ngModel)]="firstName" id="firstName">
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="patientId">Last Name:</label>
+      </div>
+      <div class="col-sm-4">
+        <input type="text" [(ngModel)]="lastName" id="lastName">
+      </div>
+    </div>
     <!--<div class="row">-->
       <!--<div class="col">-->
         <!--<label>-->
@@ -66,6 +85,18 @@
         <!--      </a>-->
       </div>
     </div>
+
+
+
   </div>
+
+  <div class="container" >
+    <div class="row" *ngIf="multiple">
+      <div class="col-sm-2">
+        Multiple rows: {{patientData | json}}
+      </div>
+    </div>
+  </div>
+
 
 </div>

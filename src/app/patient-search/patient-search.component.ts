@@ -12,21 +12,25 @@ import {SearchService} from '../service/search.service';
 })
 export class PatientSearchComponent implements OnInit {
 
-  patientData: PatientData;
+  patientData: PatientData[];
   patientId: number;
+  firstName: string;
+  lastName: string;
   title = 'Patient Portal';
-  processing:boolean;
+  processing: boolean;
+  multiple: boolean;
   error='';
   ERRORMESSAGE= 'System is Temporary unavailable, Please Try Again!';
-  patientIdIsMandatory = "Patient Id is mandatory";
+  Mandatory = "One of the below field is mandatory";
 
   // searchDataService: SearchDataServiceService;
 
   constructor( private router: Router,
                private searchDataService: SearchDataServiceService,
                private searchService: SearchService) {
-    this.patientData = new PatientData();
+    this.patientData = [];
     this.processing= false;
+    this.multiple= false;
     // this.searchDataService = new SearchDataServiceService();
   }
 
@@ -34,34 +38,45 @@ export class PatientSearchComponent implements OnInit {
     this.hideLoader()
   }
 
-  populateSearchData(): PatientData {
-    this.patientData.firstName = 'Test Patient First Name';
-    this.patientData.lastName = 'Test Patient last Name';
-    return this.patientData;
-  }
+  // populateSearchData(): PatientData {
+  //   this.patientData.firstName = 'Test Patient First Name';
+  //   this.patientData.lastName = 'Test Patient last Name';
+  //   return this.patientData;
+  // }
 
   searchPatientData() {
-    if(this.patientId === null || this.patientId === undefined || this.patientId.toString().trim().length === 0 ){
-      this.error = this.patientIdIsMandatory;
+    if( (this.patientId === null || this.patientId === undefined || this.patientId.toString().trim().length === 0) &&
+      (this.firstName === null || this.firstName === undefined || this.firstName.trim().length === 0) &&
+      (this.lastName === null || this.lastName === undefined || this.lastName.trim().length === 0)){
+      this.error = this.Mandatory;
     }
   else {
       this.showLoader();
       this.processing = true;
-      this.searchService.searchPatient(this.patientId)
+      this.searchService.searchPatient(this.patientId, this.firstName, this.lastName)
         .subscribe(data => {
             console.log(data);
             if (data.length == 1) {
-              this.patientData = data[0];
+              this.patientData[0] = data[0];
 
 
               // this.patientData.firstName = data.firstName;
               // this.patientData.lastName = data.lastName;
               // const patientData2 = this.populateSearchData();
-              this.searchDataService.setSearchData(this.patientData);
+              this.searchDataService.setSearchData(this.patientData[0]);
+
+              this.hideLoader();
+              // window.location.href = '/print';
+              this.router.navigate(['print']);
             }
-            this.hideLoader();
-            // window.location.href = '/print';
-            this.router.navigate(['print']);
+            else{
+              console.log("multiple rows")
+              for(let i=0; i < data.length;i++) {
+                this.patientData.push(data[i]);
+              }
+              this.hideLoader();
+              this.multiple = true;
+            }
           }
           ,
           error1 => {
