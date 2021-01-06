@@ -5,7 +5,6 @@ import com.jlabs.persistence.PatientPersistence;
 import com.jlabs.persistence.entity.PatientEntity;
 import com.jlabs.service.transform.PatientEntityMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,8 +39,8 @@ public class PatientService {
      return patientPersistence.savePatient(patientEntity);
     }
 
-    public Optional<PatientEntity> searchPatient(int id) {
-      final Optional<PatientEntity> patientEntity = patientPersistence.searchPatient(id);
+    public Optional<List<PatientEntity>> searchPatient(Integer id, String firstName, String lastName) {
+      final Optional<List<PatientEntity>> patientEntity = patientPersistence.searchPatient(id,firstName,lastName);
       log.debug("searched patient {}", patientEntity);
       return patientEntity;
     }

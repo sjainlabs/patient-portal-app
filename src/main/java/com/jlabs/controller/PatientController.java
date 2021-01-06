@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -51,8 +52,10 @@ public class  PatientController {
 
     @GetMapping
     @ResponseBody
-    public ResponseEntity<Optional> searchPatient(@RequestParam ("id") int id){
-        final Optional<PatientEntity> patientResponse = patientService.searchPatient(id);
+    public ResponseEntity<Optional> searchPatient(@RequestParam (value = "id",required = false) Integer id,
+                                                  @RequestParam (value = "firstName",required = false) String firstName,
+                                                  @RequestParam (value = "lastName",required = false) String lastName){
+        final Optional<List<PatientEntity>> patientResponse = patientService.searchPatient(id,firstName,lastName);
         return new ResponseEntity<>(patientResponse, HttpStatus.OK);
     }
 }

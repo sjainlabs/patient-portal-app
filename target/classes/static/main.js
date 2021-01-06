@@ -557,7 +557,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div>\r\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <h1 class=\"siteTitle\">\r\n      {{ title }}\r\n    </h1>\r\n  </div>\r\n\r\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\r\n    <!-- Links -->\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"../register\" class=\"nav-link\">Patient Registration</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div style=\"text-align:center\">\r\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\r\n  </div>\r\n\r\n  <div id=\"loadin\">\r\n  <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n  <div class=\"container\" *ngIf=\"!processing\">\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"firstName\">First Name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-3\">-->\r\n        <!--<input type=\"text\" id=\"firstName\">-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"lastName\">Last name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-4\">-->\r\n        <!--<input type=\"text\" id=\"lastName\">-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n        <label style=\"color: red\"> {{error}}</label>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">* Patient ID:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\">\r\n      </div>\r\n    </div>\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col\">-->\r\n        <!--<label>-->\r\n          <!--<input type=\"checkbox\"> Prescribe-->\r\n        <!--</label>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\">Search</button>\r\n        <!--      </a>-->\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "\r\n<div>\r\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <h1 class=\"siteTitle\">\r\n      {{ title }}\r\n    </h1>\r\n  </div>\r\n\r\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\r\n    <!-- Links -->\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"../register\" class=\"nav-link\">Patient Registration</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div style=\"text-align:center\">\r\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\r\n  </div>\r\n\r\n  <div id=\"loadin\">\r\n  <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n  <div class=\"container\" *ngIf=\"!processing\">\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"firstName\">First Name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-3\">-->\r\n        <!--<input type=\"text\" id=\"firstName\">-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"lastName\">Last name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-4\">-->\r\n        <!--<input type=\"text\" id=\"lastName\">-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n        <label style=\"color: red\"> {{error}}</label>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">* Patient ID:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">First Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"firstName\" id=\"firstName\">\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Last Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"lastName\" id=\"lastName\">\r\n      </div>\r\n    </div>\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col\">-->\r\n        <!--<label>-->\r\n          <!--<input type=\"checkbox\"> Prescribe-->\r\n        <!--</label>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\">Search</button>\r\n        <!--      </a>-->\r\n      </div>\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n\r\n  <div class=\"container\" >\r\n    <div class=\"row\" *ngIf=\"multiple\">\r\n      <div class=\"col-sm-2\">\r\n        Multiple rows: {{patientData | json}}\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -572,10 +572,9 @@ module.exports = "\r\n<div>\r\n  <div style=\"text-align:center\" xmlns=\"http:/
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientSearchComponent", function() { return PatientSearchComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _model_PatientData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../model/PatientData */ "./src/app/model/PatientData.ts");
-/* harmony import */ var _service_search_data_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/search-data-service.service */ "./src/app/service/search-data-service.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _service_search_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../service/search.service */ "./src/app/service/search.service.ts");
+/* harmony import */ var _service_search_data_service_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service/search-data-service.service */ "./src/app/service/search-data-service.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_search_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/search.service */ "./src/app/service/search.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -589,7 +588,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var PatientSearchComponent = /** @class */ (function () {
     // searchDataService: SearchDataServiceService;
     function PatientSearchComponent(router, searchDataService, searchService) {
@@ -599,38 +597,51 @@ var PatientSearchComponent = /** @class */ (function () {
         this.title = 'Patient Portal';
         this.error = '';
         this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
-        this.patientIdIsMandatory = "Patient Id is mandatory";
-        this.patientData = new _model_PatientData__WEBPACK_IMPORTED_MODULE_1__["PatientData"]();
+        this.Mandatory = "One of the below field is mandatory";
+        this.patientData = [];
         this.processing = false;
+        this.multiple = false;
         // this.searchDataService = new SearchDataServiceService();
     }
     PatientSearchComponent.prototype.ngOnInit = function () {
         this.hideLoader();
     };
-    PatientSearchComponent.prototype.populateSearchData = function () {
-        this.patientData.firstName = 'Test Patient First Name';
-        this.patientData.lastName = 'Test Patient last Name';
-        return this.patientData;
-    };
+    // populateSearchData(): PatientData {
+    //   this.patientData.firstName = 'Test Patient First Name';
+    //   this.patientData.lastName = 'Test Patient last Name';
+    //   return this.patientData;
+    // }
     PatientSearchComponent.prototype.searchPatientData = function () {
         var _this = this;
-        if (this.patientId === null || this.patientId === undefined || this.patientId.toString().trim().length === 0) {
-            this.error = this.patientIdIsMandatory;
+        if ((this.patientId === null || this.patientId === undefined || this.patientId.toString().trim().length === 0) &&
+            (this.firstName === null || this.firstName === undefined || this.firstName.trim().length === 0) &&
+            (this.lastName === null || this.lastName === undefined || this.lastName.trim().length === 0)) {
+            this.error = this.Mandatory;
         }
         else {
             this.showLoader();
             this.processing = true;
-            this.searchService.searchPatient(this.patientId)
+            this.searchService.searchPatient(this.patientId, this.firstName, this.lastName)
                 .subscribe(function (data) {
                 console.log(data);
-                _this.patientData = data;
-                // this.patientData.firstName = data.firstName;
-                // this.patientData.lastName = data.lastName;
-                // const patientData2 = this.populateSearchData();
-                _this.searchDataService.setSearchData(_this.patientData);
-                _this.hideLoader();
-                // window.location.href = '/print';
-                _this.router.navigate(['print']);
+                if (data.length == 1) {
+                    _this.patientData[0] = data[0];
+                    // this.patientData.firstName = data.firstName;
+                    // this.patientData.lastName = data.lastName;
+                    // const patientData2 = this.populateSearchData();
+                    _this.searchDataService.setSearchData(_this.patientData[0]);
+                    _this.hideLoader();
+                    // window.location.href = '/print';
+                    _this.router.navigate(['print']);
+                }
+                else {
+                    console.log("multiple rows");
+                    for (var i = 0; i < data.length; i++) {
+                        _this.patientData.push(data[i]);
+                    }
+                    _this.hideLoader();
+                    _this.multiple = true;
+                }
             }, function (error1) {
                 _this.error = _this.ERRORMESSAGE;
                 _this.processing = false;
@@ -650,9 +661,9 @@ var PatientSearchComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./patient-search.component.html */ "./src/app/patient-search/patient-search.component.html"),
             styles: [__webpack_require__(/*! ./patient-search.component.css */ "./src/app/patient-search/patient-search.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
-            _service_search_data_service_service__WEBPACK_IMPORTED_MODULE_2__["SearchDataServiceService"],
-            _service_search_service__WEBPACK_IMPORTED_MODULE_4__["SearchService"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _service_search_data_service_service__WEBPACK_IMPORTED_MODULE_1__["SearchDataServiceService"],
+            _service_search_service__WEBPACK_IMPORTED_MODULE_3__["SearchService"]])
     ], PatientSearchComponent);
     return PatientSearchComponent;
 }());
@@ -778,10 +789,36 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var SearchService = /** @class */ (function () {
     function SearchService(http) {
         this.http = http;
-        this.patientApiUrl = '/patient/v1';
+        this.patientApiUrl = '/patient/v1?';
     }
-    SearchService.prototype.searchPatient = function (id) {
-        var url = this.patientApiUrl + '?id=' + id;
+    SearchService.prototype.searchPatient = function (id, firstName, lastName) {
+        var url = this.patientApiUrl;
+        var len = 0;
+        var i;
+        var paramValues = ['id=', 'firstName=', 'lastName='];
+        for (i = 0; i < arguments.length; i++) {
+            if (arguments[i] !== undefined) {
+                len++;
+                if (len === 0) {
+                    url = url + paramValues[i] + arguments[i];
+                }
+                else if (len > 0) {
+                    url = url + '&' + paramValues[i] + arguments[i];
+                }
+            }
+        }
+        // if(len === 1){
+        //   url = url + paramValues[0]+arguments[0];
+        //
+        // }
+        // if(len === 2){
+        //   url = url + paramValues[0] +arguments[0]+ paramValues[1] + arguments[1];
+        //
+        // }
+        // if(len === 3){
+        //   url = url +  paramValues[0] +arguments[0]+ paramValues[1] + arguments[1]+ paramValues[2] + arguments[2];
+        // }
+        console.log(url);
         return this.http.get(url);
     };
     SearchService = __decorate([

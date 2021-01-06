@@ -8,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -53,7 +52,7 @@ public class PatientPersistence {
                 .build();
     }
 
-    public Optional<PatientEntity> searchPatient(int id){
-        return patientRepository.findById((id));
+    public Optional<List<PatientEntity>> searchPatient(Integer id, String firstName, String lastName){
+        return patientRepository.findPatient(id, firstName, lastName);
     }
 }
