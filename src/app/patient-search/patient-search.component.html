@@ -93,7 +93,56 @@
   <div class="container" >
     <div class="row" *ngIf="multiple">
       <div class="col-sm-2">
-        Multiple rows: {{patientData | json}}
+        <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+          <thead>
+          <tr>
+            <th style="width: 10%">
+              <mfDefaultSorter by="id"> Id</mfDefaultSorter>
+            </th>
+            <th style="width: 30%">
+              <mfDefaultSorter by="firstName">First Name</mfDefaultSorter>
+            </th>
+            <th style="width: 30%">
+              <mfDefaultSorter by="lastName">Last Name</mfDefaultSorter>
+            </th>
+            <th style="width: 30%">
+              <mfDefaultSorter by="contact">Contact</mfDefaultSorter>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of mf.data">
+            <td>{{item.id}}</td>
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.contact}}</td>
+            <td>
+              <div class="container">
+                <div class="row">
+                  <div class="col-6">
+                    <button (click)="printPage(item)">print</button>
+                  </div>
+
+                  <div class="col-6">
+                    <button>history</button>
+                  </div>
+                  <div class="col-6">
+                    <button>follow-up</button>
+                  </div>
+                </div>
+              </div>
+            </td>
+
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr>
+            <td colspan="4">
+              <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+            </td>
+          </tr>
+          </tfoot>
+        </table>
       </div>
     </div>
   </div>

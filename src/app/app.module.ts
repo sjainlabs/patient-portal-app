@@ -11,6 +11,7 @@ import { PatientInfoPrintComponent } from './patient-info-print/patient-info-pri
 import { HttpClientModule } from '@angular/common/http';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { LoaderSpinComponent } from './loader-spin/loader-spin.component';
+import {DataTableModule} from "angular-6-datatable";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { LoaderSpinComponent } from './loader-spin/loader-spin.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    DataTableModule,
     RouterModule.forRoot([
 
       {

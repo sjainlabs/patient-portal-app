@@ -21,7 +21,7 @@ export class SearchService {
     let paramValues= ['id=','firstName=','lastName='];
 
     for(i=0; i<arguments.length; i++){
-      if(arguments[i] !== undefined){
+      if(arguments[i] !== undefined && arguments[i] !== '' && arguments[i] !==  null){
         len++ ;
 
         if(len === 0){

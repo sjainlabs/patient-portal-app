@@ -12,7 +12,7 @@ import {SearchService} from '../service/search.service';
 })
 export class PatientSearchComponent implements OnInit {
 
-  patientData: PatientData[];
+  data: PatientData[];
   patientId: number;
   firstName: string;
   lastName: string;
@@ -28,7 +28,7 @@ export class PatientSearchComponent implements OnInit {
   constructor( private router: Router,
                private searchDataService: SearchDataServiceService,
                private searchService: SearchService) {
-    this.patientData = [];
+    this.data = [];
     this.processing= false;
     this.multiple= false;
     // this.searchDataService = new SearchDataServiceService();
@@ -39,9 +39,9 @@ export class PatientSearchComponent implements OnInit {
   }
 
   // populateSearchData(): PatientData {
-  //   this.patientData.firstName = 'Test Patient First Name';
-  //   this.patientData.lastName = 'Test Patient last Name';
-  //   return this.patientData;
+  //   this.data.firstName = 'Test Patient First Name';
+  //   this.data.lastName = 'Test Patient last Name';
+  //   return this.data;
   // }
 
   searchPatientData() {
@@ -53,31 +53,24 @@ export class PatientSearchComponent implements OnInit {
   else {
       this.showLoader();
       this.processing = true;
+      this.multiple = false;
       this.searchService.searchPatient(this.patientId, this.firstName, this.lastName)
         .subscribe(data => {
             console.log(data);
-            if (data.length == 1) {
-              this.patientData[0] = data[0];
-
-
-              // this.patientData.firstName = data.firstName;
-              // this.patientData.lastName = data.lastName;
-              // const patientData2 = this.populateSearchData();
-              this.searchDataService.setSearchData(this.patientData[0]);
-
-              this.hideLoader();
-              // window.location.href = '/print';
-              this.router.navigate(['print']);
-            }
-            else{
+            // if (data.length == 1) {
+            //   this.data[0] = data[0];
+            //  this.printPage(this.data[0])
+            // }
+            // else{
               console.log("multiple rows")
               for(let i=0; i < data.length;i++) {
-                this.patientData.push(data[i]);
+                this.data.push(data[i]);
               }
               this.hideLoader();
               this.multiple = true;
+              this.processing= false;
             }
-          }
+          // }
           ,
           error1 => {
             this.error = this.ERRORMESSAGE;
@@ -96,6 +89,12 @@ export class PatientSearchComponent implements OnInit {
   showLoader() {
 
     document.getElementById('loadin').style.display = '';
+  }
+
+  printPage(data){
+    this.searchDataService.setSearchData(data);
+    this.hideLoader();
+    this.router.navigate(['print']);
   }
 
 }

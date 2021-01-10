@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -70,7 +70,7 @@ var AppComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
-            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")],
+            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         })
     ], AppComponent);
     return AppComponent;
@@ -102,12 +102,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pagenotfound/pagenotfound.component */ "./src/app/pagenotfound/pagenotfound.component.ts");
 /* harmony import */ var _loader_spin_loader_spin_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./loader-spin/loader-spin.component */ "./src/app/loader-spin/loader-spin.component.ts");
+/* harmony import */ var angular_6_datatable__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! angular-6-datatable */ "./node_modules/angular-6-datatable/index.js");
+/* harmony import */ var angular_6_datatable__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(angular_6_datatable__WEBPACK_IMPORTED_MODULE_12__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -139,6 +142,7 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
+                angular_6_datatable__WEBPACK_IMPORTED_MODULE_12__["DataTableModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forRoot([
                     {
                         path: 'register',
@@ -174,7 +178,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#loading{\r\n  position: absolute;\r\n  left: 50%;\r\n  top: 50%;\r\n  z-index: 1;\r\n  width: 150px;\r\n  height: 150px;\r\n  margin: -75px 0 0 -75px;\r\n  border: 16px solid #f3f3f3;\r\n  border-radius: 50%;\r\n  border-top: 16px solid #3498db;\r\n  width: 120px;\r\n  height: 120px;\r\n  -webkit-animation: spin 2s linear infinite;\r\n          animation: spin 2s linear infinite;\r\n}\r\n\r\n@-webkit-keyframes spin {\r\n  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }\r\n  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }\r\n}\r\n\r\n@keyframes spin {\r\n  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }\r\n  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }\r\n}\r\n"
+module.exports = "#loading{\r\n  position: absolute;\r\n  left: 50%;\r\n  top: 50%;\r\n  z-index: 1;\r\n  width: 150px;\r\n  height: 150px;\r\n  margin: -75px 0 0 -75px;\r\n  border: 16px solid #f3f3f3;\r\n  border-radius: 50%;\r\n  border-top: 16px solid #3498db;\r\n  width: 120px;\r\n  height: 120px;\r\n  -webkit-animation: spin 2s linear infinite;\r\n          animation: spin 2s linear infinite;\r\n}\r\n\r\n@-webkit-keyframes spin {\r\n  0% { transform: rotate(0deg); }\r\n  100% { transform: rotate(360deg); }\r\n}\r\n\r\n@keyframes spin {\r\n  0% { transform: rotate(0deg); }\r\n  100% { transform: rotate(360deg); }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9hZGVyLXNwaW4vbG9hZGVyLXNwaW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsUUFBUTtFQUNSLFVBQVU7RUFDVixZQUFZO0VBQ1osYUFBYTtFQUNiLHVCQUF1QjtFQUN2QiwwQkFBMEI7RUFDMUIsa0JBQWtCO0VBQ2xCLDhCQUE4QjtFQUM5QixZQUFZO0VBQ1osYUFBYTtFQUNiLDBDQUFrQztVQUFsQyxrQ0FBa0M7QUFDcEM7O0FBRUE7RUFDRSxLQUFLLHVCQUF1QixFQUFFO0VBQzlCLE9BQU8seUJBQXlCLEVBQUU7QUFDcEM7O0FBSEE7RUFDRSxLQUFLLHVCQUF1QixFQUFFO0VBQzlCLE9BQU8seUJBQXlCLEVBQUU7QUFDcEMiLCJmaWxlIjoic3JjL2FwcC9sb2FkZXItc3Bpbi9sb2FkZXItc3Bpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2xvYWRpbmd7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGxlZnQ6IDUwJTtcclxuICB0b3A6IDUwJTtcclxuICB6LWluZGV4OiAxO1xyXG4gIHdpZHRoOiAxNTBweDtcclxuICBoZWlnaHQ6IDE1MHB4O1xyXG4gIG1hcmdpbjogLTc1cHggMCAwIC03NXB4O1xyXG4gIGJvcmRlcjogMTZweCBzb2xpZCAjZjNmM2YzO1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBib3JkZXItdG9wOiAxNnB4IHNvbGlkICMzNDk4ZGI7XHJcbiAgd2lkdGg6IDEyMHB4O1xyXG4gIGhlaWdodDogMTIwcHg7XHJcbiAgYW5pbWF0aW9uOiBzcGluIDJzIGxpbmVhciBpbmZpbml0ZTtcclxufVxyXG5cclxuQGtleWZyYW1lcyBzcGluIHtcclxuICAwJSB7IHRyYW5zZm9ybTogcm90YXRlKDBkZWcpOyB9XHJcbiAgMTAwJSB7IHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IH1cclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -265,7 +269,7 @@ var PatientData = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2Vub3Rmb3VuZC9wYWdlbm90Zm91bmQuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -328,7 +332,7 @@ var PagenotfoundComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/*.firstRow{*/\r\n/*  border-top: 2px solid black;*/\r\n/*  border-left: 2px solid black;*/\r\n/*  border-right: 2px solid black;*/\r\n/*}*/\r\n/*.secondRow{*/\r\n/*  border-style: solid;*/\r\n/*  border-width: 2px;*/\r\n/*}*/\r\n\r\n"
+module.exports = "/*.firstRow{*/\r\n/*  border-top: 2px solid black;*/\r\n/*  border-left: 2px solid black;*/\r\n/*  border-right: 2px solid black;*/\r\n/*}*/\r\n/*.secondRow{*/\r\n/*  border-style: solid;*/\r\n/*  border-width: 2px;*/\r\n/*}*/\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1pbmZvLXByaW50L3BhdGllbnQtaW5mby1wcmludC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGFBQWE7QUFDYixpQ0FBaUM7QUFDakMsa0NBQWtDO0FBQ2xDLG1DQUFtQztBQUNuQyxJQUFJO0FBQ0osY0FBYztBQUNkLHlCQUF5QjtBQUN6Qix1QkFBdUI7QUFDdkIsSUFBSSIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtaW5mby1wcmludC9wYXRpZW50LWluZm8tcHJpbnQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qLmZpcnN0Um93eyovXHJcbi8qICBib3JkZXItdG9wOiAycHggc29saWQgYmxhY2s7Ki9cclxuLyogIGJvcmRlci1sZWZ0OiAycHggc29saWQgYmxhY2s7Ki9cclxuLyogIGJvcmRlci1yaWdodDogMnB4IHNvbGlkIGJsYWNrOyovXHJcbi8qfSovXHJcbi8qLnNlY29uZFJvd3sqL1xyXG4vKiAgYm9yZGVyLXN0eWxlOiBzb2xpZDsqL1xyXG4vKiAgYm9yZGVyLXdpZHRoOiAycHg7Ki9cclxuLyp9Ki9cclxuXHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -409,7 +413,7 @@ var PatientInfoPrintComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\ninput[type=number] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\ninput:invalid {\r\n  border: 2px dashed red;\r\n}\r\n"
+module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\ninput[type=number] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\ninput:invalid {\r\n  border: 2px dashed red;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1yZWdpc3RyYXRpb24vcGF0aWVudC1yZWdpc3RyYXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLHNCQUFzQjtBQUN4QiIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtcmVnaXN0cmF0aW9uL3BhdGllbnQtcmVnaXN0cmF0aW9uLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpbnB1dFt0eXBlPXRleHRdIHtcclxuICB3aWR0aDogMTAwJTtcclxuICBwYWRkaW5nOiAxMnB4IDIwcHg7XHJcbiAgbWFyZ2luOiA4cHggMDtcclxuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG59XHJcblxyXG5pbnB1dFt0eXBlPW51bWJlcl0ge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHBhZGRpbmc6IDEycHggMjBweDtcclxuICBtYXJnaW46IDhweCAwO1xyXG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbn1cclxuXHJcbmlucHV0OmludmFsaWQge1xyXG4gIGJvcmRlcjogMnB4IGRhc2hlZCByZWQ7XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -546,7 +550,7 @@ var PatientRegistrationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtc2VhcmNoL3BhdGllbnQtc2VhcmNoLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -557,7 +561,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div>\r\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <h1 class=\"siteTitle\">\r\n      {{ title }}\r\n    </h1>\r\n  </div>\r\n\r\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\r\n    <!-- Links -->\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"../register\" class=\"nav-link\">Patient Registration</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div style=\"text-align:center\">\r\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\r\n  </div>\r\n\r\n  <div id=\"loadin\">\r\n  <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n  <div class=\"container\" *ngIf=\"!processing\">\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"firstName\">First Name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-3\">-->\r\n        <!--<input type=\"text\" id=\"firstName\">-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"lastName\">Last name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-4\">-->\r\n        <!--<input type=\"text\" id=\"lastName\">-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n        <label style=\"color: red\"> {{error}}</label>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">* Patient ID:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">First Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"firstName\" id=\"firstName\">\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Last Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"lastName\" id=\"lastName\">\r\n      </div>\r\n    </div>\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col\">-->\r\n        <!--<label>-->\r\n          <!--<input type=\"checkbox\"> Prescribe-->\r\n        <!--</label>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\">Search</button>\r\n        <!--      </a>-->\r\n      </div>\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n\r\n  <div class=\"container\" >\r\n    <div class=\"row\" *ngIf=\"multiple\">\r\n      <div class=\"col-sm-2\">\r\n        Multiple rows: {{patientData | json}}\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>\r\n"
+module.exports = "\r\n<div>\r\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <h1 class=\"siteTitle\">\r\n      {{ title }}\r\n    </h1>\r\n  </div>\r\n\r\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\r\n    <!-- Links -->\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"../register\" class=\"nav-link\">Patient Registration</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div style=\"text-align:center\">\r\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\r\n  </div>\r\n\r\n  <div id=\"loadin\">\r\n  <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n  <div class=\"container\" *ngIf=\"!processing\">\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"firstName\">First Name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-3\">-->\r\n        <!--<input type=\"text\" id=\"firstName\">-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"lastName\">Last name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-4\">-->\r\n        <!--<input type=\"text\" id=\"lastName\">-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n        <label style=\"color: red\"> {{error}}</label>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">* Patient ID:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">First Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"firstName\" id=\"firstName\">\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Last Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"lastName\" id=\"lastName\">\r\n      </div>\r\n    </div>\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col\">-->\r\n        <!--<label>-->\r\n          <!--<input type=\"checkbox\"> Prescribe-->\r\n        <!--</label>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\">Search</button>\r\n        <!--      </a>-->\r\n      </div>\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n\r\n  <div class=\"container\" >\r\n    <div class=\"row\" *ngIf=\"multiple\">\r\n      <div class=\"col-sm-2\">\r\n        <table class=\"table table-striped\" [mfData]=\"data\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"5\">\r\n          <thead>\r\n          <tr>\r\n            <th style=\"width: 10%\">\r\n              <mfDefaultSorter by=\"id\"> Id</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"firstName\">First Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"lastName\">Last Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Contact</mfDefaultSorter>\r\n            </th>\r\n          </tr>\r\n          </thead>\r\n          <tbody>\r\n          <tr *ngFor=\"let item of mf.data\">\r\n            <td>{{item.id}}</td>\r\n            <td>{{item.firstName}}</td>\r\n            <td>{{item.lastName}}</td>\r\n            <td>{{item.contact}}</td>\r\n            <td>\r\n              <div class=\"container\">\r\n                <div class=\"row\">\r\n                  <div class=\"col-6\">\r\n                    <button (click)=\"printPage(item)\">print</button>\r\n                  </div>\r\n\r\n                  <div class=\"col-6\">\r\n                    <button>history</button>\r\n                  </div>\r\n                  <div class=\"col-6\">\r\n                    <button>follow-up</button>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </td>\r\n\r\n          </tr>\r\n          </tbody>\r\n          <tfoot>\r\n          <tr>\r\n            <td colspan=\"4\">\r\n              <mfBootstrapPaginator [rowsOnPageSet]=\"[5,10,25]\"></mfBootstrapPaginator>\r\n            </td>\r\n          </tr>\r\n          </tfoot>\r\n        </table>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -598,7 +602,7 @@ var PatientSearchComponent = /** @class */ (function () {
         this.error = '';
         this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
         this.Mandatory = "One of the below field is mandatory";
-        this.patientData = [];
+        this.data = [];
         this.processing = false;
         this.multiple = false;
         // this.searchDataService = new SearchDataServiceService();
@@ -607,9 +611,9 @@ var PatientSearchComponent = /** @class */ (function () {
         this.hideLoader();
     };
     // populateSearchData(): PatientData {
-    //   this.patientData.firstName = 'Test Patient First Name';
-    //   this.patientData.lastName = 'Test Patient last Name';
-    //   return this.patientData;
+    //   this.data.firstName = 'Test Patient First Name';
+    //   this.data.lastName = 'Test Patient last Name';
+    //   return this.data;
     // }
     PatientSearchComponent.prototype.searchPatientData = function () {
         var _this = this;
@@ -621,28 +625,25 @@ var PatientSearchComponent = /** @class */ (function () {
         else {
             this.showLoader();
             this.processing = true;
+            this.multiple = false;
             this.searchService.searchPatient(this.patientId, this.firstName, this.lastName)
                 .subscribe(function (data) {
                 console.log(data);
-                if (data.length == 1) {
-                    _this.patientData[0] = data[0];
-                    // this.patientData.firstName = data.firstName;
-                    // this.patientData.lastName = data.lastName;
-                    // const patientData2 = this.populateSearchData();
-                    _this.searchDataService.setSearchData(_this.patientData[0]);
-                    _this.hideLoader();
-                    // window.location.href = '/print';
-                    _this.router.navigate(['print']);
+                // if (data.length == 1) {
+                //   this.data[0] = data[0];
+                //  this.printPage(this.data[0])
+                // }
+                // else{
+                console.log("multiple rows");
+                for (var i = 0; i < data.length; i++) {
+                    _this.data.push(data[i]);
                 }
-                else {
-                    console.log("multiple rows");
-                    for (var i = 0; i < data.length; i++) {
-                        _this.patientData.push(data[i]);
-                    }
-                    _this.hideLoader();
-                    _this.multiple = true;
-                }
-            }, function (error1) {
+                _this.hideLoader();
+                _this.multiple = true;
+                _this.processing = false;
+            }
+            // }
+            , function (error1) {
                 _this.error = _this.ERRORMESSAGE;
                 _this.processing = false;
                 _this.hideLoader();
@@ -654,6 +655,11 @@ var PatientSearchComponent = /** @class */ (function () {
     };
     PatientSearchComponent.prototype.showLoader = function () {
         document.getElementById('loadin').style.display = '';
+    };
+    PatientSearchComponent.prototype.printPage = function (data) {
+        this.searchDataService.setSearchData(data);
+        this.hideLoader();
+        this.router.navigate(['print']);
     };
     PatientSearchComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -797,7 +803,7 @@ var SearchService = /** @class */ (function () {
         var i;
         var paramValues = ['id=', 'firstName=', 'lastName='];
         for (i = 0; i < arguments.length; i++) {
-            if (arguments[i] !== undefined) {
+            if (arguments[i] !== undefined && arguments[i] !== '' && arguments[i] !== null) {
                 len++;
                 if (len === 0) {
                     url = url + paramValues[i] + arguments[i];
