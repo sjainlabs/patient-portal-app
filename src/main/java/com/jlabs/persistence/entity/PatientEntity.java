@@ -45,12 +45,6 @@ public class PatientEntity {
   private Double weight;
   @Column(name = "HEIGHT")
   private Double height;
-  @Column(name = "SYMPTONS")
-  private String symptoms;
-  @Column(name = "PRESCRIPTION")
-  private String prescription;
-  @Column(name = "ADDITIONAL_NOTES")
-  private String additionalNotes;
   @Column(name = "personal_id")
   private String personalId;
   @Transient

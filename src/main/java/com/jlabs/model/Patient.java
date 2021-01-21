@@ -29,9 +29,6 @@ public class Patient {
   private String email;
   private Double weight;
   private Double height;
-  private String symptoms;
-  private String prescription;
-  private String additionalNotes;
   private int personalIdType;
   private String personalId;
 }
