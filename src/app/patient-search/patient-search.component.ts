@@ -28,7 +28,7 @@ export class PatientSearchComponent implements OnInit {
   constructor( private router: Router,
                private searchDataService: SearchDataServiceService,
                private searchService: SearchService) {
-    this.data = [];
+
     this.processing= false;
     this.multiple= false;
     // this.searchDataService = new SearchDataServiceService();
@@ -45,6 +45,7 @@ export class PatientSearchComponent implements OnInit {
   // }
 
   searchPatientData() {
+    this.data = [];
     if( (this.patientId === null || this.patientId === undefined || this.patientId.toString().trim().length === 0) &&
       (this.firstName === null || this.firstName === undefined || this.firstName.trim().length === 0) &&
       (this.lastName === null || this.lastName === undefined || this.lastName.trim().length === 0)){

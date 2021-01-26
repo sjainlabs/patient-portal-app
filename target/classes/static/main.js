@@ -602,7 +602,6 @@ var PatientSearchComponent = /** @class */ (function () {
         this.error = '';
         this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
         this.Mandatory = "One of the below field is mandatory";
-        this.data = [];
         this.processing = false;
         this.multiple = false;
         // this.searchDataService = new SearchDataServiceService();
@@ -617,6 +616,7 @@ var PatientSearchComponent = /** @class */ (function () {
     // }
     PatientSearchComponent.prototype.searchPatientData = function () {
         var _this = this;
+        this.data = [];
         if ((this.patientId === null || this.patientId === undefined || this.patientId.toString().trim().length === 0) &&
             (this.firstName === null || this.firstName === undefined || this.firstName.trim().length === 0) &&
             (this.lastName === null || this.lastName === undefined || this.lastName.trim().length === 0)) {
