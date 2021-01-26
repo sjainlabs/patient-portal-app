@@ -19,8 +19,9 @@ export class PatientSearchComponent implements OnInit {
   title = 'Patient Portal';
   processing: boolean;
   multiple: boolean;
-  error='';
+  error;
   ERRORMESSAGE= 'System is Temporary unavailable, Please Try Again!';
+  DATANOTFOUND= 'Data Not Found!';
   Mandatory = "One of the below field is mandatory";
 
   // searchDataService: SearchDataServiceService;
@@ -46,6 +47,7 @@ export class PatientSearchComponent implements OnInit {
 
   searchPatientData() {
     this.data = [];
+    this.error= '';
     if( (this.patientId === null || this.patientId === undefined || this.patientId.toString().trim().length === 0) &&
       (this.firstName === null || this.firstName === undefined || this.firstName.trim().length === 0) &&
       (this.lastName === null || this.lastName === undefined || this.lastName.trim().length === 0)){
@@ -58,18 +60,17 @@ export class PatientSearchComponent implements OnInit {
       this.searchService.searchPatient(this.patientId, this.firstName, this.lastName)
         .subscribe(data => {
             console.log(data);
-            // if (data.length == 1) {
-            //   this.data[0] = data[0];
-            //  this.printPage(this.data[0])
-            // }
-            // else{
-              console.log("multiple rows")
-              for(let i=0; i < data.length;i++) {
+            if(data == null) {
+              this.error = this.DATANOTFOUND;
+            }
+            else{
+              for (let i = 0; i < data.length; i++) {
                 this.data.push(data[i]);
               }
-              this.hideLoader();
               this.multiple = true;
-              this.processing= false;
+            }
+            this.processing= false;
+            this.hideLoader();
             }
           // }
           ,

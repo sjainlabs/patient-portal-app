@@ -599,8 +599,8 @@ var PatientSearchComponent = /** @class */ (function () {
         this.searchDataService = searchDataService;
         this.searchService = searchService;
         this.title = 'Patient Portal';
-        this.error = '';
         this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
+        this.DATANOTFOUND = 'Data Not Found!';
         this.Mandatory = "One of the below field is mandatory";
         this.processing = false;
         this.multiple = false;
@@ -617,6 +617,7 @@ var PatientSearchComponent = /** @class */ (function () {
     PatientSearchComponent.prototype.searchPatientData = function () {
         var _this = this;
         this.data = [];
+        this.error = '';
         if ((this.patientId === null || this.patientId === undefined || this.patientId.toString().trim().length === 0) &&
             (this.firstName === null || this.firstName === undefined || this.firstName.trim().length === 0) &&
             (this.lastName === null || this.lastName === undefined || this.lastName.trim().length === 0)) {
@@ -629,18 +630,17 @@ var PatientSearchComponent = /** @class */ (function () {
             this.searchService.searchPatient(this.patientId, this.firstName, this.lastName)
                 .subscribe(function (data) {
                 console.log(data);
-                // if (data.length == 1) {
-                //   this.data[0] = data[0];
-                //  this.printPage(this.data[0])
-                // }
-                // else{
-                console.log("multiple rows");
-                for (var i = 0; i < data.length; i++) {
-                    _this.data.push(data[i]);
+                if (data == null) {
+                    _this.error = _this.DATANOTFOUND;
                 }
-                _this.hideLoader();
-                _this.multiple = true;
+                else {
+                    for (var i = 0; i < data.length; i++) {
+                        _this.data.push(data[i]);
+                    }
+                    _this.multiple = true;
+                }
                 _this.processing = false;
+                _this.hideLoader();
             }
             // }
             , function (error1) {
