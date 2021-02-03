@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { LoaderSpinComponent } from './loader-spin/loader-spin.component';
 import {DataTableModule} from "angular-6-datatable";
+import { PatientHistoryComponent } from './patient-history/patient-history.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {DataTableModule} from "angular-6-datatable";
     PatientRegistrationComponent,
     PatientInfoPrintComponent,
     PagenotfoundComponent,
-    LoaderSpinComponent
+    LoaderSpinComponent,
+    PatientHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,10 @@ import {DataTableModule} from "angular-6-datatable";
       {
         path: 'print',
         component: PatientInfoPrintComponent
+      },
+      {
+        path: 'history',
+        component: PatientHistoryComponent
       },
       { path: '',   redirectTo: '/register', pathMatch: 'full' }, // redirect to `first-component`
       { path: '**', component: PagenotfoundComponent },

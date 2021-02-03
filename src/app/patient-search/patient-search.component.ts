@@ -91,10 +91,15 @@ export class PatientSearchComponent implements OnInit {
     document.getElementById('loadin').style.display = '';
   }
 
-  printPage(data){
+  printPage(data) {
     this.searchDataService.setSearchData(data);
     this.hideLoader();
     this.router.navigate(['print']);
+  }
+
+  viewHistory(data) {
+    this.searchDataService.setSearchData(data);
+    this.router.navigate(['history']);
   }
 
 }

@@ -7,8 +7,8 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-10-22T09:16:20-0500",
-    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 13.0.2 (Oracle Corporation)"
+    date = "2021-01-28T19:07:26-0600",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_201 (Oracle Corporation)"
 )
 public class PatientEntityMapperImpl implements PatientEntityMapper {
 
@@ -37,9 +37,6 @@ public class PatientEntityMapperImpl implements PatientEntityMapper {
         patientEntity.setEmail( patient.getEmail() );
         patientEntity.setWeight( patient.getWeight() );
         patientEntity.setHeight( patient.getHeight() );
-        patientEntity.setSymptoms( patient.getSymptoms() );
-        patientEntity.setPrescription( patient.getPrescription() );
-        patientEntity.setAdditionalNotes( patient.getAdditionalNotes() );
         patientEntity.setPersonalId( patient.getPersonalId() );
 
         return patientEntity;
