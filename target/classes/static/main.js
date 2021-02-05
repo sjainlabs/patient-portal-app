@@ -104,12 +104,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _loader_spin_loader_spin_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./loader-spin/loader-spin.component */ "./src/app/loader-spin/loader-spin.component.ts");
 /* harmony import */ var angular_6_datatable__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! angular-6-datatable */ "./node_modules/angular-6-datatable/index.js");
 /* harmony import */ var angular_6_datatable__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(angular_6_datatable__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _patient_history_patient_history_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./patient-history/patient-history.component */ "./src/app/patient-history/patient-history.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -134,7 +136,8 @@ var AppModule = /** @class */ (function () {
                 _patient_registration_patient_registration_component__WEBPACK_IMPORTED_MODULE_5__["PatientRegistrationComponent"],
                 _patient_info_print_patient_info_print_component__WEBPACK_IMPORTED_MODULE_8__["PatientInfoPrintComponent"],
                 _pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_10__["PagenotfoundComponent"],
-                _loader_spin_loader_spin_component__WEBPACK_IMPORTED_MODULE_11__["LoaderSpinComponent"]
+                _loader_spin_loader_spin_component__WEBPACK_IMPORTED_MODULE_11__["LoaderSpinComponent"],
+                _patient_history_patient_history_component__WEBPACK_IMPORTED_MODULE_13__["PatientHistoryComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -155,6 +158,10 @@ var AppModule = /** @class */ (function () {
                     {
                         path: 'print',
                         component: _patient_info_print_patient_info_print_component__WEBPACK_IMPORTED_MODULE_8__["PatientInfoPrintComponent"]
+                    },
+                    {
+                        path: 'history',
+                        component: _patient_history_patient_history_component__WEBPACK_IMPORTED_MODULE_13__["PatientHistoryComponent"]
                     },
                     { path: '', redirectTo: '/register', pathMatch: 'full' },
                     { path: '**', component: _pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_10__["PagenotfoundComponent"] },
@@ -189,7 +196,7 @@ module.exports = "#loading{\r\n  position: absolute;\r\n  left: 50%;\r\n  top: 5
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"d-flex justify-content-center\">\n  <div class=\"spinner-border\" role=\"status\" >\n    <span class=\"sr-only\" id=\"loading\"></span>\n  </div>\n</div>\n"
+module.exports = "<div class=\"d-flex justify-content-center\">\r\n  <div class=\"spinner-border\" role=\"status\" >\r\n    <span class=\"sr-only\" id=\"loading\"></span>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -319,6 +326,85 @@ var PagenotfoundComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], PagenotfoundComponent);
     return PagenotfoundComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/patient-history/patient-history.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/patient-history/patient-history.component.css ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtaGlzdG9yeS9wYXRpZW50LWhpc3RvcnkuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/patient-history/patient-history.component.html":
+/*!****************************************************************!*\
+  !*** ./src/app/patient-history/patient-history.component.html ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  patient-history works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/patient-history/patient-history.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/patient-history/patient-history.component.ts ***!
+  \**************************************************************/
+/*! exports provided: PatientHistoryComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientHistoryComponent", function() { return PatientHistoryComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_search_data_service_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service/search-data-service.service */ "./src/app/service/search-data-service.service.ts");
+/* harmony import */ var _model_PatientData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../model/PatientData */ "./src/app/model/PatientData.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var PatientHistoryComponent = /** @class */ (function () {
+    function PatientHistoryComponent(searchDataService) {
+        this.searchDataService = searchDataService;
+        this.patientData1 = new _model_PatientData__WEBPACK_IMPORTED_MODULE_2__["PatientData"]();
+    }
+    PatientHistoryComponent.prototype.ngOnInit = function () {
+        this.getSearch();
+    };
+    PatientHistoryComponent.prototype.getSearch = function () {
+        var searchData = this.searchDataService.getSearchData();
+        this.searchData1 = searchData;
+        this.firstName = searchData.firstName;
+        this.lastName = searchData.lastName;
+        this.age = searchData.age;
+        this.searchDataService.getSearchData();
+        console.log('In History' + this.patientData1);
+    };
+    PatientHistoryComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-patient-history',
+            template: __webpack_require__(/*! ./patient-history.component.html */ "./src/app/patient-history/patient-history.component.html"),
+            styles: [__webpack_require__(/*! ./patient-history.component.css */ "./src/app/patient-history/patient-history.component.css")]
+        }),
+        __metadata("design:paramtypes", [_service_search_data_service_service__WEBPACK_IMPORTED_MODULE_1__["SearchDataServiceService"]])
+    ], PatientHistoryComponent);
+    return PatientHistoryComponent;
 }());
 
 
@@ -561,7 +647,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div>\r\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <h1 class=\"siteTitle\">\r\n      {{ title }}\r\n    </h1>\r\n  </div>\r\n\r\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\r\n    <!-- Links -->\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"../register\" class=\"nav-link\">Patient Registration</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div style=\"text-align:center\">\r\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\r\n  </div>\r\n\r\n  <div id=\"loadin\">\r\n  <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n  <div class=\"container\" *ngIf=\"!processing\">\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"firstName\">First Name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-3\">-->\r\n        <!--<input type=\"text\" id=\"firstName\">-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"lastName\">Last name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-4\">-->\r\n        <!--<input type=\"text\" id=\"lastName\">-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n        <label style=\"color: red\"> {{error}}</label>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Patient ID:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">First Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"firstName\" id=\"firstName\">\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Last Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"lastName\" id=\"lastName\">\r\n      </div>\r\n    </div>\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col\">-->\r\n        <!--<label>-->\r\n          <!--<input type=\"checkbox\"> Prescribe-->\r\n        <!--</label>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\">Search</button>\r\n        <!--      </a>-->\r\n      </div>\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n\r\n  <div class=\"container\" >\r\n    <div class=\"row\" *ngIf=\"multiple\">\r\n      <div class=\"col-sm-2\">\r\n        <table class=\"table table-striped\" [mfData]=\"data\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"5\">\r\n          <thead>\r\n          <tr>\r\n            <th style=\"width: 10%\">\r\n              <mfDefaultSorter by=\"id\"> Id</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"firstName\">First Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"lastName\">Last Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Contact</mfDefaultSorter>\r\n            </th>\r\n          </tr>\r\n          </thead>\r\n          <tbody>\r\n          <tr *ngFor=\"let item of mf.data\">\r\n            <td>{{item.id}}</td>\r\n            <td>{{item.firstName}}</td>\r\n            <td>{{item.lastName}}</td>\r\n            <td>{{item.contact}}</td>\r\n            <td>\r\n              <div class=\"container\">\r\n                <div class=\"row\">\r\n                  <div class=\"col-6\">\r\n                    <button (click)=\"printPage(item)\">print</button>\r\n                  </div>\r\n\r\n                  <div class=\"col-6\">\r\n                    <button>history</button>\r\n                  </div>\r\n                  <div class=\"col-6\">\r\n                    <button>follow-up</button>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </td>\r\n\r\n          </tr>\r\n          </tbody>\r\n          <tfoot>\r\n          <tr>\r\n            <td colspan=\"4\">\r\n              <mfBootstrapPaginator [rowsOnPageSet]=\"[5,10,25]\"></mfBootstrapPaginator>\r\n            </td>\r\n          </tr>\r\n          </tfoot>\r\n        </table>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>\r\n"
+module.exports = "\r\n<div>\r\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <h1 class=\"siteTitle\">\r\n      {{ title }}\r\n    </h1>\r\n  </div>\r\n\r\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\r\n    <!-- Links -->\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"../register\" class=\"nav-link\">Patient Registration</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div style=\"text-align:center\">\r\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\r\n  </div>\r\n\r\n  <div id=\"loadin\">\r\n  <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n  <div class=\"container\" *ngIf=\"!processing\">\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"firstName\">First Name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-3\">-->\r\n        <!--<input type=\"text\" id=\"firstName\">-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"lastName\">Last name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-4\">-->\r\n        <!--<input type=\"text\" id=\"lastName\">-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n        <label style=\"color: red\"> {{error}}</label>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Patient ID:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">First Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"firstName\" id=\"firstName\">\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Last Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"lastName\" id=\"lastName\">\r\n      </div>\r\n    </div>\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col\">-->\r\n        <!--<label>-->\r\n          <!--<input type=\"checkbox\"> Prescribe-->\r\n        <!--</label>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\">Search</button>\r\n        <!--      </a>-->\r\n      </div>\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n\r\n  <div class=\"container\" >\r\n    <div class=\"row\" *ngIf=\"multiple\">\r\n      <div class=\"col-sm-2\">\r\n        <table class=\"table table-striped\" [mfData]=\"data\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"5\">\r\n          <thead>\r\n          <tr>\r\n            <th style=\"width: 10%\">\r\n              <mfDefaultSorter by=\"id\"> Id</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"firstName\">First Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"lastName\">Last Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Contact</mfDefaultSorter>\r\n            </th>\r\n          </tr>\r\n          </thead>\r\n          <tbody>\r\n          <tr *ngFor=\"let item of mf.data\">\r\n            <td>{{item.id}}</td>\r\n            <td>{{item.firstName}}</td>\r\n            <td>{{item.lastName}}</td>\r\n            <td>{{item.contact}}</td>\r\n            <td>\r\n              <div class=\"container\">\r\n                <div class=\"row\">\r\n                  <div class=\"col-6\">\r\n                    <button (click)=\"printPage(item)\">print</button>\r\n                  </div>\r\n\r\n                  <div class=\"col-6\">\r\n                    <button (click)=\"viewHistory(item)\">history</button>\r\n                  </div>\r\n                  <div class=\"col-6\">\r\n                    <button>follow-up</button>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </td>\r\n\r\n          </tr>\r\n          </tbody>\r\n          <tfoot>\r\n          <tr>\r\n            <td colspan=\"4\">\r\n              <mfBootstrapPaginator [rowsOnPageSet]=\"[5,10,25]\"></mfBootstrapPaginator>\r\n            </td>\r\n          </tr>\r\n          </tfoot>\r\n        </table>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -660,6 +746,10 @@ var PatientSearchComponent = /** @class */ (function () {
         this.searchDataService.setSearchData(data);
         this.hideLoader();
         this.router.navigate(['print']);
+    };
+    PatientSearchComponent.prototype.viewHistory = function (data) {
+        this.searchDataService.setSearchData(data);
+        this.router.navigate(['history']);
     };
     PatientSearchComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -901,7 +991,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\P2855416\Documents\git\personal\patient-portal-app\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Smita\Personal\PatientPortal\patient-portal-app\src\main.ts */"./src/main.ts");
 
 
 /***/ })

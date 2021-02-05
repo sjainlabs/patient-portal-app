@@ -1,8 +1,11 @@
 package com.jlabs.controller;
 
 import com.jlabs.model.Patient;
+import com.jlabs.model.Visit;
 import com.jlabs.persistence.entity.PatientEntity;
+import com.jlabs.persistence.entity.VisitEntity;
 import com.jlabs.service.PatientService;
+import com.jlabs.service.VisitService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,6 +26,9 @@ public class  PatientController {
 
     @Autowired
     PatientService patientService;
+
+    @Autowired
+    VisitService visitService;
 
     @PostMapping
     @ResponseBody
@@ -58,4 +64,11 @@ public class  PatientController {
         final Optional<List<PatientEntity>> patientResponse = patientService.searchPatient(id,firstName,lastName);
         return new ResponseEntity<>(patientResponse, HttpStatus.OK);
     }
+
+  @GetMapping("/visit")
+  @ResponseBody
+  public ResponseEntity<Optional> getVisitInfo(@RequestParam (value = "patientId",required = false) int patientId){
+    final Optional<List<VisitEntity>> visitEntity = visitService.getVisit(patientId);
+    return new ResponseEntity<>(visitEntity, HttpStatus.OK);
+  }
 }

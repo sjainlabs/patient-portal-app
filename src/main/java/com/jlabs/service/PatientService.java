@@ -1,6 +1,7 @@
 package com.jlabs.service;
 
 import com.jlabs.model.Patient;
+import com.jlabs.model.Visit;
 import com.jlabs.persistence.PatientPersistence;
 import com.jlabs.persistence.entity.PatientEntity;
 import com.jlabs.service.transform.PatientEntityMapper;
