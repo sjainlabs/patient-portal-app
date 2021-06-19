@@ -55,6 +55,7 @@ export class PatientRegistrationComponent  {
 
   addNewPatientAgain(){
     this.show = false;
+    this.processing = false;
   }
 
 
