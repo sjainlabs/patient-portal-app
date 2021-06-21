@@ -1,6 +1,7 @@
 package com.jlabs.persistence.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.jlabs.model.Patient;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,8 +18,12 @@ public class VisitEntity {
   @Column(name = "VISIT_ID")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int visitId;
-  @Column(name = "PATIENT_ID")
-  private int patientId;
+
+  @ManyToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "PATIENT_ID")
+  private PatientEntity patientEntity;
+
+
   @Column(name= "VISIT_DATE")
   private String visitDate;
   @Column(name = "FOLLOW_UP_DAYS")

@@ -339,7 +339,7 @@ var PagenotfoundComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtaGlzdG9yeS9wYXRpZW50LWhpc3RvcnkuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "#visits {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n  border-collapse: collapse;\r\n  width: 100%;\r\n}\r\n\r\n#visits td, #visits th {\r\n  border: 1px solid #ddd;\r\n  padding: 8px;\r\n}\r\n\r\n#visits tr:nth-child(even){background-color: #f2f2f2;}\r\n\r\n#visits tr:hover {background-color: #ddd;}\r\n\r\n#visits th {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  background-color: #0072ff8a;\r\n  color: white;\r\n}\r\n\r\n#visitHeader{\r\n  font-family: Arial, Helvetica, sans-serif;\r\n  width: 100%;\r\n}\r\n\r\n#visitHeader  td {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  padding: 8px;\r\n\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1oaXN0b3J5L3BhdGllbnQtaGlzdG9yeS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UseUNBQXlDO0VBQ3pDLHlCQUF5QjtFQUN6QixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxzQkFBc0I7RUFDdEIsWUFBWTtBQUNkOztBQUVBLDJCQUEyQix5QkFBeUIsQ0FBQzs7QUFFckQsa0JBQWtCLHNCQUFzQixDQUFDOztBQUV6QztFQUNFLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsZ0JBQWdCO0VBQ2hCLDJCQUEyQjtFQUMzQixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSx5Q0FBeUM7RUFDekMsV0FBVztBQUNiOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUNwQixnQkFBZ0I7RUFDaEIsWUFBWTs7QUFFZCIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtaGlzdG9yeS9wYXRpZW50LWhpc3RvcnkuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiN2aXNpdHMge1xyXG4gIGZvbnQtZmFtaWx5OiBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmO1xyXG4gIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbiN2aXNpdHMgdGQsICN2aXNpdHMgdGgge1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkICNkZGQ7XHJcbiAgcGFkZGluZzogOHB4O1xyXG59XHJcblxyXG4jdmlzaXRzIHRyOm50aC1jaGlsZChldmVuKXtiYWNrZ3JvdW5kLWNvbG9yOiAjZjJmMmYyO31cclxuXHJcbiN2aXNpdHMgdHI6aG92ZXIge2JhY2tncm91bmQtY29sb3I6ICNkZGQ7fVxyXG5cclxuI3Zpc2l0cyB0aCB7XHJcbiAgcGFkZGluZy10b3A6IDEycHg7XHJcbiAgcGFkZGluZy1ib3R0b206IDEycHg7XHJcbiAgdGV4dC1hbGlnbjogbGVmdDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA3MmZmOGE7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG4jdmlzaXRIZWFkZXJ7XHJcbiAgZm9udC1mYW1pbHk6IEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbiN2aXNpdEhlYWRlciAgdGQge1xyXG4gIHBhZGRpbmctdG9wOiAxMnB4O1xyXG4gIHBhZGRpbmctYm90dG9tOiAxMnB4O1xyXG4gIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgcGFkZGluZzogOHB4O1xyXG5cclxufVxyXG5cclxuIl19 */"
 
 /***/ }),
 
@@ -350,7 +350,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  patient-history works!\r\n</p>\r\n"
+module.exports = "<div>\r\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <h1 class=\"siteTitle\">\r\n      {{ title }}\r\n    </h1>\r\n  </div>\r\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\r\n    <!-- Links -->\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"../register\" class=\"nav-link\">Patient Registration</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div style=\"text-align:center\">\r\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\r\n  </div>\r\n\r\n  <div id=\"loadin\">\r\n    <app-loader-spin></app-loader-spin>\r\n  </div>\r\n<br>\r\n  <div class=\"container\">\r\n    <table id=\"visitHeader\">\r\n      <tr>\r\n        <td>Name : {{patientVisitData[0].patientEntity.firstName}}</td>\r\n        <td>DOB :  {{patientVisitData[0].patientEntity.firstName}}</td>\r\n        <td>Patient Id : {{patientVisitData[0].patientEntity.id}}</td>\r\n      </tr>\r\n\r\n    </table>\r\n<br>\r\n\r\n    <table id=\"visits\">\r\n      <thead>\r\n      <tr>\r\n        <th>Visit Date</th>\r\n        <th>Symptoms</th>\r\n        <th>Prescription</th>\r\n        <th>FollowUp Date</th>\r\n        <th>Notes</th>\r\n      </tr>\r\n      </thead>\r\n      <tbody>\r\n      <tr *ngFor=\"let visit of patientVisitData\">\r\n        <td>{{visit.visitDate}} </td>\r\n        <td>{{visit.symptoms}} </td>\r\n        <td>{{visit.prescription}} </td>\r\n        <td>{{visit.followUpDate}} </td>\r\n        <td>{{visit.notes}} </td>\r\n      </tr>\r\n\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -365,8 +365,7 @@ module.exports = "<p>\r\n  patient-history works!\r\n</p>\r\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientHistoryComponent", function() { return PatientHistoryComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _service_search_data_service_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service/search-data-service.service */ "./src/app/service/search-data-service.service.ts");
-/* harmony import */ var _model_PatientData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../model/PatientData */ "./src/app/model/PatientData.ts");
+/* harmony import */ var _service_patient_visit_search_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service/patient-visit-search.service */ "./src/app/service/patient-visit-search.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -378,23 +377,46 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-
 var PatientHistoryComponent = /** @class */ (function () {
-    function PatientHistoryComponent(searchDataService) {
-        this.searchDataService = searchDataService;
-        this.patientData1 = new _model_PatientData__WEBPACK_IMPORTED_MODULE_2__["PatientData"]();
+    function PatientHistoryComponent(patientVisitSearchService) {
+        this.patientVisitSearchService = patientVisitSearchService;
+        this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
+        this.DATANOTFOUND = 'Data Not Found!';
+        this.title = 'Patient Portal';
+        this.patientId = 1;
     }
     PatientHistoryComponent.prototype.ngOnInit = function () {
-        this.getSearch();
+        this.getPatientVisit();
     };
-    PatientHistoryComponent.prototype.getSearch = function () {
-        var searchData = this.searchDataService.getSearchData();
-        this.searchData1 = searchData;
-        this.firstName = searchData.firstName;
-        this.lastName = searchData.lastName;
-        this.age = searchData.age;
-        this.searchDataService.getSearchData();
-        console.log('In History' + this.patientData1);
+    PatientHistoryComponent.prototype.getPatientVisit = function () {
+        var _this = this;
+        this.patientVisitData = [];
+        this.error = '';
+        var searchData = this.patientVisitSearchService.searchVisitForPatientId(1)
+            .subscribe(function (data) {
+            console.log(data);
+            if (data == null) {
+                _this.error = _this.DATANOTFOUND;
+            }
+            else {
+                for (var i = 0; i < data.length; i++) {
+                    _this.patientVisitData.push(data[i]);
+                }
+            }
+            _this.hideLoader();
+        }
+        // }
+        , function (error1) {
+            _this.error = _this.ERRORMESSAGE;
+            _this.hideLoader();
+        });
+        ;
+    };
+    PatientHistoryComponent.prototype.hideLoader = function () {
+        document.getElementById('loadin').style.display = 'none';
+    };
+    PatientHistoryComponent.prototype.showLoader = function () {
+        document.getElementById('loadin').style.display = '';
     };
     PatientHistoryComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -402,7 +424,7 @@ var PatientHistoryComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./patient-history.component.html */ "./src/app/patient-history/patient-history.component.html"),
             styles: [__webpack_require__(/*! ./patient-history.component.css */ "./src/app/patient-history/patient-history.component.css")]
         }),
-        __metadata("design:paramtypes", [_service_search_data_service_service__WEBPACK_IMPORTED_MODULE_1__["SearchDataServiceService"]])
+        __metadata("design:paramtypes", [_service_patient_visit_search_service__WEBPACK_IMPORTED_MODULE_1__["PatientVisitSearchService"]])
     ], PatientHistoryComponent);
     return PatientHistoryComponent;
 }());
@@ -697,9 +719,9 @@ var PatientSearchComponent = /** @class */ (function () {
         this.hideLoader();
     };
     // populateSearchData(): PatientData {
-    //   this.data.firstName = 'Test Patient First Name';
-    //   this.data.lastName = 'Test Patient last Name';
-    //   return this.data;
+    //   this.patientVisitData.firstName = 'Test Patient First Name';
+    //   this.patientVisitData.lastName = 'Test Patient last Name';
+    //   return this.patientVisitData;
     // }
     PatientSearchComponent.prototype.searchPatientData = function () {
         var _this = this;
@@ -808,6 +830,52 @@ var PatientRegistrationService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], PatientRegistrationService);
     return PatientRegistrationService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/patient-visit-search.service.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/service/patient-visit-search.service.ts ***!
+  \*********************************************************/
+/*! exports provided: PatientVisitSearchService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientVisitSearchService", function() { return PatientVisitSearchService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PatientVisitSearchService = /** @class */ (function () {
+    function PatientVisitSearchService(http) {
+        this.http = http;
+        this.patientApiVisitUrl = '/patient/v1/visit?patientId=';
+    }
+    PatientVisitSearchService.prototype.searchVisitForPatientId = function (id) {
+        var url = this.patientApiVisitUrl;
+        url = url + id;
+        return this.http.get(url);
+    };
+    PatientVisitSearchService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], PatientVisitSearchService);
+    return PatientVisitSearchService;
 }());
 
 

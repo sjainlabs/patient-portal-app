@@ -1,3 +1,60 @@
-<p>
-  patient-history works!
-</p>
+<div>
+  <div style="text-align:center" xmlns="http://www.w3.org/1999/html">
+    <h1 class="siteTitle">
+      {{ title }}
+    </h1>
+  </div>
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink="../register" class="nav-link">Patient Registration</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active">Patient Search</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div style="text-align:center">
+    <img width="300" alt="Angular Logo" src="../assets/patient-image.jpeg">
+  </div>
+
+  <div id="loadin">
+    <app-loader-spin></app-loader-spin>
+  </div>
+<br>
+  <div class="container">
+    <table id="visitHeader">
+      <tr>
+        <td>Name : {{patientVisitData[0].patientEntity.firstName}}</td>
+        <td>DOB :  {{patientVisitData[0].patientEntity.firstName}}</td>
+        <td>Patient Id : {{patientVisitData[0].patientEntity.id}}</td>
+      </tr>
+
+    </table>
+<br>
+
+    <table id="visits">
+      <thead>
+      <tr>
+        <th>Visit Date</th>
+        <th>Symptoms</th>
+        <th>Prescription</th>
+        <th>FollowUp Date</th>
+        <th>Notes</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let visit of patientVisitData">
+        <td>{{visit.visitDate}} </td>
+        <td>{{visit.symptoms}} </td>
+        <td>{{visit.prescription}} </td>
+        <td>{{visit.followUpDate}} </td>
+        <td>{{visit.notes}} </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

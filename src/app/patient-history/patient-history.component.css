@@ -1,0 +1,36 @@
+#visits {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#visits td, #visits th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#visits tr:nth-child(even){background-color: #f2f2f2;}
+
+#visits tr:hover {background-color: #ddd;}
+
+#visits th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0072ff8a;
+  color: white;
+}
+
+#visitHeader{
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+}
+
+#visitHeader  td {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  padding: 8px;
+
+}
+

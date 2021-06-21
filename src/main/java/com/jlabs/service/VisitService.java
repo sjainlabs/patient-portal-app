@@ -4,7 +4,10 @@ import com.jlabs.model.Visit;
 import com.jlabs.persistence.VisitPersistence;
 import com.jlabs.persistence.entity.PatientEntity;
 import com.jlabs.persistence.entity.VisitEntity;
+import com.jlabs.service.transform.PatientEntityMapper;
+import com.jlabs.service.transform.VisitEntityMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +19,7 @@ import java.util.Optional;
 public class VisitService {
 
   private VisitPersistence visitPersistence;
+  VisitEntityMapper visitEntityMapper = Mappers.getMapper(VisitEntityMapper.class);
 
   @Autowired
   public VisitService(VisitPersistence visitPersistence){
@@ -26,5 +30,13 @@ public class VisitService {
     final Optional<List<VisitEntity>> visitEntity = visitPersistence.visitInfo(patientId);
     log.debug("Patient Visit {}", visitEntity);
     return visitEntity;
+  }
+
+  public String createVisit(Visit visit) {
+    VisitEntity visitEntity= visitEntityMapper.PatientTOPatientEntity(visit);
+    log.debug("Visit Entity {}", visitEntity);
+    final String visit1 = visitPersistence.addVisit(visitEntity);
+    log.debug("Patient Visit {}", visitEntity);
+    return visit1;
   }
 }

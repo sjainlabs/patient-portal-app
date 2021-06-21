@@ -22,23 +22,23 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/patient/v1")
 @Slf4j
-public class  PatientController {
+public class PatientController {
 
-    @Autowired
-    PatientService patientService;
+  @Autowired
+  PatientService patientService;
 
-    @Autowired
-    VisitService visitService;
+  @Autowired
+  VisitService visitService;
 
-    @PostMapping
-    @ResponseBody
-    public ResponseEntity<String> savePatient(@RequestBody Patient patient){
-        log.info("patient request");
-        log.debug("patient request {}", patient);
-        final String patientResponse = patientService.savePatient(patient);
-        return new ResponseEntity<>(patientResponse, HttpStatus.CREATED);
+  @PostMapping
+  @ResponseBody
+  public ResponseEntity<String> savePatient(@RequestBody Patient patient) {
+    log.info("patient request");
+    log.debug("patient request {}", patient);
+    final String patientResponse = patientService.savePatient(patient);
+    return new ResponseEntity<>(patientResponse, HttpStatus.CREATED);
 
-    }
+  }
 
 //    @GetMapping
 //    @ResponseBody
@@ -56,19 +56,28 @@ public class  PatientController {
 //        return new ResponseEntity<>(patientResponse, HttpStatus.OK);
 //    }
 
-    @GetMapping
-    @ResponseBody
-    public ResponseEntity<Optional> searchPatient(@RequestParam (value = "id",required = false) Integer id,
-                                                  @RequestParam (value = "firstName",required = false) String firstName,
-                                                  @RequestParam (value = "lastName",required = false) String lastName){
-        final Optional<List<PatientEntity>> patientResponse = patientService.searchPatient(id,firstName,lastName);
-        return new ResponseEntity<>(patientResponse, HttpStatus.OK);
-    }
+  @GetMapping
+  @ResponseBody
+  public ResponseEntity<Optional> searchPatient(@RequestParam(value = "id", required = false) Integer id,
+                                                @RequestParam(value = "firstName", required = false) String firstName,
+                                                @RequestParam(value = "lastName", required = false) String lastName) {
+    final Optional<List<PatientEntity>> patientResponse = patientService.searchPatient(id, firstName, lastName);
+    return new ResponseEntity<>(patientResponse, HttpStatus.OK);
+  }
 
   @GetMapping("/visit")
   @ResponseBody
-  public ResponseEntity<Optional> getVisitInfo(@RequestParam (value = "patientId",required = false) int patientId){
+  public ResponseEntity<Optional> getVisitInfo(@RequestParam(value = "patientId", required = false) int patientId) {
     final Optional<List<VisitEntity>> visitEntity = visitService.getVisit(patientId);
     return new ResponseEntity<>(visitEntity, HttpStatus.OK);
+  }
+
+  @PostMapping("/visit")
+  @ResponseBody
+  public ResponseEntity<String> createVisitInfo(@RequestBody Visit visit) {
+    log.info("patient request");
+    log.debug("patient request {}", visit);
+    final String visit1 = visitService.createVisit(visit);
+    return new ResponseEntity<>(visit1, HttpStatus.OK);
   }
 }
