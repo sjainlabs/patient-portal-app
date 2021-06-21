@@ -12,5 +12,5 @@ import java.util.Optional;
 public interface VisitRepository extends JpaRepository<VisitEntity, String> {
 
   @Query(" select v from VisitEntity v  where ( :id is null or v.patientEntity.id = :id)")
-  public Optional<List<VisitEntity>> findByVisitByPatientId(int id);
+  public Optional<List<VisitEntity>> findByVisitByPatientId(@Param("id") Integer id);
 }
