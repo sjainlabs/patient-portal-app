@@ -24,7 +24,21 @@
     <app-loader-spin></app-loader-spin>
   </div>
 <br>
-  <div class="container">
+
+  <div id="mainVisitHeader" class=" container ">
+    <div id="newVisit">
+    <label style="color: red"> {{error}}</label>
+
+        <!--      <a routerLink="print" class="nav-link">-->
+      <br>
+        <span>Please Click to Add a new Visit - </span>
+
+        <button type="submit" class="btn btn-primary disabled" (click)="addVisit()">New Visit</button>
+        <!--      </a>-->
+
+  </div>
+
+  <div  *ngIf="error==''">
     <table id="visitHeader">
       <tr>
         <td>Name : {{patientVisitData[0].patientEntity.firstName}}</td>
@@ -57,4 +71,5 @@
       </tbody>
     </table>
   </div>
+</div>
 </div>
