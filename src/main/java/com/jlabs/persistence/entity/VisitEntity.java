@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.jlabs.model.Patient;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -19,7 +21,7 @@ public class VisitEntity {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int visitId;
 
-  @ManyToOne(cascade = CascadeType.ALL)
+  @ManyToOne
   @JoinColumn(name = "PATIENT_ID")
   private PatientEntity patientEntity;
 
@@ -29,7 +31,7 @@ public class VisitEntity {
   @Column(name = "FOLLOW_UP_DAYS")
   private int followUpDays;
   @Column(name= "FOLLOW_UP_DATE")
-  private Date followUpDate;
+  private String followUpDate;
   @Column(name = "PRESCRIPTION")
   private String prescription;
   @Column(name = "SYMPTONS")

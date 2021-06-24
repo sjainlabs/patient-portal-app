@@ -4,6 +4,8 @@ import {PatientData} from '../model/PatientData';
 import {PatientVisitSearchService} from "../service/patient-visit-search.service";
 import {stringDistance} from "codelyzer/util/utils";
 import {VisitData} from "../model/VisitData";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {p} from "@angular/core/src/render3";
 
 @Component({
   selector: 'app-patient-history',
@@ -18,14 +20,29 @@ export class PatientHistoryComponent implements OnInit {
   ERRORMESSAGE= 'System is Temporary unavailable, Please Try Again!';
   DATANOTFOUND= 'No Visits Found for the Patient!';
   title = 'Patient Portal';
+  newVisitFlag: boolean ;
+  visitFormData :  FormGroup;
 
   constructor(private searchDataService: SearchDataServiceService,
-              private patientVisitSearchService: PatientVisitSearchService) {
+              private patientVisitSearchService: PatientVisitSearchService,
+              private fb: FormBuilder) {
     this.patientId=1;
+    this.createForm();
   }
 
   ngOnInit() {
     this.getPatientVisit();
+  }
+
+  createForm() {
+    this.visitFormData = this.fb.group({
+      symptoms: new FormControl(''),
+      prescription: new FormControl(''),
+      age: new FormControl(''),
+      followUpDays: new FormControl(''),
+      notes: new FormControl('')
+
+    });
   }
 
   getPatientDataFromSearch() {
@@ -39,6 +56,7 @@ export class PatientHistoryComponent implements OnInit {
 
   getPatientVisit() {
    const searchData1 = this.getPatientDataFromSearch();
+    this.patientId = Number(searchData1.id) ;
     const patientId = Number(searchData1.id) ;
     this.patientVisitData=[];
     this.error='';
@@ -78,6 +96,26 @@ export class PatientHistoryComponent implements OnInit {
 
 
   addVisit() {
+    this.newVisitFlag = true;
+    console.log(this.visitFormData.value);
+  }
 
+  onSubmitVisit(){
+    this.showLoader();
+    console.log(this.visitFormData.value);
+    const patient  = new PatientData() ;
+    patient.id = this.patientId.toString()
+
+    this.patientVisitSearchService.addVisitForPatient(this.visitFormData.value, patient)
+      .subscribe( s => {
+        console.log(s);
+        this.hideLoader();
+        this.newVisitFlag = false;
+      },
+      error1 => {
+        this.error = this.ERRORMESSAGE;
+        this.hideLoader();
+      }
+      );
   }
 }

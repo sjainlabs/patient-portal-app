@@ -9,6 +9,7 @@ C:\Users\P2855416\Documents\git\personal\patient-portal-app\src\main\java\com\jl
 C:\Users\P2855416\Documents\git\personal\patient-portal-app\src\main\java\com\jlabs\config\WebSecurityConfig.java
 C:\Users\P2855416\Documents\git\personal\patient-portal-app\src\main\java\com\jlabs\model\Patient.java
 C:\Users\P2855416\Documents\git\personal\patient-portal-app\src\main\java\com\jlabs\persistence\entity\VisitEntity.java
+C:\Users\P2855416\Documents\git\personal\patient-portal-app\src\main\java\com\jlabs\service\transform\VisitEntityMapper.java
 C:\Users\P2855416\Documents\git\personal\patient-portal-app\src\main\java\com\jlabs\persistence\PatientPersistence.java
 C:\Users\P2855416\Documents\git\personal\patient-portal-app\src\main\java\com\jlabs\service\transform\PatientEntityMapper.java
 C:\Users\P2855416\Documents\git\personal\patient-portal-app\src\main\java\com\jlabs\service\PatientService.java

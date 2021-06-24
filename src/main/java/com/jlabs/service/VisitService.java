@@ -11,6 +11,9 @@ import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,9 +37,21 @@ public class VisitService {
 
   public String createVisit(Visit visit) {
     VisitEntity visitEntity= visitEntityMapper.PatientTOPatientEntity(visit);
+    setVisitDate(visitEntity);
+    setFollowupDate(visitEntity);
     log.debug("Visit Entity {}", visitEntity);
     final String visit1 = visitPersistence.addVisit(visitEntity);
     log.debug("Patient Visit {}", visitEntity);
     return visit1;
+  }
+
+  private void setFollowupDate(VisitEntity visitEntity) {
+    final LocalDateTime followUpDate = LocalDateTime.parse(visitEntity.getVisitDate()).plusDays(visitEntity.getFollowUpDays());
+    visitEntity.setFollowUpDate(String.valueOf(followUpDate));
+  }
+
+  private void setVisitDate(VisitEntity visitEntity) {
+    final LocalDateTime currentTime = LocalDateTime.now((ZoneOffset.UTC));
+    visitEntity.setVisitDate(currentTime.toString());
   }
 }

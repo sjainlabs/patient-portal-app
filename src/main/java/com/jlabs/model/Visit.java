@@ -11,7 +11,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class Visit {
   private int visitId;
-  private int patientId;
+  private Patient patient;
   private String visitDate;
   private int followUpDays;
   private Date followUpDate;

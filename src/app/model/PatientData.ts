@@ -11,4 +11,5 @@ export class PatientData {
   gender: string
   updatedAt: string
 
+
 }

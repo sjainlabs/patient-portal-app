@@ -31,14 +31,15 @@
 
         <!--      <a routerLink="print" class="nav-link">-->
       <br>
+      <div *ngIf="!newVisitFlag">
         <span>Please Click to Add a new Visit - </span>
 
-        <button type="submit" class="btn btn-primary disabled" (click)="addVisit()">New Visit</button>
+        <button type="submit" class="btn btn-primary" (click)="addVisit()">New Visit</button>
         <!--      </a>-->
-
+      </div>
   </div>
 
-  <div  *ngIf="error==''">
+  <div  *ngIf="error=='' && !newVisitFlag">
     <table id="visitHeader">
       <tr>
         <td>Name : {{patientVisitData[0].patientEntity.firstName}}</td>
@@ -70,6 +71,41 @@
 
       </tbody>
     </table>
+  </div>
+
+    <div *ngIf="newVisitFlag && error==''">
+      <form [formGroup]="visitFormData"
+            (ngSubmit)="onSubmitVisit(visitFormData.value)" novalidate>
+        <div>
+          <label>Symptoms:
+            <input type="text"  formControlName="symptoms" class="form-control">
+          </label>
+        </div>
+
+        <div>
+          <label>Prescription:
+            <input type="text"  formControlName="prescription"  class="form-control">
+          </label>
+        </div>
+
+        <div>
+          <label>Followup Days:
+            <input type="text" formControlName="followUpDays" class="form-control">
+          </label>
+        </div>
+
+        <div>
+          <label>Notes:
+            <input type="text" formControlName="notes" class="form-control">
+          </label>
+        </div>
+
+        <button type="submit"
+                [disabled]="visitFormData.pristine || visitFormData.invalid" class="btn btn-success">
+          Submit
+        </button>
+
+      </form>
   </div>
 </div>
 </div>

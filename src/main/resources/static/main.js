@@ -350,7 +350,7 @@ module.exports = "#visits {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <h1 class=\"siteTitle\">\r\n      {{ title }}\r\n    </h1>\r\n  </div>\r\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\r\n    <!-- Links -->\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"../register\" class=\"nav-link\">Patient Registration</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div style=\"text-align:center\">\r\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\r\n  </div>\r\n\r\n  <div id=\"loadin\">\r\n    <app-loader-spin></app-loader-spin>\r\n  </div>\r\n<br>\r\n\r\n  <div id=\"mainVisitHeader\" class=\" container \">\r\n    <div id=\"newVisit\">\r\n    <label style=\"color: red\"> {{error}}</label>\r\n\r\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n      <br>\r\n        <span>Please Click to Add a new Visit - </span>\r\n\r\n        <button type=\"submit\" class=\"btn btn-primary disabled\" (click)=\"addVisit()\">New Visit</button>\r\n        <!--      </a>-->\r\n\r\n  </div>\r\n\r\n  <div  *ngIf=\"error==''\">\r\n    <table id=\"visitHeader\">\r\n      <tr>\r\n        <td>Name : {{patientVisitData[0].patientEntity.firstName}}</td>\r\n        <td>DOB :  {{patientVisitData[0].patientEntity.firstName}}</td>\r\n        <td>Patient Id : {{patientVisitData[0].patientEntity.id}}</td>\r\n      </tr>\r\n\r\n    </table>\r\n<br>\r\n\r\n    <table id=\"visits\" class=\"table\">\r\n      <thead>\r\n      <tr>\r\n        <th>Visit Date</th>\r\n        <th>Symptoms</th>\r\n        <th>Prescription</th>\r\n        <th>FollowUp Date</th>\r\n        <th>Notes</th>\r\n      </tr>\r\n      </thead>\r\n      <tbody>\r\n      <tr *ngFor=\"let visit of patientVisitData\">\r\n        <td>{{visit.visitDate}} </td>\r\n        <td>{{visit.symptoms}} </td>\r\n        <td>{{visit.prescription}} </td>\r\n        <td>{{visit.followUpDate}} </td>\r\n        <td>{{visit.notes}} </td>\r\n      </tr>\r\n\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n</div>\r\n</div>\r\n"
+module.exports = "<div>\r\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <h1 class=\"siteTitle\">\r\n      {{ title }}\r\n    </h1>\r\n  </div>\r\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\r\n    <!-- Links -->\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"../register\" class=\"nav-link\">Patient Registration</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div style=\"text-align:center\">\r\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\r\n  </div>\r\n\r\n  <div id=\"loadin\">\r\n    <app-loader-spin></app-loader-spin>\r\n  </div>\r\n<br>\r\n\r\n  <div id=\"mainVisitHeader\" class=\" container \">\r\n    <div id=\"newVisit\">\r\n    <label style=\"color: red\"> {{error}}</label>\r\n\r\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n      <br>\r\n      <div *ngIf=\"!newVisitFlag\">\r\n        <span>Please Click to Add a new Visit - </span>\r\n\r\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"addVisit()\">New Visit</button>\r\n        <!--      </a>-->\r\n      </div>\r\n  </div>\r\n\r\n  <div  *ngIf=\"error=='' && !newVisitFlag\">\r\n    <table id=\"visitHeader\">\r\n      <tr>\r\n        <td>Name : {{patientVisitData[0].patientEntity.firstName}}</td>\r\n        <td>DOB :  {{patientVisitData[0].patientEntity.firstName}}</td>\r\n        <td>Patient Id : {{patientVisitData[0].patientEntity.id}}</td>\r\n      </tr>\r\n\r\n    </table>\r\n<br>\r\n\r\n    <table id=\"visits\" class=\"table\">\r\n      <thead>\r\n      <tr>\r\n        <th>Visit Date</th>\r\n        <th>Symptoms</th>\r\n        <th>Prescription</th>\r\n        <th>FollowUp Date</th>\r\n        <th>Notes</th>\r\n      </tr>\r\n      </thead>\r\n      <tbody>\r\n      <tr *ngFor=\"let visit of patientVisitData\">\r\n        <td>{{visit.visitDate}} </td>\r\n        <td>{{visit.symptoms}} </td>\r\n        <td>{{visit.prescription}} </td>\r\n        <td>{{visit.followUpDate}} </td>\r\n        <td>{{visit.notes}} </td>\r\n      </tr>\r\n\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n\r\n    <div *ngIf=\"newVisitFlag && error==''\">\r\n      <form [formGroup]=\"visitFormData\"\r\n            (ngSubmit)=\"onSubmitVisit(visitFormData.value)\" novalidate>\r\n        <div>\r\n          <label>Symptoms:\r\n            <input type=\"text\"  formControlName=\"symptoms\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>Prescription:\r\n            <input type=\"text\"  formControlName=\"prescription\"  class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>Followup Days:\r\n            <input type=\"text\" formControlName=\"followUpDays\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>Notes:\r\n            <input type=\"text\" formControlName=\"notes\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <button type=\"submit\"\r\n                [disabled]=\"visitFormData.pristine || visitFormData.invalid\" class=\"btn btn-success\">\r\n          Submit\r\n        </button>\r\n\r\n      </form>\r\n  </div>\r\n</div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -366,7 +366,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientHistoryComponent", function() { return PatientHistoryComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _service_search_data_service_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service/search-data-service.service */ "./src/app/service/search-data-service.service.ts");
-/* harmony import */ var _service_patient_visit_search_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/patient-visit-search.service */ "./src/app/service/patient-visit-search.service.ts");
+/* harmony import */ var _model_PatientData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../model/PatientData */ "./src/app/model/PatientData.ts");
+/* harmony import */ var _service_patient_visit_search_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/patient-visit-search.service */ "./src/app/service/patient-visit-search.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -379,17 +381,30 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var PatientHistoryComponent = /** @class */ (function () {
-    function PatientHistoryComponent(searchDataService, patientVisitSearchService) {
+    function PatientHistoryComponent(searchDataService, patientVisitSearchService, fb) {
         this.searchDataService = searchDataService;
         this.patientVisitSearchService = patientVisitSearchService;
+        this.fb = fb;
         this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
         this.DATANOTFOUND = 'No Visits Found for the Patient!';
         this.title = 'Patient Portal';
         this.patientId = 1;
+        this.createForm();
     }
     PatientHistoryComponent.prototype.ngOnInit = function () {
         this.getPatientVisit();
+    };
+    PatientHistoryComponent.prototype.createForm = function () {
+        this.visitFormData = this.fb.group({
+            symptoms: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            prescription: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            age: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            followUpDays: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            notes: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('')
+        });
     };
     PatientHistoryComponent.prototype.getPatientDataFromSearch = function () {
         return this.searchDataService.getSearchData();
@@ -402,6 +417,7 @@ var PatientHistoryComponent = /** @class */ (function () {
     PatientHistoryComponent.prototype.getPatientVisit = function () {
         var _this = this;
         var searchData1 = this.getPatientDataFromSearch();
+        this.patientId = Number(searchData1.id);
         var patientId = Number(searchData1.id);
         this.patientVisitData = [];
         this.error = '';
@@ -432,6 +448,24 @@ var PatientHistoryComponent = /** @class */ (function () {
         document.getElementById('loadin').style.display = '';
     };
     PatientHistoryComponent.prototype.addVisit = function () {
+        this.newVisitFlag = true;
+        console.log(this.visitFormData.value);
+    };
+    PatientHistoryComponent.prototype.onSubmitVisit = function () {
+        var _this = this;
+        this.showLoader();
+        console.log(this.visitFormData.value);
+        var patient = new _model_PatientData__WEBPACK_IMPORTED_MODULE_2__["PatientData"]();
+        patient.id = this.patientId.toString();
+        this.patientVisitSearchService.addVisitForPatient(this.visitFormData.value, patient)
+            .subscribe(function (s) {
+            console.log(s);
+            _this.hideLoader();
+            _this.newVisitFlag = false;
+        }, function (error1) {
+            _this.error = _this.ERRORMESSAGE;
+            _this.hideLoader();
+        });
     };
     PatientHistoryComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -440,7 +474,8 @@ var PatientHistoryComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./patient-history.component.css */ "./src/app/patient-history/patient-history.component.css")]
         }),
         __metadata("design:paramtypes", [_service_search_data_service_service__WEBPACK_IMPORTED_MODULE_1__["SearchDataServiceService"],
-            _service_patient_visit_search_service__WEBPACK_IMPORTED_MODULE_2__["PatientVisitSearchService"]])
+            _service_patient_visit_search_service__WEBPACK_IMPORTED_MODULE_3__["PatientVisitSearchService"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"]])
     ], PatientHistoryComponent);
     return PatientHistoryComponent;
 }());
@@ -878,12 +913,17 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var PatientVisitSearchService = /** @class */ (function () {
     function PatientVisitSearchService(http) {
         this.http = http;
-        this.patientApiVisitUrl = '/patient/v1/visit?patientId=';
+        this.patientApiVisitUrl = '/patient/v1/visit';
     }
     PatientVisitSearchService.prototype.searchVisitForPatientId = function (id) {
         var url = this.patientApiVisitUrl;
-        url = url + id;
+        url = url + '?patientId=' + id;
         return this.http.get(url);
+    };
+    PatientVisitSearchService.prototype.addVisitForPatient = function (visitData, patient) {
+        visitData.patient = patient;
+        var url = this.patientApiVisitUrl;
+        return this.http.post(url, visitData);
     };
     PatientVisitSearchService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({

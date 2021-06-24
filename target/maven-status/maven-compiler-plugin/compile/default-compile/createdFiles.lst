@@ -1,5 +1,6 @@
 com\jlabs\model\Visit$VisitBuilder.class
 com\jlabs\persistence\VisitPersistence.class
+com\jlabs\service\transform\VisitEntityMapperImpl.class
 com\jlabs\model\PersonalIdentification.class
 com\jlabs\persistence\repository\VisitRepository.class
 com\jlabs\persistence\repository\PatientRepository.class
@@ -7,6 +8,7 @@ com\jlabs\model\Visit.class
 com\jlabs\persistence\entity\PersonalIdentificationEntity.class
 com\jlabs\model\PersonalIdentification$PersonalIdentificationBuilder.class
 com\jlabs\service\VisitService.class
+com\jlabs\service\transform\VisitEntityMapper.class
 com\jlabs\model\Patient$PatientBuilder.class
 com\jlabs\service\transform\PatientEntityMapperImpl.class
 com\jlabs\config\SwaggerConfig.class
