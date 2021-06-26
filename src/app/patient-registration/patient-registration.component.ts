@@ -64,6 +64,7 @@ export class PatientRegistrationComponent  {
 
       firstName: new FormControl( '',Validators.required),
       lastName: new FormControl(''),
+      dateOfBirth: new FormControl(''),
       age: new FormControl(''),
       gender: new FormControl(''),
       address: new FormControl(''),

@@ -2,6 +2,7 @@ export class PatientData {
   firstName: string;
   lastName: string;
   age: number;
+  dateOfBirth: string;
   height: number;
   weight: number;
   doctorName: string;
@@ -10,6 +11,7 @@ export class PatientData {
   city: string;
   gender: string
   updatedAt: string
+  personalId: string
 
 
 }

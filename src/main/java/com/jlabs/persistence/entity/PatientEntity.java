@@ -4,9 +4,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Getter
 @Setter
+@ToString
 @Entity
 @Table(name = "PATIENT")
 public class PatientEntity {
@@ -23,6 +25,8 @@ public class PatientEntity {
   private String doctorName;
   @Column(name = "gender")
   private String gender;
+  @Column(name = "DATE_OF_BIRTH")
+  private LocalDate dateOfBirth;
   @Column(name = "AGE")
   private int age;
   @Column(name = "ADDRESS")

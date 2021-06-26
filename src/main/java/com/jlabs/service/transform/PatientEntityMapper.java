@@ -14,8 +14,22 @@ import org.mapstruct.Mapping;
 public interface PatientEntityMapper {
 
   @Mapping(source = "personalIdType", target = "personalIdentificationEntity.personalIdType")
-//  @Mapping(source = "personalIdTypeDesc", target = "personalIdentificationEntity.personalIdTypeDesc")
-    PatientEntity PatientTOPatientEntity(Patient patient);
+  @Mapping(target = "id",ignore = true)
+//  @Mapping(target = "dateOfBirth",ignore = true)
+  PatientEntity PatientTOPatientEntity(Patient patient);
 
+//  @AfterMapping
+//  default void afterMappingsforDateOfBirth(
+//    @MappingTarget PatientEntity patientEntity, Patient patient
+//  ){
+//    final LocalDate of = patient.getDateOfBirth();
+//    final Date dateOfBirth = Date.valueOf(of);
+//    patientEntity.setDateOfBirth(dateOfBirth);
+//  }
+
+
+
+  @Mapping(target = "personalIdType", source = "personalIdentificationEntity.personalIdType")
+  Patient PatientEntityTOPatient(PatientEntity patientEntity);
 
 }

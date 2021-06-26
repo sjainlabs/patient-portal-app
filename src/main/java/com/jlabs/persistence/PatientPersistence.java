@@ -30,10 +30,8 @@ public class PatientPersistence {
 
     public String savePatient(PatientEntity patientEntity){
 
-       entityManager.find(PersonalIdentificationEntity.class, patientEntity.getPersonalIdentificationEntity().getPersonalIdType());
-//      patientEntity.setPersonalIdentificationEntity(personalIdentificationEntity);
       final PatientEntity save = patientRepository.save(patientEntity);
-      log.debug("Patient Entity Saved {}" , save);
+      log.info("Patient Entity Saved {}" , save.toString());
       return String.valueOf(save.getId());
     }
 

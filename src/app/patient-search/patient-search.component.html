@@ -108,6 +108,13 @@
             <th style="width: 30%">
               <mfDefaultSorter by="contact">Contact</mfDefaultSorter>
             </th>
+            <th style="width: 30%">
+              <mfDefaultSorter by="contact">Date Of Birth</mfDefaultSorter>
+            </th>
+
+            <th style="width: 30%">
+              <mfDefaultSorter by="contact">Personal Identification</mfDefaultSorter>
+            </th>
           </tr>
           </thead>
           <tbody>
@@ -116,6 +123,8 @@
             <td>{{item.firstName}}</td>
             <td>{{item.lastName}}</td>
             <td>{{item.contact}}</td>
+            <td>{{item.dateOfBirth}}</td>
+            <td>{{item.personalId}}</td>
             <td>
               <button type="button" class="btn btn-primary" (click)="printPage(item)">Print</button>
             </td>

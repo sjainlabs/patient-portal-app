@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Created by sjain on 5/25/20.
@@ -40,10 +41,17 @@ public class PatientService {
      return patientPersistence.savePatient(patientEntity);
     }
 
-    public Optional<List<PatientEntity>> searchPatient(Integer id, String firstName, String lastName) {
+    public Optional<List<Patient>> searchPatient(Integer id, String firstName, String lastName) {
+
       final Optional<List<PatientEntity>> patientEntity = patientPersistence.searchPatient(id,firstName,lastName);
       log.debug("searched patient {}", patientEntity);
-      return patientEntity;
+      final List<Patient> patients = patientEntity.get().stream().map(patientEntity1 -> {
+        return patientEntityMapper.PatientEntityTOPatient(patientEntity1);
+
+      }).collect(Collectors.toList());
+//      Patient patient= patientEntityMapper.PatientEntityTOPatient(patientEntity);
+
+      return Optional.ofNullable(patients);
     }
 
     public List<Patient> searchAllPatient() {

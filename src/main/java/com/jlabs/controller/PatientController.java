@@ -61,7 +61,7 @@ public class PatientController {
   public ResponseEntity<Optional> searchPatient(@RequestParam(value = "id", required = false) Integer id,
                                                 @RequestParam(value = "firstName", required = false) String firstName,
                                                 @RequestParam(value = "lastName", required = false) String lastName) {
-    final Optional<List<PatientEntity>> patientResponse = patientService.searchPatient(id, firstName, lastName);
+    final Optional<List<Patient>> patientResponse = patientService.searchPatient(id, firstName, lastName);
     return new ResponseEntity<>(patientResponse, HttpStatus.OK);
   }
 
