@@ -97,6 +97,7 @@ export class PatientHistoryComponent implements OnInit {
 
   addVisit() {
     this.newVisitFlag = true;
+    this.error='';
     console.log(this.visitFormData.value);
   }
 
@@ -111,6 +112,7 @@ export class PatientHistoryComponent implements OnInit {
         console.log(s);
         this.hideLoader();
         this.newVisitFlag = false;
+        this.getPatientVisit();
       },
       error1 => {
         this.error = this.ERRORMESSAGE;

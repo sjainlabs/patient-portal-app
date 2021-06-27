@@ -449,6 +449,7 @@ var PatientHistoryComponent = /** @class */ (function () {
     };
     PatientHistoryComponent.prototype.addVisit = function () {
         this.newVisitFlag = true;
+        this.error = '';
         console.log(this.visitFormData.value);
     };
     PatientHistoryComponent.prototype.onSubmitVisit = function () {
@@ -462,6 +463,7 @@ var PatientHistoryComponent = /** @class */ (function () {
             console.log(s);
             _this.hideLoader();
             _this.newVisitFlag = false;
+            _this.getPatientVisit();
         }, function (error1) {
             _this.error = _this.ERRORMESSAGE;
             _this.hideLoader();
