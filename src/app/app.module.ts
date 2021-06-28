@@ -13,6 +13,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { LoaderSpinComponent } from './loader-spin/loader-spin.component';
 import {DataTableModule} from "angular-6-datatable";
 import { PatientHistoryComponent } from './patient-history/patient-history.component';
+import { PatientHeaderComponent } from './patient-header/patient-header.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PatientHistoryComponent } from './patient-history/patient-history.compo
     PatientInfoPrintComponent,
     PagenotfoundComponent,
     LoaderSpinComponent,
-    PatientHistoryComponent
+    PatientHistoryComponent,
+    PatientHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,28 @@ import { PatientHistoryComponent } from './patient-history/patient-history.compo
         path: 'history',
         component: PatientHistoryComponent
       },
-      { path: '',   redirectTo: '/register', pathMatch: 'full' }, // redirect to `first-component`
+      { path: '',   redirectTo: '/search', pathMatch: 'full' }, // redirect to `first-component`
+      { path: '**', component: PagenotfoundComponent },
+    ]),
+    RouterModule.forChild([
+
+      {
+        path: 'register',
+        component: PatientRegistrationComponent
+      },
+      {
+        path: 'search',
+        component: PatientSearchComponent
+      },
+      {
+        path: 'print',
+        component: PatientInfoPrintComponent
+      },
+      {
+        path: 'history',
+        component: PatientHistoryComponent
+      },
+      { path: '',   redirectTo: '/search', pathMatch: 'full' }, // redirect to `first-component`
       { path: '**', component: PagenotfoundComponent },
     ])
   ],

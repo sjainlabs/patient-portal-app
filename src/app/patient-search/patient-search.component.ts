@@ -16,7 +16,6 @@ export class PatientSearchComponent implements OnInit {
   patientId: number;
   firstName: string;
   lastName: string;
-  title = 'Patient Portal';
   processing: boolean;
   multiple: boolean;
   error;

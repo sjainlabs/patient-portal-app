@@ -12,7 +12,6 @@ export class PatientRegistrationComponent  {
   show: boolean = false;
   processing: boolean = false;
   patientIdCreated: string;
-  title = 'Patient Portal';
   patientFormData :  FormGroup;
   error='';
   ERRORMESSAGE= 'System is Temporary unavailable, Please Try Again!';
