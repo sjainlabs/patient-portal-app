@@ -54,6 +54,7 @@ export class PatientHistoryComponent implements OnInit {
   }
 
   getPatientVisit() {
+    this.showLoader();
    const searchData1 = this.getPatientDataFromSearch();
     this.patientId = Number(searchData1.id) ;
     const patientId = Number(searchData1.id) ;
