@@ -46,10 +46,10 @@ public class PatientUIController {
     return mav;
   }
 
-//  @GetMapping("/history")
-//  public ModelAndView history( ) {
-//    ModelAndView mav = new ModelAndView("index");
-//    mav.addObject("version", "0.1");
-//    return mav;
-//  }
+  @GetMapping("/history")
+  public ModelAndView history( ) {
+    ModelAndView mav = new ModelAndView("search");
+    mav.addObject("version", "0.1");
+    return mav;
+  }
 }
