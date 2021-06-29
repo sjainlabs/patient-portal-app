@@ -17,7 +17,7 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #0072ff8a;
+  background-color: #490f198a;
   color: white;
 }
 
@@ -42,5 +42,11 @@
 #newVisit {
 
 
+}
+
+.btn-success.disabled, .btn-success:disabled {
+  color: #fff;
+  background-color: #a0706d;
+  border-color: #a0706d;
 }
 

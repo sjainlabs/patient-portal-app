@@ -2,3 +2,9 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 html, body { height: 100%; background-color: #efdfdb7d; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+.btn-primary {
+  color: #fff;
+  background-color:#490f198a;
+  border-color: #490f198a;
+}

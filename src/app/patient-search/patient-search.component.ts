@@ -20,7 +20,7 @@ export class PatientSearchComponent implements OnInit {
   multiple: boolean;
   error;
   ERRORMESSAGE= 'System is Temporary unavailable, Please Try Again!';
-  DATANOTFOUND= 'Data Not Found!';
+  DATANOTFOUND= 'Data Not Found - One or the other Search Criteria entered is not correct!';
   Mandatory = "One of the below field is mandatory";
 
   // searchDataService: SearchDataServiceService;
@@ -59,7 +59,7 @@ export class PatientSearchComponent implements OnInit {
       this.searchService.searchPatient(this.patientId, this.firstName, this.lastName)
         .subscribe(data => {
             console.log(data);
-            if(data == null) {
+            if(data === null || data.length === 0) {
               this.error = this.DATANOTFOUND;
             }
             else{

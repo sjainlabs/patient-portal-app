@@ -19,3 +19,9 @@ input:invalid {
 select {
    width: 112%;
 }
+
+.btn-success.disabled, .btn-success:disabled {
+  color: #fff;
+  background-color: #a0706d;
+  border-color: #a0706d;
+}

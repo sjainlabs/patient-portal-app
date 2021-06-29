@@ -10,6 +10,7 @@ import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -45,12 +46,15 @@ public class PatientService {
 
       final Optional<List<PatientEntity>> patientEntity = patientPersistence.searchPatient(id,firstName,lastName);
       log.debug("searched patient {}", patientEntity);
-      final List<Patient> patients = patientEntity.get().stream().map(patientEntity1 -> {
-        return patientEntityMapper.PatientEntityTOPatient(patientEntity1);
+      List<Patient> patients = Arrays.asList();
+      if(patientEntity.isPresent()) {
 
-      }).collect(Collectors.toList());
+         patients = patientEntity.get().stream().map(patientEntity1 -> {
+          return patientEntityMapper.PatientEntityTOPatient(patientEntity1);
+
+        }).collect(Collectors.toList());
 //      Patient patient= patientEntityMapper.PatientEntityTOPatient(patientEntity);
-
+      }
       return Optional.ofNullable(patients);
     }
 
