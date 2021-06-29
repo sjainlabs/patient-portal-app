@@ -50,7 +50,7 @@
         <td>{{visit.visitDate}} </td>
         <td>{{visit.symptoms}} </td>
         <td>{{visit.prescription}} </td>
-        <td>{{visit.followUpDate}} </td>
+        <td >{{visit.followUpDate}} </td>
         <td>{{visit.notes}} </td>
       </tr>
 
@@ -63,25 +63,26 @@
             (ngSubmit)="onSubmitVisit(visitFormData.value)" novalidate>
         <div>
           <label>Symptoms:
-            <input type="text"  formControlName="symptoms" class="form-control">
+            <textarea type="text"  formControlName="symptoms" class="form-control" rows="5" cols="50" placeholder="Fever,Cold ,Nausea etc..."></textarea>
           </label>
         </div>
 
         <div>
           <label>Prescription:
-            <input type="text"  formControlName="prescription"  class="form-control">
+            <textarea type="text"  formControlName="prescription"  class="form-control" rows="5" cols="50" placeholder="paracetamol, ibuprofen etc"></textarea>
           </label>
         </div>
 
         <div>
           <label>Followup Days:
-            <input type="text" formControlName="followUpDays" class="form-control">
+            <input type="text" formControlName="followUpDays" class="form-control" (keypress)="patientHelper.numberOnly($event)" placeholder="7">
           </label>
         </div>
 
         <div>
           <label>Notes:
-            <input type="text" formControlName="notes" class="form-control">
+            <textarea type="text" formControlName="notes" class="form-control"  rows="3" cols="50" placeholder="Additiona Notes - Blood work,X-Ray needed, Referral to a speaciaist etc">
+            </textarea>
           </label>
         </div>
 

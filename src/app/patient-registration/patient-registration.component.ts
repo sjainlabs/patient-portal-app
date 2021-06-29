@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {PatientRegistrationService} from "../service/patient-registration.service";
+import {PatientHelper} from "../helper/PatientHelper";
 
 @Component({
   selector: 'app-patient-registration',
@@ -18,8 +19,13 @@ export class PatientRegistrationComponent  {
   totalDatesOfBirth=[];
   totalMonthOfBirth=[];
   totalDatesOfYear=[];
+  patientHelper: PatientHelper;
 
-  constructor(private patientRegistrationService: PatientRegistrationService, private fb: FormBuilder) {
+  constructor(private patientRegistrationService: PatientRegistrationService,
+              private fb: FormBuilder,
+
+             ) {
+    this.patientHelper = new PatientHelper();
     this.show = false;
     this.processing= false;
     this.createForm();

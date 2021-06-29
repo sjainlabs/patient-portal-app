@@ -24,7 +24,8 @@ import { PatientHeaderComponent } from './patient-header/patient-header.componen
     PagenotfoundComponent,
     LoaderSpinComponent,
     PatientHistoryComponent,
-    PatientHeaderComponent
+    PatientHeaderComponent,
+    // PatientHelper
   ],
   imports: [
     BrowserModule,

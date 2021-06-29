@@ -52,7 +52,7 @@
         <div>
           <label>
             Age:
-            <input type="text" (keypress)="numberOnly($event)" formControlName="age" required class="form-control" placeholder="33" maxlength="3">
+            <input type="text" (keypress)="patientHelper.numberOnly($event)" formControlName="age" required class="form-control" placeholder="33" maxlength="3">
           </label>
         </div>
 
@@ -143,21 +143,21 @@
         <div>
           <label>
             ZipCode:
-            <input type="text" formControlName="zipCode" (keypress)="numberOnly($event)" class="form-control" placeholder="302001" maxlength="10">
+            <input type="text" formControlName="zipCode" (keypress)="patientHelper.numberOnly($event)" class="form-control" placeholder="302001" maxlength="10">
           </label>
         </div>
 
         <div>
           <label>
             Contact:
-            <input type="text" formControlName="contact" (keypress)="numberOnly($event)" required class="form-control" maxlength="15" placeholder="919545864800">
+            <input type="text" formControlName="contact" (keypress)="patientHelper.numberOnly($event)" required class="form-control" maxlength="15" placeholder="919545864800">
           </label>
         </div>
 
         <div>
           <label>
             Emeregency Contact:
-            <input type="text" formControlName="emergencyContact" (keypress)="numberOnly($event)" class="form-control" maxlength="15" placeholder="919545864800">
+            <input type="text" formControlName="emergencyContact" (keypress)="patientHelper.numberOnly($event)" class="form-control" maxlength="15" placeholder="919545864800">
           </label>
         </div>
 
@@ -199,14 +199,14 @@
         <div>
           <label>
             Weight(Kg):
-            <input type="text" formControlName="weight" (keypress)="numberOnly($event)" class="form-control" placeholder="72">
+            <input type="text" formControlName="weight" (keypress)="patientHelper.numberOnly($event)" class="form-control" placeholder="72">
           </label>
         </div>
 
         <div>
           <label>
             Height(Centimeter):
-            <input type="text" formControlName="height" class="form-control" placeholder="174">
+            <input type="text" formControlName="height" class="form-control" placeholder="174" (keypress)="patientHelper.numberOnly($event)">
           </label>
         </div>
 

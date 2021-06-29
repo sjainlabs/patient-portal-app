@@ -6,6 +6,7 @@ import {stringDistance} from "codelyzer/util/utils";
 import {VisitData} from "../model/VisitData";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {p} from "@angular/core/src/render3";
+import {PatientHelper} from "../helper/PatientHelper";
 
 @Component({
   selector: 'app-patient-history',
@@ -21,12 +22,14 @@ export class PatientHistoryComponent implements OnInit {
   DATANOTFOUND= 'No Visits Found for the Patient!';
   newVisitFlag: boolean ;
   visitFormData :  FormGroup;
+  patientHelper: PatientHelper;
 
   constructor(private searchDataService: SearchDataServiceService,
               private patientVisitSearchService: PatientVisitSearchService,
               private fb: FormBuilder) {
     this.patientId=1;
     this.createForm();
+    this.patientHelper = new PatientHelper();
   }
 
   ngOnInit() {
