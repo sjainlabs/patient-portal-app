@@ -70,7 +70,7 @@ var AppComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
-            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
+            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")],
         })
     ], AppComponent);
     return AppComponent;
@@ -105,12 +105,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angular_6_datatable__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! angular-6-datatable */ "./node_modules/angular-6-datatable/index.js");
 /* harmony import */ var angular_6_datatable__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(angular_6_datatable__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _patient_history_patient_history_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./patient-history/patient-history.component */ "./src/app/patient-history/patient-history.component.ts");
+/* harmony import */ var _patient_header_patient_header_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./patient-header/patient-header.component */ "./src/app/patient-header/patient-header.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -137,7 +139,8 @@ var AppModule = /** @class */ (function () {
                 _patient_info_print_patient_info_print_component__WEBPACK_IMPORTED_MODULE_8__["PatientInfoPrintComponent"],
                 _pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_10__["PagenotfoundComponent"],
                 _loader_spin_loader_spin_component__WEBPACK_IMPORTED_MODULE_11__["LoaderSpinComponent"],
-                _patient_history_patient_history_component__WEBPACK_IMPORTED_MODULE_13__["PatientHistoryComponent"]
+                _patient_history_patient_history_component__WEBPACK_IMPORTED_MODULE_13__["PatientHistoryComponent"],
+                _patient_header_patient_header_component__WEBPACK_IMPORTED_MODULE_14__["PatientHeaderComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -163,7 +166,27 @@ var AppModule = /** @class */ (function () {
                         path: 'history',
                         component: _patient_history_patient_history_component__WEBPACK_IMPORTED_MODULE_13__["PatientHistoryComponent"]
                     },
-                    { path: '', redirectTo: '/register', pathMatch: 'full' },
+                    { path: '', redirectTo: '/search', pathMatch: 'full' },
+                    { path: '**', component: _pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_10__["PagenotfoundComponent"] },
+                ]),
+                _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forChild([
+                    {
+                        path: 'register',
+                        component: _patient_registration_patient_registration_component__WEBPACK_IMPORTED_MODULE_5__["PatientRegistrationComponent"]
+                    },
+                    {
+                        path: 'search',
+                        component: _patient_search_patient_search_component__WEBPACK_IMPORTED_MODULE_4__["PatientSearchComponent"]
+                    },
+                    {
+                        path: 'print',
+                        component: _patient_info_print_patient_info_print_component__WEBPACK_IMPORTED_MODULE_8__["PatientInfoPrintComponent"]
+                    },
+                    {
+                        path: 'history',
+                        component: _patient_history_patient_history_component__WEBPACK_IMPORTED_MODULE_13__["PatientHistoryComponent"]
+                    },
+                    { path: '', redirectTo: '/search', pathMatch: 'full' },
                     { path: '**', component: _pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_10__["PagenotfoundComponent"] },
                 ])
             ],
@@ -178,6 +201,31 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/helper/PatientHelper.ts":
+/*!*****************************************!*\
+  !*** ./src/app/helper/PatientHelper.ts ***!
+  \*****************************************/
+/*! exports provided: PatientHelper */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientHelper", function() { return PatientHelper; });
+var PatientHelper = /** @class */ (function () {
+    function PatientHelper() {
+    }
+    PatientHelper.prototype.numberOnly = function (event) {
+        var patt = /^([0-9])$/;
+        var result = patt.test(event.key);
+        return result;
+    };
+    return PatientHelper;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/loader-spin/loader-spin.component.css":
 /*!*******************************************************!*\
   !*** ./src/app/loader-spin/loader-spin.component.css ***!
@@ -185,7 +233,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#loading{\r\n  position: absolute;\r\n  left: 50%;\r\n  top: 50%;\r\n  z-index: 1;\r\n  width: 150px;\r\n  height: 150px;\r\n  margin: -75px 0 0 -75px;\r\n  border: 16px solid #f3f3f3;\r\n  border-radius: 50%;\r\n  border-top: 16px solid #3498db;\r\n  width: 120px;\r\n  height: 120px;\r\n  -webkit-animation: spin 2s linear infinite;\r\n          animation: spin 2s linear infinite;\r\n}\r\n\r\n@-webkit-keyframes spin {\r\n  0% { transform: rotate(0deg); }\r\n  100% { transform: rotate(360deg); }\r\n}\r\n\r\n@keyframes spin {\r\n  0% { transform: rotate(0deg); }\r\n  100% { transform: rotate(360deg); }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9hZGVyLXNwaW4vbG9hZGVyLXNwaW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsUUFBUTtFQUNSLFVBQVU7RUFDVixZQUFZO0VBQ1osYUFBYTtFQUNiLHVCQUF1QjtFQUN2QiwwQkFBMEI7RUFDMUIsa0JBQWtCO0VBQ2xCLDhCQUE4QjtFQUM5QixZQUFZO0VBQ1osYUFBYTtFQUNiLDBDQUFrQztVQUFsQyxrQ0FBa0M7QUFDcEM7O0FBRUE7RUFDRSxLQUFLLHVCQUF1QixFQUFFO0VBQzlCLE9BQU8seUJBQXlCLEVBQUU7QUFDcEM7O0FBSEE7RUFDRSxLQUFLLHVCQUF1QixFQUFFO0VBQzlCLE9BQU8seUJBQXlCLEVBQUU7QUFDcEMiLCJmaWxlIjoic3JjL2FwcC9sb2FkZXItc3Bpbi9sb2FkZXItc3Bpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2xvYWRpbmd7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGxlZnQ6IDUwJTtcclxuICB0b3A6IDUwJTtcclxuICB6LWluZGV4OiAxO1xyXG4gIHdpZHRoOiAxNTBweDtcclxuICBoZWlnaHQ6IDE1MHB4O1xyXG4gIG1hcmdpbjogLTc1cHggMCAwIC03NXB4O1xyXG4gIGJvcmRlcjogMTZweCBzb2xpZCAjZjNmM2YzO1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBib3JkZXItdG9wOiAxNnB4IHNvbGlkICMzNDk4ZGI7XHJcbiAgd2lkdGg6IDEyMHB4O1xyXG4gIGhlaWdodDogMTIwcHg7XHJcbiAgYW5pbWF0aW9uOiBzcGluIDJzIGxpbmVhciBpbmZpbml0ZTtcclxufVxyXG5cclxuQGtleWZyYW1lcyBzcGluIHtcclxuICAwJSB7IHRyYW5zZm9ybTogcm90YXRlKDBkZWcpOyB9XHJcbiAgMTAwJSB7IHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IH1cclxufVxyXG4iXX0= */"
+module.exports = "#loading{\r\n  position: absolute;\r\n  left: 50%;\r\n  top: 50%;\r\n  z-index: 1;\r\n  width: 150px;\r\n  height: 150px;\r\n  margin: -75px 0 0 -75px;\r\n  border: 16px solid #f3f3f3;\r\n  border-radius: 50%;\r\n  border-top: 16px solid #3498db;\r\n  width: 120px;\r\n  height: 120px;\r\n  -webkit-animation: spin 2s linear infinite;\r\n          animation: spin 2s linear infinite;\r\n}\r\n\r\n@-webkit-keyframes spin {\r\n  0% { transform: rotate(0deg); }\r\n  100% { transform: rotate(360deg); }\r\n}\r\n\r\n@keyframes spin {\r\n  0% { transform: rotate(0deg); }\r\n  100% { transform: rotate(360deg); }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9hZGVyLXNwaW4vbG9hZGVyLXNwaW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFtQjtFQUNuQixVQUFVO0VBQ1YsU0FBUztFQUNULFdBQVc7RUFDWCxhQUFhO0VBQ2IsY0FBYztFQUNkLHdCQUF3QjtFQUN4QiwyQkFBMkI7RUFDM0IsbUJBQW1CO0VBQ25CLCtCQUErQjtFQUMvQixhQUFhO0VBQ2IsY0FBYztFQUNkLDJDQUFtQztVQUFuQyxtQ0FBbUM7Q0FDcEM7O0FBRUQ7RUFDRSxLQUFLLHdCQUF3QixFQUFFO0VBQy9CLE9BQU8sMEJBQTBCLEVBQUU7Q0FDcEM7O0FBSEQ7RUFDRSxLQUFLLHdCQUF3QixFQUFFO0VBQy9CLE9BQU8sMEJBQTBCLEVBQUU7Q0FDcEMiLCJmaWxlIjoic3JjL2FwcC9sb2FkZXItc3Bpbi9sb2FkZXItc3Bpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2xvYWRpbmd7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGxlZnQ6IDUwJTtcclxuICB0b3A6IDUwJTtcclxuICB6LWluZGV4OiAxO1xyXG4gIHdpZHRoOiAxNTBweDtcclxuICBoZWlnaHQ6IDE1MHB4O1xyXG4gIG1hcmdpbjogLTc1cHggMCAwIC03NXB4O1xyXG4gIGJvcmRlcjogMTZweCBzb2xpZCAjZjNmM2YzO1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBib3JkZXItdG9wOiAxNnB4IHNvbGlkICMzNDk4ZGI7XHJcbiAgd2lkdGg6IDEyMHB4O1xyXG4gIGhlaWdodDogMTIwcHg7XHJcbiAgYW5pbWF0aW9uOiBzcGluIDJzIGxpbmVhciBpbmZpbml0ZTtcclxufVxyXG5cclxuQGtleWZyYW1lcyBzcGluIHtcclxuICAwJSB7IHRyYW5zZm9ybTogcm90YXRlKDBkZWcpOyB9XHJcbiAgMTAwJSB7IHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IH1cclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -332,6 +380,70 @@ var PagenotfoundComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/patient-header/patient-header.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/patient-header/patient-header.component.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtaGVhZGVyL3BhdGllbnQtaGVhZGVyLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/patient-header/patient-header.component.html":
+/*!**************************************************************!*\
+  !*** ./src/app/patient-header/patient-header.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\n    <h1 class=\"siteTitle\">\n      {{ title }}\n    </h1>\n  </div>\n\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\n    <!-- Links -->\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item\">\n        <a routerLink=\"../search\" class=\"nav-link\" routerLinkActive=\"active\">Patient Search </a>\n      </li>\n      <li class=\"nav-item\">\n        <a routerLink=\"../register\" class=\"nav-link\" routerLinkActive=\"active\">Patient Registration</a>\n      </li>\n    </ul>\n  </nav>\n\n  <div style=\"text-align:center\">\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/patient-header/patient-header.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/patient-header/patient-header.component.ts ***!
+  \************************************************************/
+/*! exports provided: PatientHeaderComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientHeaderComponent", function() { return PatientHeaderComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PatientHeaderComponent = /** @class */ (function () {
+    function PatientHeaderComponent() {
+        this.title = 'Patient Portal';
+    }
+    PatientHeaderComponent.prototype.ngOnInit = function () {
+    };
+    PatientHeaderComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-patient-header',
+            template: __webpack_require__(/*! ./patient-header.component.html */ "./src/app/patient-header/patient-header.component.html"),
+            styles: [__webpack_require__(/*! ./patient-header.component.css */ "./src/app/patient-header/patient-header.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], PatientHeaderComponent);
+    return PatientHeaderComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/patient-history/patient-history.component.css":
 /*!***************************************************************!*\
   !*** ./src/app/patient-history/patient-history.component.css ***!
@@ -339,7 +451,7 @@ var PagenotfoundComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#visits {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n  border-collapse: collapse;\r\n  width: 100%;\r\n}\r\n\r\n#visits td, #visits th {\r\n  border: 1px solid #ddd;\r\n  padding: 8px;\r\n}\r\n\r\n#visits tr:nth-child(even){background-color: #f2f2f2;}\r\n\r\n#visits tr:hover {background-color: #ddd;}\r\n\r\n#visits th {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  background-color: #0072ff8a;\r\n  color: white;\r\n}\r\n\r\n#visitHeader{\r\n  font-family: Arial, Helvetica, sans-serif;\r\n  width: 100%;\r\n}\r\n\r\n#visitHeader  td {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  padding: 8px;\r\n\r\n}\r\n\r\n#mainVisitHeader{\r\n  /*border: 7px solid*/\r\n}\r\n\r\n#newVisit {\r\n\r\n\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1oaXN0b3J5L3BhdGllbnQtaGlzdG9yeS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UseUNBQXlDO0VBQ3pDLHlCQUF5QjtFQUN6QixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxzQkFBc0I7RUFDdEIsWUFBWTtBQUNkOztBQUVBLDJCQUEyQix5QkFBeUIsQ0FBQzs7QUFFckQsa0JBQWtCLHNCQUFzQixDQUFDOztBQUV6QztFQUNFLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsZ0JBQWdCO0VBQ2hCLDJCQUEyQjtFQUMzQixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSx5Q0FBeUM7RUFDekMsV0FBVztBQUNiOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUNwQixnQkFBZ0I7RUFDaEIsWUFBWTs7QUFFZDs7QUFFQTtFQUNFLG9CQUFvQjtBQUN0Qjs7QUFHQTs7O0FBR0EiLCJmaWxlIjoic3JjL2FwcC9wYXRpZW50LWhpc3RvcnkvcGF0aWVudC1oaXN0b3J5LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjdmlzaXRzIHtcclxuICBmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjtcclxuICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4jdmlzaXRzIHRkLCAjdmlzaXRzIHRoIHtcclxuICBib3JkZXI6IDFweCBzb2xpZCAjZGRkO1xyXG4gIHBhZGRpbmc6IDhweDtcclxufVxyXG5cclxuI3Zpc2l0cyB0cjpudGgtY2hpbGQoZXZlbil7YmFja2dyb3VuZC1jb2xvcjogI2YyZjJmMjt9XHJcblxyXG4jdmlzaXRzIHRyOmhvdmVyIHtiYWNrZ3JvdW5kLWNvbG9yOiAjZGRkO31cclxuXHJcbiN2aXNpdHMgdGgge1xyXG4gIHBhZGRpbmctdG9wOiAxMnB4O1xyXG4gIHBhZGRpbmctYm90dG9tOiAxMnB4O1xyXG4gIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogIzAwNzJmZjhhO1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuI3Zpc2l0SGVhZGVye1xyXG4gIGZvbnQtZmFtaWx5OiBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4jdmlzaXRIZWFkZXIgIHRkIHtcclxuICBwYWRkaW5nLXRvcDogMTJweDtcclxuICBwYWRkaW5nLWJvdHRvbTogMTJweDtcclxuICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gIHBhZGRpbmc6IDhweDtcclxuXHJcbn1cclxuXHJcbiNtYWluVmlzaXRIZWFkZXJ7XHJcbiAgLypib3JkZXI6IDdweCBzb2xpZCovXHJcbn1cclxuXHJcblxyXG4jbmV3VmlzaXQge1xyXG5cclxuXHJcbn1cclxuXHJcbiJdfQ== */"
+module.exports = "#visits {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n  border-collapse: collapse;\r\n  width: 100%;\r\n}\r\n\r\n#visits td, #visits th {\r\n  border: 1px solid #ddd;\r\n  padding: 8px;\r\n}\r\n\r\n#visits tr:nth-child(even){background-color: #f2f2f2;}\r\n\r\n#visits tr:hover {background-color: #ddd;}\r\n\r\n#visits th {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  background-color: #0072ff8a;\r\n  color: white;\r\n}\r\n\r\n#visitHeader{\r\n  font-family: Arial, Helvetica, sans-serif;\r\n  width: 100%;\r\n}\r\n\r\n#visitHeader  td {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  padding: 8px;\r\n\r\n}\r\n\r\n#mainVisitHeader{\r\n  /*border: 7px solid*/\r\n}\r\n\r\n#newVisit {\r\n\r\n\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1oaXN0b3J5L3BhdGllbnQtaGlzdG9yeS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsMENBQTBDO0VBQzFDLDBCQUEwQjtFQUMxQixZQUFZO0NBQ2I7O0FBRUQ7RUFDRSx1QkFBdUI7RUFDdkIsYUFBYTtDQUNkOztBQUVELDJCQUEyQiwwQkFBMEIsQ0FBQzs7QUFFdEQsa0JBQWtCLHVCQUF1QixDQUFDOztBQUUxQztFQUNFLGtCQUFrQjtFQUNsQixxQkFBcUI7RUFDckIsaUJBQWlCO0VBQ2pCLDRCQUE0QjtFQUM1QixhQUFhO0NBQ2Q7O0FBRUQ7RUFDRSwwQ0FBMEM7RUFDMUMsWUFBWTtDQUNiOztBQUVEO0VBQ0Usa0JBQWtCO0VBQ2xCLHFCQUFxQjtFQUNyQixpQkFBaUI7RUFDakIsYUFBYTs7Q0FFZDs7QUFFRDtFQUNFLHFCQUFxQjtDQUN0Qjs7QUFHRDs7O0NBR0MiLCJmaWxlIjoic3JjL2FwcC9wYXRpZW50LWhpc3RvcnkvcGF0aWVudC1oaXN0b3J5LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjdmlzaXRzIHtcclxuICBmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjtcclxuICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4jdmlzaXRzIHRkLCAjdmlzaXRzIHRoIHtcclxuICBib3JkZXI6IDFweCBzb2xpZCAjZGRkO1xyXG4gIHBhZGRpbmc6IDhweDtcclxufVxyXG5cclxuI3Zpc2l0cyB0cjpudGgtY2hpbGQoZXZlbil7YmFja2dyb3VuZC1jb2xvcjogI2YyZjJmMjt9XHJcblxyXG4jdmlzaXRzIHRyOmhvdmVyIHtiYWNrZ3JvdW5kLWNvbG9yOiAjZGRkO31cclxuXHJcbiN2aXNpdHMgdGgge1xyXG4gIHBhZGRpbmctdG9wOiAxMnB4O1xyXG4gIHBhZGRpbmctYm90dG9tOiAxMnB4O1xyXG4gIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogIzAwNzJmZjhhO1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuI3Zpc2l0SGVhZGVye1xyXG4gIGZvbnQtZmFtaWx5OiBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4jdmlzaXRIZWFkZXIgIHRkIHtcclxuICBwYWRkaW5nLXRvcDogMTJweDtcclxuICBwYWRkaW5nLWJvdHRvbTogMTJweDtcclxuICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gIHBhZGRpbmc6IDhweDtcclxuXHJcbn1cclxuXHJcbiNtYWluVmlzaXRIZWFkZXJ7XHJcbiAgLypib3JkZXI6IDdweCBzb2xpZCovXHJcbn1cclxuXHJcblxyXG4jbmV3VmlzaXQge1xyXG5cclxuXHJcbn1cclxuXHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -350,7 +462,7 @@ module.exports = "#visits {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <h1 class=\"siteTitle\">\r\n      {{ title }}\r\n    </h1>\r\n  </div>\r\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\r\n    <!-- Links -->\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"../register\" class=\"nav-link\">Patient Registration</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div style=\"text-align:center\">\r\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\r\n  </div>\r\n\r\n  <div id=\"loadin\">\r\n    <app-loader-spin></app-loader-spin>\r\n  </div>\r\n<br>\r\n\r\n  <div id=\"mainVisitHeader\" class=\" container \">\r\n    <div id=\"newVisit\">\r\n    <label style=\"color: red\"> {{error}}</label>\r\n\r\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n      <br>\r\n      <div *ngIf=\"!newVisitFlag\">\r\n        <span>Please Click to Add a new Visit - </span>\r\n\r\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"addVisit()\">New Visit</button>\r\n        <!--      </a>-->\r\n      </div>\r\n  </div>\r\n\r\n  <div  *ngIf=\"error=='' && !newVisitFlag\">\r\n    <table id=\"visitHeader\">\r\n      <tr>\r\n        <td>Name : {{patientVisitData[0].patientEntity.firstName}}</td>\r\n        <td>DOB :  {{patientVisitData[0].patientEntity.firstName}}</td>\r\n        <td>Patient Id : {{patientVisitData[0].patientEntity.id}}</td>\r\n      </tr>\r\n\r\n    </table>\r\n<br>\r\n\r\n    <table id=\"visits\" class=\"table\">\r\n      <thead>\r\n      <tr>\r\n        <th>Visit Date</th>\r\n        <th>Symptoms</th>\r\n        <th>Prescription</th>\r\n        <th>FollowUp Date</th>\r\n        <th>Notes</th>\r\n      </tr>\r\n      </thead>\r\n      <tbody>\r\n      <tr *ngFor=\"let visit of patientVisitData\">\r\n        <td>{{visit.visitDate}} </td>\r\n        <td>{{visit.symptoms}} </td>\r\n        <td>{{visit.prescription}} </td>\r\n        <td>{{visit.followUpDate}} </td>\r\n        <td>{{visit.notes}} </td>\r\n      </tr>\r\n\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n\r\n    <div *ngIf=\"newVisitFlag && error==''\">\r\n      <form [formGroup]=\"visitFormData\"\r\n            (ngSubmit)=\"onSubmitVisit(visitFormData.value)\" novalidate>\r\n        <div>\r\n          <label>Symptoms:\r\n            <input type=\"text\"  formControlName=\"symptoms\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>Prescription:\r\n            <input type=\"text\"  formControlName=\"prescription\"  class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>Followup Days:\r\n            <input type=\"text\" formControlName=\"followUpDays\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>Notes:\r\n            <input type=\"text\" formControlName=\"notes\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <button type=\"submit\"\r\n                [disabled]=\"visitFormData.pristine || visitFormData.invalid\" class=\"btn btn-success\">\r\n          Submit\r\n        </button>\r\n\r\n      </form>\r\n  </div>\r\n</div>\r\n</div>\r\n"
+module.exports = "<div>\r\n\r\n<app-patient-header></app-patient-header>\r\n\r\n<br>\r\n\r\n  <div id=\"loadin\">\r\n    <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n  <div id=\"mainVisitHeader\" class=\" container \">\r\n    <div id=\"newVisit\">\r\n    <label style=\"color: red\"> {{error}}</label>\r\n\r\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n      <br>\r\n      <div *ngIf=\"!newVisitFlag\">\r\n        <span>Please Click to Add a new Visit - </span>\r\n\r\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"addVisit()\">New Visit</button>\r\n        <!--      </a>-->\r\n      </div>\r\n  </div>\r\n\r\n  <div  *ngIf=\"error=='' && !newVisitFlag\">\r\n    <table id=\"visitHeader\">\r\n      <tr>\r\n        <td>Name : {{patientVisitData[0].patientEntity.firstName}}</td>\r\n        <td>DOB :  {{patientVisitData[0].patientEntity.firstName}}</td>\r\n        <td>Patient Id : {{patientVisitData[0].patientEntity.id}}</td>\r\n      </tr>\r\n\r\n    </table>\r\n<br>\r\n\r\n\r\n\r\n    <table id=\"visits\" class=\"table\">\r\n      <thead>\r\n      <tr>\r\n        <th>Visit Date</th>\r\n        <th>Symptoms</th>\r\n        <th>Prescription</th>\r\n        <th>FollowUp Date</th>\r\n        <th>Notes</th>\r\n      </tr>\r\n      </thead>\r\n      <tbody>\r\n      <tr *ngFor=\"let visit of patientVisitData\">\r\n        <td>{{visit.visitDate}} </td>\r\n        <td>{{visit.symptoms}} </td>\r\n        <td>{{visit.prescription}} </td>\r\n        <td >{{visit.followUpDate}} </td>\r\n        <td>{{visit.notes}} </td>\r\n      </tr>\r\n\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n\r\n    <div *ngIf=\"newVisitFlag && error==''\">\r\n      <form [formGroup]=\"visitFormData\"\r\n            (ngSubmit)=\"onSubmitVisit(visitFormData.value)\" novalidate>\r\n        <div>\r\n          <label>Symptoms:\r\n            <textarea type=\"text\"  formControlName=\"symptoms\" class=\"form-control\" rows=\"5\" cols=\"50\" placeholder=\"Fever,Cold ,Nausea etc...\"></textarea>\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>Prescription:\r\n            <textarea type=\"text\"  formControlName=\"prescription\"  class=\"form-control\" rows=\"5\" cols=\"50\" placeholder=\"paracetamol, ibuprofen etc\"></textarea>\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>Followup Days:\r\n            <input type=\"text\" formControlName=\"followUpDays\" class=\"form-control\" (keypress)=\"patientHelper.numberOnly($event)\" placeholder=\"7\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>Notes:\r\n            <textarea type=\"text\" formControlName=\"notes\" class=\"form-control\"  rows=\"3\" cols=\"50\" placeholder=\"Additiona Notes - Blood work,X-Ray needed, Referral to a speaciaist etc\">\r\n            </textarea>\r\n          </label>\r\n        </div>\r\n\r\n        <button type=\"submit\"\r\n                [disabled]=\"visitFormData.pristine || visitFormData.invalid\" class=\"btn btn-success\">\r\n          Submit\r\n        </button>\r\n\r\n      </form>\r\n  </div>\r\n</div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -369,6 +481,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _model_PatientData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../model/PatientData */ "./src/app/model/PatientData.ts");
 /* harmony import */ var _service_patient_visit_search_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/patient-visit-search.service */ "./src/app/service/patient-visit-search.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _helper_PatientHelper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helper/PatientHelper */ "./src/app/helper/PatientHelper.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -383,6 +496,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var PatientHistoryComponent = /** @class */ (function () {
     function PatientHistoryComponent(searchDataService, patientVisitSearchService, fb) {
         this.searchDataService = searchDataService;
@@ -390,9 +504,9 @@ var PatientHistoryComponent = /** @class */ (function () {
         this.fb = fb;
         this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
         this.DATANOTFOUND = 'No Visits Found for the Patient!';
-        this.title = 'Patient Portal';
         this.patientId = 1;
         this.createForm();
+        this.patientHelper = new _helper_PatientHelper__WEBPACK_IMPORTED_MODULE_5__["PatientHelper"]();
     }
     PatientHistoryComponent.prototype.ngOnInit = function () {
         this.getPatientVisit();
@@ -416,6 +530,7 @@ var PatientHistoryComponent = /** @class */ (function () {
     };
     PatientHistoryComponent.prototype.getPatientVisit = function () {
         var _this = this;
+        this.showLoader();
         var searchData1 = this.getPatientDataFromSearch();
         this.patientId = Number(searchData1.id);
         var patientId = Number(searchData1.id);
@@ -493,7 +608,7 @@ var PatientHistoryComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/*.firstRow{*/\r\n/*  border-top: 2px solid black;*/\r\n/*  border-left: 2px solid black;*/\r\n/*  border-right: 2px solid black;*/\r\n/*}*/\r\n/*.secondRow{*/\r\n/*  border-style: solid;*/\r\n/*  border-width: 2px;*/\r\n/*}*/\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1pbmZvLXByaW50L3BhdGllbnQtaW5mby1wcmludC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGFBQWE7QUFDYixpQ0FBaUM7QUFDakMsa0NBQWtDO0FBQ2xDLG1DQUFtQztBQUNuQyxJQUFJO0FBQ0osY0FBYztBQUNkLHlCQUF5QjtBQUN6Qix1QkFBdUI7QUFDdkIsSUFBSSIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtaW5mby1wcmludC9wYXRpZW50LWluZm8tcHJpbnQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qLmZpcnN0Um93eyovXHJcbi8qICBib3JkZXItdG9wOiAycHggc29saWQgYmxhY2s7Ki9cclxuLyogIGJvcmRlci1sZWZ0OiAycHggc29saWQgYmxhY2s7Ki9cclxuLyogIGJvcmRlci1yaWdodDogMnB4IHNvbGlkIGJsYWNrOyovXHJcbi8qfSovXHJcbi8qLnNlY29uZFJvd3sqL1xyXG4vKiAgYm9yZGVyLXN0eWxlOiBzb2xpZDsqL1xyXG4vKiAgYm9yZGVyLXdpZHRoOiAycHg7Ki9cclxuLyp9Ki9cclxuXHJcbiJdfQ== */"
+module.exports = "/*.firstRow{*/\r\n/*  border-top: 2px solid black;*/\r\n/*  border-left: 2px solid black;*/\r\n/*  border-right: 2px solid black;*/\r\n/*}*/\r\n/*.secondRow{*/\r\n/*  border-style: solid;*/\r\n/*  border-width: 2px;*/\r\n/*}*/\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1pbmZvLXByaW50L3BhdGllbnQtaW5mby1wcmludC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGNBQWM7QUFDZCxrQ0FBa0M7QUFDbEMsbUNBQW1DO0FBQ25DLG9DQUFvQztBQUNwQyxLQUFLO0FBQ0wsZUFBZTtBQUNmLDBCQUEwQjtBQUMxQix3QkFBd0I7QUFDeEIsS0FBSyIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtaW5mby1wcmludC9wYXRpZW50LWluZm8tcHJpbnQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qLmZpcnN0Um93eyovXHJcbi8qICBib3JkZXItdG9wOiAycHggc29saWQgYmxhY2s7Ki9cclxuLyogIGJvcmRlci1sZWZ0OiAycHggc29saWQgYmxhY2s7Ki9cclxuLyogIGJvcmRlci1yaWdodDogMnB4IHNvbGlkIGJsYWNrOyovXHJcbi8qfSovXHJcbi8qLnNlY29uZFJvd3sqL1xyXG4vKiAgYm9yZGVyLXN0eWxlOiBzb2xpZDsqL1xyXG4vKiAgYm9yZGVyLXdpZHRoOiAycHg7Ki9cclxuLyp9Ki9cclxuXHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -574,7 +689,7 @@ var PatientInfoPrintComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\ninput[type=number] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\ninput:invalid {\r\n  border: 2px dashed red;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1yZWdpc3RyYXRpb24vcGF0aWVudC1yZWdpc3RyYXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLHNCQUFzQjtBQUN4QiIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtcmVnaXN0cmF0aW9uL3BhdGllbnQtcmVnaXN0cmF0aW9uLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpbnB1dFt0eXBlPXRleHRdIHtcclxuICB3aWR0aDogMTAwJTtcclxuICBwYWRkaW5nOiAxMnB4IDIwcHg7XHJcbiAgbWFyZ2luOiA4cHggMDtcclxuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG59XHJcblxyXG5pbnB1dFt0eXBlPW51bWJlcl0ge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHBhZGRpbmc6IDEycHggMjBweDtcclxuICBtYXJnaW46IDhweCAwO1xyXG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbn1cclxuXHJcbmlucHV0OmludmFsaWQge1xyXG4gIGJvcmRlcjogMnB4IGRhc2hlZCByZWQ7XHJcbn1cclxuIl19 */"
+module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\ninput[type=number] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\ninput:invalid {\r\n  border: 2px dashed red;\r\n}\r\n\r\nselect {\r\n   width: 112%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1yZWdpc3RyYXRpb24vcGF0aWVudC1yZWdpc3RyYXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQVk7RUFDWixtQkFBbUI7RUFDbkIsY0FBYztFQUNkLHVCQUF1QjtDQUN4Qjs7QUFFRDtFQUNFLFlBQVk7RUFDWixtQkFBbUI7RUFDbkIsY0FBYztFQUNkLHVCQUF1QjtDQUN4Qjs7QUFFRDtFQUNFLHVCQUF1QjtDQUN4Qjs7QUFFRDtHQUNHLFlBQVk7Q0FDZCIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtcmVnaXN0cmF0aW9uL3BhdGllbnQtcmVnaXN0cmF0aW9uLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpbnB1dFt0eXBlPXRleHRdIHtcclxuICB3aWR0aDogMTAwJTtcclxuICBwYWRkaW5nOiAxMnB4IDIwcHg7XHJcbiAgbWFyZ2luOiA4cHggMDtcclxuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG59XHJcblxyXG5pbnB1dFt0eXBlPW51bWJlcl0ge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHBhZGRpbmc6IDEycHggMjBweDtcclxuICBtYXJnaW46IDhweCAwO1xyXG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbn1cclxuXHJcbmlucHV0OmludmFsaWQge1xyXG4gIGJvcmRlcjogMnB4IGRhc2hlZCByZWQ7XHJcbn1cclxuXHJcbnNlbGVjdCB7XHJcbiAgIHdpZHRoOiAxMTIlO1xyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -585,7 +700,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <h1 class=\"siteTitle\">\r\n      {{ title }}\r\n    </h1>\r\n  </div>\r\n\r\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\r\n    <!-- Links -->\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\">Patient Registration</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"../search\" class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div style=\"text-align:center\">\r\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\r\n  </div>\r\n\r\n  <div id=\"loadin\">\r\n    <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n\r\n  <div class=\"container\">\r\n    <!--<div  style=\"background-color: mintcream\">-->\r\n    <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\r\n    <!--<h1>-->\r\n    <!--{{ title }}!-->\r\n    <!--</h1>-->\r\n    <!--<img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\r\n    <!--</div>-->\r\n\r\n    <div *ngIf=\"show && processing\"> Registration Completed! Patient Id : {{patientIdCreated}}\r\n      <button (click)=\"addNewPatientAgain()\"> Click here to Add a new Patient</button>\r\n    </div>\r\n\r\n    <div *ngIf=\"error !== '' \">\r\n      <p style=\"color: red\"> {{error}} </p>\r\n    </div>\r\n    <div *ngIf=\"!show && error === '' && !processing\">\r\n      <form [formGroup]=\"patientFormData\" (ngSubmit)=\"onSubmit(patientFormData.value)\" novalidate>\r\n\r\n        <div>\r\n          <label>\r\n           First Name:\r\n\r\n            <input id=\"firstName\" type=\"text\" formControlName=\"firstName\" class=\"form-control\" required=\"\">\r\n\r\n            <div *ngIf=\"patientFormData.controls['firstName'].invalid && (patientFormData.controls['firstName'].dirty\r\n             || patientFormData.controls['firstName'].touched)\" class=\"alert alert-danger\">\r\n              <div *ngIf=\"patientFormData.controls['firstName'].errors.required\">\r\n                First Name is required.\r\n              </div>\r\n            </div>\r\n          </label>\r\n        </div>\r\n        <!--<div *ngIf=\"firstName.errors.required\"> First Name is required</div>-->\r\n        <div>\r\n          <label>\r\n            Last Name:\r\n            <input type=\"text\" formControlName=\"lastName\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div>\r\n          <label>\r\n            Age:\r\n            <input type=\"text\" (keypress)=\"numberOnly($event)\" formControlName=\"age\" required class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Date Of Birth:\r\n            <input type=\"text\"  formControlName=\"dateOfBirth\" required class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            <P>Gender:</P>\r\n            <input type=\"radio\" id=\"male\" formControlName=\"gender\" value=\"male\">\r\n            <label for=\"male\">Male</label><br>\r\n            <input type=\"radio\" id=\"female\" formControlName=\"gender\" value=\"female\">\r\n            <label for=\"female\">Female</label><br>\r\n            <input type=\"radio\" id=\"other\" formControlName=\"gender\" value=\"other\">\r\n            <label for=\"other\">Other</label>\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Address:\r\n            <input type=\"text\" formControlName=\"address\" class=\"form-control\" >\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            City:\r\n            <input type=\"text\" formControlName=\"city\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            State:\r\n            <input type=\"text\" formControlName=\"state\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            ZipCode:\r\n            <input type=\"text\" formControlName=\"zipCode\" (keypress)=\"numberOnly($event)\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Contact:\r\n            <input type=\"text\" formControlName=\"contact\" (keypress)=\"numberOnly($event)\" required class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Emeregency Contact:\r\n            <input type=\"text\" formControlName=\"emergencyContact\" (keypress)=\"numberOnly($event)\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Care of:\r\n            <input type=\"text\" formControlName=\"careOf\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Email:\r\n            <input type=\"email\" formControlName=\"email\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Personal Identification Type:\r\n            <select name=\"personalIdType\" id=\"personalIdType\" formControlName=\"personalIdType\" class=\"form-control\">\r\n              <option value=\"1\">Aadhar Card</option>\r\n              <option value=\"2\">Driving License</option>\r\n              <option value=\"3\">Passport</option>\r\n              <option value=\"4\">Voter Id</option>\r\n              <option value=\"5\">Pan Card</option>\r\n            </select>\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Personal Identification:\r\n            <input type=\"text\" formControlName=\"personalId\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Weight:\r\n            <input type=\"text\" formControlName=\"weight\" (keypress)=\"numberOnly($event)\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Height:\r\n            <input type=\"text\" formControlName=\"height\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n\r\n        <div>\r\n          <label>\r\n            Doctor Name:\r\n            <input type=\"text\" formControlName=\"doctorName\" class=\"form-control\">\r\n          </label>\r\n        </div>\r\n\r\n        <!--<div>-->\r\n          <!--<label>-->\r\n            <!--<p> Symptoms: </p>-->\r\n            <!--<textarea type=\"text\" formControlName=\"symptoms\" rows=\"4\" cols=\"50\" class=\"form-control\"></textarea>-->\r\n          <!--</label>-->\r\n        <!--</div>-->\r\n\r\n\r\n        <div>\r\n          <!--<label>-->\r\n            <!--<p> Prescription: </p>-->\r\n            <!--<textarea  formControlName=\"prescription\" rows=\"4\" cols=\"50\" class=\"form-control\"></textarea>-->\r\n          <!--</label>-->\r\n        </div>\r\n\r\n        <!--<div>-->\r\n          <!--<label>-->\r\n            <!--<p> Additional Notes: </p>-->\r\n            <!--<textarea type=\"text\" formControlName=\"additionalNotes\" rows=\"4\" cols=\"50\" class=\"form-control\"></textarea>-->\r\n          <!--</label>-->\r\n        <!--</div>-->\r\n\r\n\r\n        <button type=\"submit\"\r\n                [disabled]=\"patientFormData.pristine || patientFormData.invalid\" class=\"btn btn-success\">\r\n          Submit\r\n        </button>\r\n        <!--<button class=\"button\" type=\"submit\">Submit</button>-->\r\n\r\n      </form>\r\n\r\n      <!--</div>-->\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div>\r\n\r\n  <app-patient-header></app-patient-header>\r\n\r\n  <div id=\"loadin\">\r\n    <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n\r\n  <div class=\"container\">\r\n    <!--<div  style=\"background-color: mintcream\">-->\r\n    <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\r\n    <!--<h1>-->\r\n    <!--{{ title }}!-->\r\n    <!--</h1>-->\r\n    <!--<img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\r\n    <!--</div>-->\r\n\r\n    <div *ngIf=\"show && processing\"> Registration Completed! Patient Id : {{patientIdCreated}}\r\n      <button (click)=\"addNewPatientAgain()\"> Click here to Add a new Patient</button>\r\n    </div>\r\n\r\n    <div *ngIf=\"error !== '' \">\r\n      <p style=\"color: red\"> {{error}} </p>\r\n    </div>\r\n    <div *ngIf=\"!show && error === '' && !processing\">\r\n      <form [formGroup]=\"patientFormData\" (ngSubmit)=\"onSubmit(patientFormData.value)\" novalidate>\r\n\r\n        <div>\r\n          <label>\r\n           First Name:\r\n\r\n            <input id=\"firstName\" type=\"text\" formControlName=\"firstName\" class=\"form-control\" required=\"\" placeholder=\"Jon\">\r\n\r\n            <div *ngIf=\"patientFormData.controls['firstName'].invalid && (patientFormData.controls['firstName'].dirty\r\n             || patientFormData.controls['firstName'].touched)\" class=\"alert alert-danger\">\r\n              <div *ngIf=\"patientFormData.controls['firstName'].errors.required\">\r\n                First Name is required.\r\n              </div>\r\n            </div>\r\n          </label>\r\n        </div>\r\n        <!--<div *ngIf=\"firstName.errors.required\"> First Name is required</div>-->\r\n        <div>\r\n          <label>\r\n            Last Name:\r\n            <input type=\"text\" formControlName=\"lastName\" class=\"form-control\" placeholder=\"Doe\">\r\n          </label>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div>\r\n          <label>\r\n            Age:\r\n            <input type=\"text\" (keypress)=\"patientHelper.numberOnly($event)\" formControlName=\"age\" required class=\"form-control\" placeholder=\"33\" maxlength=\"3\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Date Of Birth:\r\n            <div class=\"form-row\">\r\n              <div class=\"form-group  col-4\">\r\n\r\n                <select name=\"birthDate\" id=\"birthDate\" formControlName=\"birthDate\" class=\"form-control\" [selectedIndex]=\"totalDatesOfBirth[0]\" required>\r\n\r\n                  <option *ngFor=\"let dd of totalDatesOfBirth\" [value]=\"dd\" >{{dd}}</option>\r\n                </select>\r\n\r\n              </div>\r\n              <div class=\"form-group  col-4\">\r\n\r\n\r\n                <select name=\"birthMonth\" id=\"birthMonth\" formControlName=\"birthMonth\" class=\"form-control\" [selectedIndex]=\"totalMonthOfBirth[0]\" required>\r\n\r\n                  <option *ngFor=\"let mm of totalMonthOfBirth\" [value]=\"mm\">{{mm}}</option>\r\n                </select>\r\n              </div>\r\n                <div class=\"form-group  col-4\">\r\n                  <select  id=\"birthYear\" formControlName=\"birthYear\" class=\"form-control\" [selectedIndex]=\"totalDatesOfYear[0]\" required> // value is an object\r\n                    <option *ngFor=\"let obj of totalDatesOfYear\" value=\"{{obj}}\">{{obj}}</option>\r\n                  </select>\r\n\r\n\r\n                </div>\r\n              </div>\r\n          </label>\r\n\r\n          <!--<div *ngIf=\"patientFormData.controls['firstName'].invalid && (patientFormData.controls['firstName'].dirty-->\r\n             <!--|| patientFormData.controls['firstName'].touched)\" class=\"alert alert-danger\">-->\r\n            <!--<div *ngIf=\"patientFormData.controls['firstName'].errors.required\">-->\r\n              <!--First Name is required.-->\r\n            <!--</div>-->\r\n\r\n          <div *ngIf=\"patientFormData.controls['birthDate'].invalid && (patientFormData.controls['birthDate'].dirty\r\n            && patientFormData.controls['birthMonth'].invalid && patientFormData.controls['birthMonth'].dirty\r\n            && patientFormData.controls['birthYear'].invalid && patientFormData.controls['birthYear'].dirty\r\n             || patientFormData.controls['birthDate'].touched\r\n             ||  patientFormData.controls['birthMonth'].touched\r\n             ||  patientFormData.controls['birthYear'].touched)\" class=\"alert alert-danger\">\r\n            <div *ngIf=\"patientFormData.controls['birthDate'].errors.required\r\n                        || patientFormData.controls['birthMonth'].errors.required\r\n                          || patientFormData.controls['birthYear'].errors.required\">\r\n             Date Of Birth is required!\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            <P>Gender:</P>\r\n            <input type=\"radio\" id=\"male\" formControlName=\"gender\" value=\"male\">\r\n            <label for=\"male\">Male</label><br>\r\n            <input type=\"radio\" id=\"female\" formControlName=\"gender\" value=\"female\">\r\n            <label for=\"female\">Female</label><br>\r\n            <input type=\"radio\" id=\"other\" formControlName=\"gender\" value=\"other\">\r\n            <label for=\"other\">Other</label>\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Address:\r\n            <input type=\"text\" formControlName=\"address\" class=\"form-control\" placeholder=\"1212 Rajendra Nagar\" >\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            City:\r\n            <input type=\"text\" formControlName=\"city\" class=\"form-control\" placeholder=\"Jaipur\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            State:\r\n            <input type=\"text\" formControlName=\"state\" class=\"form-control\" placeholder=\"Rajashthan\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            ZipCode:\r\n            <input type=\"text\" formControlName=\"zipCode\" (keypress)=\"patientHelper.numberOnly($event)\" class=\"form-control\" placeholder=\"302001\" maxlength=\"10\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Contact:\r\n            <input type=\"text\" formControlName=\"contact\" (keypress)=\"patientHelper.numberOnly($event)\" required class=\"form-control\" maxlength=\"15\" placeholder=\"919545864800\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Emeregency Contact:\r\n            <input type=\"text\" formControlName=\"emergencyContact\" (keypress)=\"patientHelper.numberOnly($event)\" class=\"form-control\" maxlength=\"15\" placeholder=\"919545864800\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Care of:\r\n            <input type=\"text\" formControlName=\"careOf\" class=\"form-control\" placeholder=\"Sri Ravi Jain\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Email:\r\n            <input type=\"email\" formControlName=\"email\" class=\"form-control\" placeholder=\"abc@gmail.com\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Personal Identification Type:\r\n            <select name=\"personalIdType\" id=\"personalIdType\" formControlName=\"personalIdType\" class=\"form-control\">\r\n              <option value=\"1\"></option>\r\n              <option value=\"2\">Aadhar Card</option>\r\n              <option value=\"3\">Driving License</option>\r\n              <option value=\"4\">Passport</option>\r\n              <option value=\"5\">Voter Id</option>\r\n              <option value=\"6\">Pan Card</option>\r\n            </select>\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Personal Identification:\r\n            <input type=\"text\" formControlName=\"personalId\" class=\"form-control\" placeholder=\"AT1234\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Weight(Kg):\r\n            <input type=\"text\" formControlName=\"weight\" (keypress)=\"patientHelper.numberOnly($event)\" class=\"form-control\" placeholder=\"72\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Height(Centimeter):\r\n            <input type=\"text\" formControlName=\"height\" class=\"form-control\" placeholder=\"174\" (keypress)=\"patientHelper.numberOnly($event)\">\r\n          </label>\r\n        </div>\r\n\r\n\r\n        <div>\r\n          <label>\r\n            Doctor Name:\r\n            <select name=\"doctorName\" id=\"doctorName\" formControlName=\"doctorName\" class=\"form-control\">\r\n              <option value=\"None\"></option>\r\n              <option value=\"Dr. Siddhart Jain\">Dr. Siddhart Jain</option>\r\n              <option value=\"Dr. Siddhart Jain\">Dr. Poonam Jain</option>\r\n            </select>\r\n          </label>\r\n        </div>\r\n\r\n\r\n\r\n\r\n        <button type=\"submit\"\r\n                [disabled]=\"patientFormData.pristine || patientFormData.invalid\" class=\"btn btn-success\">\r\n          Submit\r\n        </button>\r\n        <!--<button class=\"button\" type=\"submit\">Submit</button>-->\r\n\r\n      </form>\r\n\r\n      <!--</div>-->\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -602,6 +717,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _service_patient_registration_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/patient-registration.service */ "./src/app/service/patient-registration.service.ts");
+/* harmony import */ var _helper_PatientHelper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helper/PatientHelper */ "./src/app/helper/PatientHelper.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -614,27 +730,69 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var PatientRegistrationComponent = /** @class */ (function () {
     function PatientRegistrationComponent(patientRegistrationService, fb) {
         this.patientRegistrationService = patientRegistrationService;
         this.fb = fb;
         this.show = false;
         this.processing = false;
-        this.title = 'Patient Portal';
         this.error = '';
         this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
+        this.totalDatesOfBirth = [];
+        this.totalMonthOfBirth = [];
+        this.totalDatesOfYear = [];
+        this.patientHelper = new _helper_PatientHelper__WEBPACK_IMPORTED_MODULE_3__["PatientHelper"]();
         this.show = false;
         this.processing = false;
         this.createForm();
     }
     PatientRegistrationComponent.prototype.ngOnInit = function () {
         this.hideLoader();
+        this.createDatesOfBirth();
+        this.createMonthOfBirth();
+        this.creatYearOfBirthArray();
+    };
+    PatientRegistrationComponent.prototype.createDatesOfBirth = function () {
+        this.totalDatesOfBirth[0] = 'DD';
+        var index = 1;
+        var i;
+        for (i = 1; i <= 31; i++) {
+            this.totalDatesOfBirth[index] = i;
+            index++;
+        }
+        // this.totalDatesOfBirth = Array.from({length: 31}, (_, i) => i + 2);
+    };
+    PatientRegistrationComponent.prototype.createMonthOfBirth = function () {
+        this.totalMonthOfBirth[0] = 'MM';
+        var index = 1;
+        var i;
+        for (i = 1; i <= 12; i++) {
+            this.totalMonthOfBirth[index] = i;
+            index++;
+        }
+        // this.totalMonthOfBirth = Array.from({length: 12}, (_, i) => i + 2);
+    };
+    PatientRegistrationComponent.prototype.creatYearOfBirthArray = function () {
+        var currentYear = new Date().getFullYear();
+        this.totalDatesOfYear[0] = 'YYYY';
+        var index = 1;
+        var i;
+        // i=  currentYear;
+        for (i = currentYear; i > currentYear - 120; i--) {
+            this.totalDatesOfYear[index] = i;
+            index++;
+        }
     };
     PatientRegistrationComponent.prototype.onSubmit = function () {
         var _this = this;
         this.showLoader();
         // TODO: Use EventEmitter with form value
         console.log(this.patientFormData.value);
+        var dateOfBirth = this.patientFormData.getRawValue().birthYear + '-' + this.patientFormData.getRawValue().birthMonth + '-' + this.patientFormData.getRawValue().birthDate;
+        this.patientFormData.patchValue({
+            dateOfBirth: dateOfBirth
+        });
         this.show = true;
         this.patientRegistrationService.addPatient(this.patientFormData.value)
             .subscribe(function (s) {
@@ -660,6 +818,9 @@ var PatientRegistrationComponent = /** @class */ (function () {
             firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
             lastName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             dateOfBirth: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            birthDate: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+            birthMonth: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+            birthYear: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
             age: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             gender: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
             address: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
@@ -697,7 +858,8 @@ var PatientRegistrationComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./patient-registration.component.html */ "./src/app/patient-registration/patient-registration.component.html"),
             styles: [__webpack_require__(/*! ./patient-registration.component.css */ "./src/app/patient-registration/patient-registration.component.css")]
         }),
-        __metadata("design:paramtypes", [_service_patient_registration_service__WEBPACK_IMPORTED_MODULE_2__["PatientRegistrationService"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
+        __metadata("design:paramtypes", [_service_patient_registration_service__WEBPACK_IMPORTED_MODULE_2__["PatientRegistrationService"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
     ], PatientRegistrationComponent);
     return PatientRegistrationComponent;
 }());
@@ -724,7 +886,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div>\r\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\r\n    <h1 class=\"siteTitle\">\r\n      {{ title }}\r\n    </h1>\r\n  </div>\r\n\r\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\r\n    <!-- Links -->\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a routerLink=\"../register\" class=\"nav-link\">Patient Registration</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <div style=\"text-align:center\">\r\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\r\n  </div>\r\n\r\n  <div id=\"loadin\">\r\n  <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n  <div class=\"container\" *ngIf=\"!processing\">\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"firstName\">First Name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-3\">-->\r\n        <!--<input type=\"text\" id=\"firstName\">-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"lastName\">Last name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-4\">-->\r\n        <!--<input type=\"text\" id=\"lastName\">-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n        <label style=\"color: red\"> {{error}}</label>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Patient ID:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">First Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"firstName\" id=\"firstName\">\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Last Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"lastName\" id=\"lastName\">\r\n      </div>\r\n    </div>\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col\">-->\r\n        <!--<label>-->\r\n          <!--<input type=\"checkbox\"> Prescribe-->\r\n        <!--</label>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\">Search</button>\r\n        <!--      </a>-->\r\n      </div>\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n\r\n  <div class=\"container\" >\r\n    <div class=\"row\" *ngIf=\"multiple\">\r\n      <div class=\"col-sm-2\">\r\n        <table class=\"table table-striped\" [mfData]=\"data\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"5\">\r\n          <thead>\r\n          <tr>\r\n            <th style=\"width: 10%\">\r\n              <mfDefaultSorter by=\"id\"> Id</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"firstName\">First Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"lastName\">Last Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Contact</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Date Of Birth</mfDefaultSorter>\r\n            </th>\r\n\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Personal Identification</mfDefaultSorter>\r\n            </th>\r\n          </tr>\r\n          </thead>\r\n          <tbody>\r\n          <tr *ngFor=\"let item of mf.data\">\r\n            <td>{{item.id}}</td>\r\n            <td>{{item.firstName}}</td>\r\n            <td>{{item.lastName}}</td>\r\n            <td>{{item.contact}}</td>\r\n            <td>{{item.dateOfBirth}}</td>\r\n            <td>{{item.personalId}}</td>\r\n            <td>\r\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"printPage(item)\">Print</button>\r\n            </td>\r\n            <td>\r\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"viewHistory(item)\">Visit History</button>\r\n            </td>\r\n\r\n          </tr>\r\n          </tbody>\r\n          <tfoot>\r\n          <tr>\r\n            <td colspan=\"4\">\r\n              <mfBootstrapPaginator [rowsOnPageSet]=\"[5,10,25]\"></mfBootstrapPaginator>\r\n            </td>\r\n          </tr>\r\n          </tfoot>\r\n        </table>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>\r\n"
+module.exports = "\r\n<div>\r\n\r\n  <app-patient-header></app-patient-header>\r\n\r\n  <div id=\"loadin\">\r\n  <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n  <div class=\"container\" *ngIf=\"!processing\">\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"firstName\">First Name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-3\">-->\r\n        <!--<input type=\"text\" id=\"firstName\">-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"lastName\">Last name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-4\">-->\r\n        <!--<input type=\"text\" id=\"lastName\">-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n        <label style=\"color: red\"> {{error}}</label>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Patient ID:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">First Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"firstName\" id=\"firstName\">\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Last Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"lastName\" id=\"lastName\">\r\n      </div>\r\n    </div>\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col\">-->\r\n        <!--<label>-->\r\n          <!--<input type=\"checkbox\"> Prescribe-->\r\n        <!--</label>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\">Search</button>\r\n        <!--      </a>-->\r\n      </div>\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n\r\n  <div class=\"container\" >\r\n    <div class=\"row\" *ngIf=\"multiple\">\r\n      <div class=\"col-sm-2\">\r\n        <table class=\"table table-striped\" [mfData]=\"data\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"5\">\r\n          <thead>\r\n          <tr>\r\n            <th style=\"width: 10%\">\r\n              <mfDefaultSorter by=\"id\"> Id</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"firstName\">First Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"lastName\">Last Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Contact</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Date Of Birth</mfDefaultSorter>\r\n            </th>\r\n\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Personal Identification</mfDefaultSorter>\r\n            </th>\r\n          </tr>\r\n          </thead>\r\n          <tbody>\r\n          <tr *ngFor=\"let item of mf.data\">\r\n            <td>{{item.id}}</td>\r\n            <td>{{item.firstName}}</td>\r\n            <td>{{item.lastName}}</td>\r\n            <td>{{item.contact}}</td>\r\n            <td>{{item.dateOfBirth}}</td>\r\n            <td>{{item.personalId}}</td>\r\n            <td>\r\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"printPage(item)\">Print</button>\r\n            </td>\r\n            <td>\r\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"viewHistory(item)\">Visit History</button>\r\n            </td>\r\n\r\n          </tr>\r\n          </tbody>\r\n          <tfoot>\r\n          <tr>\r\n            <td colspan=\"4\">\r\n              <mfBootstrapPaginator [rowsOnPageSet]=\"[5,10,25]\"></mfBootstrapPaginator>\r\n            </td>\r\n          </tr>\r\n          </tfoot>\r\n        </table>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -761,7 +923,6 @@ var PatientSearchComponent = /** @class */ (function () {
         this.router = router;
         this.searchDataService = searchDataService;
         this.searchService = searchService;
-        this.title = 'Patient Portal';
         this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
         this.DATANOTFOUND = 'Data Not Found!';
         this.Mandatory = "One of the below field is mandatory";
@@ -873,9 +1034,9 @@ var PatientRegistrationService = /** @class */ (function () {
         this.http = http;
         this.patientApiUrl = '/patient/v1';
     }
-    PatientRegistrationService.prototype.addPatient = function (pateint) {
+    PatientRegistrationService.prototype.addPatient = function (patient) {
         var url = this.patientApiUrl;
-        return this.http.post(url, pateint);
+        return this.http.post(url, patient);
     };
     PatientRegistrationService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
