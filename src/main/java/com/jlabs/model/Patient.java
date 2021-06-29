@@ -26,7 +26,7 @@ public class Patient {
   private String firstName;
   private String lastName;
   private String doctorName;
-  @JsonFormat(shape = JsonFormat.Shape.STRING,pattern="yyyy-MM-dd")
+  @JsonFormat(shape = JsonFormat.Shape.STRING,pattern="yyyy-M-d")
 //  @DateTimeFormat(pattern = "yyyy-MM-dd", iso = DateTimeFormat.ISO.DATE)
 //  @JsonSerialize(using = LocalDateSerializer.class)
 //  @JsonDeserialize(using = LocalDateDeserializer.class)
