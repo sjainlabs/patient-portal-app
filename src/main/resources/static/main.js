@@ -387,7 +387,7 @@ var PagenotfoundComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtaGVhZGVyL3BhdGllbnQtaGVhZGVyLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\r\n\r\n.bg-primary{background-color: #a0706d !important}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1oZWFkZXIvcGF0aWVudC1oZWFkZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUVBLFlBQVksb0NBQW9DLENBQUMiLCJmaWxlIjoic3JjL2FwcC9wYXRpZW50LWhlYWRlci9wYXRpZW50LWhlYWRlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcblxyXG4uYmctcHJpbWFyeXtiYWNrZ3JvdW5kLWNvbG9yOiAjYTA3MDZkICFpbXBvcnRhbnR9XHJcblxyXG4iXX0= */"
 
 /***/ }),
 
@@ -398,7 +398,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">\n    <h1 class=\"siteTitle\">\n      {{ title }}\n    </h1>\n  </div>\n\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\n    <!-- Links -->\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item\">\n        <a routerLink=\"../search\" class=\"nav-link\" routerLinkActive=\"active\">Patient Search </a>\n      </li>\n      <li class=\"nav-item\">\n        <a routerLink=\"../register\" class=\"nav-link\" routerLinkActive=\"active\">Patient Registration</a>\n      </li>\n    </ul>\n  </nav>\n\n  <div style=\"text-align:center\">\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\n  </div>\n</div>\n"
+module.exports = "<div >\n  <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\n    <!--<h1 class=\"siteTitle\">-->\n      <!--{{ title }}-->\n    <!--</h1>-->\n  <!--</div>-->\n\n\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\" >\n    <!-- Links -->\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item\">\n        <a routerLink=\"../search\" class=\"nav-link\" routerLinkActive=\"active\">Patient Search </a>\n      </li>\n      <li class=\"nav-item\">\n        <a routerLink=\"../register\" class=\"nav-link\" routerLinkActive=\"active\">Patient Registration</a>\n      </li>\n    </ul>\n  </nav>\n  <div style=\" text-align:center \">\n    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">\n  </div>\n  <br><br>\n</div>\n"
 
 /***/ }),
 
