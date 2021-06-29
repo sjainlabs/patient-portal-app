@@ -59,7 +59,31 @@
         <div>
           <label>
             Date Of Birth:
-            <input type="text"  formControlName="dateOfBirth" required class="form-control">
+            <div class="form-row">
+              <div class="form-group  col-4">
+
+                <select name="birthDate" id="birthDate" formControlName="birthDate" class="form-control" [selectedIndex]="totalDatesOfBirth[0]" >
+
+                  <option *ngFor="let dd of totalDatesOfBirth" [value]="dd" >{{dd}}</option>
+                </select>
+
+              </div>
+              <div class="form-group  col-4">
+
+
+                <select name="birthMonth" id="birthMonth" formControlName="birthMonth" class="form-control" [selectedIndex]="totalMonthOfBirth[0]">
+
+                  <option *ngFor="let mm of totalMonthOfBirth" [value]="mm">{{mm}}</option>
+                </select>
+              </div>
+                <div class="form-group  col-4">
+                  <select  id="birthYear" formControlName="birthYear" class="form-control" [selectedIndex]="totalDatesOfYear[0]"> // value is an object
+                    <option *ngFor="let obj of totalDatesOfYear" value="{{obj}}">{{obj}}</option>
+                  </select>
+
+
+                </div>
+              </div>
           </label>
         </div>
 
@@ -171,9 +195,9 @@
           <label>
             Doctor Name:
             <select name="doctorName" id="doctorName" formControlName="doctorName" class="form-control">
-              <option value="1"></option>
-              <option value="2">Dr. Siddhart Jain</option>
-              <option value="3">Dr. Poonam Jain</option>
+              <option value="None"></option>
+              <option value="Dr. Siddhart Jain">Dr. Siddhart Jain</option>
+              <option value="Dr. Siddhart Jain">Dr. Poonam Jain</option>
             </select>
           </label>
         </div>

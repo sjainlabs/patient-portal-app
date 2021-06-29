@@ -15,8 +15,9 @@ export class PatientRegistrationComponent  {
   patientFormData :  FormGroup;
   error='';
   ERRORMESSAGE= 'System is Temporary unavailable, Please Try Again!';
-
-
+  totalDatesOfBirth=[];
+  totalMonthOfBirth=[];
+  totalDatesOfYear=[];
 
   constructor(private patientRegistrationService: PatientRegistrationService, private fb: FormBuilder) {
     this.show = false;
@@ -25,14 +26,58 @@ export class PatientRegistrationComponent  {
   }
 
   ngOnInit() {
-    this.hideLoader()
+    this.hideLoader();
+    this.createDatesOfBirth();
+    this.createMonthOfBirth();
+    this.creatYearOfBirthArray();
   }
 
+  createDatesOfBirth(){
+    this.totalDatesOfBirth[0]='DD'
+    let index: number = 1;
+    let i: number;
+    for (i = 1; i <= 31 ; i++) {
+      this.totalDatesOfBirth[index] = i;
+      index++;
+    }
+    // this.totalDatesOfBirth = Array.from({length: 31}, (_, i) => i + 2);
+
+  }
+
+  createMonthOfBirth(){
+    this.totalMonthOfBirth[0]='MM';
+    let index: number = 1;
+    let i: number;
+    for (i = 1; i <= 12 ; i++) {
+      this.totalMonthOfBirth[index] = i;
+      index++;
+    }
+    // this.totalMonthOfBirth = Array.from({length: 12}, (_, i) => i + 2);
+
+
+  }
+
+  creatYearOfBirthArray() {
+    const currentYear = new Date().getFullYear();
+    this.totalDatesOfYear[0]='YYYY';
+    let index: number = 1;
+    let i: number;
+    // i=  currentYear;
+    for (i = currentYear; i > currentYear - 120; i--) {
+      this.totalDatesOfYear[index] = i;
+      index++;
+    }
+  }
 
   onSubmit() {
     this.showLoader();
     // TODO: Use EventEmitter with form value
     console.log(this.patientFormData.value);
+
+    const dateOfBirth = this.patientFormData.getRawValue().birthYear+'-'+this.patientFormData.getRawValue().birthMonth+'-'+this.patientFormData.getRawValue().birthDate;
+    this.patientFormData.patchValue({
+      dateOfBirth: dateOfBirth
+    });
     this.show=true;
     this.patientRegistrationService.addPatient(this.patientFormData.value)
       .subscribe(s => {
@@ -64,6 +109,9 @@ export class PatientRegistrationComponent  {
       firstName: new FormControl( '',Validators.required),
       lastName: new FormControl(''),
       dateOfBirth: new FormControl(''),
+      birthDate: new FormControl(''),
+      birthMonth: new FormControl(''),
+      birthYear: new FormControl(''),
       age: new FormControl(''),
       gender: new FormControl(''),
       address: new FormControl(''),
@@ -83,6 +131,7 @@ export class PatientRegistrationComponent  {
       prescription: new FormControl(''),
       additionalNotes: new FormControl(''),
     });
+
   }
 
   numberOnly(event): boolean {

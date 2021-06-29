@@ -12,8 +12,8 @@ export class PatientRegistrationService {
 
   private patientApiUrl = '/patient/v1';
 
-  addPatient(pateint: any): Observable<any> {
+  addPatient(patient: any): Observable<any> {
     const url = this.patientApiUrl;
-    return this.http.post(url,pateint);
+    return this.http.post(url,patient);
   }
 }
