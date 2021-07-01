@@ -39,7 +39,7 @@ export class PatientRegistrationComponent  {
   }
 
   createDatesOfBirth(){
-    this.totalDatesOfBirth[0]='DD'
+    this.totalDatesOfBirth[0]=''
     let index: number = 1;
     let i: number;
     for (i = 1; i <= 31 ; i++) {
@@ -51,7 +51,7 @@ export class PatientRegistrationComponent  {
   }
 
   createMonthOfBirth(){
-    this.totalMonthOfBirth[0]='MM';
+    this.totalMonthOfBirth[0]='';
     let index: number = 1;
     let i: number;
     for (i = 1; i <= 12 ; i++) {
@@ -65,7 +65,7 @@ export class PatientRegistrationComponent  {
 
   creatYearOfBirthArray() {
     const currentYear = new Date().getFullYear();
-    this.totalDatesOfYear[0]='YYYY';
+    this.totalDatesOfYear[0]='';
     let index: number = 1;
     let i: number;
     // i=  currentYear;
