@@ -77,14 +77,15 @@ export class PatientRegistrationComponent  {
 
   onSubmit() {
     this.showLoader();
-    // TODO: Use EventEmitter with form value
-    console.log(this.patientFormData.value);
+    this.show=true;
 
     const dateOfBirth = this.patientFormData.getRawValue().birthYear+'-'+this.patientFormData.getRawValue().birthMonth+'-'+this.patientFormData.getRawValue().birthDate;
     this.patientFormData.patchValue({
       dateOfBirth: dateOfBirth
     });
-    this.show=true;
+    this.updatePersonalIdValue();
+    // TODO: Use EventEmitter with form value
+    console.log(this.patientFormData.value);
     this.patientRegistrationService.addPatient(this.patientFormData.value)
       .subscribe(s => {
         console.log(s);
@@ -156,4 +157,11 @@ export class PatientRegistrationComponent  {
     document.getElementById('loadin').style.display = '';
   }
 
+  updatePersonalIdValue() {
+    if(this.patientFormData.getRawValue().personalIdType === ''){
+      this.patientFormData.patchValue({
+        personalId: ''
+      });
+    }
+  }
 }

@@ -15,7 +15,7 @@
     <!--</h1>-->
     <!--<img width="300" alt="Angular Logo" src="../assets/patient-image.jpeg">-->
     <!--</div>-->
-
+    <p><i> Note: ( All fields marked with * are required.) </i></p>
     <div *ngIf="show && processing"> Registration Completed! Patient Id : {{patientIdCreated}}
       <button (click)="addNewPatientAgain()"> Click here to Add a new Patient</button>
     </div>
@@ -28,7 +28,7 @@
 
         <div>
           <label>
-           First Name:
+           First Name *:
 
             <input id="firstName" type="text" formControlName="firstName" class="form-control" required="" placeholder="Jon">
 
@@ -58,7 +58,7 @@
 
         <div>
           <label>
-            Date Of Birth:
+            Date Of Birth *:
             <div class="form-row">
               <div class="form-group  col-4">
 
@@ -160,7 +160,7 @@
 
         <div>
           <label>
-            Contact:
+            Contact *:
             <input type="text" formControlName="contact" (keypress)="patientHelper.numberOnly($event)" required class="form-control" maxlength="15" placeholder="919545864800">
           </label>
         </div>
@@ -189,8 +189,8 @@
         <div>
           <label>
             Personal Identification Type:
-            <select name="personalIdType" id="personalIdType" formControlName="personalIdType" class="form-control">
-              <option value="1"></option>
+            <select name="personalIdType" id="personalIdType" formControlName="personalIdType" class="form-control"  >
+              <option value=""></option>
               <option value="2">Aadhar Card</option>
               <option value="3">Driving License</option>
               <option value="4">Passport</option>
@@ -201,9 +201,9 @@
         </div>
 
         <div>
-          <label>
+          <label *ngIf="patientFormData.getRawValue().personalIdType!= ''">
             Personal Identification:
-            <input type="text" formControlName="personalId" class="form-control" placeholder="AT1234">
+            <input type="text" formControlName="personalId" class="form-control" placeholder="AT1234" >
           </label>
         </div>
 
