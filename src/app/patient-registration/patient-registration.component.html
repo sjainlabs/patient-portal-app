@@ -15,7 +15,7 @@
     <!--</h1>-->
     <!--<img width="300" alt="Angular Logo" src="../assets/patient-image.jpeg">-->
     <!--</div>-->
-    <p><i> Note: ( All fields marked with * are required.) </i></p>
+
     <div *ngIf="show && processing"> Registration Completed! Patient Id : {{patientIdCreated}}
       <button (click)="addNewPatientAgain()"> Click here to Add a new Patient</button>
     </div>
@@ -24,6 +24,7 @@
       <p style="color: red"> {{error}} </p>
     </div>
     <div *ngIf="!show && error === '' && !processing">
+      <p><i> Note: ( All fields marked with * are required.) </i></p>
       <form [formGroup]="patientFormData" (ngSubmit)="onSubmit(patientFormData.value)" novalidate>
 
         <div>
@@ -103,19 +104,27 @@
               <!--First Name is required.-->
             <!--</div>-->
 
-          <div *ngIf="patientFormData.controls['birthDate'].invalid && (patientFormData.controls['birthDate'].dirty
-            && patientFormData.controls['birthMonth'].invalid && patientFormData.controls['birthMonth'].dirty
-            && patientFormData.controls['birthYear'].invalid && patientFormData.controls['birthYear'].dirty
-             || patientFormData.controls['birthDate'].touched
-             ||  patientFormData.controls['birthMonth'].touched
-             ||  patientFormData.controls['birthYear'].touched)" class="alert alert-danger">
+          <div *ngIf="patientFormData.controls['birthDate'].invalid && (patientFormData.controls['birthDate'].dirty|| patientFormData.controls['birthDate'].touched)" class="alert alert-danger">
             <div *ngIf="patientFormData.controls['birthDate'].errors.required
                         || patientFormData.controls['birthMonth'].errors.required
                           || patientFormData.controls['birthYear'].errors.required">
-             Date Of Birth is required!
+             Date is required!
             </div>
           </div>
 
+          <div *ngIf="patientFormData.controls['birthMonth'].invalid && (patientFormData.controls['firstName'].dirty
+             || patientFormData.controls['birthMonth'].touched)" class="alert alert-danger">
+            <div *ngIf="patientFormData.controls['birthMonth'].errors.required">
+              Month is required.
+            </div>
+          </div>
+
+            <div *ngIf="patientFormData.controls['birthYear'].invalid && (patientFormData.controls['firstName'].dirty
+             || patientFormData.controls['birthYear'].touched)" class="alert alert-danger">
+              <div *ngIf="patientFormData.controls['birthYear'].errors.required">
+                Year is required.
+              </div>
+            </div>
         </div>
 
         <div>
