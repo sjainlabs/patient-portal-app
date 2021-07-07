@@ -10,6 +10,7 @@ import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -42,9 +43,9 @@ public class PatientService {
      return patientPersistence.savePatient(patientEntity);
     }
 
-    public Optional<List<Patient>> searchPatient(Integer id, String firstName, String lastName) {
+    public Optional<List<Patient>> searchPatient(Integer id, String firstName,String lastName, String contact, String personalid, LocalDate dateOfbirth) {
 
-      final Optional<List<PatientEntity>> patientEntity = patientPersistence.searchPatient(id,firstName,lastName);
+      final Optional<List<PatientEntity>> patientEntity = patientPersistence.searchPatient(id,firstName,lastName,contact, personalid, dateOfbirth);
       log.debug("searched patient {}", patientEntity);
       List<Patient> patients = Arrays.asList();
       if(patientEntity.isPresent()) {

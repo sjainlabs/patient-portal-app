@@ -1,5 +1,6 @@
 package com.jlabs.controller;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.jlabs.model.Patient;
 import com.jlabs.model.Visit;
 import com.jlabs.persistence.entity.PatientEntity;
@@ -8,10 +9,12 @@ import com.jlabs.service.PatientService;
 import com.jlabs.service.VisitService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,8 +63,13 @@ public class PatientController {
   @ResponseBody
   public ResponseEntity<Optional> searchPatient(@RequestParam(value = "id", required = false) Integer id,
                                                 @RequestParam(value = "firstName", required = false) String firstName,
-                                                @RequestParam(value = "lastName", required = false) String lastName) {
-    final Optional<List<Patient>> patientResponse = patientService.searchPatient(id, firstName, lastName);
+                                                @RequestParam(value = "lastName", required = false) String lastName,
+                                                @RequestParam(value = "contact", required = false) String contact,
+                                                @RequestParam(value = "personalId", required = false) String personalId,
+                                                @RequestParam(value = "dateOfBirth", required = false)@JsonFormat(shape = JsonFormat.Shape.STRING,pattern="yyyy-M-d")
+                                                  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-M-d") LocalDate dateOfBirth
+                                                ) {
+    final Optional<List<Patient>> patientResponse = patientService.searchPatient(id, firstName, lastName, contact, personalId, dateOfBirth);
     return new ResponseEntity<>(patientResponse, HttpStatus.OK);
   }
 

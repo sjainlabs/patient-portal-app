@@ -12,13 +12,14 @@ export class SearchService {
 
   private patientApiUrl = '/patient/v1?';
 
-  searchPatient(id: number, firstName: string, lastName: string): Observable<PatientData[]> {
+  searchPatient(id: number, firstName: string, lastName:
+    string, contact: number, personalId: string, dateOfBirth: any): Observable<PatientData[]> {
 
     let url = this.patientApiUrl;
     let len=0;
     let i;
 
-    let paramValues= ['id=','firstName=','lastName='];
+    let paramValues= ['id=','firstName=','lastName=','contact=','personalId=','dateOfBirth='];
 
     for(i=0; i<arguments.length; i++){
       if(arguments[i] !== undefined && arguments[i] !== '' && arguments[i] !==  null){

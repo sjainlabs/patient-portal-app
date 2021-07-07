@@ -33,47 +33,12 @@ export class PatientRegistrationComponent  {
 
   ngOnInit() {
     this.hideLoader();
-    this.createDatesOfBirth();
-    this.createMonthOfBirth();
-    this.creatYearOfBirthArray();
+    this.totalDatesOfBirth = this.patientHelper.createDatesOfBirth();
+    this.totalMonthOfBirth = this.patientHelper.createMonthOfBirth();
+    this.totalDatesOfYear = this.patientHelper.creatYearOfBirthArray();
   }
 
-  createDatesOfBirth(){
-    this.totalDatesOfBirth[0]=''
-    let index: number = 1;
-    let i: number;
-    for (i = 1; i <= 31 ; i++) {
-      this.totalDatesOfBirth[index] = i;
-      index++;
-    }
-    // this.totalDatesOfBirth = Array.from({length: 31}, (_, i) => i + 2);
 
-  }
-
-  createMonthOfBirth(){
-    this.totalMonthOfBirth[0]='';
-    let index: number = 1;
-    let i: number;
-    for (i = 1; i <= 12 ; i++) {
-      this.totalMonthOfBirth[index] = i;
-      index++;
-    }
-    // this.totalMonthOfBirth = Array.from({length: 12}, (_, i) => i + 2);
-
-
-  }
-
-  creatYearOfBirthArray() {
-    const currentYear = new Date().getFullYear();
-    this.totalDatesOfYear[0]='';
-    let index: number = 1;
-    let i: number;
-    // i=  currentYear;
-    for (i = currentYear; i > currentYear - 120; i--) {
-      this.totalDatesOfYear[index] = i;
-      index++;
-    }
-  }
 
   onSubmit() {
     this.showLoader();
@@ -141,11 +106,6 @@ export class PatientRegistrationComponent  {
 
   }
 
-  numberOnly(event): boolean {
-  let patt = /^([0-9])$/;
-  let result = patt.test(event.key);
-  return result;
-}
 
   hideLoader() {
 

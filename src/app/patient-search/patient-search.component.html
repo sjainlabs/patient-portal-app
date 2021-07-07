@@ -1,36 +1,35 @@
-
 <div>
 
   <app-patient-header></app-patient-header>
 
   <div id="loadin">
-  <app-loader-spin></app-loader-spin>
+    <app-loader-spin></app-loader-spin>
   </div>
 
   <div class="container" *ngIf="!processing">
     <!--<div class="row">-->
-      <!--<div class="col-sm-2">-->
-        <!--<label for="firstName">First Name:</label>-->
-      <!--</div>-->
-      <!--<div class="col-sm-3">-->
-        <!--<input type="text" id="firstName">-->
-      <!--</div>-->
-      <!--<div class="col-sm-2">-->
-        <!--<label for="lastName">Last name:</label>-->
-      <!--</div>-->
-      <!--<div class="col-sm-4">-->
-        <!--<input type="text" id="lastName">-->
-      <!--</div>-->
+    <!--<div class="col-sm-2">-->
+    <!--<label for="firstName">First Name:</label>-->
+    <!--</div>-->
+    <!--<div class="col-sm-3">-->
+    <!--<input type="text" id="firstName">-->
+    <!--</div>-->
+    <!--<div class="col-sm-2">-->
+    <!--<label for="lastName">Last name:</label>-->
+    <!--</div>-->
+    <!--<div class="col-sm-4">-->
+    <!--<input type="text" id="lastName">-->
+    <!--</div>-->
     <!--</div>-->
     <div class="row">
-        <label style="color: red"> {{error}}</label>
+      <label style="color: red"> {{error}}</label>
     </div>
     <div class="row">
       <div class="col-sm-2">
         <label for="patientId">Patient ID:</label>
       </div>
       <div class="col-sm-4">
-        <input type="text" [(ngModel)]="patientId" id="patientId">
+        <input type="text" [(ngModel)]="patientId" id="patientId" placeholder="1">
       </div>
     </div>
 
@@ -39,7 +38,7 @@
         <label for="patientId">First Name:</label>
       </div>
       <div class="col-sm-4">
-        <input type="text" [(ngModel)]="firstName" id="firstName">
+        <input type="text" [(ngModel)]="firstName" id="firstName" placeholder="Don">
       </div>
     </div>
 
@@ -49,29 +48,93 @@
         <label for="patientId">Last Name:</label>
       </div>
       <div class="col-sm-4">
-        <input type="text" [(ngModel)]="lastName" id="lastName">
+        <input type="text" [(ngModel)]="lastName" id="lastName" placeholder="Joe">
       </div>
     </div>
-    <!--<div class="row">-->
-      <!--<div class="col">-->
-        <!--<label>-->
-          <!--<input type="checkbox"> Prescribe-->
-        <!--</label>-->
-      <!--</div>-->
-    <!--</div>-->
+
     <div class="row">
-      <div class="col">
-        <!--      <a routerLink="print" class="nav-link">-->
-        <button type="submit" class="btn btn-primary" (click)="searchPatientData()">Search</button>
-        <!--      </a>-->
+      <div class="col-sm-2">
+        <label for="patientId">Contact Number:</label>
+      </div>
+      <div class="col-sm-4">
+        <input type="text" [(ngModel)]="contact" id="contact" (keypress)="patientHelper.numberOnly($event)"
+               placeholder="919545864822">
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="patientId">Personal Id:</label>
+      </div>
+      <div class="col-sm-4">
+        <input type="text" [(ngModel)]="personalId" id="personalId" placeholder="Aadhar,DL etc">
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="birthDate"> Date Of Birth:</label>
+      </div>
+
+      <div class=" col-4">
+        <div class="row">
+          <div class="col-sm-2">
+        <select name="birthDate" id="birthDate" [(ngModel)]="birthDate">
+
+          <option *ngFor="let dd of totalDatesOfBirth" [value]="dd">{{dd}}</option>
+        </select>
+
+      </div>
+      <div class=" col-2">
+
+
+        <select name="birthMonth" id="birthMonth" [(ngModel)]="birthMonth">
+
+          <option *ngFor="let mm of totalMonthOfBirth" [value]="mm">{{mm}}</option>
+        </select>
+      </div>
+      <div class=" col-2">
+        <select id="birthYear" [(ngModel)]="birthYear">
+          <option *ngFor="let obj of totalDatesOfYear" [value]="obj">{{obj}}</option>
+        </select>
+      </div>
+    </div>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-sm-2">
+
+        </div>
+
+        <div class="col-sm-4">
+          <div class="row">
+        <div class=" col-2">
+          Date
+        </div>
+        <div class="  col-2">
+          Month
+        </div>
+        <div class="  col-2">
+          Year
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <!--      <a routerLink="print" class="nav-link">-->
+          <button type="submit" class="btn btn-primary" (click)="searchPatientData()">Search</button>
+          <!--      </a>-->
+        </div>
+      </div>
 
 
 
   </div>
 
-  <div class="container" >
+  <div class="container">
     <div class="row" *ngIf="multiple">
       <div class="col-sm-2">
         <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
@@ -90,8 +153,8 @@
               <mfDefaultSorter by="contact">Contact</mfDefaultSorter>
             </th>
             <th style="width: 30%">
-              <mfDefaultSorter by="contact">Date Of Birth</mfDefaultSorter>
-               <!--<br>-->
+              <mfDefaultSorter by="dateOfBirth">Date Of Birth</mfDefaultSorter>
+              <!--<br>-->
               <span style="font-size: 9px"> (YYYY-MM-DD) </span>
             </th>
 

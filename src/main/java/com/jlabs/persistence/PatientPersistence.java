@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -50,7 +51,7 @@ public class PatientPersistence {
                 .build();
     }
 
-    public Optional<List<PatientEntity>> searchPatient(Integer id, String firstName, String lastName){
-        return patientRepository.findPatient(id, firstName, lastName);
+    public Optional<List<PatientEntity>> searchPatient(Integer id, String firstName, String lastName, String contact, String personalId, LocalDate dateOfbirth){
+        return patientRepository.findPatient(id, firstName, lastName,contact,personalId, dateOfbirth );
     }
 }

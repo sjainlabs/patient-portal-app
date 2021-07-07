@@ -219,6 +219,41 @@ var PatientHelper = /** @class */ (function () {
         var result = patt.test(event.key);
         return result;
     };
+    PatientHelper.prototype.createDatesOfBirth = function () {
+        var totalDatesOfBirth = [];
+        totalDatesOfBirth[0] = '';
+        var index = 1;
+        var i;
+        for (i = 1; i <= 31; i++) {
+            totalDatesOfBirth[index] = i;
+            index++;
+        }
+        return totalDatesOfBirth;
+    };
+    PatientHelper.prototype.createMonthOfBirth = function () {
+        var totalMonthOfBirth = [];
+        totalMonthOfBirth[0] = '';
+        var index = 1;
+        var i;
+        for (i = 1; i <= 12; i++) {
+            totalMonthOfBirth[index] = i;
+            index++;
+        }
+        return totalMonthOfBirth;
+    };
+    PatientHelper.prototype.creatYearOfBirthArray = function () {
+        var totalDatesOfYear = [];
+        var currentYear = new Date().getFullYear();
+        totalDatesOfYear[0] = '';
+        var index = 1;
+        var i;
+        // i=  currentYear;
+        for (i = currentYear; i > currentYear - 120; i--) {
+            totalDatesOfYear[index] = i;
+            index++;
+        }
+        return totalDatesOfYear;
+    };
     return PatientHelper;
 }());
 
@@ -749,40 +784,9 @@ var PatientRegistrationComponent = /** @class */ (function () {
     }
     PatientRegistrationComponent.prototype.ngOnInit = function () {
         this.hideLoader();
-        this.createDatesOfBirth();
-        this.createMonthOfBirth();
-        this.creatYearOfBirthArray();
-    };
-    PatientRegistrationComponent.prototype.createDatesOfBirth = function () {
-        this.totalDatesOfBirth[0] = '';
-        var index = 1;
-        var i;
-        for (i = 1; i <= 31; i++) {
-            this.totalDatesOfBirth[index] = i;
-            index++;
-        }
-        // this.totalDatesOfBirth = Array.from({length: 31}, (_, i) => i + 2);
-    };
-    PatientRegistrationComponent.prototype.createMonthOfBirth = function () {
-        this.totalMonthOfBirth[0] = '';
-        var index = 1;
-        var i;
-        for (i = 1; i <= 12; i++) {
-            this.totalMonthOfBirth[index] = i;
-            index++;
-        }
-        // this.totalMonthOfBirth = Array.from({length: 12}, (_, i) => i + 2);
-    };
-    PatientRegistrationComponent.prototype.creatYearOfBirthArray = function () {
-        var currentYear = new Date().getFullYear();
-        this.totalDatesOfYear[0] = '';
-        var index = 1;
-        var i;
-        // i=  currentYear;
-        for (i = currentYear; i > currentYear - 120; i--) {
-            this.totalDatesOfYear[index] = i;
-            index++;
-        }
+        this.totalDatesOfBirth = this.patientHelper.createDatesOfBirth();
+        this.totalMonthOfBirth = this.patientHelper.createMonthOfBirth();
+        this.totalDatesOfYear = this.patientHelper.creatYearOfBirthArray();
     };
     PatientRegistrationComponent.prototype.onSubmit = function () {
         var _this = this;
@@ -842,11 +846,6 @@ var PatientRegistrationComponent = /** @class */ (function () {
             additionalNotes: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
         });
     };
-    PatientRegistrationComponent.prototype.numberOnly = function (event) {
-        var patt = /^([0-9])$/;
-        var result = patt.test(event.key);
-        return result;
-    };
     PatientRegistrationComponent.prototype.hideLoader = function () {
         document.getElementById('loadin').style.display = 'none';
     };
@@ -894,7 +893,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div>\r\n\r\n  <app-patient-header></app-patient-header>\r\n\r\n  <div id=\"loadin\">\r\n  <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n  <div class=\"container\" *ngIf=\"!processing\">\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"firstName\">First Name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-3\">-->\r\n        <!--<input type=\"text\" id=\"firstName\">-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n        <!--<label for=\"lastName\">Last name:</label>-->\r\n      <!--</div>-->\r\n      <!--<div class=\"col-sm-4\">-->\r\n        <!--<input type=\"text\" id=\"lastName\">-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n        <label style=\"color: red\"> {{error}}</label>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Patient ID:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">First Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"firstName\" id=\"firstName\">\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Last Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"lastName\" id=\"lastName\">\r\n      </div>\r\n    </div>\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col\">-->\r\n        <!--<label>-->\r\n          <!--<input type=\"checkbox\"> Prescribe-->\r\n        <!--</label>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\">Search</button>\r\n        <!--      </a>-->\r\n      </div>\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n\r\n  <div class=\"container\" >\r\n    <div class=\"row\" *ngIf=\"multiple\">\r\n      <div class=\"col-sm-2\">\r\n        <table class=\"table table-striped\" [mfData]=\"data\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"5\">\r\n          <thead>\r\n          <tr>\r\n            <th style=\"width: 10%\">\r\n              <mfDefaultSorter by=\"id\"> Id</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"firstName\">First Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"lastName\">Last Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Contact</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Date Of Birth</mfDefaultSorter>\r\n               <!--<br>-->\r\n              <span style=\"font-size: 9px\"> (YYYY-MM-DD) </span>\r\n            </th>\r\n\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Personal Identification</mfDefaultSorter>\r\n            </th>\r\n          </tr>\r\n          </thead>\r\n          <tbody>\r\n          <tr *ngFor=\"let item of mf.data\">\r\n            <td>{{item.id}}</td>\r\n            <td>{{item.firstName}}</td>\r\n            <td>{{item.lastName}}</td>\r\n            <td>{{item.contact}}</td>\r\n            <td>{{item.dateOfBirth}}</td>\r\n            <td>{{item.personalId}}</td>\r\n            <td>\r\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"printPage(item)\">Print</button>\r\n            </td>\r\n            <td>\r\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"viewHistory(item)\">Visit History</button>\r\n            </td>\r\n\r\n          </tr>\r\n          </tbody>\r\n          <tfoot>\r\n          <tr>\r\n            <td colspan=\"4\">\r\n              <mfBootstrapPaginator [rowsOnPageSet]=\"[5,10,25]\"></mfBootstrapPaginator>\r\n            </td>\r\n          </tr>\r\n          </tfoot>\r\n        </table>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>\r\n"
+module.exports = "<div>\r\n\r\n  <app-patient-header></app-patient-header>\r\n\r\n  <div id=\"loadin\">\r\n    <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n  <div class=\"container\" *ngIf=\"!processing\">\r\n    <!--<div class=\"row\">-->\r\n    <!--<div class=\"col-sm-2\">-->\r\n    <!--<label for=\"firstName\">First Name:</label>-->\r\n    <!--</div>-->\r\n    <!--<div class=\"col-sm-3\">-->\r\n    <!--<input type=\"text\" id=\"firstName\">-->\r\n    <!--</div>-->\r\n    <!--<div class=\"col-sm-2\">-->\r\n    <!--<label for=\"lastName\">Last name:</label>-->\r\n    <!--</div>-->\r\n    <!--<div class=\"col-sm-4\">-->\r\n    <!--<input type=\"text\" id=\"lastName\">-->\r\n    <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n      <label style=\"color: red\"> {{error}}</label>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Patient ID:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\" placeholder=\"1\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">First Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"firstName\" id=\"firstName\" placeholder=\"Don\">\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Last Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"lastName\" id=\"lastName\" placeholder=\"Joe\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Contact Number:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"contact\" id=\"contact\" (keypress)=\"patientHelper.numberOnly($event)\"\r\n               placeholder=\"919545864822\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Personal Id:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"personalId\" id=\"personalId\" placeholder=\"Aadhar,DL etc\">\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"birthDate\"> Date Of Birth:</label>\r\n      </div>\r\n\r\n      <div class=\" col-4\">\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-2\">\r\n        <select name=\"birthDate\" id=\"birthDate\" [(ngModel)]=\"birthDate\">\r\n\r\n          <option *ngFor=\"let dd of totalDatesOfBirth\" [value]=\"dd\">{{dd}}</option>\r\n        </select>\r\n\r\n      </div>\r\n      <div class=\" col-2\">\r\n\r\n\r\n        <select name=\"birthMonth\" id=\"birthMonth\" [(ngModel)]=\"birthMonth\">\r\n\r\n          <option *ngFor=\"let mm of totalMonthOfBirth\" [value]=\"mm\">{{mm}}</option>\r\n        </select>\r\n      </div>\r\n      <div class=\" col-2\">\r\n        <select id=\"birthYear\" [(ngModel)]=\"birthYear\">\r\n          <option *ngFor=\"let obj of totalDatesOfYear\" [value]=\"obj\">{{obj}}</option>\r\n        </select>\r\n      </div>\r\n    </div>\r\n      </div>\r\n    </div>\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-2\">\r\n\r\n        </div>\r\n\r\n        <div class=\"col-sm-4\">\r\n          <div class=\"row\">\r\n        <div class=\" col-2\">\r\n          Date\r\n        </div>\r\n        <div class=\"  col-2\">\r\n          Month\r\n        </div>\r\n        <div class=\"  col-2\">\r\n          Year\r\n        </div>\r\n      </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"row\">\r\n        <div class=\"col\">\r\n          <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n          <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\">Search</button>\r\n          <!--      </a>-->\r\n        </div>\r\n      </div>\r\n\r\n\r\n\r\n  </div>\r\n\r\n  <div class=\"container\">\r\n    <div class=\"row\" *ngIf=\"multiple\">\r\n      <div class=\"col-sm-2\">\r\n        <table class=\"table table-striped\" [mfData]=\"data\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"5\">\r\n          <thead>\r\n          <tr>\r\n            <th style=\"width: 10%\">\r\n              <mfDefaultSorter by=\"id\"> Id</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"firstName\">First Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"lastName\">Last Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Contact</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"dateOfBirth\">Date Of Birth</mfDefaultSorter>\r\n              <!--<br>-->\r\n              <span style=\"font-size: 9px\"> (YYYY-MM-DD) </span>\r\n            </th>\r\n\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Personal Identification</mfDefaultSorter>\r\n            </th>\r\n          </tr>\r\n          </thead>\r\n          <tbody>\r\n          <tr *ngFor=\"let item of mf.data\">\r\n            <td>{{item.id}}</td>\r\n            <td>{{item.firstName}}</td>\r\n            <td>{{item.lastName}}</td>\r\n            <td>{{item.contact}}</td>\r\n            <td>{{item.dateOfBirth}}</td>\r\n            <td>{{item.personalId}}</td>\r\n            <td>\r\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"printPage(item)\">Print</button>\r\n            </td>\r\n            <td>\r\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"viewHistory(item)\">Visit History</button>\r\n            </td>\r\n\r\n          </tr>\r\n          </tbody>\r\n          <tfoot>\r\n          <tr>\r\n            <td colspan=\"4\">\r\n              <mfBootstrapPaginator [rowsOnPageSet]=\"[5,10,25]\"></mfBootstrapPaginator>\r\n            </td>\r\n          </tr>\r\n          </tfoot>\r\n        </table>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -912,6 +911,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _service_search_data_service_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service/search-data-service.service */ "./src/app/service/search-data-service.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _service_search_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/search.service */ "./src/app/service/search.service.ts");
+/* harmony import */ var _helper_PatientHelper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../helper/PatientHelper */ "./src/app/helper/PatientHelper.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -925,6 +925,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var PatientSearchComponent = /** @class */ (function () {
     // searchDataService: SearchDataServiceService;
     function PatientSearchComponent(router, searchDataService, searchService) {
@@ -934,12 +935,19 @@ var PatientSearchComponent = /** @class */ (function () {
         this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
         this.DATANOTFOUND = 'Data Not Found - One or the other Search Criteria entered is not correct!';
         this.Mandatory = "One of the below field is mandatory";
+        this.totalDatesOfBirth = [];
+        this.totalMonthOfBirth = [];
+        this.totalDatesOfYear = [];
         this.processing = false;
         this.multiple = false;
+        this.patientHelper = new _helper_PatientHelper__WEBPACK_IMPORTED_MODULE_4__["PatientHelper"]();
         // this.searchDataService = new SearchDataServiceService();
     }
     PatientSearchComponent.prototype.ngOnInit = function () {
         this.hideLoader();
+        this.totalDatesOfBirth = this.patientHelper.createDatesOfBirth();
+        this.totalMonthOfBirth = this.patientHelper.createMonthOfBirth();
+        this.totalDatesOfYear = this.patientHelper.creatYearOfBirthArray();
     };
     // populateSearchData(): PatientData {
     //   this.data.firstName = 'Test Patient First Name';
@@ -952,14 +960,25 @@ var PatientSearchComponent = /** @class */ (function () {
         this.error = '';
         if ((this.patientId === null || this.patientId === undefined || this.patientId.toString().trim().length === 0) &&
             (this.firstName === null || this.firstName === undefined || this.firstName.trim().length === 0) &&
-            (this.lastName === null || this.lastName === undefined || this.lastName.trim().length === 0)) {
+            (this.lastName === null || this.lastName === undefined || this.lastName.trim().length === 0) &&
+            (this.contact === null || this.contact === undefined || this.contact === 0) &&
+            (this.personalId === null || this.personalId === undefined || this.personalId.trim().length === 0) &&
+            (this.birthDate === null || this.birthDate === undefined || this.birthDate.trim().length === 0 ||
+                this.birthMonth === null || this.birthMonth === undefined || this.birthMonth.trim().length === 0 ||
+                this.birthYear === null || this.birthYear === undefined || this.birthYear.trim().length === 0)) {
             this.error = this.Mandatory;
         }
         else {
             this.showLoader();
             this.processing = true;
             this.multiple = false;
-            this.searchService.searchPatient(this.patientId, this.firstName, this.lastName)
+            var dateOfBirth = void 0;
+            if (!(this.birthDate === null || this.birthDate === undefined || this.birthDate.trim().length === 0 ||
+                this.birthMonth === null || this.birthMonth === undefined || this.birthMonth.trim().length === 0 ||
+                this.birthYear === null || this.birthYear === undefined || this.birthYear.trim().length === 0)) {
+                dateOfBirth = this.birthYear + '-' + this.birthMonth + '-' + this.birthDate;
+            }
+            this.searchService.searchPatient(this.patientId, this.firstName, this.lastName, this.contact, this.personalId, dateOfBirth)
                 .subscribe(function (data) {
                 console.log(data);
                 if (data === null || data.length === 0) {
@@ -1184,11 +1203,11 @@ var SearchService = /** @class */ (function () {
         this.http = http;
         this.patientApiUrl = '/patient/v1?';
     }
-    SearchService.prototype.searchPatient = function (id, firstName, lastName) {
+    SearchService.prototype.searchPatient = function (id, firstName, lastName, contact, personalId, dateOfBirth) {
         var url = this.patientApiUrl;
         var len = 0;
         var i;
-        var paramValues = ['id=', 'firstName=', 'lastName='];
+        var paramValues = ['id=', 'firstName=', 'lastName=', 'contact=', 'personalId=', 'dateOfBirth='];
         for (i = 0; i < arguments.length; i++) {
             if (arguments[i] !== undefined && arguments[i] !== '' && arguments[i] !== null) {
                 len++;

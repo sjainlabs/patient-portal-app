@@ -4,6 +4,7 @@ import {SearchDataServiceService} from '../service/search-data-service.service';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {SearchService} from '../service/search.service';
+import {PatientHelper} from "../helper/PatientHelper";
 
 @Component({
   selector: 'app-patient-search',
@@ -16,12 +17,21 @@ export class PatientSearchComponent implements OnInit {
   patientId: number;
   firstName: string;
   lastName: string;
+  contact: number;
+  personalId: string;
+  birthDate: string;
+  birthMonth: string;
+  birthYear: string;
   processing: boolean;
   multiple: boolean;
   error;
   ERRORMESSAGE= 'System is Temporary unavailable, Please Try Again!';
   DATANOTFOUND= 'Data Not Found - One or the other Search Criteria entered is not correct!';
   Mandatory = "One of the below field is mandatory";
+  totalDatesOfBirth=[];
+  totalMonthOfBirth=[];
+  totalDatesOfYear=[];
+  patientHelper: PatientHelper;
 
   // searchDataService: SearchDataServiceService;
 
@@ -31,11 +41,15 @@ export class PatientSearchComponent implements OnInit {
 
     this.processing= false;
     this.multiple= false;
+    this.patientHelper = new PatientHelper();
     // this.searchDataService = new SearchDataServiceService();
   }
 
   ngOnInit() {
-    this.hideLoader()
+    this.hideLoader();
+    this.totalDatesOfBirth = this.patientHelper.createDatesOfBirth();
+    this.totalMonthOfBirth = this.patientHelper.createMonthOfBirth();
+    this.totalDatesOfYear = this.patientHelper.creatYearOfBirthArray();
   }
 
   // populateSearchData(): PatientData {
@@ -49,14 +63,29 @@ export class PatientSearchComponent implements OnInit {
     this.error= '';
     if( (this.patientId === null || this.patientId === undefined || this.patientId.toString().trim().length === 0) &&
       (this.firstName === null || this.firstName === undefined || this.firstName.trim().length === 0) &&
-      (this.lastName === null || this.lastName === undefined || this.lastName.trim().length === 0)){
+      (this.lastName === null || this.lastName === undefined || this.lastName.trim().length === 0) &&
+      (this.contact === null || this.contact === undefined || this.contact === 0) &&
+      (this.personalId === null || this.personalId === undefined || this.personalId.trim().length === 0) &&
+      (this.birthDate === null || this.birthDate === undefined || this.birthDate.trim().length === 0 ||
+      this.birthMonth === null || this.birthMonth === undefined || this.birthMonth.trim().length === 0 ||
+      this.birthYear === null || this.birthYear === undefined || this.birthYear.trim().length === 0)
+    ){
       this.error = this.Mandatory;
     }
   else {
       this.showLoader();
       this.processing = true;
       this.multiple = false;
-      this.searchService.searchPatient(this.patientId, this.firstName, this.lastName)
+      let dateOfBirth;
+
+      if(!(this.birthDate === null || this.birthDate === undefined || this.birthDate.trim().length === 0 ||
+        this.birthMonth === null || this.birthMonth === undefined || this.birthMonth.trim().length === 0 ||
+        this.birthYear === null || this.birthYear === undefined || this.birthYear.trim().length === 0)) {
+       dateOfBirth = this.birthYear+'-'+this.birthMonth+'-'+this.birthDate;
+      }
+
+      this.searchService.searchPatient(this.patientId, this.firstName, this.lastName,
+        this.contact, this.personalId, dateOfBirth)
         .subscribe(data => {
             console.log(data);
             if(data === null || data.length === 0) {
