@@ -74,62 +74,62 @@
 
     <div class="row">
       <div class="col-sm-2">
-        <label for="birthDate"> Date Of Birth:</label>
+        <label for="birthDate"> Date Of Birth(DD-MM-YYYY):</label>
       </div>
 
       <div class=" col-4">
         <div class="row">
           <div class="col-sm-2">
-        <select name="birthDate" id="birthDate" [(ngModel)]="birthDate">
+            <select name="birthDate" id="birthDate" [(ngModel)]="birthDate">
 
-          <option *ngFor="let dd of totalDatesOfBirth" [value]="dd">{{dd}}</option>
-        </select>
+              <option *ngFor="let dd of totalDatesOfBirth" [value]="dd">{{dd}}</option>
+            </select>
 
-      </div>
-      <div class=" col-2">
+          </div>
+          <div class=" col-sm-2">
 
 
-        <select name="birthMonth" id="birthMonth" [(ngModel)]="birthMonth">
+            <select name="birthMonth" id="birthMonth" [(ngModel)]="birthMonth">
 
-          <option *ngFor="let mm of totalMonthOfBirth" [value]="mm">{{mm}}</option>
-        </select>
-      </div>
-      <div class=" col-2">
-        <select id="birthYear" [(ngModel)]="birthYear">
-          <option *ngFor="let obj of totalDatesOfYear" [value]="obj">{{obj}}</option>
-        </select>
+              <option *ngFor="let mm of totalMonthOfBirth" [value]="mm">{{mm}}</option>
+            </select>
+          </div>
+          <div class=" col-sm-2">
+            <select id="birthYear" [(ngModel)]="birthYear">
+              <option *ngFor="let obj of totalDatesOfYear" [value]="obj">{{obj}}</option>
+            </select>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!--<div class="row">-->
+      <!--<div class="col-sm-2">-->
+
+      <!--</div>-->
+
+      <!--<div class="col-sm-4">-->
+        <!--<div class="row">-->
+          <!--<div class=" col-2">-->
+            <!--Date-->
+          <!--</div>-->
+          <!--<div class="  col-2">-->
+            <!--Month-->
+          <!--</div>-->
+          <!--<div class="  col-2">-->
+            <!--Year-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <div class="row">
+      <div class="col">
+        <!--      <a routerLink="print" class="nav-link">-->
+        <button type="submit" class="btn btn-primary" (click)="searchPatientData()">Search</button>
+        <!--      </a>-->
       </div>
     </div>
-      <div class="row">
-        <div class="col-sm-2">
-
-        </div>
-
-        <div class="col-sm-4">
-          <div class="row">
-        <div class=" col-2">
-          Date
-        </div>
-        <div class="  col-2">
-          Month
-        </div>
-        <div class="  col-2">
-          Year
-        </div>
-      </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <!--      <a routerLink="print" class="nav-link">-->
-          <button type="submit" class="btn btn-primary" (click)="searchPatientData()">Search</button>
-          <!--      </a>-->
-        </div>
-      </div>
-
 
 
   </div>
