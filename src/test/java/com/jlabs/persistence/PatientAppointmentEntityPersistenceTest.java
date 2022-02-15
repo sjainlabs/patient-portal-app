@@ -21,6 +21,6 @@ public class PatientAppointmentEntityPersistenceTest {
 
   @Test
   public void getAppointmentTest() {
-    List<PatientAppointmentEntity> patientAppointments = patientAppointmentPersistence.getAppointment();
+    List<PatientAppointmentEntity> patientAppointments = patientAppointmentPersistence.getAllAppointments();
   }
 }

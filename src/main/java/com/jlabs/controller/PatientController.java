@@ -4,13 +4,11 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.jlabs.model.Patient;
 import com.jlabs.model.Visit;
 import com.jlabs.persistence.entity.PatientAppointmentEntity;
-import com.jlabs.persistence.entity.PatientEntity;
 import com.jlabs.persistence.entity.VisitEntity;
 import com.jlabs.service.PatientAppointmentService;
 import com.jlabs.service.PatientService;
 import com.jlabs.service.VisitService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
@@ -95,10 +93,10 @@ public class PatientController {
     return new ResponseEntity<>(visit1, HttpStatus.OK);
   }
 
-  @GetMapping("/appointment")
+  @GetMapping("/appointments")
   @ResponseBody
-  public ResponseEntity<List<PatientAppointmentEntity>> getPatientAppointment(){
-    List<PatientAppointmentEntity> patientAppointmentEntityList = patientAppointmentService.getAppointment();
-    return new ResponseEntity<>(patientAppointmentEntityList, HttpStatus.OK);
+  public ResponseEntity<Optional> getPatientAppointment(){
+    Optional<List<PatientAppointmentEntity>> patientAppointments = patientAppointmentService.getAllAppointments();
+    return new ResponseEntity<>(patientAppointments, HttpStatus.OK);
   }
 }
