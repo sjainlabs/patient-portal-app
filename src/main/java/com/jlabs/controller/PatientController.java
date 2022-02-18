@@ -2,8 +2,9 @@ package com.jlabs.controller;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.jlabs.model.Patient;
+import com.jlabs.model.Appointment;
 import com.jlabs.model.Visit;
-import com.jlabs.persistence.entity.PatientAppointmentEntity;
+import com.jlabs.persistence.entity.AppointmentEntity;
 import com.jlabs.persistence.entity.VisitEntity;
 import com.jlabs.service.PatientAppointmentService;
 import com.jlabs.service.PatientService;
@@ -96,7 +97,15 @@ public class PatientController {
   @GetMapping("/appointments")
   @ResponseBody
   public ResponseEntity<Optional> getPatientAppointment(){
-    Optional<List<PatientAppointmentEntity>> patientAppointments = patientAppointmentService.getAllAppointments();
+    Optional<List<AppointmentEntity>> patientAppointments = patientAppointmentService.getAllAppointments();
     return new ResponseEntity<>(patientAppointments, HttpStatus.OK);
+  }
+
+  @PostMapping("/appointments")
+  @ResponseBody
+  public ResponseEntity<String> createPatientAppointment(@RequestBody Appointment appointment){
+    log.debug("Create Appointment Request: {}", appointment);
+    String appointmentId = patientAppointmentService.createAppointments(appointment);
+    return new ResponseEntity<>("Appointment created, AppointmentId: " + appointmentId, HttpStatus.CREATED);
   }
 }
