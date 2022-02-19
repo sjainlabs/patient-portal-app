@@ -12,11 +12,10 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name = "patient_appointment")
-public class PatientAppointmentEntity {
+public class AppointmentEntity {
 
   @Id
   @Column(name = "appointment_id")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int appointmentId;
 
   @Column(name = "appointment_date")
@@ -24,9 +23,9 @@ public class PatientAppointmentEntity {
 
   @OneToOne
   @JoinColumn(name = "doctor_id")
-  private DoctorEntity doctorId;
+  private DoctorEntity doctorEntity;
 
   @OneToOne
   @JoinColumn(name = "patient_id")
-  private PatientEntity patientId;
+  private PatientEntity patientEntity;
 }
