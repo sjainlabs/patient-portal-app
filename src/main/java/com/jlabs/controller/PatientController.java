@@ -6,7 +6,7 @@ import com.jlabs.model.Appointment;
 import com.jlabs.model.Visit;
 import com.jlabs.persistence.entity.AppointmentEntity;
 import com.jlabs.persistence.entity.VisitEntity;
-import com.jlabs.service.PatientAppointmentService;
+import com.jlabs.service.AppointmentService;
 import com.jlabs.service.PatientService;
 import com.jlabs.service.VisitService;
 import lombok.extern.slf4j.Slf4j;
@@ -36,7 +36,7 @@ public class PatientController {
   VisitService visitService;
 
   @Autowired
-  PatientAppointmentService patientAppointmentService;
+  AppointmentService appointmentService;
 
   @PostMapping
   @ResponseBody
@@ -97,7 +97,7 @@ public class PatientController {
   @GetMapping("/appointments")
   @ResponseBody
   public ResponseEntity<Optional> getPatientAppointment(){
-    Optional<List<AppointmentEntity>> patientAppointments = patientAppointmentService.getAllAppointments();
+    Optional<List<AppointmentEntity>> patientAppointments = appointmentService.getAllAppointments();
     return new ResponseEntity<>(patientAppointments, HttpStatus.OK);
   }
 
@@ -105,7 +105,15 @@ public class PatientController {
   @ResponseBody
   public ResponseEntity<String> createPatientAppointment(@RequestBody Appointment appointment){
     log.debug("Create Appointment Request: {}", appointment);
-    String appointmentId = patientAppointmentService.createAppointments(appointment);
+    String appointmentId = appointmentService.createAppointments(appointment);
     return new ResponseEntity<>("Appointment created, AppointmentId: " + appointmentId, HttpStatus.CREATED);
+  }
+
+  @GetMapping("/appointments/{doctorId}")
+  @ResponseBody
+  public ResponseEntity<List<Appointment>> getAppointmentByDoctorId(@PathVariable int doctorId){
+    log.info("Get Appointment by Doctor id: {}", doctorId);
+    List<Appointment> appointmentsList = appointmentService.getAppointmentsByDoctorId(doctorId);
+    return new ResponseEntity<>(appointmentsList, HttpStatus.OK);
   }
 }
