@@ -163,7 +163,7 @@
         <div>
           <label>
             ZipCode:
-            <input type="text" formControlName="zipCode" (keypress)="patientHelper.numberOnly($event)" class="form-control" placeholder="302001" maxlength="10">
+            <input type="text" formControlName="zipCode" (keypress)="patientHelper.numberOnly($event)" class="form-control" placeholder="302001" maxlength="6">
           </label>
         </div>
 
@@ -219,14 +219,14 @@
         <div>
           <label>
             Weight(Kg):
-            <input type="text" formControlName="weight" (keypress)="patientHelper.numberOnly($event)" class="form-control" placeholder="72">
+            <input type="text" formControlName="weight" (keypress)="patientHelper.numberOnly($event)" class="form-control" maxlength="3" placeholder="72">
           </label>
         </div>
 
         <div>
           <label>
             Height(Centimeter):
-            <input type="text" formControlName="height" class="form-control" placeholder="174" (keypress)="patientHelper.numberOnly($event)">
+            <input type="text" formControlName="height" class="form-control" maxlength="3" placeholder="174" (keypress)="patientHelper.numberOnly($event)">
           </label>
         </div>
 
