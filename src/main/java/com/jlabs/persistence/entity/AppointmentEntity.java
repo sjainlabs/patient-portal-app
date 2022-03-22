@@ -5,7 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 @Getter
 @Setter
@@ -16,10 +16,11 @@ public class AppointmentEntity {
 
   @Id
   @Column(name = "appointment_id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int appointmentId;
 
   @Column(name = "appointment_date")
-  private Date appointmentDate;
+  private ZonedDateTime appointmentDate;
 
   @OneToOne
   @JoinColumn(name = "doctor_id")

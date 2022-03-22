@@ -21,6 +21,6 @@
 //
 //  @Test
 //  public void getAppointmentTest() {
-//    List<AppointmentEntity> patientAppointments = appointmentPersistence.getAllAppointments();
+//    List<AppointmentEntity> patientAppointments = appointmentPersistence.getAppointments();
 //  }
 //}

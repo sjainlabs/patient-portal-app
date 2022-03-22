@@ -4,19 +4,20 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.jlabs.model.Patient;
 import com.jlabs.model.Appointment;
 import com.jlabs.model.Visit;
-import com.jlabs.persistence.entity.AppointmentEntity;
 import com.jlabs.persistence.entity.VisitEntity;
 import com.jlabs.service.AppointmentService;
 import com.jlabs.service.PatientService;
 import com.jlabs.service.VisitService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -96,8 +97,8 @@ public class PatientController {
 
   @GetMapping("/appointments")
   @ResponseBody
-  public ResponseEntity<Optional> getPatientAppointment(){
-    Optional<List<AppointmentEntity>> patientAppointments = appointmentService.getAllAppointments();
+  public ResponseEntity<Optional> getPatientAppointment(@Param("doctorName") String doctorName, @Param("appointmentDate") String appointmentDate ){
+    Optional<List<Appointment>> patientAppointments = appointmentService.getAppointments(doctorName, appointmentDate);
     return new ResponseEntity<>(patientAppointments, HttpStatus.OK);
   }
 
