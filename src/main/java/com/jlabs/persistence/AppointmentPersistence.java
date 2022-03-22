@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,6 +39,12 @@ public class AppointmentPersistence {
   public List<AppointmentEntity> getAppointmentByDoctorId(int doctorId){
     List<AppointmentEntity> appointmentsEntityList = appointmentRepository.findAppointmentByDoctorId(doctorId);
     log.debug("Retrieve appointment Entity by doctorID: {}" , appointmentsEntityList);
+    return appointmentsEntityList;
+  }
+
+  public List<AppointmentEntity> getAppointmentByDoctorNameOrAppointmentDate(String doctorName, ZonedDateTime appointmentDate){
+    List<AppointmentEntity> appointmentsEntityList = appointmentRepository.findAppointmentByDoctorNameOrAppointmentDate(doctorName,appointmentDate);
+    log.debug("Retrieve appointment Entity by doctorName Or AppointmentDate: {}" , appointmentsEntityList);
     return appointmentsEntityList;
   }
 }

@@ -4,11 +4,13 @@ import com.jlabs.model.Appointment;
 import com.jlabs.persistence.AppointmentPersistence;
 import com.jlabs.persistence.entity.AppointmentEntity;
 import com.jlabs.service.transform.AppointmentEntityMapper;
+import jdk.nashorn.internal.runtime.regexp.joni.constants.OPCode;
 import lombok.extern.slf4j.Slf4j;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -21,10 +23,23 @@ public class AppointmentService {
   private AppointmentPersistence appointmentPersistence;
   AppointmentEntityMapper appointmentEntityMapper = Mappers.getMapper(AppointmentEntityMapper.class);
 
-  public Optional<List<AppointmentEntity>> getAllAppointments(){
-    Optional<List<AppointmentEntity>> patientAppointments = Optional.ofNullable(appointmentPersistence.getAllAppointments());
-    log.info("Retrieve all appointments: {}" , patientAppointments);
-    return patientAppointments;
+  public Optional<List<Appointment>> getAppointments(String doctorName, String appointmentDate){
+    Optional<List<AppointmentEntity>> patientAppointments = Optional.empty();
+    if(doctorName == null && appointmentDate == null){
+       patientAppointments = Optional.ofNullable(appointmentPersistence.getAllAppointments());
+    }
+    else{
+      patientAppointments = Optional.ofNullable(appointmentPersistence.getAppointmentByDoctorNameOrAppointmentDate(doctorName,ZonedDateTime.parse(appointmentDate)));
+    }
+    List<Appointment> appointmentsList = new ArrayList<>();
+    if(!patientAppointments.get().isEmpty()) {
+      log.info("Retrieved all appointments: {}" , patientAppointments);
+      for (AppointmentEntity appointmentEntity: patientAppointments.get()) {
+        Appointment appointment = appointmentEntityMapper.AppointmentEntityToAppointment(appointmentEntity);
+        appointmentsList.add(appointment);
+      }
+    }
+    return Optional.ofNullable(appointmentsList);
   }
 
   public String createAppointments(Appointment appointment){
