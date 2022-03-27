@@ -14,6 +14,8 @@ import { LoaderSpinComponent } from './loader-spin/loader-spin.component';
 import {DataTableModule} from "angular-6-datatable";
 import { PatientHistoryComponent } from './patient-history/patient-history.component';
 import { PatientHeaderComponent } from './patient-header/patient-header.component';
+import { AppointmentViewComponent } from './appointment-view/appointment-view.component';
+import { AppointmentCreateComponent } from './appointment-create/appointment-create.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { PatientHeaderComponent } from './patient-header/patient-header.componen
     LoaderSpinComponent,
     PatientHistoryComponent,
     PatientHeaderComponent,
+    AppointmentViewComponent,
+    AppointmentCreateComponent,
     // PatientHelper
   ],
   imports: [
@@ -52,6 +56,14 @@ import { PatientHeaderComponent } from './patient-header/patient-header.componen
         path: 'history',
         component: PatientHistoryComponent
       },
+      {
+        path: 'appointment',
+        component: AppointmentViewComponent
+      },
+      {
+        path: 'appointment-create',
+        component: AppointmentCreateComponent
+      },
       { path: '',   redirectTo: '/search', pathMatch: 'full' }, // redirect to `first-component`
       { path: '**', component: PagenotfoundComponent },
     ]),
@@ -72,6 +84,14 @@ import { PatientHeaderComponent } from './patient-header/patient-header.componen
       {
         path: 'history',
         component: PatientHistoryComponent
+      },
+      {
+        path: 'appointment',
+        component: AppointmentViewComponent
+      },
+      {
+        path: 'appointment-create',
+        component: AppointmentCreateComponent
       },
       { path: '',   redirectTo: '/search', pathMatch: 'full' }, // redirect to `first-component`
       { path: '**', component: PagenotfoundComponent },
