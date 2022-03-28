@@ -3,6 +3,7 @@ import {AppointmentData} from "../model/AppointmentData";
 import {DoctorData} from "../model/DoctorData";
 import {AppointmentSearchService} from "../service/appointment-search.service";
 import * as moment from 'moment';
+import {PatientData} from "../model/PatientData";
 
 @Component({
   selector: 'app-appointment-create',
@@ -23,9 +24,11 @@ export class AppointmentCreateComponent implements OnInit {
   hoursSlot3 = [];
 
   constructor(private appointmentSearchService: AppointmentSearchService) {
+
   }
 
   ngOnInit() {
+    this.hideLoader();
     this.appointmentWindow1();
     this.appointmentWindow2();
     this.appointmentWindow3();
@@ -90,11 +93,14 @@ export class AppointmentCreateComponent implements OnInit {
             for (let i = 0; i < data.length; i++) {
 
               this.appointmentData.push(data[i]);
-              console.log(this.appointmentData[i].appointmentDate);
-              console.log(this.appointmentData[i].startTime);
+              // console.log(this.appointmentData[i].appointmentDate);
+              // console.log(this.appointmentData[i].startTime);
 
             }
             if (data.length > 0) {
+              // let startTime = this.appointmentData[i].startTime.slice(11);
+              let hoursSlotFiltered =  this.hoursSlot1.filter(slot => this.appointmentData.forEach(a => a.startTime) === slot)
+              console.log("hoursSlotFiltered" + hoursSlotFiltered);
               this.appointmentFound = true;
             }
           }
@@ -120,6 +126,29 @@ export class AppointmentCreateComponent implements OnInit {
   }
 
   bookAppointment(date) {
+    let appointment : AppointmentData = new AppointmentData();
+    appointment.doctor = new DoctorData();
+    appointment.patient = new PatientData();
+    appointment.appointmentDate = "2022-03-29"
+    appointment.startTime= appointment.appointmentDate +" "+ date;
+    appointment.doctor.doctorId = 2;
+    appointment.patient.id = '2';
+    this.appointmentSearchService.createAppointment(appointment)
+      .subscribe(s => {
+          console.log("Appointment Booked id"+ s);
+          // this.patientIdCreated = s;
+          this.error= '';
+          // this.processing = true;
+          this.hideLoader();
+        },
+        error1 => {this.error = this.ERRORMESSAGE;
+          // this.show= false;
+          // this.processing=false;
+          this.hideLoader();
+        }
+      );
     console.log("Appointment Booked : " + date);
+
+
   }
 }

@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {AppointmentSearchService} from "../service/appointment-search.service";
 import {AppointmentData} from "../model/AppointmentData";
 import {DoctorData} from "../model/DoctorData";
+import {formatDate} from '@angular/common';
+import * as moment from 'moment';
 
 
 @Component({
@@ -41,8 +43,13 @@ export class AppointmentViewComponent implements OnInit {
             for (let i = 0; i < data.length; i++) {
 
               this.appointmentData.push(data[i]);
-              console.log(this.appointmentData[i].appointmentDate);
-              console.log(this.appointmentData[i].startTime);
+              this.appointmentData[i].startTime = this.appointmentData[i].startTime.slice(11);
+              console.log( this.appointmentData[i].startTime);
+            // this.appointmentData[i].startTime = new Date( this.appointmentData[i].startTime);
+              // console.log(this.appointmentData[i].appointmentDate);
+             // consol    e.log (moment(this.appointmentData[i].startTime,'yyyy-MM-dd'));
+             //  console.log( formatDate(this.appointmentData[i].startTime,'yyyy-MM-dd','en-us'));
+             //  console.log(this.appointmentData[i].startTime);
 
             }
 

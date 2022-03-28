@@ -46,9 +46,11 @@
         <!--<div class="row"> Range 8 am - 12PM</div>-->
         <div class="row">
           <div *ngFor="let dateRange of hoursSlot1">
+            <div class="col-sm-2">
             <label style="background-color: green" (click)="bookAppointment(dateRange)">{{dateRange}}  </label>
-            <label  style="background-color: white">  </label>
-            <label  style="background-color: white">  </label>
+            <label  style="background-color: white">   </label>
+            <label  style="background-color: white">   </label>
+            </div>
 
           </div>
         </div>
