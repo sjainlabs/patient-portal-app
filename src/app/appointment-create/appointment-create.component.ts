@@ -48,12 +48,12 @@ export class AppointmentCreateComponent implements OnInit {
 
     for (let hour = 8;hour < 21; hour++ )
     {
-      this.hoursSlot1.push(moment({hour}).format('hh:mm A'));
+      this.hoursSlot1.push(moment({hour}).format('HH:mm A'));
       this.hoursSlot1.push(
         moment({
           hour,
           minute: 20
-        }).format('hh:mm A')
+        }).format('HH:mm A')
       );
     }
 
