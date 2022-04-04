@@ -707,11 +707,11 @@ var AppointmentCreateComponent = /** @class */ (function () {
         this.hoursSlot1 = [];
         moment__WEBPACK_IMPORTED_MODULE_4__["locale"](this.locale); // optional - can remove if you are only dealing with one locale
         for (var hour = 8; hour < 21; hour++) {
-            this.hoursSlot1.push(moment__WEBPACK_IMPORTED_MODULE_4__({ hour: hour }).format('hh:mm A'));
+            this.hoursSlot1.push(moment__WEBPACK_IMPORTED_MODULE_4__({ hour: hour }).format('HH:mm A'));
             this.hoursSlot1.push(moment__WEBPACK_IMPORTED_MODULE_4__({
                 hour: hour,
                 minute: 20
-            }).format('hh:mm A'));
+            }).format('HH:mm A'));
         }
     };
     AppointmentCreateComponent.prototype.appointmentWindow2 = function () {
