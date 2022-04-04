@@ -14,9 +14,9 @@
         <label for="doctorName">Doctor Name:</label>
       </div>
       <div class="col-sm-2">
-        <select id="doctorName" name="doctorName" [(ngModel)]="doctorName">
-          <option value="Dr Siddhart Kothari">Dr Siddhart Kothari</option>
-          <option value="Dr Poonam Jain">Dr Poonam Jain</option>
+        <select id="doctorName" name="doctorName" [(ngModel)]="doctorSelected">
+          <option  *ngFor="let doctor of doctorList" [ngValue]="doctor" >{{doctor.doctorName}}</option>
+<!--          <option value="Dr Poonam Jain">Dr Poonam Jain</option>-->
         </select>
       </div>
     </div>
