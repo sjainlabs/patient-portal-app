@@ -7,6 +7,7 @@ import com.jlabs.model.Appointment;
 import com.jlabs.model.Visit;
 import com.jlabs.persistence.entity.VisitEntity;
 import com.jlabs.service.AppointmentService;
+import com.jlabs.service.DoctorService;
 import com.jlabs.service.PatientService;
 import com.jlabs.service.VisitService;
 import lombok.extern.slf4j.Slf4j;
@@ -39,6 +40,9 @@ public class PatientController {
 
   @Autowired
   AppointmentService appointmentService;
+
+  @Autowired
+  DoctorService doctorService;
 
   @PostMapping
   @ResponseBody
@@ -121,9 +125,9 @@ public class PatientController {
 
   @GetMapping("/doctors")
   @ResponseBody
-  public ResponseEntity<List<Doctor>> getAllDoctors(){
+  public ResponseEntity<Optional> getAllDoctors(){
     log.info("Get all Doctors");
-//    List<Appointment> appointmentsList = appointmentService.getAppointmentsByDoctorId();
-    return new ResponseEntity<>(null, HttpStatus.OK);
+    Optional<List<Doctor>> doctorList = doctorService.getAllDoctors();
+    return new ResponseEntity<>(doctorList, HttpStatus.OK);
   }
 }

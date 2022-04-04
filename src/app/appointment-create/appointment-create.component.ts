@@ -7,6 +7,8 @@ import {PatientData} from "../model/PatientData";
 import {AppointmentConfirmationComponent} from "../appointment-confirmation/appointment-confirmation.component";
 import {AppointmentDataServiceService} from "../service/appointment-data-service.service";
 import {Router} from "@angular/router";
+import {DoctorServiceService} from "../service/doctor-service.service";
+import {SearchDataServiceService} from "../service/search-data-service.service";
 
 @Component({
   selector: 'app-appointment-create',
@@ -23,12 +25,14 @@ export class AppointmentCreateComponent implements OnInit {
   appointmentData: AppointmentData[] = [];
   locale = 'en'; // or whatever you want...
   hoursSlot1 = [];
-  hoursSlot2 = [];
-  hoursSlot3 = [];
   currentDate;
+  doctorList : DoctorData[] =[];
+  doctorSelected : DoctorData ;
 
   constructor(private appointmentSearchService: AppointmentSearchService,
               private appointmentConfirmationService: AppointmentDataServiceService,
+              private doctorService: DoctorServiceService,
+              private searchDataService: SearchDataServiceService,
               private router: Router) {
     this.currentDate = moment(new Date()).format("YYYY-MM-DD");
 
@@ -36,9 +40,8 @@ export class AppointmentCreateComponent implements OnInit {
 
   ngOnInit() {
     this.hideLoader();
+    this.searchDoctors();
     this.appointmentWindow1();
-    this.appointmentWindow2();
-    this.appointmentWindow3();
   }
 
 
@@ -58,36 +61,36 @@ export class AppointmentCreateComponent implements OnInit {
     }
 
   }
-  appointmentWindow2() {
-    moment.locale(this.locale);  // optional - can remove if you are only dealing with one locale
 
-    for (let hour = 12;hour < 17; hour++ )
-    {
-      this.hoursSlot2.push(moment({hour}).format('h:mm A'));
-      this.hoursSlot2.push(
-        moment({
-          hour,
-          minute: 20
-        }).format('h:mm A')
-      );
-    }
+  searchDoctors() {
+    this.showLoader();
+    this.doctorList = [];
+    this.doctorService.searchAllDoctors()
+      .subscribe(data => {
+          console.log(data);
+          if (data == null) {
+            this.error = this.DATANOTFOUND;
+          } else {
+            for (let i = 0; i < data.length; i++) {
 
+              this.doctorList.push(data[i]);
+              console.log(this.doctorList[i].doctorName);
+              // console.log(this.appointmentData[i].startTime);
+
+            }
+
+          }
+          this.hideLoader();
+        }
+        // }
+        ,
+        error1 => {
+          this.error = this.ERRORMESSAGE;
+          this.hideLoader();
+        }
+      )
   }
-  appointmentWindow3() {
-    moment.locale(this.locale);  // optional - can remove if you are only dealing with one locale
 
-    for (let hour = 16;hour < 21; hour++ )
-    {
-      this.hoursSlot3.push(moment({hour}).format('h:mm A'));
-      this.hoursSlot3.push(
-        moment({
-          hour,
-          minute: 20
-        }).format('h:mm A')
-      );
-    }
-
-  }
 
   searchAppointment(doctorName, appointmentDate,hourslot) {
     this.appointmentWindow1();
@@ -125,25 +128,16 @@ export class AppointmentCreateComponent implements OnInit {
       )
   }
 
-  hideLoader() {
-
-    document.getElementById('loadin').style.display = 'none';
-  }
-
-  showLoader() {
-
-    document.getElementById('loadin').style.display = '';
-  }
-
   bookAppointment(date, startTime) {
+    let patient = this.getPatientDataFromSearch();
     let appointment : AppointmentData = new AppointmentData();
     appointment.doctor = new DoctorData();
     appointment.patient = new PatientData();
     appointment.appointmentDate = date;
     appointment.startTime= appointment.appointmentDate +" "+ startTime;
-    appointment.doctor.doctorId = 2;
-    appointment.doctor.doctorName = this.doctorName;
-    appointment.patient.id = '2';
+    appointment.doctor.doctorId = this.doctorSelected.doctorId;
+    appointment.doctor.doctorName = this.doctorSelected.doctorName;
+    appointment.patient.id = patient.id;
     this.appointmentSearchService.createAppointment(appointment)
       .subscribe(s => {
           console.log("Appointment Booked id"+ s);
@@ -164,9 +158,24 @@ export class AppointmentCreateComponent implements OnInit {
 
   }
 
+  getPatientDataFromSearch() {
+    return this.searchDataService.getSearchData();
+  }
+
   appointmentConfirmation(data) {
     this.appointmentConfirmationService.appointmentConfirmation = data;
     this.router.navigate(['appointment-confirmation']);
+  }
+
+
+  hideLoader() {
+
+    document.getElementById('loadin').style.display = 'none';
+  }
+
+  showLoader() {
+
+    document.getElementById('loadin').style.display = '';
   }
 
 }

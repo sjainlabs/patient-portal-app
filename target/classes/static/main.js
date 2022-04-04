@@ -642,7 +642,7 @@ module.exports = "#appointment {\n  font-family: Arial, Helvetica, sans-serif;\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <br>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div id=\"appointmentHeader\" class=\" container \">\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"doctorName\">Doctor Name:</label>\n      </div>\n      <div class=\"col-sm-2\">\n        <select id=\"doctorName\" name=\"doctorName\" [(ngModel)]=\"doctorName\">\n          <option value=\"Dr Siddhart Kothari\">Dr Siddhart Kothari</option>\n          <option value=\"Dr Poonam Jain\">Dr Poonam Jain</option>\n        </select>\n      </div>\n    </div>\n      <div class=\"row\">\n        <div class=\"col-sm-2\">\n          <label for=\"appointmentDate\">Appointment Date:</label>\n        </div>\n        <div class=\"col-sm-2\">\n          <input type=\"date\" [(ngModel)]=\"appointmentDate\" id=\"appointmentDate\" placeholder=\"DD/MM/YY\" [min]=\"currentDate\">\n        </div>\n      </div>\n\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"   searchAppointment(doctorName,appointmentDate,hoursSlot1)\" title=\"Search For Available Appointment\">Search</button>\n        <!--      </a>-->\n      </div>\n    </div>\n\n  </div>\n\n  <br>\n  <br>\n\n    <div class=\"container appointment\" *ngIf=\"appointmentFound===true\">\n\n      <div>\n<!--        <div class=\"row\"> Date: {{appointmentDate}}</div>-->\n        <div class=\"row\">\n          <div *ngFor=\"let dateRange of hoursSlot1\">\n            <div class=\"col-sm-2\">\n            <button title=\"Book Appointment\" type=\"submit\" class=\"btn btn-primary\"  (click)=\"bookAppointment(appointmentDate, dateRange)\">{{dateRange}}  </button>\n            <label  style=\"background-color: white\">   </label>\n            <label  style=\"background-color: white\">   </label>\n            </div>\n\n          </div>\n        </div>\n        <!--<div class=\"row\"> Range 12 PM - 4 PM</div>-->\n        <!--<div class=\"row\">-->\n          <!--<div *ngFor=\"let dateRange of hoursSlot2\">-->\n            <!--<label style=\"background-color: green\">{{dateRange}} </label>-->\n          <!--</div>-->\n        <!--</div>-->\n\n        <!--<div class=\"row\"> Range 4 PM - 8 PM</div>-->\n        <!--<div class=\"row\">-->\n          <!--<div *ngFor=\"let dateRange of hoursSlot3\">-->\n            <!--<label style=\"background-color: green\">{{dateRange}} </label>-->\n          <!--</div>-->\n        <!--</div>-->\n\n\n      </div>\n\n\n    </div>\n\n  </div>\n\n"
+module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <br>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div id=\"appointmentHeader\" class=\" container \">\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"doctorName\">Doctor Name:</label>\n      </div>\n      <div class=\"col-sm-2\">\n        <select id=\"doctorName\" name=\"doctorName\" [(ngModel)]=\"doctorSelected\">\n          <option  *ngFor=\"let doctor of doctorList\" [ngValue]=\"doctor\" >{{doctor.doctorName}}</option>\n<!--          <option value=\"Dr Poonam Jain\">Dr Poonam Jain</option>-->\n        </select>\n      </div>\n    </div>\n      <div class=\"row\">\n        <div class=\"col-sm-2\">\n          <label for=\"appointmentDate\">Appointment Date:</label>\n        </div>\n        <div class=\"col-sm-2\">\n          <input type=\"date\" [(ngModel)]=\"appointmentDate\" id=\"appointmentDate\" placeholder=\"DD/MM/YY\" [min]=\"currentDate\">\n        </div>\n      </div>\n\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"   searchAppointment(doctorName,appointmentDate,hoursSlot1)\" title=\"Search For Available Appointment\">Search</button>\n        <!--      </a>-->\n      </div>\n    </div>\n\n  </div>\n\n  <br>\n  <br>\n\n    <div class=\"container appointment\" *ngIf=\"appointmentFound===true\">\n\n      <div>\n<!--        <div class=\"row\"> Date: {{appointmentDate}}</div>-->\n        <div class=\"row\">\n          <div *ngFor=\"let dateRange of hoursSlot1\">\n            <div class=\"col-sm-2\">\n            <button title=\"Book Appointment\" type=\"submit\" class=\"btn btn-primary\"  (click)=\"bookAppointment(appointmentDate, dateRange)\">{{dateRange}}  </button>\n            <label  style=\"background-color: white\">   </label>\n            <label  style=\"background-color: white\">   </label>\n            </div>\n\n          </div>\n        </div>\n        <!--<div class=\"row\"> Range 12 PM - 4 PM</div>-->\n        <!--<div class=\"row\">-->\n          <!--<div *ngFor=\"let dateRange of hoursSlot2\">-->\n            <!--<label style=\"background-color: green\">{{dateRange}} </label>-->\n          <!--</div>-->\n        <!--</div>-->\n\n        <!--<div class=\"row\"> Range 4 PM - 8 PM</div>-->\n        <!--<div class=\"row\">-->\n          <!--<div *ngFor=\"let dateRange of hoursSlot3\">-->\n            <!--<label style=\"background-color: green\">{{dateRange}} </label>-->\n          <!--</div>-->\n        <!--</div>-->\n\n\n      </div>\n\n\n    </div>\n\n  </div>\n\n"
 
 /***/ }),
 
@@ -665,6 +665,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _model_PatientData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../model/PatientData */ "./src/app/model/PatientData.ts");
 /* harmony import */ var _service_appointment_data_service_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../service/appointment-data-service.service */ "./src/app/service/appointment-data-service.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_doctor_service_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../service/doctor-service.service */ "./src/app/service/doctor-service.service.ts");
+/* harmony import */ var _service_search_data_service_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../service/search-data-service.service */ "./src/app/service/search-data-service.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -682,10 +684,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var AppointmentCreateComponent = /** @class */ (function () {
-    function AppointmentCreateComponent(appointmentSearchService, appointmentConfirmationService, router) {
+    function AppointmentCreateComponent(appointmentSearchService, appointmentConfirmationService, doctorService, searchDataService, router) {
         this.appointmentSearchService = appointmentSearchService;
         this.appointmentConfirmationService = appointmentConfirmationService;
+        this.doctorService = doctorService;
+        this.searchDataService = searchDataService;
         this.router = router;
         this.appointmentFound = false;
         this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
@@ -693,15 +699,13 @@ var AppointmentCreateComponent = /** @class */ (function () {
         this.appointmentData = [];
         this.locale = 'en'; // or whatever you want...
         this.hoursSlot1 = [];
-        this.hoursSlot2 = [];
-        this.hoursSlot3 = [];
+        this.doctorList = [];
         this.currentDate = moment__WEBPACK_IMPORTED_MODULE_4__(new Date()).format("YYYY-MM-DD");
     }
     AppointmentCreateComponent.prototype.ngOnInit = function () {
         this.hideLoader();
+        this.searchDoctors();
         this.appointmentWindow1();
-        this.appointmentWindow2();
-        this.appointmentWindow3();
     };
     AppointmentCreateComponent.prototype.appointmentWindow1 = function () {
         this.hoursSlot1 = [];
@@ -714,25 +718,30 @@ var AppointmentCreateComponent = /** @class */ (function () {
             }).format('HH:mm A'));
         }
     };
-    AppointmentCreateComponent.prototype.appointmentWindow2 = function () {
-        moment__WEBPACK_IMPORTED_MODULE_4__["locale"](this.locale); // optional - can remove if you are only dealing with one locale
-        for (var hour = 12; hour < 17; hour++) {
-            this.hoursSlot2.push(moment__WEBPACK_IMPORTED_MODULE_4__({ hour: hour }).format('h:mm A'));
-            this.hoursSlot2.push(moment__WEBPACK_IMPORTED_MODULE_4__({
-                hour: hour,
-                minute: 20
-            }).format('h:mm A'));
+    AppointmentCreateComponent.prototype.searchDoctors = function () {
+        var _this = this;
+        this.showLoader();
+        this.doctorList = [];
+        this.doctorService.searchAllDoctors()
+            .subscribe(function (data) {
+            console.log(data);
+            if (data == null) {
+                _this.error = _this.DATANOTFOUND;
+            }
+            else {
+                for (var i = 0; i < data.length; i++) {
+                    _this.doctorList.push(data[i]);
+                    console.log(_this.doctorList[i].doctorName);
+                    // console.log(this.appointmentData[i].startTime);
+                }
+            }
+            _this.hideLoader();
         }
-    };
-    AppointmentCreateComponent.prototype.appointmentWindow3 = function () {
-        moment__WEBPACK_IMPORTED_MODULE_4__["locale"](this.locale); // optional - can remove if you are only dealing with one locale
-        for (var hour = 16; hour < 21; hour++) {
-            this.hoursSlot3.push(moment__WEBPACK_IMPORTED_MODULE_4__({ hour: hour }).format('h:mm A'));
-            this.hoursSlot3.push(moment__WEBPACK_IMPORTED_MODULE_4__({
-                hour: hour,
-                minute: 20
-            }).format('h:mm A'));
-        }
+        // }
+        , function (error1) {
+            _this.error = _this.ERRORMESSAGE;
+            _this.hideLoader();
+        });
     };
     AppointmentCreateComponent.prototype.searchAppointment = function (doctorName, appointmentDate, hourslot) {
         var _this = this;
@@ -767,22 +776,17 @@ var AppointmentCreateComponent = /** @class */ (function () {
             _this.hideLoader();
         });
     };
-    AppointmentCreateComponent.prototype.hideLoader = function () {
-        document.getElementById('loadin').style.display = 'none';
-    };
-    AppointmentCreateComponent.prototype.showLoader = function () {
-        document.getElementById('loadin').style.display = '';
-    };
     AppointmentCreateComponent.prototype.bookAppointment = function (date, startTime) {
         var _this = this;
+        var patient = this.getPatientDataFromSearch();
         var appointment = new _model_AppointmentData__WEBPACK_IMPORTED_MODULE_1__["AppointmentData"]();
         appointment.doctor = new _model_DoctorData__WEBPACK_IMPORTED_MODULE_2__["DoctorData"]();
         appointment.patient = new _model_PatientData__WEBPACK_IMPORTED_MODULE_5__["PatientData"]();
         appointment.appointmentDate = date;
         appointment.startTime = appointment.appointmentDate + " " + startTime;
-        appointment.doctor.doctorId = 2;
-        appointment.doctor.doctorName = this.doctorName;
-        appointment.patient.id = '2';
+        appointment.doctor.doctorId = this.doctorSelected.doctorId;
+        appointment.doctor.doctorName = this.doctorSelected.doctorName;
+        appointment.patient.id = patient.id;
         this.appointmentSearchService.createAppointment(appointment)
             .subscribe(function (s) {
             console.log("Appointment Booked id" + s);
@@ -799,9 +803,18 @@ var AppointmentCreateComponent = /** @class */ (function () {
         console.log("Appointment Booked : " + date);
         this.appointmentConfirmation(appointment);
     };
+    AppointmentCreateComponent.prototype.getPatientDataFromSearch = function () {
+        return this.searchDataService.getSearchData();
+    };
     AppointmentCreateComponent.prototype.appointmentConfirmation = function (data) {
         this.appointmentConfirmationService.appointmentConfirmation = data;
         this.router.navigate(['appointment-confirmation']);
+    };
+    AppointmentCreateComponent.prototype.hideLoader = function () {
+        document.getElementById('loadin').style.display = 'none';
+    };
+    AppointmentCreateComponent.prototype.showLoader = function () {
+        document.getElementById('loadin').style.display = '';
     };
     AppointmentCreateComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -811,6 +824,8 @@ var AppointmentCreateComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_service_appointment_search_service__WEBPACK_IMPORTED_MODULE_3__["AppointmentSearchService"],
             _service_appointment_data_service_service__WEBPACK_IMPORTED_MODULE_6__["AppointmentDataServiceService"],
+            _service_doctor_service_service__WEBPACK_IMPORTED_MODULE_8__["DoctorServiceService"],
+            _service_search_data_service_service__WEBPACK_IMPORTED_MODULE_9__["SearchDataServiceService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]])
     ], AppointmentCreateComponent);
     return AppointmentCreateComponent;
@@ -1923,6 +1938,51 @@ var AppointmentSearchService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], AppointmentSearchService);
     return AppointmentSearchService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/doctor-service.service.ts":
+/*!***************************************************!*\
+  !*** ./src/app/service/doctor-service.service.ts ***!
+  \***************************************************/
+/*! exports provided: DoctorServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoctorServiceService", function() { return DoctorServiceService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var DoctorServiceService = /** @class */ (function () {
+    function DoctorServiceService(http) {
+        this.http = http;
+        this.doctorApiUrl = '/doctor/v1';
+    }
+    DoctorServiceService.prototype.searchAllDoctors = function () {
+        var url = this.doctorApiUrl + "/doctors";
+        return this.http.get(url);
+    };
+    DoctorServiceService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], DoctorServiceService);
+    return DoctorServiceService;
 }());
 
 
