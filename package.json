@@ -25,8 +25,11 @@
     "angular-6-datatable": "^0.8.0",
     "bootstrap": "^4.5.0",
     "core-js": "^2.5.4",
+    "iana-tz-data": "^2019.1.0",
+    "moment": "^2.29.1",
     "rxjs": "~6.2.0",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "zoned-date-time": "^1.1.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.4",

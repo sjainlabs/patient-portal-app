@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -19,5 +20,5 @@ public interface AppointmentRepository extends JpaRepository<AppointmentEntity, 
 
   @Query("select appointment from AppointmentEntity appointment where ( :doctorName is null or appointment.doctorEntity.doctorName= :doctorName" +
     " or :appointmentDate is null or appointment.appointmentDate= :appointmentDate)")
-  public List<AppointmentEntity> findAppointmentByDoctorNameOrAppointmentDate(@Param("doctorName") String doctorName,@Param("appointmentDate") ZonedDateTime appointmentDate);
+  public List<AppointmentEntity> findAppointmentByDoctorNameOrAppointmentDate(@Param("doctorName") String doctorName,@Param("appointmentDate") LocalDate appointmentDate);
 }
