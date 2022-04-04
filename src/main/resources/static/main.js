@@ -333,7 +333,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hcHAuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -411,12 +411,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _patient_header_patient_header_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./patient-header/patient-header.component */ "./src/app/patient-header/patient-header.component.ts");
 /* harmony import */ var _appointment_view_appointment_view_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./appointment-view/appointment-view.component */ "./src/app/appointment-view/appointment-view.component.ts");
 /* harmony import */ var _appointment_create_appointment_create_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./appointment-create/appointment-create.component */ "./src/app/appointment-create/appointment-create.component.ts");
+/* harmony import */ var _appointment_confirmation_appointment_confirmation_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./appointment-confirmation/appointment-confirmation.component */ "./src/app/appointment-confirmation/appointment-confirmation.component.ts");
+/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/esm5/core.es5.js");
+/* harmony import */ var angular2_datetimepicker__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! angular2-datetimepicker */ "./node_modules/angular2-datetimepicker/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -450,6 +458,7 @@ var AppModule = /** @class */ (function () {
                 _patient_header_patient_header_component__WEBPACK_IMPORTED_MODULE_14__["PatientHeaderComponent"],
                 _appointment_view_appointment_view_component__WEBPACK_IMPORTED_MODULE_15__["AppointmentViewComponent"],
                 _appointment_create_appointment_create_component__WEBPACK_IMPORTED_MODULE_16__["AppointmentCreateComponent"],
+                _appointment_confirmation_appointment_confirmation_component__WEBPACK_IMPORTED_MODULE_17__["AppointmentConfirmationComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -458,6 +467,9 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
                 angular_6_datatable__WEBPACK_IMPORTED_MODULE_12__["DataTableModule"],
+                _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_18__["MatDatepickerModule"],
+                _angular_material_core__WEBPACK_IMPORTED_MODULE_19__["MatNativeDateModule"],
+                angular2_datetimepicker__WEBPACK_IMPORTED_MODULE_20__["AngularDateTimePickerModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forRoot([
                     {
                         path: 'register',
@@ -482,6 +494,10 @@ var AppModule = /** @class */ (function () {
                     {
                         path: 'appointment-create',
                         component: _appointment_create_appointment_create_component__WEBPACK_IMPORTED_MODULE_16__["AppointmentCreateComponent"]
+                    },
+                    {
+                        path: 'appointment-confirmation',
+                        component: _appointment_confirmation_appointment_confirmation_component__WEBPACK_IMPORTED_MODULE_17__["AppointmentConfirmationComponent"]
                     },
                     { path: '', redirectTo: '/search', pathMatch: 'full' },
                     { path: '**', component: _pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_10__["PagenotfoundComponent"] },
@@ -511,15 +527,97 @@ var AppModule = /** @class */ (function () {
                         path: 'appointment-create',
                         component: _appointment_create_appointment_create_component__WEBPACK_IMPORTED_MODULE_16__["AppointmentCreateComponent"]
                     },
+                    {
+                        path: 'appointment-confirmation',
+                        component: _appointment_confirmation_appointment_confirmation_component__WEBPACK_IMPORTED_MODULE_17__["AppointmentConfirmationComponent"]
+                    },
                     { path: '', redirectTo: '/search', pathMatch: 'full' },
                     { path: '**', component: _pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_10__["PagenotfoundComponent"] },
                 ])
             ],
-            providers: [],
+            providers: [_angular_material_datepicker__WEBPACK_IMPORTED_MODULE_18__["MatDatepickerModule"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/appointment-confirmation/appointment-confirmation.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/appointment-confirmation/appointment-confirmation.component.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hcHBvaW50bWVudC1jb25maXJtYXRpb24vYXBwb2ludG1lbnQtY29uZmlybWF0aW9uLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/appointment-confirmation/appointment-confirmation.component.html":
+/*!**********************************************************************************!*\
+  !*** ./src/app/appointment-confirmation/appointment-confirmation.component.html ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <br>\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n<div class=\"container\">\n<p>\n  Your Appointment is Confirmed for :{{appointmentConfirmation.startTime}}  with  {{appointmentConfirmation.doctor.doctorName}}\n</p>\n</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/appointment-confirmation/appointment-confirmation.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/appointment-confirmation/appointment-confirmation.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: AppointmentConfirmationComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppointmentConfirmationComponent", function() { return AppointmentConfirmationComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_appointment_data_service_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service/appointment-data-service.service */ "./src/app/service/appointment-data-service.service.ts");
+/* harmony import */ var _model_AppointmentData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../model/AppointmentData */ "./src/app/model/AppointmentData.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AppointmentConfirmationComponent = /** @class */ (function () {
+    function AppointmentConfirmationComponent(appointmentConfirmationService) {
+        this.appointmentConfirmationService = appointmentConfirmationService;
+        this.appointmentConfirmation = new _model_AppointmentData__WEBPACK_IMPORTED_MODULE_2__["AppointmentData"]();
+    }
+    AppointmentConfirmationComponent.prototype.ngOnInit = function () {
+        this.showLoader();
+        this.appointmentConfirmation = this.appointmentConfirmationService.appointmentConfirmation;
+        this.hideLoader();
+    };
+    AppointmentConfirmationComponent.prototype.hideLoader = function () {
+        document.getElementById('loadin').style.display = 'none';
+    };
+    AppointmentConfirmationComponent.prototype.showLoader = function () {
+        document.getElementById('loadin').style.display = '';
+    };
+    AppointmentConfirmationComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-appointment-confirmation',
+            template: __webpack_require__(/*! ./appointment-confirmation.component.html */ "./src/app/appointment-confirmation/appointment-confirmation.component.html"),
+            styles: [__webpack_require__(/*! ./appointment-confirmation.component.css */ "./src/app/appointment-confirmation/appointment-confirmation.component.css")]
+        }),
+        __metadata("design:paramtypes", [_service_appointment_data_service_service__WEBPACK_IMPORTED_MODULE_1__["AppointmentDataServiceService"]])
+    ], AppointmentConfirmationComponent);
+    return AppointmentConfirmationComponent;
 }());
 
 
@@ -533,7 +631,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#appointment {\n  font-family: Arial, Helvetica, sans-serif;\n  border-collapse: collapse;\n  width: 100%;\n}\n\n#appointment td, #appointment th {\n  border: 1px solid #ddd;\n  padding: 8px;\n}\n\n#appointment tr:nth-child(even){background-color: #f2f2f2;}\n\n#appointment tr:hover {background-color: #ddd;}\n\n#appointment th {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  background-color: #490f198a;\n  color: white;\n}\n\n#appointment{\n  font-family: Arial, Helvetica, sans-serif;\n  width: 100%;\n}\n\n#appointment  td {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  padding: 8px;\n\n}\n\n#appointmentHeader{\n  /*border: 7px solid*/\n}\n\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #a0706d;\n  border-color: #a0706d;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwb2ludG1lbnQtY3JlYXRlL2FwcG9pbnRtZW50LWNyZWF0ZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UseUNBQXlDO0VBQ3pDLHlCQUF5QjtFQUN6QixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxzQkFBc0I7RUFDdEIsWUFBWTtBQUNkOztBQUVBLGdDQUFnQyx5QkFBeUIsQ0FBQzs7QUFFMUQsdUJBQXVCLHNCQUFzQixDQUFDOztBQUU5QztFQUNFLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsZ0JBQWdCO0VBQ2hCLDJCQUEyQjtFQUMzQixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSx5Q0FBeUM7RUFDekMsV0FBVztBQUNiOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUNwQixnQkFBZ0I7RUFDaEIsWUFBWTs7QUFFZDs7QUFFQTtFQUNFLG9CQUFvQjtBQUN0Qjs7QUFLQTtFQUNFLFdBQVc7RUFDWCx5QkFBeUI7RUFDekIscUJBQXFCO0FBQ3ZCIiwiZmlsZSI6InNyYy9hcHAvYXBwb2ludG1lbnQtY3JlYXRlL2FwcG9pbnRtZW50LWNyZWF0ZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2FwcG9pbnRtZW50IHtcbiAgZm9udC1mYW1pbHk6IEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7XG4gIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4jYXBwb2ludG1lbnQgdGQsICNhcHBvaW50bWVudCB0aCB7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNkZGQ7XG4gIHBhZGRpbmc6IDhweDtcbn1cblxuI2FwcG9pbnRtZW50IHRyOm50aC1jaGlsZChldmVuKXtiYWNrZ3JvdW5kLWNvbG9yOiAjZjJmMmYyO31cblxuI2FwcG9pbnRtZW50IHRyOmhvdmVyIHtiYWNrZ3JvdW5kLWNvbG9yOiAjZGRkO31cblxuI2FwcG9pbnRtZW50IHRoIHtcbiAgcGFkZGluZy10b3A6IDEycHg7XG4gIHBhZGRpbmctYm90dG9tOiAxMnB4O1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDkwZjE5OGE7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cblxuI2FwcG9pbnRtZW50e1xuICBmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbiNhcHBvaW50bWVudCAgdGQge1xuICBwYWRkaW5nLXRvcDogMTJweDtcbiAgcGFkZGluZy1ib3R0b206IDEycHg7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIHBhZGRpbmc6IDhweDtcblxufVxuXG4jYXBwb2ludG1lbnRIZWFkZXJ7XG4gIC8qYm9yZGVyOiA3cHggc29saWQqL1xufVxuXG5cblxuXG4uYnRuLXN1Y2Nlc3MuZGlzYWJsZWQsIC5idG4tc3VjY2VzczpkaXNhYmxlZCB7XG4gIGNvbG9yOiAjZmZmO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjYTA3MDZkO1xuICBib3JkZXItY29sb3I6ICNhMDcwNmQ7XG59XG5cbiJdfQ== */"
+module.exports = "#appointment {\n  font-family: Arial, Helvetica, sans-serif;\n  border-collapse: collapse;\n  width: 100%;\n}\n\n#appointment td, #appointment th {\n  border: 1px solid #ddd;\n  padding: 8px;\n}\n\n#appointment tr:nth-child(even){background-color: #f2f2f2;}\n\n#appointment tr:hover {background-color: #ddd;}\n\n#appointment th {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  background-color: #490f198a;\n  color: white;\n}\n\n#appointment{\n  font-family: Arial, Helvetica, sans-serif;\n  width: 100%;\n}\n\n#appointment  td {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  padding: 8px;\n\n}\n\n#appointmentHeader{\n  /*border: 7px solid*/\n}\n\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #a0706d;\n  border-color: #a0706d;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL2FwcG9pbnRtZW50LWNyZWF0ZS9hcHBvaW50bWVudC1jcmVhdGUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHlDQUF5QztFQUN6Qyx5QkFBeUI7RUFDekIsV0FBVztBQUNiOztBQUVBO0VBQ0Usc0JBQXNCO0VBQ3RCLFlBQVk7QUFDZDs7QUFFQSxnQ0FBZ0MseUJBQXlCLENBQUM7O0FBRTFELHVCQUF1QixzQkFBc0IsQ0FBQzs7QUFFOUM7RUFDRSxpQkFBaUI7RUFDakIsb0JBQW9CO0VBQ3BCLGdCQUFnQjtFQUNoQiwyQkFBMkI7RUFDM0IsWUFBWTtBQUNkOztBQUVBO0VBQ0UseUNBQXlDO0VBQ3pDLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsZ0JBQWdCO0VBQ2hCLFlBQVk7O0FBRWQ7O0FBRUE7RUFDRSxvQkFBb0I7QUFDdEI7O0FBS0E7RUFDRSxXQUFXO0VBQ1gseUJBQXlCO0VBQ3pCLHFCQUFxQjtBQUN2QiIsImZpbGUiOiIuLi9hcHBvaW50bWVudC1jcmVhdGUvYXBwb2ludG1lbnQtY3JlYXRlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjYXBwb2ludG1lbnQge1xuICBmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjtcbiAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbiNhcHBvaW50bWVudCB0ZCwgI2FwcG9pbnRtZW50IHRoIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2RkZDtcbiAgcGFkZGluZzogOHB4O1xufVxuXG4jYXBwb2ludG1lbnQgdHI6bnRoLWNoaWxkKGV2ZW4pe2JhY2tncm91bmQtY29sb3I6ICNmMmYyZjI7fVxuXG4jYXBwb2ludG1lbnQgdHI6aG92ZXIge2JhY2tncm91bmQtY29sb3I6ICNkZGQ7fVxuXG4jYXBwb2ludG1lbnQgdGgge1xuICBwYWRkaW5nLXRvcDogMTJweDtcbiAgcGFkZGluZy1ib3R0b206IDEycHg7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIGJhY2tncm91bmQtY29sb3I6ICM0OTBmMTk4YTtcbiAgY29sb3I6IHdoaXRlO1xufVxuXG4jYXBwb2ludG1lbnR7XG4gIGZvbnQtZmFtaWx5OiBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmO1xuICB3aWR0aDogMTAwJTtcbn1cblxuI2FwcG9pbnRtZW50ICB0ZCB7XG4gIHBhZGRpbmctdG9wOiAxMnB4O1xuICBwYWRkaW5nLWJvdHRvbTogMTJweDtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgcGFkZGluZzogOHB4O1xuXG59XG5cbiNhcHBvaW50bWVudEhlYWRlcntcbiAgLypib3JkZXI6IDdweCBzb2xpZCovXG59XG5cblxuXG5cbi5idG4tc3VjY2Vzcy5kaXNhYmxlZCwgLmJ0bi1zdWNjZXNzOmRpc2FibGVkIHtcbiAgY29sb3I6ICNmZmY7XG4gIGJhY2tncm91bmQtY29sb3I6ICNhMDcwNmQ7XG4gIGJvcmRlci1jb2xvcjogI2EwNzA2ZDtcbn1cblxuIl19 */"
 
 /***/ }),
 
@@ -544,7 +642,7 @@ module.exports = "#appointment {\n  font-family: Arial, Helvetica, sans-serif;\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <br>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div id=\"appointmentHeader\" class=\" container \">\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"doctorName\">Doctor Name:</label>\n      </div>\n      <div class=\"col-sm-2\">\n        <select id=\"doctorName\" name=\"doctorName\">\n          <option value=\"Dr Siddhart Kothari\">Dr Siddhart Kothari</option>\n          <option value=\"Dr Poonam Jain\">Dr Poonam Jain</option>\n        </select>\n      </div>\n\n      <div class=\"row\">\n        <div class=\"col-sm-2\">\n          <label for=\"appointmentDate\">Appointment Date:</label>\n        </div>\n        <div class=\"col-sm-2\">\n          <input type=\"text\" [(ngModel)]=\"appointmentDate\" id=\"appointmentDate\" placeholder=\"DD/MM/YY\">\n        </div>\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchAppointment(doctorName,appointmentDate)\">Available\n          Appointment\n        </button>\n        <!--      </a>-->\n      </div>\n    </div>\n\n    <div class=\"appointment\" *ngIf=\"appointmentFound===true\">\n\n      <div>\n        <!--<div class=\"row\"> Range 8 am - 12PM</div>-->\n        <div class=\"row\">\n          <div *ngFor=\"let dateRange of hoursSlot1\">\n            <div class=\"col-sm-2\">\n            <label style=\"background-color: green\" (click)=\"bookAppointment(dateRange)\">{{dateRange}}  </label>\n            <label  style=\"background-color: white\">   </label>\n            <label  style=\"background-color: white\">   </label>\n            </div>\n\n          </div>\n        </div>\n        <!--<div class=\"row\"> Range 12 PM - 4 PM</div>-->\n        <!--<div class=\"row\">-->\n          <!--<div *ngFor=\"let dateRange of hoursSlot2\">-->\n            <!--<label style=\"background-color: green\">{{dateRange}} </label>-->\n          <!--</div>-->\n        <!--</div>-->\n\n        <!--<div class=\"row\"> Range 4 PM - 8 PM</div>-->\n        <!--<div class=\"row\">-->\n          <!--<div *ngFor=\"let dateRange of hoursSlot3\">-->\n            <!--<label style=\"background-color: green\">{{dateRange}} </label>-->\n          <!--</div>-->\n        <!--</div>-->\n\n\n      </div>\n\n\n    </div>\n\n  </div>\n\n</div>\n"
+module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <br>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div id=\"appointmentHeader\" class=\" container \">\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"doctorName\">Doctor Name:</label>\n      </div>\n      <div class=\"col-sm-2\">\n        <select id=\"doctorName\" name=\"doctorName\" [(ngModel)]=\"doctorName\">\n          <option value=\"Dr Siddhart Kothari\">Dr Siddhart Kothari</option>\n          <option value=\"Dr Poonam Jain\">Dr Poonam Jain</option>\n        </select>\n      </div>\n    </div>\n      <div class=\"row\">\n        <div class=\"col-sm-2\">\n          <label for=\"appointmentDate\">Appointment Date:</label>\n        </div>\n        <div class=\"col-sm-2\">\n          <input type=\"date\" [(ngModel)]=\"appointmentDate\" id=\"appointmentDate\" placeholder=\"DD/MM/YY\" [min]=\"currentDate\">\n        </div>\n      </div>\n\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"   searchAppointment(doctorName,appointmentDate,hoursSlot1)\" title=\"Search For Available Appointment\">Search</button>\n        <!--      </a>-->\n      </div>\n    </div>\n\n  </div>\n\n  <br>\n  <br>\n\n    <div class=\"container appointment\" *ngIf=\"appointmentFound===true\">\n\n      <div>\n<!--        <div class=\"row\"> Date: {{appointmentDate}}</div>-->\n        <div class=\"row\">\n          <div *ngFor=\"let dateRange of hoursSlot1\">\n            <div class=\"col-sm-2\">\n            <button title=\"Book Appointment\" type=\"submit\" class=\"btn btn-primary\"  (click)=\"bookAppointment(appointmentDate, dateRange)\">{{dateRange}}  </button>\n            <label  style=\"background-color: white\">   </label>\n            <label  style=\"background-color: white\">   </label>\n            </div>\n\n          </div>\n        </div>\n        <!--<div class=\"row\"> Range 12 PM - 4 PM</div>-->\n        <!--<div class=\"row\">-->\n          <!--<div *ngFor=\"let dateRange of hoursSlot2\">-->\n            <!--<label style=\"background-color: green\">{{dateRange}} </label>-->\n          <!--</div>-->\n        <!--</div>-->\n\n        <!--<div class=\"row\"> Range 4 PM - 8 PM</div>-->\n        <!--<div class=\"row\">-->\n          <!--<div *ngFor=\"let dateRange of hoursSlot3\">-->\n            <!--<label style=\"background-color: green\">{{dateRange}} </label>-->\n          <!--</div>-->\n        <!--</div>-->\n\n\n      </div>\n\n\n    </div>\n\n  </div>\n\n"
 
 /***/ }),
 
@@ -565,6 +663,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _model_PatientData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../model/PatientData */ "./src/app/model/PatientData.ts");
+/* harmony import */ var _service_appointment_data_service_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../service/appointment-data-service.service */ "./src/app/service/appointment-data-service.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -580,9 +680,13 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var AppointmentCreateComponent = /** @class */ (function () {
-    function AppointmentCreateComponent(appointmentSearchService) {
+    function AppointmentCreateComponent(appointmentSearchService, appointmentConfirmationService, router) {
         this.appointmentSearchService = appointmentSearchService;
+        this.appointmentConfirmationService = appointmentConfirmationService;
+        this.router = router;
         this.appointmentFound = false;
         this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
         this.DATANOTFOUND = 'No Appointments Found for the Patient!';
@@ -591,6 +695,7 @@ var AppointmentCreateComponent = /** @class */ (function () {
         this.hoursSlot1 = [];
         this.hoursSlot2 = [];
         this.hoursSlot3 = [];
+        this.currentDate = moment__WEBPACK_IMPORTED_MODULE_4__(new Date()).format("YYYY-MM-DD");
     }
     AppointmentCreateComponent.prototype.ngOnInit = function () {
         this.hideLoader();
@@ -599,13 +704,14 @@ var AppointmentCreateComponent = /** @class */ (function () {
         this.appointmentWindow3();
     };
     AppointmentCreateComponent.prototype.appointmentWindow1 = function () {
+        this.hoursSlot1 = [];
         moment__WEBPACK_IMPORTED_MODULE_4__["locale"](this.locale); // optional - can remove if you are only dealing with one locale
         for (var hour = 8; hour < 21; hour++) {
-            this.hoursSlot1.push(moment__WEBPACK_IMPORTED_MODULE_4__({ hour: hour }).format('h:mm A'));
+            this.hoursSlot1.push(moment__WEBPACK_IMPORTED_MODULE_4__({ hour: hour }).format('hh:mm A'));
             this.hoursSlot1.push(moment__WEBPACK_IMPORTED_MODULE_4__({
                 hour: hour,
                 minute: 20
-            }).format('h:mm A'));
+            }).format('hh:mm A'));
         }
     };
     AppointmentCreateComponent.prototype.appointmentWindow2 = function () {
@@ -628,8 +734,9 @@ var AppointmentCreateComponent = /** @class */ (function () {
             }).format('h:mm A'));
         }
     };
-    AppointmentCreateComponent.prototype.searchAppointment = function (doctorName, appointmentDate) {
+    AppointmentCreateComponent.prototype.searchAppointment = function (doctorName, appointmentDate, hourslot) {
         var _this = this;
+        this.appointmentWindow1();
         this.showLoader();
         this.appointmentData = [];
         this.appointmentSearchService.getAllAppointments(doctorName, appointmentDate)
@@ -641,13 +748,14 @@ var AppointmentCreateComponent = /** @class */ (function () {
             else {
                 for (var i = 0; i < data.length; i++) {
                     _this.appointmentData.push(data[i]);
-                    // console.log(this.appointmentData[i].appointmentDate);
+                    console.log(_this.appointmentData[i].appointmentDate);
                     // console.log(this.appointmentData[i].startTime);
                 }
                 if (data.length > 0) {
                     // let startTime = this.appointmentData[i].startTime.slice(11);
-                    var hoursSlotFiltered = _this.hoursSlot1.filter(function (slot) { return _this.appointmentData.forEach(function (a) { return a.startTime; }) === slot; });
+                    var hoursSlotFiltered = hourslot.filter(function (o1) { return !data.some(function (o2) { return appointmentDate + " " + o1 === o2.startTime; }); });
                     console.log("hoursSlotFiltered" + hoursSlotFiltered);
+                    _this.hoursSlot1 = hoursSlotFiltered;
                     _this.appointmentFound = true;
                 }
             }
@@ -665,14 +773,15 @@ var AppointmentCreateComponent = /** @class */ (function () {
     AppointmentCreateComponent.prototype.showLoader = function () {
         document.getElementById('loadin').style.display = '';
     };
-    AppointmentCreateComponent.prototype.bookAppointment = function (date) {
+    AppointmentCreateComponent.prototype.bookAppointment = function (date, startTime) {
         var _this = this;
         var appointment = new _model_AppointmentData__WEBPACK_IMPORTED_MODULE_1__["AppointmentData"]();
         appointment.doctor = new _model_DoctorData__WEBPACK_IMPORTED_MODULE_2__["DoctorData"]();
         appointment.patient = new _model_PatientData__WEBPACK_IMPORTED_MODULE_5__["PatientData"]();
-        appointment.appointmentDate = "2022-03-29";
-        appointment.startTime = appointment.appointmentDate + " " + date;
+        appointment.appointmentDate = date;
+        appointment.startTime = appointment.appointmentDate + " " + startTime;
         appointment.doctor.doctorId = 2;
+        appointment.doctor.doctorName = this.doctorName;
         appointment.patient.id = '2';
         this.appointmentSearchService.createAppointment(appointment)
             .subscribe(function (s) {
@@ -688,6 +797,11 @@ var AppointmentCreateComponent = /** @class */ (function () {
             _this.hideLoader();
         });
         console.log("Appointment Booked : " + date);
+        this.appointmentConfirmation(appointment);
+    };
+    AppointmentCreateComponent.prototype.appointmentConfirmation = function (data) {
+        this.appointmentConfirmationService.appointmentConfirmation = data;
+        this.router.navigate(['appointment-confirmation']);
     };
     AppointmentCreateComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -695,7 +809,9 @@ var AppointmentCreateComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./appointment-create.component.html */ "./src/app/appointment-create/appointment-create.component.html"),
             styles: [__webpack_require__(/*! ./appointment-create.component.css */ "./src/app/appointment-create/appointment-create.component.css")]
         }),
-        __metadata("design:paramtypes", [_service_appointment_search_service__WEBPACK_IMPORTED_MODULE_3__["AppointmentSearchService"]])
+        __metadata("design:paramtypes", [_service_appointment_search_service__WEBPACK_IMPORTED_MODULE_3__["AppointmentSearchService"],
+            _service_appointment_data_service_service__WEBPACK_IMPORTED_MODULE_6__["AppointmentDataServiceService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]])
     ], AppointmentCreateComponent);
     return AppointmentCreateComponent;
 }());
@@ -711,7 +827,7 @@ var AppointmentCreateComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#appointment {\n  font-family: Arial, Helvetica, sans-serif;\n  border-collapse: collapse;\n  width: 100%;\n}\n\n#appointment td, #appointment th {\n  border: 1px solid #ddd;\n  padding: 8px;\n}\n\n#appointment tr:nth-child(even){background-color: #f2f2f2;}\n\n#appointment tr:hover {background-color: #ddd;}\n\n#appointment th {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  background-color: #490f198a;\n  color: white;\n}\n\n#appointment{\n  font-family: Arial, Helvetica, sans-serif;\n  width: 100%;\n}\n\n#appointment  td {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  padding: 8px;\n\n}\n\n#appointmentHeader{\n  /*border: 7px solid*/\n}\n\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #a0706d;\n  border-color: #a0706d;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwb2ludG1lbnQtdmlldy9hcHBvaW50bWVudC12aWV3LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx5Q0FBeUM7RUFDekMseUJBQXlCO0VBQ3pCLFdBQVc7QUFDYjs7QUFFQTtFQUNFLHNCQUFzQjtFQUN0QixZQUFZO0FBQ2Q7O0FBRUEsZ0NBQWdDLHlCQUF5QixDQUFDOztBQUUxRCx1QkFBdUIsc0JBQXNCLENBQUM7O0FBRTlDO0VBQ0UsaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUNwQixnQkFBZ0I7RUFDaEIsMkJBQTJCO0VBQzNCLFlBQVk7QUFDZDs7QUFFQTtFQUNFLHlDQUF5QztFQUN6QyxXQUFXO0FBQ2I7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsb0JBQW9CO0VBQ3BCLGdCQUFnQjtFQUNoQixZQUFZOztBQUVkOztBQUVBO0VBQ0Usb0JBQW9CO0FBQ3RCOztBQUtBO0VBQ0UsV0FBVztFQUNYLHlCQUF5QjtFQUN6QixxQkFBcUI7QUFDdkIiLCJmaWxlIjoic3JjL2FwcC9hcHBvaW50bWVudC12aWV3L2FwcG9pbnRtZW50LXZpZXcuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNhcHBvaW50bWVudCB7XG4gIGZvbnQtZmFtaWx5OiBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmO1xuICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlO1xuICB3aWR0aDogMTAwJTtcbn1cblxuI2FwcG9pbnRtZW50IHRkLCAjYXBwb2ludG1lbnQgdGgge1xuICBib3JkZXI6IDFweCBzb2xpZCAjZGRkO1xuICBwYWRkaW5nOiA4cHg7XG59XG5cbiNhcHBvaW50bWVudCB0cjpudGgtY2hpbGQoZXZlbil7YmFja2dyb3VuZC1jb2xvcjogI2YyZjJmMjt9XG5cbiNhcHBvaW50bWVudCB0cjpob3ZlciB7YmFja2dyb3VuZC1jb2xvcjogI2RkZDt9XG5cbiNhcHBvaW50bWVudCB0aCB7XG4gIHBhZGRpbmctdG9wOiAxMnB4O1xuICBwYWRkaW5nLWJvdHRvbTogMTJweDtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzQ5MGYxOThhO1xuICBjb2xvcjogd2hpdGU7XG59XG5cbiNhcHBvaW50bWVudHtcbiAgZm9udC1mYW1pbHk6IEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4jYXBwb2ludG1lbnQgIHRkIHtcbiAgcGFkZGluZy10b3A6IDEycHg7XG4gIHBhZGRpbmctYm90dG9tOiAxMnB4O1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBwYWRkaW5nOiA4cHg7XG5cbn1cblxuI2FwcG9pbnRtZW50SGVhZGVye1xuICAvKmJvcmRlcjogN3B4IHNvbGlkKi9cbn1cblxuXG5cblxuLmJ0bi1zdWNjZXNzLmRpc2FibGVkLCAuYnRuLXN1Y2Nlc3M6ZGlzYWJsZWQge1xuICBjb2xvcjogI2ZmZjtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2EwNzA2ZDtcbiAgYm9yZGVyLWNvbG9yOiAjYTA3MDZkO1xufVxuXG4iXX0= */"
+module.exports = "#appointment {\n  font-family: Arial, Helvetica, sans-serif;\n  border-collapse: collapse;\n  width: 100%;\n}\n\n#appointment td, #appointment th {\n  border: 1px solid #ddd;\n  padding: 8px;\n}\n\n#appointment tr:nth-child(even){background-color: #f2f2f2;}\n\n#appointment tr:hover {background-color: #ddd;}\n\n#appointment th {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  background-color: #490f198a;\n  color: white;\n}\n\n#appointment{\n  font-family: Arial, Helvetica, sans-serif;\n  width: 100%;\n}\n\n#appointment  td {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  padding: 8px;\n\n}\n\n#appointmentHeader{\n  /*border: 7px solid*/\n}\n\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #a0706d;\n  border-color: #a0706d;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL2FwcG9pbnRtZW50LXZpZXcvYXBwb2ludG1lbnQtdmlldy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UseUNBQXlDO0VBQ3pDLHlCQUF5QjtFQUN6QixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxzQkFBc0I7RUFDdEIsWUFBWTtBQUNkOztBQUVBLGdDQUFnQyx5QkFBeUIsQ0FBQzs7QUFFMUQsdUJBQXVCLHNCQUFzQixDQUFDOztBQUU5QztFQUNFLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsZ0JBQWdCO0VBQ2hCLDJCQUEyQjtFQUMzQixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSx5Q0FBeUM7RUFDekMsV0FBVztBQUNiOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUNwQixnQkFBZ0I7RUFDaEIsWUFBWTs7QUFFZDs7QUFFQTtFQUNFLG9CQUFvQjtBQUN0Qjs7QUFLQTtFQUNFLFdBQVc7RUFDWCx5QkFBeUI7RUFDekIscUJBQXFCO0FBQ3ZCIiwiZmlsZSI6Ii4uL2FwcG9pbnRtZW50LXZpZXcvYXBwb2ludG1lbnQtdmlldy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2FwcG9pbnRtZW50IHtcbiAgZm9udC1mYW1pbHk6IEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7XG4gIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4jYXBwb2ludG1lbnQgdGQsICNhcHBvaW50bWVudCB0aCB7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNkZGQ7XG4gIHBhZGRpbmc6IDhweDtcbn1cblxuI2FwcG9pbnRtZW50IHRyOm50aC1jaGlsZChldmVuKXtiYWNrZ3JvdW5kLWNvbG9yOiAjZjJmMmYyO31cblxuI2FwcG9pbnRtZW50IHRyOmhvdmVyIHtiYWNrZ3JvdW5kLWNvbG9yOiAjZGRkO31cblxuI2FwcG9pbnRtZW50IHRoIHtcbiAgcGFkZGluZy10b3A6IDEycHg7XG4gIHBhZGRpbmctYm90dG9tOiAxMnB4O1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDkwZjE5OGE7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cblxuI2FwcG9pbnRtZW50e1xuICBmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbiNhcHBvaW50bWVudCAgdGQge1xuICBwYWRkaW5nLXRvcDogMTJweDtcbiAgcGFkZGluZy1ib3R0b206IDEycHg7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIHBhZGRpbmc6IDhweDtcblxufVxuXG4jYXBwb2ludG1lbnRIZWFkZXJ7XG4gIC8qYm9yZGVyOiA3cHggc29saWQqL1xufVxuXG5cblxuXG4uYnRuLXN1Y2Nlc3MuZGlzYWJsZWQsIC5idG4tc3VjY2VzczpkaXNhYmxlZCB7XG4gIGNvbG9yOiAjZmZmO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjYTA3MDZkO1xuICBib3JkZXItY29sb3I6ICNhMDcwNmQ7XG59XG5cbiJdfQ== */"
 
 /***/ }),
 
@@ -722,7 +838,7 @@ module.exports = "#appointment {\n  font-family: Arial, Helvetica, sans-serif;\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <br>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div id=\"appointmentHeader\" class=\" container \">\n    <table id=\"appointment\" class=\"table\">\n      <thead>\n      <tr>\n        <th>Doctor Name</th>\n        <th>Patient Name</th>\n        <th>Appointment Date</th>\n        <th>Start Time</th>\n        <th>End Time</th>\n\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let appointment of appointmentData\">\n        <td\n          >{{appointment?.doctor?.doctorName}} </td>\n        <td\n\n        >{{appointment?.patient?.firstName}} </td>\n        <td >{{appointment?.appointmentDate }} </td>\n        <td>{{appointment?.startTime  }} </td>\n        <td >{{appointment?.endTime}} </td>\n      </tr>\n      </tbody>\n    </table>\n  </div>\n\n</div>\n"
+module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <br>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div id=\"appointmentHeader\" class=\" container \">\n    <table id=\"appointment\" class=\"table table-striped\" [mfData]=\"appointmentData\"\n           #mf=\"mfDataTable\">\n      <thead>\n      <tr>\n        <th>\n          <mfDefaultSorter by=\"doctorName\">Doctor Name</mfDefaultSorter>\n        </th>\n        <th>\n          <mfDefaultSorter by=\"patientName\">Patient Name</mfDefaultSorter>\n        </th>\n        <th>\n          <mfDefaultSorter by=\"appointmentDate\">Appointment Date</mfDefaultSorter>\n        </th>\n        <th>\n          <mfDefaultSorter by=\"startTime\">Start Time</mfDefaultSorter>\n        </th>\n        <th>\n          <mfDefaultSorter by=\"endTime\">End Time</mfDefaultSorter>\n        </th>\n\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let appointment of mf.data\">\n        <td\n        >{{appointment?.doctor?.doctorName}} </td>\n        <td\n\n        >{{appointment?.patient?.firstName}} {{appointment?.patient?.lastName}} </td>\n        <td>{{appointment?.appointmentDate }} </td>\n        <td>{{appointment?.startTime  }} </td>\n        <td>{{appointment?.endTime}} </td>\n      </tr>\n      </tbody>\n    </table>\n  </div>\n  <br>\n  <br>\n</div>\n"
 
 /***/ }),
 
@@ -883,7 +999,7 @@ var PatientHelper = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#loading{\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  z-index: 1;\n  width: 150px;\n  height: 150px;\n  margin: -75px 0 0 -75px;\n  border: 16px solid #f3f3f3;\n  border-radius: 50%;\n  border-top: 16px solid #3498db;\n  width: 120px;\n  height: 120px;\n  -webkit-animation: spin 2s linear infinite;\n          animation: spin 2s linear infinite;\n}\n\n@-webkit-keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\n@keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9hZGVyLXNwaW4vbG9hZGVyLXNwaW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsUUFBUTtFQUNSLFVBQVU7RUFDVixZQUFZO0VBQ1osYUFBYTtFQUNiLHVCQUF1QjtFQUN2QiwwQkFBMEI7RUFDMUIsa0JBQWtCO0VBQ2xCLDhCQUE4QjtFQUM5QixZQUFZO0VBQ1osYUFBYTtFQUNiLDBDQUFrQztVQUFsQyxrQ0FBa0M7QUFDcEM7O0FBRUE7RUFDRSxLQUFLLHVCQUF1QixFQUFFO0VBQzlCLE9BQU8seUJBQXlCLEVBQUU7QUFDcEM7O0FBSEE7RUFDRSxLQUFLLHVCQUF1QixFQUFFO0VBQzlCLE9BQU8seUJBQXlCLEVBQUU7QUFDcEMiLCJmaWxlIjoic3JjL2FwcC9sb2FkZXItc3Bpbi9sb2FkZXItc3Bpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2xvYWRpbmd7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogNTAlO1xuICB0b3A6IDUwJTtcbiAgei1pbmRleDogMTtcbiAgd2lkdGg6IDE1MHB4O1xuICBoZWlnaHQ6IDE1MHB4O1xuICBtYXJnaW46IC03NXB4IDAgMCAtNzVweDtcbiAgYm9yZGVyOiAxNnB4IHNvbGlkICNmM2YzZjM7XG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgYm9yZGVyLXRvcDogMTZweCBzb2xpZCAjMzQ5OGRiO1xuICB3aWR0aDogMTIwcHg7XG4gIGhlaWdodDogMTIwcHg7XG4gIGFuaW1hdGlvbjogc3BpbiAycyBsaW5lYXIgaW5maW5pdGU7XG59XG5cbkBrZXlmcmFtZXMgc3BpbiB7XG4gIDAlIHsgdHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7IH1cbiAgMTAwJSB7IHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IH1cbn1cbiJdfQ== */"
+module.exports = "#loading{\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  z-index: 1;\n  width: 150px;\n  height: 150px;\n  margin: -75px 0 0 -75px;\n  border: 16px solid #f3f3f3;\n  border-radius: 50%;\n  border-top: 16px solid #3498db;\n  width: 120px;\n  height: 120px;\n  -webkit-animation: spin 2s linear infinite;\n          animation: spin 2s linear infinite;\n}\n\n@-webkit-keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\n@keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL2xvYWRlci1zcGluL2xvYWRlci1zcGluLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBa0I7RUFDbEIsU0FBUztFQUNULFFBQVE7RUFDUixVQUFVO0VBQ1YsWUFBWTtFQUNaLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsMEJBQTBCO0VBQzFCLGtCQUFrQjtFQUNsQiw4QkFBOEI7RUFDOUIsWUFBWTtFQUNaLGFBQWE7RUFDYiwwQ0FBa0M7VUFBbEMsa0NBQWtDO0FBQ3BDOztBQUVBO0VBQ0UsS0FBSyx1QkFBdUIsRUFBRTtFQUM5QixPQUFPLHlCQUF5QixFQUFFO0FBQ3BDOztBQUhBO0VBQ0UsS0FBSyx1QkFBdUIsRUFBRTtFQUM5QixPQUFPLHlCQUF5QixFQUFFO0FBQ3BDIiwiZmlsZSI6Ii4uL2xvYWRlci1zcGluL2xvYWRlci1zcGluLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjbG9hZGluZ3tcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBsZWZ0OiA1MCU7XG4gIHRvcDogNTAlO1xuICB6LWluZGV4OiAxO1xuICB3aWR0aDogMTUwcHg7XG4gIGhlaWdodDogMTUwcHg7XG4gIG1hcmdpbjogLTc1cHggMCAwIC03NXB4O1xuICBib3JkZXI6IDE2cHggc29saWQgI2YzZjNmMztcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICBib3JkZXItdG9wOiAxNnB4IHNvbGlkICMzNDk4ZGI7XG4gIHdpZHRoOiAxMjBweDtcbiAgaGVpZ2h0OiAxMjBweDtcbiAgYW5pbWF0aW9uOiBzcGluIDJzIGxpbmVhciBpbmZpbml0ZTtcbn1cblxuQGtleWZyYW1lcyBzcGluIHtcbiAgMCUgeyB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTsgfVxuICAxMDAlIHsgdHJhbnNmb3JtOiByb3RhdGUoMzYwZGVnKTsgfVxufVxuIl19 */"
 
 /***/ }),
 
@@ -1014,7 +1130,7 @@ var PatientData = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2Vub3Rmb3VuZC9wYWdlbm90Zm91bmQuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9wYWdlbm90Zm91bmQvcGFnZW5vdGZvdW5kLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -1077,7 +1193,7 @@ var PagenotfoundComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n.bg-primary{background-color: #a0706d !important}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1oZWFkZXIvcGF0aWVudC1oZWFkZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUVBLFlBQVksb0NBQW9DIiwiZmlsZSI6InNyYy9hcHAvcGF0aWVudC1oZWFkZXIvcGF0aWVudC1oZWFkZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxuXG4uYmctcHJpbWFyeXtiYWNrZ3JvdW5kLWNvbG9yOiAjYTA3MDZkICFpbXBvcnRhbnR9XG5cbiJdfQ== */"
+module.exports = "\n\n.bg-primary{background-color: #a0706d !important}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3BhdGllbnQtaGVhZGVyL3BhdGllbnQtaGVhZGVyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFFQSxZQUFZLG9DQUFvQyIsImZpbGUiOiIuLi9wYXRpZW50LWhlYWRlci9wYXRpZW50LWhlYWRlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cbi5iZy1wcmltYXJ5e2JhY2tncm91bmQtY29sb3I6ICNhMDcwNmQgIWltcG9ydGFudH1cblxuIl19 */"
 
 /***/ }),
 
@@ -1141,7 +1257,7 @@ var PatientHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#visits {\n  font-family: Arial, Helvetica, sans-serif;\n  border-collapse: collapse;\n  width: 100%;\n}\n\n#visits td, #visits th {\n  border: 1px solid #ddd;\n  padding: 8px;\n}\n\n#visits tr:nth-child(even){background-color: #f2f2f2;}\n\n#visits tr:hover {background-color: #ddd;}\n\n#visits th {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  background-color: #490f198a;\n  color: white;\n}\n\n#visitHeader{\n  font-family: Arial, Helvetica, sans-serif;\n  width: 100%;\n}\n\n#visitHeader  td {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  padding: 8px;\n\n}\n\n#mainVisitHeader{\n  /*border: 7px solid*/\n}\n\n#newVisit {\n\n\n}\n\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #a0706d;\n  border-color: #a0706d;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1oaXN0b3J5L3BhdGllbnQtaGlzdG9yeS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UseUNBQXlDO0VBQ3pDLHlCQUF5QjtFQUN6QixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxzQkFBc0I7RUFDdEIsWUFBWTtBQUNkOztBQUVBLDJCQUEyQix5QkFBeUIsQ0FBQzs7QUFFckQsa0JBQWtCLHNCQUFzQixDQUFDOztBQUV6QztFQUNFLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsZ0JBQWdCO0VBQ2hCLDJCQUEyQjtFQUMzQixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSx5Q0FBeUM7RUFDekMsV0FBVztBQUNiOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUNwQixnQkFBZ0I7RUFDaEIsWUFBWTs7QUFFZDs7QUFFQTtFQUNFLG9CQUFvQjtBQUN0Qjs7QUFHQTs7O0FBR0E7O0FBRUE7RUFDRSxXQUFXO0VBQ1gseUJBQXlCO0VBQ3pCLHFCQUFxQjtBQUN2QiIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtaGlzdG9yeS9wYXRpZW50LWhpc3RvcnkuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiN2aXNpdHMge1xuICBmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjtcbiAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbiN2aXNpdHMgdGQsICN2aXNpdHMgdGgge1xuICBib3JkZXI6IDFweCBzb2xpZCAjZGRkO1xuICBwYWRkaW5nOiA4cHg7XG59XG5cbiN2aXNpdHMgdHI6bnRoLWNoaWxkKGV2ZW4pe2JhY2tncm91bmQtY29sb3I6ICNmMmYyZjI7fVxuXG4jdmlzaXRzIHRyOmhvdmVyIHtiYWNrZ3JvdW5kLWNvbG9yOiAjZGRkO31cblxuI3Zpc2l0cyB0aCB7XG4gIHBhZGRpbmctdG9wOiAxMnB4O1xuICBwYWRkaW5nLWJvdHRvbTogMTJweDtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzQ5MGYxOThhO1xuICBjb2xvcjogd2hpdGU7XG59XG5cbiN2aXNpdEhlYWRlcntcbiAgZm9udC1mYW1pbHk6IEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4jdmlzaXRIZWFkZXIgIHRkIHtcbiAgcGFkZGluZy10b3A6IDEycHg7XG4gIHBhZGRpbmctYm90dG9tOiAxMnB4O1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBwYWRkaW5nOiA4cHg7XG5cbn1cblxuI21haW5WaXNpdEhlYWRlcntcbiAgLypib3JkZXI6IDdweCBzb2xpZCovXG59XG5cblxuI25ld1Zpc2l0IHtcblxuXG59XG5cbi5idG4tc3VjY2Vzcy5kaXNhYmxlZCwgLmJ0bi1zdWNjZXNzOmRpc2FibGVkIHtcbiAgY29sb3I6ICNmZmY7XG4gIGJhY2tncm91bmQtY29sb3I6ICNhMDcwNmQ7XG4gIGJvcmRlci1jb2xvcjogI2EwNzA2ZDtcbn1cblxuIl19 */"
+module.exports = "#visits {\n  font-family: Arial, Helvetica, sans-serif;\n  border-collapse: collapse;\n  width: 100%;\n}\n\n#visits td, #visits th {\n  border: 1px solid #ddd;\n  padding: 8px;\n}\n\n#visits tr:nth-child(even){background-color: #f2f2f2;}\n\n#visits tr:hover {background-color: #ddd;}\n\n#visits th {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  background-color: #490f198a;\n  color: white;\n}\n\n#visitHeader{\n  font-family: Arial, Helvetica, sans-serif;\n  width: 100%;\n}\n\n#visitHeader  td {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  padding: 8px;\n\n}\n\n#mainVisitHeader{\n  /*border: 7px solid*/\n}\n\n#newVisit {\n\n\n}\n\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #a0706d;\n  border-color: #a0706d;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3BhdGllbnQtaGlzdG9yeS9wYXRpZW50LWhpc3RvcnkuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHlDQUF5QztFQUN6Qyx5QkFBeUI7RUFDekIsV0FBVztBQUNiOztBQUVBO0VBQ0Usc0JBQXNCO0VBQ3RCLFlBQVk7QUFDZDs7QUFFQSwyQkFBMkIseUJBQXlCLENBQUM7O0FBRXJELGtCQUFrQixzQkFBc0IsQ0FBQzs7QUFFekM7RUFDRSxpQkFBaUI7RUFDakIsb0JBQW9CO0VBQ3BCLGdCQUFnQjtFQUNoQiwyQkFBMkI7RUFDM0IsWUFBWTtBQUNkOztBQUVBO0VBQ0UseUNBQXlDO0VBQ3pDLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsZ0JBQWdCO0VBQ2hCLFlBQVk7O0FBRWQ7O0FBRUE7RUFDRSxvQkFBb0I7QUFDdEI7O0FBR0E7OztBQUdBOztBQUVBO0VBQ0UsV0FBVztFQUNYLHlCQUF5QjtFQUN6QixxQkFBcUI7QUFDdkIiLCJmaWxlIjoiLi4vcGF0aWVudC1oaXN0b3J5L3BhdGllbnQtaGlzdG9yeS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI3Zpc2l0cyB7XG4gIGZvbnQtZmFtaWx5OiBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmO1xuICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlO1xuICB3aWR0aDogMTAwJTtcbn1cblxuI3Zpc2l0cyB0ZCwgI3Zpc2l0cyB0aCB7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNkZGQ7XG4gIHBhZGRpbmc6IDhweDtcbn1cblxuI3Zpc2l0cyB0cjpudGgtY2hpbGQoZXZlbil7YmFja2dyb3VuZC1jb2xvcjogI2YyZjJmMjt9XG5cbiN2aXNpdHMgdHI6aG92ZXIge2JhY2tncm91bmQtY29sb3I6ICNkZGQ7fVxuXG4jdmlzaXRzIHRoIHtcbiAgcGFkZGluZy10b3A6IDEycHg7XG4gIHBhZGRpbmctYm90dG9tOiAxMnB4O1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDkwZjE5OGE7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cblxuI3Zpc2l0SGVhZGVye1xuICBmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbiN2aXNpdEhlYWRlciAgdGQge1xuICBwYWRkaW5nLXRvcDogMTJweDtcbiAgcGFkZGluZy1ib3R0b206IDEycHg7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIHBhZGRpbmc6IDhweDtcblxufVxuXG4jbWFpblZpc2l0SGVhZGVye1xuICAvKmJvcmRlcjogN3B4IHNvbGlkKi9cbn1cblxuXG4jbmV3VmlzaXQge1xuXG5cbn1cblxuLmJ0bi1zdWNjZXNzLmRpc2FibGVkLCAuYnRuLXN1Y2Nlc3M6ZGlzYWJsZWQge1xuICBjb2xvcjogI2ZmZjtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2EwNzA2ZDtcbiAgYm9yZGVyLWNvbG9yOiAjYTA3MDZkO1xufVxuXG4iXX0= */"
 
 /***/ }),
 
@@ -1298,7 +1414,7 @@ var PatientHistoryComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/*.firstRow{*/\n/*  border-top: 2px solid black;*/\n/*  border-left: 2px solid black;*/\n/*  border-right: 2px solid black;*/\n/*}*/\n/*.secondRow{*/\n/*  border-style: solid;*/\n/*  border-width: 2px;*/\n/*}*/\n#printPage{\n  background-color: white;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1pbmZvLXByaW50L3BhdGllbnQtaW5mby1wcmludC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGFBQWE7QUFDYixpQ0FBaUM7QUFDakMsa0NBQWtDO0FBQ2xDLG1DQUFtQztBQUNuQyxJQUFJO0FBQ0osY0FBYztBQUNkLHlCQUF5QjtBQUN6Qix1QkFBdUI7QUFDdkIsSUFBSTtBQUVKO0VBQ0UsdUJBQXVCO0FBQ3pCIiwiZmlsZSI6InNyYy9hcHAvcGF0aWVudC1pbmZvLXByaW50L3BhdGllbnQtaW5mby1wcmludC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyouZmlyc3RSb3d7Ki9cbi8qICBib3JkZXItdG9wOiAycHggc29saWQgYmxhY2s7Ki9cbi8qICBib3JkZXItbGVmdDogMnB4IHNvbGlkIGJsYWNrOyovXG4vKiAgYm9yZGVyLXJpZ2h0OiAycHggc29saWQgYmxhY2s7Ki9cbi8qfSovXG4vKi5zZWNvbmRSb3d7Ki9cbi8qICBib3JkZXItc3R5bGU6IHNvbGlkOyovXG4vKiAgYm9yZGVyLXdpZHRoOiAycHg7Ki9cbi8qfSovXG5cbiNwcmludFBhZ2V7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xufVxuIl19 */"
+module.exports = "/*.firstRow{*/\n/*  border-top: 2px solid black;*/\n/*  border-left: 2px solid black;*/\n/*  border-right: 2px solid black;*/\n/*}*/\n/*.secondRow{*/\n/*  border-style: solid;*/\n/*  border-width: 2px;*/\n/*}*/\n#printPage{\n  background-color: white;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3BhdGllbnQtaW5mby1wcmludC9wYXRpZW50LWluZm8tcHJpbnQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxhQUFhO0FBQ2IsaUNBQWlDO0FBQ2pDLGtDQUFrQztBQUNsQyxtQ0FBbUM7QUFDbkMsSUFBSTtBQUNKLGNBQWM7QUFDZCx5QkFBeUI7QUFDekIsdUJBQXVCO0FBQ3ZCLElBQUk7QUFFSjtFQUNFLHVCQUF1QjtBQUN6QiIsImZpbGUiOiIuLi9wYXRpZW50LWluZm8tcHJpbnQvcGF0aWVudC1pbmZvLXByaW50LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKi5maXJzdFJvd3sqL1xuLyogIGJvcmRlci10b3A6IDJweCBzb2xpZCBibGFjazsqL1xuLyogIGJvcmRlci1sZWZ0OiAycHggc29saWQgYmxhY2s7Ki9cbi8qICBib3JkZXItcmlnaHQ6IDJweCBzb2xpZCBibGFjazsqL1xuLyp9Ki9cbi8qLnNlY29uZFJvd3sqL1xuLyogIGJvcmRlci1zdHlsZTogc29saWQ7Ki9cbi8qICBib3JkZXItd2lkdGg6IDJweDsqL1xuLyp9Ki9cblxuI3ByaW50UGFnZXtcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG59XG4iXX0= */"
 
 /***/ }),
 
@@ -1379,7 +1495,7 @@ var PatientInfoPrintComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "input[type=text] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n\ninput[type=number] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n\ninput:invalid {\n  border: 2px dashed red;\n}\n\nselect {\n   width: 112%;\n}\n\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #a0706d;\n  border-color: #a0706d;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1yZWdpc3RyYXRpb24vcGF0aWVudC1yZWdpc3RyYXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLHNCQUFzQjtBQUN4Qjs7QUFFQTtHQUNHLFdBQVc7QUFDZDs7QUFFQTtFQUNFLFdBQVc7RUFDWCx5QkFBeUI7RUFDekIscUJBQXFCO0FBQ3ZCIiwiZmlsZSI6InNyYy9hcHAvcGF0aWVudC1yZWdpc3RyYXRpb24vcGF0aWVudC1yZWdpc3RyYXRpb24uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImlucHV0W3R5cGU9dGV4dF0ge1xuICB3aWR0aDogMTAwJTtcbiAgcGFkZGluZzogMTJweCAyMHB4O1xuICBtYXJnaW46IDhweCAwO1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xufVxuXG5pbnB1dFt0eXBlPW51bWJlcl0ge1xuICB3aWR0aDogMTAwJTtcbiAgcGFkZGluZzogMTJweCAyMHB4O1xuICBtYXJnaW46IDhweCAwO1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xufVxuXG5pbnB1dDppbnZhbGlkIHtcbiAgYm9yZGVyOiAycHggZGFzaGVkIHJlZDtcbn1cblxuc2VsZWN0IHtcbiAgIHdpZHRoOiAxMTIlO1xufVxuXG4uYnRuLXN1Y2Nlc3MuZGlzYWJsZWQsIC5idG4tc3VjY2VzczpkaXNhYmxlZCB7XG4gIGNvbG9yOiAjZmZmO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjYTA3MDZkO1xuICBib3JkZXItY29sb3I6ICNhMDcwNmQ7XG59XG4iXX0= */"
+module.exports = "input[type=text] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n\ninput[type=number] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n\ninput:invalid {\n  border: 2px dashed red;\n}\n\nselect {\n   width: 112%;\n}\n\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #a0706d;\n  border-color: #a0706d;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3BhdGllbnQtcmVnaXN0cmF0aW9uL3BhdGllbnQtcmVnaXN0cmF0aW9uLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFXO0VBQ1gsa0JBQWtCO0VBQ2xCLGFBQWE7RUFDYixzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsa0JBQWtCO0VBQ2xCLGFBQWE7RUFDYixzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7O0FBRUE7R0FDRyxXQUFXO0FBQ2Q7O0FBRUE7RUFDRSxXQUFXO0VBQ1gseUJBQXlCO0VBQ3pCLHFCQUFxQjtBQUN2QiIsImZpbGUiOiIuLi9wYXRpZW50LXJlZ2lzdHJhdGlvbi9wYXRpZW50LXJlZ2lzdHJhdGlvbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW5wdXRbdHlwZT10ZXh0XSB7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nOiAxMnB4IDIwcHg7XG4gIG1hcmdpbjogOHB4IDA7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG59XG5cbmlucHV0W3R5cGU9bnVtYmVyXSB7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nOiAxMnB4IDIwcHg7XG4gIG1hcmdpbjogOHB4IDA7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG59XG5cbmlucHV0OmludmFsaWQge1xuICBib3JkZXI6IDJweCBkYXNoZWQgcmVkO1xufVxuXG5zZWxlY3Qge1xuICAgd2lkdGg6IDExMiU7XG59XG5cbi5idG4tc3VjY2Vzcy5kaXNhYmxlZCwgLmJ0bi1zdWNjZXNzOmRpc2FibGVkIHtcbiAgY29sb3I6ICNmZmY7XG4gIGJhY2tncm91bmQtY29sb3I6ICNhMDcwNmQ7XG4gIGJvcmRlci1jb2xvcjogI2EwNzA2ZDtcbn1cbiJdfQ== */"
 
 /***/ }),
 
@@ -1537,7 +1653,7 @@ var PatientRegistrationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtc2VhcmNoL3BhdGllbnQtc2VhcmNoLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9wYXRpZW50LXNlYXJjaC9wYXRpZW50LXNlYXJjaC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -1686,6 +1802,56 @@ var PatientSearchComponent = /** @class */ (function () {
             _service_search_service__WEBPACK_IMPORTED_MODULE_3__["SearchService"]])
     ], PatientSearchComponent);
     return PatientSearchComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/appointment-data-service.service.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/service/appointment-data-service.service.ts ***!
+  \*************************************************************/
+/*! exports provided: AppointmentDataServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppointmentDataServiceService", function() { return AppointmentDataServiceService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _model_AppointmentData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../model/AppointmentData */ "./src/app/model/AppointmentData.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AppointmentDataServiceService = /** @class */ (function () {
+    function AppointmentDataServiceService() {
+        this._appointmentConfirmation = new _model_AppointmentData__WEBPACK_IMPORTED_MODULE_1__["AppointmentData"]();
+    }
+    Object.defineProperty(AppointmentDataServiceService.prototype, "appointmentConfirmation", {
+        get: function () {
+            return this._appointmentConfirmation;
+        },
+        set: function (value) {
+            this._appointmentConfirmation = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    AppointmentDataServiceService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [])
+    ], AppointmentDataServiceService);
+    return AppointmentDataServiceService;
 }());
 
 

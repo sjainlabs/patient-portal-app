@@ -1,6 +1,7 @@
 package com.jlabs.controller;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.jlabs.model.Doctor;
 import com.jlabs.model.Patient;
 import com.jlabs.model.Appointment;
 import com.jlabs.model.Visit;
@@ -116,5 +117,13 @@ public class PatientController {
     log.info("Get Appointment by Doctor id: {}", doctorId);
     List<Appointment> appointmentsList = appointmentService.getAppointmentsByDoctorId(doctorId);
     return new ResponseEntity<>(appointmentsList, HttpStatus.OK);
+  }
+
+  @GetMapping("/doctors")
+  @ResponseBody
+  public ResponseEntity<List<Doctor>> getAllDoctors(){
+    log.info("Get all Doctors");
+//    List<Appointment> appointmentsList = appointmentService.getAppointmentsByDoctorId();
+    return new ResponseEntity<>(null, HttpStatus.OK);
   }
 }
