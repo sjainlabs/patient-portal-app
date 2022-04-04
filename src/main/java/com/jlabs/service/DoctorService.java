@@ -16,53 +16,53 @@ import java.util.Optional;
 
 @Slf4j
 @Service
-public class AppointmentService {
+public class DoctorService {
 
   @Autowired
   private AppointmentPersistence appointmentPersistence;
-  AppointmentEntityMapper appointmentEntityMapper = Mappers.getMapper(AppointmentEntityMapper.class);
-
-  public Optional<List<Appointment>> getAppointments(String doctorName, String appointmentDate){
-    Optional<List<AppointmentEntity>> patientAppointments = Optional.empty();
-    LocalDate appointmentDateParsed = null;
-    if(doctorName == null && appointmentDate == null){
-       patientAppointments = Optional.ofNullable(appointmentPersistence.getAllAppointments());
-    }
-    else{
-      if(appointmentDate!=null){
-         appointmentDateParsed = LocalDate.parse(appointmentDate);
-
-      }      patientAppointments = Optional.ofNullable(appointmentPersistence.getAppointmentByDoctorNameOrAppointmentDate(doctorName, appointmentDateParsed));
-    }
-
-    List<Appointment> appointmentsList = new ArrayList<>();
-    if(!patientAppointments.get().isEmpty()) {
-      log.info("Retrieved all appointments: {}" , patientAppointments);
-      for (AppointmentEntity appointmentEntity: patientAppointments.get()) {
-        Appointment appointment = appointmentEntityMapper.AppointmentEntityToAppointment(appointmentEntity);
-        appointmentsList.add(appointment);
-      }
-    }
-    return Optional.ofNullable(appointmentsList);
-  }
-
-  public String createAppointments(Appointment appointment){
-    AppointmentEntity appointmentEntity = appointmentEntityMapper.AppointmentToAppointmentEntity(appointment);
-    String patientAppointmentId = appointmentPersistence.createAppointments(appointmentEntity);
-    log.info("Created patient appointment with appointment Id: {}" , patientAppointmentId);
-    return patientAppointmentId;
-  }
-
-  public List<Appointment> getAppointmentsByDoctorId(int doctorId){
-    List<AppointmentEntity> appointmentsEntityList = appointmentPersistence.getAppointmentByDoctorId(doctorId);
-    List<Appointment> appointmentsList = new ArrayList<>();
-    if(!appointmentsEntityList.isEmpty()) {
-      for (AppointmentEntity appointmentEntity: appointmentsEntityList) {
-        Appointment appointment = appointmentEntityMapper.AppointmentEntityToAppointment(appointmentEntity);
-        appointmentsList.add(appointment);
-      }
-    }
-    log.info("Retrieve appointments by doctorId: {}" , appointmentsList);
-    return appointmentsList;
-  }
+//  AppointmentEntityMapper appointmentEntityMapper = Mappers.getMapper(AppointmentEntityMapper.class);
+//
+//  public Optional<List<Appointment>> getAppointments(String doctorName, String appointmentDate){
+//    Optional<List<AppointmentEntity>> patientAppointments = Optional.empty();
+//    LocalDate appointmentDateParsed = null;
+//    if(doctorName == null && appointmentDate == null){
+//       patientAppointments = Optional.ofNullable(appointmentPersistence.getAllAppointments());
+//    }
+//    else{
+//      if(appointmentDate!=null){
+//         appointmentDateParsed = LocalDate.parse(appointmentDate);
+//
+//      }      patientAppointments = Optional.ofNullable(appointmentPersistence.getAppointmentByDoctorNameOrAppointmentDate(doctorName, appointmentDateParsed));
+//    }
+//
+//    List<Appointment> appointmentsList = new ArrayList<>();
+//    if(!patientAppointments.get().isEmpty()) {
+//      log.info("Retrieved all appointments: {}" , patientAppointments);
+//      for (AppointmentEntity appointmentEntity: patientAppointments.get()) {
+//        Appointment appointment = appointmentEntityMapper.AppointmentEntityToAppointment(appointmentEntity);
+//        appointmentsList.add(appointment);
+//      }
+//    }
+//    return Optional.ofNullable(appointmentsList);
+//  }
+//
+//  public String createAppointments(Appointment appointment){
+//    AppointmentEntity appointmentEntity = appointmentEntityMapper.AppointmentToAppointmentEntity(appointment);
+//    String patientAppointmentId = appointmentPersistence.createAppointments(appointmentEntity);
+//    log.info("Created patient appointment with appointment Id: {}" , patientAppointmentId);
+//    return patientAppointmentId;
+//  }
+//
+//  public List<Appointment> getAppointmentsByDoctorId(int doctorId){
+//    List<AppointmentEntity> appointmentsEntityList = appointmentPersistence.getAppointmentByDoctorId(doctorId);
+//    List<Appointment> appointmentsList = new ArrayList<>();
+//    if(!appointmentsEntityList.isEmpty()) {
+//      for (AppointmentEntity appointmentEntity: appointmentsEntityList) {
+//        Appointment appointment = appointmentEntityMapper.AppointmentEntityToAppointment(appointmentEntity);
+//        appointmentsList.add(appointment);
+//      }
+//    }
+//    log.info("Retrieve appointments by doctorId: {}" , appointmentsList);
+//    return appointmentsList;
+//  }
 }

@@ -4,6 +4,9 @@ import {DoctorData} from "../model/DoctorData";
 import {AppointmentSearchService} from "../service/appointment-search.service";
 import * as moment from 'moment';
 import {PatientData} from "../model/PatientData";
+import {AppointmentConfirmationComponent} from "../appointment-confirmation/appointment-confirmation.component";
+import {AppointmentDataServiceService} from "../service/appointment-data-service.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-appointment-create',
@@ -22,8 +25,12 @@ export class AppointmentCreateComponent implements OnInit {
   hoursSlot1 = [];
   hoursSlot2 = [];
   hoursSlot3 = [];
+  currentDate;
 
-  constructor(private appointmentSearchService: AppointmentSearchService) {
+  constructor(private appointmentSearchService: AppointmentSearchService,
+              private appointmentConfirmationService: AppointmentDataServiceService,
+              private router: Router) {
+    this.currentDate = moment(new Date()).format("YYYY-MM-DD");
 
   }
 
@@ -36,16 +43,17 @@ export class AppointmentCreateComponent implements OnInit {
 
 
   appointmentWindow1() {
+    this.hoursSlot1 = [];
     moment.locale(this.locale);  // optional - can remove if you are only dealing with one locale
 
     for (let hour = 8;hour < 21; hour++ )
     {
-      this.hoursSlot1.push(moment({hour}).format('h:mm A'));
+      this.hoursSlot1.push(moment({hour}).format('hh:mm A'));
       this.hoursSlot1.push(
         moment({
           hour,
           minute: 20
-        }).format('h:mm A')
+        }).format('hh:mm A')
       );
     }
 
@@ -81,7 +89,8 @@ export class AppointmentCreateComponent implements OnInit {
 
   }
 
-  searchAppointment(doctorName, appointmentDate) {
+  searchAppointment(doctorName, appointmentDate,hourslot) {
+    this.appointmentWindow1();
     this.showLoader();
     this.appointmentData = [];
     this.appointmentSearchService.getAllAppointments(doctorName, appointmentDate)
@@ -93,14 +102,15 @@ export class AppointmentCreateComponent implements OnInit {
             for (let i = 0; i < data.length; i++) {
 
               this.appointmentData.push(data[i]);
-              // console.log(this.appointmentData[i].appointmentDate);
+              console.log(this.appointmentData[i].appointmentDate);
               // console.log(this.appointmentData[i].startTime);
 
             }
             if (data.length > 0) {
               // let startTime = this.appointmentData[i].startTime.slice(11);
-              let hoursSlotFiltered =  this.hoursSlot1.filter(slot => this.appointmentData.forEach(a => a.startTime) === slot)
+              let hoursSlotFiltered =  hourslot.filter(o1 => !data.some(o2 =>  appointmentDate + " " + o1 === o2.startTime));
               console.log("hoursSlotFiltered" + hoursSlotFiltered);
+              this.hoursSlot1 = hoursSlotFiltered;
               this.appointmentFound = true;
             }
           }
@@ -125,13 +135,14 @@ export class AppointmentCreateComponent implements OnInit {
     document.getElementById('loadin').style.display = '';
   }
 
-  bookAppointment(date) {
+  bookAppointment(date, startTime) {
     let appointment : AppointmentData = new AppointmentData();
     appointment.doctor = new DoctorData();
     appointment.patient = new PatientData();
-    appointment.appointmentDate = "2022-03-29"
-    appointment.startTime= appointment.appointmentDate +" "+ date;
+    appointment.appointmentDate = date;
+    appointment.startTime= appointment.appointmentDate +" "+ startTime;
     appointment.doctor.doctorId = 2;
+    appointment.doctor.doctorName = this.doctorName;
     appointment.patient.id = '2';
     this.appointmentSearchService.createAppointment(appointment)
       .subscribe(s => {
@@ -148,7 +159,14 @@ export class AppointmentCreateComponent implements OnInit {
         }
       );
     console.log("Appointment Booked : " + date);
+    this.appointmentConfirmation(appointment);
 
 
   }
+
+  appointmentConfirmation(data) {
+    this.appointmentConfirmationService.appointmentConfirmation = data;
+    this.router.navigate(['appointment-confirmation']);
+  }
+
 }

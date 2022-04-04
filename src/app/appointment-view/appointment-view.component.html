@@ -9,30 +9,42 @@
   </div>
 
   <div id="appointmentHeader" class=" container ">
-    <table id="appointment" class="table">
+    <table id="appointment" class="table table-striped" [mfData]="appointmentData"
+           #mf="mfDataTable">
       <thead>
       <tr>
-        <th>Doctor Name</th>
-        <th>Patient Name</th>
-        <th>Appointment Date</th>
-        <th>Start Time</th>
-        <th>End Time</th>
+        <th>
+          <mfDefaultSorter by="doctorName">Doctor Name</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="patientName">Patient Name</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="appointmentDate">Appointment Date</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="startTime">Start Time</mfDefaultSorter>
+        </th>
+        <th>
+          <mfDefaultSorter by="endTime">End Time</mfDefaultSorter>
+        </th>
 
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let appointment of appointmentData">
+      <tr *ngFor="let appointment of mf.data">
         <td
-          >{{appointment?.doctor?.doctorName}} </td>
+        >{{appointment?.doctor?.doctorName}} </td>
         <td
 
-        >{{appointment?.patient?.firstName}} </td>
-        <td >{{appointment?.appointmentDate }} </td>
+        >{{appointment?.patient?.firstName}} {{appointment?.patient?.lastName}} </td>
+        <td>{{appointment?.appointmentDate }} </td>
         <td>{{appointment?.startTime  }} </td>
-        <td >{{appointment?.endTime}} </td>
+        <td>{{appointment?.endTime}} </td>
       </tr>
       </tbody>
     </table>
   </div>
-
+  <br>
+  <br>
 </div>

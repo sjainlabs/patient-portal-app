@@ -16,6 +16,10 @@ import { PatientHistoryComponent } from './patient-history/patient-history.compo
 import { PatientHeaderComponent } from './patient-header/patient-header.component';
 import { AppointmentViewComponent } from './appointment-view/appointment-view.component';
 import { AppointmentCreateComponent } from './appointment-create/appointment-create.component';
+import { AppointmentConfirmationComponent } from './appointment-confirmation/appointment-confirmation.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {AngularDateTimePickerModule} from "angular2-datetimepicker";
 
 @NgModule({
   declarations: [
@@ -29,6 +33,7 @@ import { AppointmentCreateComponent } from './appointment-create/appointment-cre
     PatientHeaderComponent,
     AppointmentViewComponent,
     AppointmentCreateComponent,
+    AppointmentConfirmationComponent,
     // PatientHelper
   ],
   imports: [
@@ -38,6 +43,9 @@ import { AppointmentCreateComponent } from './appointment-create/appointment-cre
     BrowserAnimationsModule,
     HttpClientModule,
     DataTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    AngularDateTimePickerModule,
     RouterModule.forRoot([
 
       {
@@ -64,8 +72,12 @@ import { AppointmentCreateComponent } from './appointment-create/appointment-cre
         path: 'appointment-create',
         component: AppointmentCreateComponent
       },
-      { path: '',   redirectTo: '/search', pathMatch: 'full' }, // redirect to `first-component`
-      { path: '**', component: PagenotfoundComponent },
+      {
+        path: 'appointment-confirmation',
+        component: AppointmentConfirmationComponent
+      },
+      {path: '', redirectTo: '/search', pathMatch: 'full'}, // redirect to `first-component`
+      {path: '**', component: PagenotfoundComponent},
     ]),
     RouterModule.forChild([
 
@@ -93,11 +105,15 @@ import { AppointmentCreateComponent } from './appointment-create/appointment-cre
         path: 'appointment-create',
         component: AppointmentCreateComponent
       },
-      { path: '',   redirectTo: '/search', pathMatch: 'full' }, // redirect to `first-component`
-      { path: '**', component: PagenotfoundComponent },
+      {
+        path: 'appointment-confirmation',
+        component: AppointmentConfirmationComponent
+      },
+      {path: '', redirectTo: '/search', pathMatch: 'full'}, // redirect to `first-component`
+      {path: '**', component: PagenotfoundComponent},
     ])
   ],
-  providers: [],
+  providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

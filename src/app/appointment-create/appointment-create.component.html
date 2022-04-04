@@ -14,40 +14,43 @@
         <label for="doctorName">Doctor Name:</label>
       </div>
       <div class="col-sm-2">
-        <select id="doctorName" name="doctorName">
+        <select id="doctorName" name="doctorName" [(ngModel)]="doctorName">
           <option value="Dr Siddhart Kothari">Dr Siddhart Kothari</option>
           <option value="Dr Poonam Jain">Dr Poonam Jain</option>
         </select>
       </div>
-
+    </div>
       <div class="row">
         <div class="col-sm-2">
           <label for="appointmentDate">Appointment Date:</label>
         </div>
         <div class="col-sm-2">
-          <input type="text" [(ngModel)]="appointmentDate" id="appointmentDate" placeholder="DD/MM/YY">
+          <input type="date" [(ngModel)]="appointmentDate" id="appointmentDate" placeholder="DD/MM/YY" [min]="currentDate">
         </div>
       </div>
-    </div>
+
 
     <div class="row">
       <div class="col-sm-2">
         <!--      <a routerLink="print" class="nav-link">-->
-        <button type="submit" class="btn btn-primary" (click)="searchAppointment(doctorName,appointmentDate)">Available
-          Appointment
-        </button>
+        <button type="submit" class="btn btn-primary" (click)="   searchAppointment(doctorName,appointmentDate,hoursSlot1)" title="Search For Available Appointment">Search</button>
         <!--      </a>-->
       </div>
     </div>
 
-    <div class="appointment" *ngIf="appointmentFound===true">
+  </div>
+
+  <br>
+  <br>
+
+    <div class="container appointment" *ngIf="appointmentFound===true">
 
       <div>
-        <!--<div class="row"> Range 8 am - 12PM</div>-->
+<!--        <div class="row"> Date: {{appointmentDate}}</div>-->
         <div class="row">
           <div *ngFor="let dateRange of hoursSlot1">
             <div class="col-sm-2">
-            <label style="background-color: green" (click)="bookAppointment(dateRange)">{{dateRange}}  </label>
+            <button title="Book Appointment" type="submit" class="btn btn-primary"  (click)="bookAppointment(appointmentDate, dateRange)">{{dateRange}}  </button>
             <label  style="background-color: white">   </label>
             <label  style="background-color: white">   </label>
             </div>
@@ -76,4 +79,3 @@
 
   </div>
 
-</div>
