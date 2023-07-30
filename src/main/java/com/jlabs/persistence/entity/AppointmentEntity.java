@@ -22,11 +22,11 @@ public class AppointmentEntity {
   @Column(name = "appointment_date")
   private ZonedDateTime appointmentDate;
 
-  @OneToOne
+  @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "doctor_id")
   private DoctorEntity doctorEntity;
 
-  @OneToOne
+  @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "patient_id")
   private PatientEntity patientEntity;
 }

@@ -4,7 +4,7 @@ import com.jlabs.model.Appointment;
 import com.jlabs.persistence.AppointmentPersistence;
 import com.jlabs.persistence.entity.AppointmentEntity;
 import com.jlabs.service.transform.AppointmentEntityMapper;
-import jdk.nashorn.internal.runtime.regexp.joni.constants.OPCode;
+//import jdk.nashorn.internal.runtime.regexp.joni.constants.OPCode;
 import lombok.extern.slf4j.Slf4j;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;

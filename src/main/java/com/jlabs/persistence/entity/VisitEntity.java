@@ -21,7 +21,7 @@ public class VisitEntity {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int visitId;
 
-  @ManyToOne
+  @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "PATIENT_ID")
   private PatientEntity patientEntity;
 

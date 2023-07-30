@@ -19,7 +19,7 @@ public class DoctorEntity {
   private String doctorName;
   @Column(name = "personal_id")
   private String personalId;
-  @OneToOne
+  @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "personal_id_type")
   private PersonalIdentificationEntity personalIdentificationEntity;
 }

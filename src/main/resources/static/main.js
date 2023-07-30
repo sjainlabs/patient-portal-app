@@ -1,5 +1,308 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
+/***/ "./node_modules/moment/locale sync recursive ^\\.\\/.*$":
+/*!**************************************************!*\
+  !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "./node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/moment/locale/az.js",
+	"./be": "./node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/moment/locale/bg.js",
+	"./bm": "./node_modules/moment/locale/bm.js",
+	"./bm.js": "./node_modules/moment/locale/bm.js",
+	"./bn": "./node_modules/moment/locale/bn.js",
+	"./bn-bd": "./node_modules/moment/locale/bn-bd.js",
+	"./bn-bd.js": "./node_modules/moment/locale/bn-bd.js",
+	"./bn.js": "./node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/moment/locale/da.js",
+	"./de": "./node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-au": "./node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
+	"./en-il": "./node_modules/moment/locale/en-il.js",
+	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-in": "./node_modules/moment/locale/en-in.js",
+	"./en-in.js": "./node_modules/moment/locale/en-in.js",
+	"./en-nz": "./node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./en-sg": "./node_modules/moment/locale/en-sg.js",
+	"./en-sg.js": "./node_modules/moment/locale/en-sg.js",
+	"./eo": "./node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/moment/locale/es-do.js",
+	"./es-mx": "./node_modules/moment/locale/es-mx.js",
+	"./es-mx.js": "./node_modules/moment/locale/es-mx.js",
+	"./es-us": "./node_modules/moment/locale/es-us.js",
+	"./es-us.js": "./node_modules/moment/locale/es-us.js",
+	"./es.js": "./node_modules/moment/locale/es.js",
+	"./et": "./node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fil": "./node_modules/moment/locale/fil.js",
+	"./fil.js": "./node_modules/moment/locale/fil.js",
+	"./fo": "./node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./ga": "./node_modules/moment/locale/ga.js",
+	"./ga.js": "./node_modules/moment/locale/ga.js",
+	"./gd": "./node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-deva": "./node_modules/moment/locale/gom-deva.js",
+	"./gom-deva.js": "./node_modules/moment/locale/gom-deva.js",
+	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
+	"./gu": "./node_modules/moment/locale/gu.js",
+	"./gu.js": "./node_modules/moment/locale/gu.js",
+	"./he": "./node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/moment/locale/id.js",
+	"./is": "./node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/moment/locale/is.js",
+	"./it": "./node_modules/moment/locale/it.js",
+	"./it-ch": "./node_modules/moment/locale/it-ch.js",
+	"./it-ch.js": "./node_modules/moment/locale/it-ch.js",
+	"./it.js": "./node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ku": "./node_modules/moment/locale/ku.js",
+	"./ku.js": "./node_modules/moment/locale/ku.js",
+	"./ky": "./node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/moment/locale/mn.js",
+	"./mr": "./node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/moment/locale/ms.js",
+	"./mt": "./node_modules/moment/locale/mt.js",
+	"./mt.js": "./node_modules/moment/locale/mt.js",
+	"./my": "./node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./oc-lnc": "./node_modules/moment/locale/oc-lnc.js",
+	"./oc-lnc.js": "./node_modules/moment/locale/oc-lnc.js",
+	"./pa-in": "./node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/moment/locale/se.js",
+	"./si": "./node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/moment/locale/tet.js",
+	"./tg": "./node_modules/moment/locale/tg.js",
+	"./tg.js": "./node_modules/moment/locale/tg.js",
+	"./th": "./node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tk": "./node_modules/moment/locale/tk.js",
+	"./tk.js": "./node_modules/moment/locale/tk.js",
+	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/moment/locale/tzm.js",
+	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
+	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
+	"./uk": "./node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-mo": "./node_modules/moment/locale/zh-mo.js",
+	"./zh-mo.js": "./node_modules/moment/locale/zh-mo.js",
+	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) { // check for number or string
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return id;
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
+
+/***/ }),
+
 /***/ "./src/$$_lazy_route_resource lazy recursive":
 /*!**********************************************************!*\
   !*** ./src/$$_lazy_route_resource lazy namespace object ***!
@@ -30,7 +333,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hcHAuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -41,7 +344,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n<!--  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\r\n<!--    <h1 class=\"siteTitle\">-->\r\n<!--      {{ title }}-->\r\n<!--    </h1>-->\r\n<!--  </div>-->\r\n<!--  <div style=\"text-align:center;\">-->\r\n<!--    <button type=\"button\" class=\"btn btn-primary alignButton\">Register Patient</button>-->\r\n<!--  </div>-->\r\n<!--  <div style=\"text-align:center;\">-->\r\n<!--    <a routerLink = \"search\">-->\r\n<!--      <button type=\"button\" class=\"btn btn-primary\">Search Patient</button>-->\r\n<!--    </a>-->\r\n<!--  </div>-->\r\n<!--  <div>-->\r\n<!--    <a routerLink = \"search\">New component</a>-->\r\n<!--  </div>-->\r\n\r\n<!--  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">-->\r\n<!--    &lt;!&ndash; Links &ndash;&gt;-->\r\n<!--    <ul class=\"navbar-nav\">-->\r\n<!--      <li class=\"nav-item\">-->\r\n<!--        <a routerLink=\"register\" class=\"nav-link\">Patient Registration</a>-->\r\n<!--      </li>-->\r\n<!--      <li class=\"nav-item\">-->\r\n<!--        <a routerLink=\"search\" class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>-->\r\n<!--      </li>-->\r\n<!--    </ul>-->\r\n<!--  </nav>-->\r\n\r\n<!--  <div style=\"text-align:center\" >-->\r\n<!--    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\r\n<!--  </div>-->\r\n<!--  <app-patient-registration></app-patient-registration>-->\r\n  <router-outlet></router-outlet>\r\n</div>\r\n"
+module.exports = "<div>\n<!--  <div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\n<!--    <h1 class=\"siteTitle\">-->\n<!--      {{ title }}-->\n<!--    </h1>-->\n<!--  </div>-->\n<!--  <div style=\"text-align:center;\">-->\n<!--    <button type=\"button\" class=\"btn btn-primary alignButton\">Register Patient</button>-->\n<!--  </div>-->\n<!--  <div style=\"text-align:center;\">-->\n<!--    <a routerLink = \"search\">-->\n<!--      <button type=\"button\" class=\"btn btn-primary\">Search Patient</button>-->\n<!--    </a>-->\n<!--  </div>-->\n<!--  <div>-->\n<!--    <a routerLink = \"search\">New component</a>-->\n<!--  </div>-->\n\n<!--  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">-->\n<!--    &lt;!&ndash; Links &ndash;&gt;-->\n<!--    <ul class=\"navbar-nav\">-->\n<!--      <li class=\"nav-item\">-->\n<!--        <a routerLink=\"register\" class=\"nav-link\">Patient Registration</a>-->\n<!--      </li>-->\n<!--      <li class=\"nav-item\">-->\n<!--        <a routerLink=\"search\" class=\"nav-link\" routerLinkActive=\"active\">Patient Search</a>-->\n<!--      </li>-->\n<!--    </ul>-->\n<!--  </nav>-->\n\n<!--  <div style=\"text-align:center\" >-->\n<!--    <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\n<!--  </div>-->\n<!--  <app-patient-registration></app-patient-registration>-->\n  <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -70,7 +373,7 @@ var AppComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
-            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")],
+            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         })
     ], AppComponent);
     return AppComponent;
@@ -106,12 +409,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angular_6_datatable__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(angular_6_datatable__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _patient_history_patient_history_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./patient-history/patient-history.component */ "./src/app/patient-history/patient-history.component.ts");
 /* harmony import */ var _patient_header_patient_header_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./patient-header/patient-header.component */ "./src/app/patient-header/patient-header.component.ts");
+/* harmony import */ var _appointment_view_appointment_view_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./appointment-view/appointment-view.component */ "./src/app/appointment-view/appointment-view.component.ts");
+/* harmony import */ var _appointment_create_appointment_create_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./appointment-create/appointment-create.component */ "./src/app/appointment-create/appointment-create.component.ts");
+/* harmony import */ var _appointment_confirmation_appointment_confirmation_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./appointment-confirmation/appointment-confirmation.component */ "./src/app/appointment-confirmation/appointment-confirmation.component.ts");
+/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/esm5/core.es5.js");
+/* harmony import */ var angular2_datetimepicker__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! angular2-datetimepicker */ "./node_modules/angular2-datetimepicker/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
+
+
 
 
 
@@ -141,6 +456,9 @@ var AppModule = /** @class */ (function () {
                 _loader_spin_loader_spin_component__WEBPACK_IMPORTED_MODULE_11__["LoaderSpinComponent"],
                 _patient_history_patient_history_component__WEBPACK_IMPORTED_MODULE_13__["PatientHistoryComponent"],
                 _patient_header_patient_header_component__WEBPACK_IMPORTED_MODULE_14__["PatientHeaderComponent"],
+                _appointment_view_appointment_view_component__WEBPACK_IMPORTED_MODULE_15__["AppointmentViewComponent"],
+                _appointment_create_appointment_create_component__WEBPACK_IMPORTED_MODULE_16__["AppointmentCreateComponent"],
+                _appointment_confirmation_appointment_confirmation_component__WEBPACK_IMPORTED_MODULE_17__["AppointmentConfirmationComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -149,6 +467,9 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
                 angular_6_datatable__WEBPACK_IMPORTED_MODULE_12__["DataTableModule"],
+                _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_18__["MatDatepickerModule"],
+                _angular_material_core__WEBPACK_IMPORTED_MODULE_19__["MatNativeDateModule"],
+                angular2_datetimepicker__WEBPACK_IMPORTED_MODULE_20__["AngularDateTimePickerModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forRoot([
                     {
                         path: 'register',
@@ -165,6 +486,18 @@ var AppModule = /** @class */ (function () {
                     {
                         path: 'history',
                         component: _patient_history_patient_history_component__WEBPACK_IMPORTED_MODULE_13__["PatientHistoryComponent"]
+                    },
+                    {
+                        path: 'appointment',
+                        component: _appointment_view_appointment_view_component__WEBPACK_IMPORTED_MODULE_15__["AppointmentViewComponent"]
+                    },
+                    {
+                        path: 'appointment-create',
+                        component: _appointment_create_appointment_create_component__WEBPACK_IMPORTED_MODULE_16__["AppointmentCreateComponent"]
+                    },
+                    {
+                        path: 'appointment-confirmation',
+                        component: _appointment_confirmation_appointment_confirmation_component__WEBPACK_IMPORTED_MODULE_17__["AppointmentConfirmationComponent"]
                     },
                     { path: '', redirectTo: '/search', pathMatch: 'full' },
                     { path: '**', component: _pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_10__["PagenotfoundComponent"] },
@@ -186,15 +519,428 @@ var AppModule = /** @class */ (function () {
                         path: 'history',
                         component: _patient_history_patient_history_component__WEBPACK_IMPORTED_MODULE_13__["PatientHistoryComponent"]
                     },
+                    {
+                        path: 'appointment',
+                        component: _appointment_view_appointment_view_component__WEBPACK_IMPORTED_MODULE_15__["AppointmentViewComponent"]
+                    },
+                    {
+                        path: 'appointment-create',
+                        component: _appointment_create_appointment_create_component__WEBPACK_IMPORTED_MODULE_16__["AppointmentCreateComponent"]
+                    },
+                    {
+                        path: 'appointment-confirmation',
+                        component: _appointment_confirmation_appointment_confirmation_component__WEBPACK_IMPORTED_MODULE_17__["AppointmentConfirmationComponent"]
+                    },
                     { path: '', redirectTo: '/search', pathMatch: 'full' },
                     { path: '**', component: _pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_10__["PagenotfoundComponent"] },
                 ])
             ],
-            providers: [],
+            providers: [_angular_material_datepicker__WEBPACK_IMPORTED_MODULE_18__["MatDatepickerModule"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/appointment-confirmation/appointment-confirmation.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/appointment-confirmation/appointment-confirmation.component.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hcHBvaW50bWVudC1jb25maXJtYXRpb24vYXBwb2ludG1lbnQtY29uZmlybWF0aW9uLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/appointment-confirmation/appointment-confirmation.component.html":
+/*!**********************************************************************************!*\
+  !*** ./src/app/appointment-confirmation/appointment-confirmation.component.html ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <br>\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n<div class=\"container\">\n<p>\n  Your Appointment is Confirmed for :{{appointmentConfirmation.startTime}}  with  {{appointmentConfirmation.doctor.doctorName}}\n</p>\n</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/appointment-confirmation/appointment-confirmation.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/appointment-confirmation/appointment-confirmation.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: AppointmentConfirmationComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppointmentConfirmationComponent", function() { return AppointmentConfirmationComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_appointment_data_service_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service/appointment-data-service.service */ "./src/app/service/appointment-data-service.service.ts");
+/* harmony import */ var _model_AppointmentData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../model/AppointmentData */ "./src/app/model/AppointmentData.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AppointmentConfirmationComponent = /** @class */ (function () {
+    function AppointmentConfirmationComponent(appointmentConfirmationService) {
+        this.appointmentConfirmationService = appointmentConfirmationService;
+        this.appointmentConfirmation = new _model_AppointmentData__WEBPACK_IMPORTED_MODULE_2__["AppointmentData"]();
+    }
+    AppointmentConfirmationComponent.prototype.ngOnInit = function () {
+        this.showLoader();
+        this.appointmentConfirmation = this.appointmentConfirmationService.appointmentConfirmation;
+        this.hideLoader();
+    };
+    AppointmentConfirmationComponent.prototype.hideLoader = function () {
+        document.getElementById('loadin').style.display = 'none';
+    };
+    AppointmentConfirmationComponent.prototype.showLoader = function () {
+        document.getElementById('loadin').style.display = '';
+    };
+    AppointmentConfirmationComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-appointment-confirmation',
+            template: __webpack_require__(/*! ./appointment-confirmation.component.html */ "./src/app/appointment-confirmation/appointment-confirmation.component.html"),
+            styles: [__webpack_require__(/*! ./appointment-confirmation.component.css */ "./src/app/appointment-confirmation/appointment-confirmation.component.css")]
+        }),
+        __metadata("design:paramtypes", [_service_appointment_data_service_service__WEBPACK_IMPORTED_MODULE_1__["AppointmentDataServiceService"]])
+    ], AppointmentConfirmationComponent);
+    return AppointmentConfirmationComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/appointment-create/appointment-create.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/appointment-create/appointment-create.component.css ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#appointment {\n  font-family: Arial, Helvetica, sans-serif;\n  border-collapse: collapse;\n  width: 100%;\n}\n\n#appointment td, #appointment th {\n  border: 1px solid #ddd;\n  padding: 8px;\n}\n\n#appointment tr:nth-child(even){background-color: #f2f2f2;}\n\n#appointment tr:hover {background-color: #ddd;}\n\n#appointment th {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  background-color: #490f198a;\n  color: white;\n}\n\n#appointment{\n  font-family: Arial, Helvetica, sans-serif;\n  width: 100%;\n}\n\n#appointment  td {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  padding: 8px;\n\n}\n\n#appointmentHeader{\n  /*border: 7px solid*/\n}\n\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #a0706d;\n  border-color: #a0706d;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL2FwcG9pbnRtZW50LWNyZWF0ZS9hcHBvaW50bWVudC1jcmVhdGUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHlDQUF5QztFQUN6Qyx5QkFBeUI7RUFDekIsV0FBVztBQUNiOztBQUVBO0VBQ0Usc0JBQXNCO0VBQ3RCLFlBQVk7QUFDZDs7QUFFQSxnQ0FBZ0MseUJBQXlCLENBQUM7O0FBRTFELHVCQUF1QixzQkFBc0IsQ0FBQzs7QUFFOUM7RUFDRSxpQkFBaUI7RUFDakIsb0JBQW9CO0VBQ3BCLGdCQUFnQjtFQUNoQiwyQkFBMkI7RUFDM0IsWUFBWTtBQUNkOztBQUVBO0VBQ0UseUNBQXlDO0VBQ3pDLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsZ0JBQWdCO0VBQ2hCLFlBQVk7O0FBRWQ7O0FBRUE7RUFDRSxvQkFBb0I7QUFDdEI7O0FBS0E7RUFDRSxXQUFXO0VBQ1gseUJBQXlCO0VBQ3pCLHFCQUFxQjtBQUN2QiIsImZpbGUiOiIuLi9hcHBvaW50bWVudC1jcmVhdGUvYXBwb2ludG1lbnQtY3JlYXRlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjYXBwb2ludG1lbnQge1xuICBmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjtcbiAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbiNhcHBvaW50bWVudCB0ZCwgI2FwcG9pbnRtZW50IHRoIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2RkZDtcbiAgcGFkZGluZzogOHB4O1xufVxuXG4jYXBwb2ludG1lbnQgdHI6bnRoLWNoaWxkKGV2ZW4pe2JhY2tncm91bmQtY29sb3I6ICNmMmYyZjI7fVxuXG4jYXBwb2ludG1lbnQgdHI6aG92ZXIge2JhY2tncm91bmQtY29sb3I6ICNkZGQ7fVxuXG4jYXBwb2ludG1lbnQgdGgge1xuICBwYWRkaW5nLXRvcDogMTJweDtcbiAgcGFkZGluZy1ib3R0b206IDEycHg7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIGJhY2tncm91bmQtY29sb3I6ICM0OTBmMTk4YTtcbiAgY29sb3I6IHdoaXRlO1xufVxuXG4jYXBwb2ludG1lbnR7XG4gIGZvbnQtZmFtaWx5OiBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmO1xuICB3aWR0aDogMTAwJTtcbn1cblxuI2FwcG9pbnRtZW50ICB0ZCB7XG4gIHBhZGRpbmctdG9wOiAxMnB4O1xuICBwYWRkaW5nLWJvdHRvbTogMTJweDtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgcGFkZGluZzogOHB4O1xuXG59XG5cbiNhcHBvaW50bWVudEhlYWRlcntcbiAgLypib3JkZXI6IDdweCBzb2xpZCovXG59XG5cblxuXG5cbi5idG4tc3VjY2Vzcy5kaXNhYmxlZCwgLmJ0bi1zdWNjZXNzOmRpc2FibGVkIHtcbiAgY29sb3I6ICNmZmY7XG4gIGJhY2tncm91bmQtY29sb3I6ICNhMDcwNmQ7XG4gIGJvcmRlci1jb2xvcjogI2EwNzA2ZDtcbn1cblxuIl19 */"
+
+/***/ }),
+
+/***/ "./src/app/appointment-create/appointment-create.component.html":
+/*!**********************************************************************!*\
+  !*** ./src/app/appointment-create/appointment-create.component.html ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <br>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div id=\"appointmentHeader\" class=\" container \">\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"doctorName\">Doctor Name:</label>\n      </div>\n      <div class=\"col-sm-2\">\n        <select id=\"doctorName\" name=\"doctorName\" [(ngModel)]=\"doctorSelected\">\n          <option  *ngFor=\"let doctor of doctorList\" [ngValue]=\"doctor\" >{{doctor.doctorName}}</option>\n<!--          <option value=\"Dr Poonam Jain\">Dr Poonam Jain</option>-->\n        </select>\n      </div>\n    </div>\n      <div class=\"row\">\n        <div class=\"col-sm-2\">\n          <label for=\"appointmentDate\">Appointment Date:</label>\n        </div>\n        <div class=\"col-sm-2\">\n          <input type=\"date\" [(ngModel)]=\"appointmentDate\" id=\"appointmentDate\" placeholder=\"DD/MM/YY\" [min]=\"currentDate\">\n        </div>\n      </div>\n\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"   searchAppointment(doctorName,appointmentDate,hoursSlot1)\" title=\"Search For Available Appointment\">Search</button>\n        <!--      </a>-->\n      </div>\n    </div>\n\n  </div>\n\n  <br>\n  <br>\n\n    <div class=\"container appointment\" *ngIf=\"appointmentFound===true\">\n\n      <div>\n<!--        <div class=\"row\"> Date: {{appointmentDate}}</div>-->\n        <div class=\"row\">\n          <div *ngFor=\"let dateRange of hoursSlot1\">\n            <div class=\"col-sm-2\">\n            <button title=\"Book Appointment\" type=\"submit\" class=\"btn btn-primary\"  (click)=\"bookAppointment(appointmentDate, dateRange)\">{{dateRange}}  </button>\n            <label  style=\"background-color: white\">   </label>\n            <label  style=\"background-color: white\">   </label>\n            </div>\n\n          </div>\n        </div>\n        <!--<div class=\"row\"> Range 12 PM - 4 PM</div>-->\n        <!--<div class=\"row\">-->\n          <!--<div *ngFor=\"let dateRange of hoursSlot2\">-->\n            <!--<label style=\"background-color: green\">{{dateRange}} </label>-->\n          <!--</div>-->\n        <!--</div>-->\n\n        <!--<div class=\"row\"> Range 4 PM - 8 PM</div>-->\n        <!--<div class=\"row\">-->\n          <!--<div *ngFor=\"let dateRange of hoursSlot3\">-->\n            <!--<label style=\"background-color: green\">{{dateRange}} </label>-->\n          <!--</div>-->\n        <!--</div>-->\n\n\n      </div>\n\n\n    </div>\n\n  </div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/appointment-create/appointment-create.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/appointment-create/appointment-create.component.ts ***!
+  \********************************************************************/
+/*! exports provided: AppointmentCreateComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppointmentCreateComponent", function() { return AppointmentCreateComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _model_AppointmentData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../model/AppointmentData */ "./src/app/model/AppointmentData.ts");
+/* harmony import */ var _model_DoctorData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../model/DoctorData */ "./src/app/model/DoctorData.ts");
+/* harmony import */ var _service_appointment_search_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/appointment-search.service */ "./src/app/service/appointment-search.service.ts");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _model_PatientData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../model/PatientData */ "./src/app/model/PatientData.ts");
+/* harmony import */ var _service_appointment_data_service_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../service/appointment-data-service.service */ "./src/app/service/appointment-data-service.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_doctor_service_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../service/doctor-service.service */ "./src/app/service/doctor-service.service.ts");
+/* harmony import */ var _service_search_data_service_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../service/search-data-service.service */ "./src/app/service/search-data-service.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+var AppointmentCreateComponent = /** @class */ (function () {
+    function AppointmentCreateComponent(appointmentSearchService, appointmentConfirmationService, doctorService, searchDataService, router) {
+        this.appointmentSearchService = appointmentSearchService;
+        this.appointmentConfirmationService = appointmentConfirmationService;
+        this.doctorService = doctorService;
+        this.searchDataService = searchDataService;
+        this.router = router;
+        this.appointmentFound = false;
+        this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
+        this.DATANOTFOUND = 'No Appointments Found for the Patient!';
+        this.appointmentData = [];
+        this.locale = 'en'; // or whatever you want...
+        this.hoursSlot1 = [];
+        this.doctorList = [];
+        this.currentDate = moment__WEBPACK_IMPORTED_MODULE_4__(new Date()).format("YYYY-MM-DD");
+    }
+    AppointmentCreateComponent.prototype.ngOnInit = function () {
+        this.hideLoader();
+        this.searchDoctors();
+        this.appointmentWindow1();
+    };
+    AppointmentCreateComponent.prototype.appointmentWindow1 = function () {
+        this.hoursSlot1 = [];
+        moment__WEBPACK_IMPORTED_MODULE_4__["locale"](this.locale); // optional - can remove if you are only dealing with one locale
+        for (var hour = 8; hour < 21; hour++) {
+            this.hoursSlot1.push(moment__WEBPACK_IMPORTED_MODULE_4__({ hour: hour }).format('HH:mm A'));
+            this.hoursSlot1.push(moment__WEBPACK_IMPORTED_MODULE_4__({
+                hour: hour,
+                minute: 20
+            }).format('HH:mm A'));
+        }
+    };
+    AppointmentCreateComponent.prototype.searchDoctors = function () {
+        var _this = this;
+        this.showLoader();
+        this.doctorList = [];
+        this.doctorService.searchAllDoctors()
+            .subscribe(function (data) {
+            console.log(data);
+            if (data == null) {
+                _this.error = _this.DATANOTFOUND;
+            }
+            else {
+                for (var i = 0; i < data.length; i++) {
+                    _this.doctorList.push(data[i]);
+                    console.log(_this.doctorList[i].doctorName);
+                    // console.log(this.appointmentData[i].startTime);
+                }
+            }
+            _this.hideLoader();
+        }
+        // }
+        , function (error1) {
+            _this.error = _this.ERRORMESSAGE;
+            _this.hideLoader();
+        });
+    };
+    AppointmentCreateComponent.prototype.searchAppointment = function (doctorName, appointmentDate, hourslot) {
+        var _this = this;
+        this.appointmentWindow1();
+        this.showLoader();
+        this.appointmentData = [];
+        this.appointmentSearchService.getAllAppointments(doctorName, appointmentDate)
+            .subscribe(function (data) {
+            console.log(data);
+            if (data == null) {
+                _this.error = _this.DATANOTFOUND;
+            }
+            else {
+                for (var i = 0; i < data.length; i++) {
+                    _this.appointmentData.push(data[i]);
+                    console.log(_this.appointmentData[i].appointmentDate);
+                    // console.log(this.appointmentData[i].startTime);
+                }
+                if (data.length > 0) {
+                    // let startTime = this.appointmentData[i].startTime.slice(11);
+                    var hoursSlotFiltered = hourslot.filter(function (o1) { return !data.some(function (o2) { return appointmentDate + " " + o1 === o2.startTime; }); });
+                    console.log("hoursSlotFiltered" + hoursSlotFiltered);
+                    _this.hoursSlot1 = hoursSlotFiltered;
+                    _this.appointmentFound = true;
+                }
+            }
+            _this.hideLoader();
+        }
+        // }
+        , function (error1) {
+            _this.error = _this.ERRORMESSAGE;
+            _this.hideLoader();
+        });
+    };
+    AppointmentCreateComponent.prototype.bookAppointment = function (date, startTime) {
+        var _this = this;
+        var patient = this.getPatientDataFromSearch();
+        var appointment = new _model_AppointmentData__WEBPACK_IMPORTED_MODULE_1__["AppointmentData"]();
+        appointment.doctor = new _model_DoctorData__WEBPACK_IMPORTED_MODULE_2__["DoctorData"]();
+        appointment.patient = new _model_PatientData__WEBPACK_IMPORTED_MODULE_5__["PatientData"]();
+        appointment.appointmentDate = date;
+        appointment.startTime = appointment.appointmentDate + " " + startTime;
+        appointment.doctor.doctorId = this.doctorSelected.doctorId;
+        appointment.doctor.doctorName = this.doctorSelected.doctorName;
+        appointment.patient.id = patient.id;
+        this.appointmentSearchService.createAppointment(appointment)
+            .subscribe(function (s) {
+            console.log("Appointment Booked id" + s);
+            // this.patientIdCreated = s;
+            _this.error = '';
+            // this.processing = true;
+            _this.hideLoader();
+        }, function (error1) {
+            _this.error = _this.ERRORMESSAGE;
+            // this.show= false;
+            // this.processing=false;
+            _this.hideLoader();
+        });
+        console.log("Appointment Booked : " + date);
+        this.appointmentConfirmation(appointment);
+    };
+    AppointmentCreateComponent.prototype.getPatientDataFromSearch = function () {
+        return this.searchDataService.getSearchData();
+    };
+    AppointmentCreateComponent.prototype.appointmentConfirmation = function (data) {
+        this.appointmentConfirmationService.appointmentConfirmation = data;
+        this.router.navigate(['appointment-confirmation']);
+    };
+    AppointmentCreateComponent.prototype.hideLoader = function () {
+        document.getElementById('loadin').style.display = 'none';
+    };
+    AppointmentCreateComponent.prototype.showLoader = function () {
+        document.getElementById('loadin').style.display = '';
+    };
+    AppointmentCreateComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-appointment-create',
+            template: __webpack_require__(/*! ./appointment-create.component.html */ "./src/app/appointment-create/appointment-create.component.html"),
+            styles: [__webpack_require__(/*! ./appointment-create.component.css */ "./src/app/appointment-create/appointment-create.component.css")]
+        }),
+        __metadata("design:paramtypes", [_service_appointment_search_service__WEBPACK_IMPORTED_MODULE_3__["AppointmentSearchService"],
+            _service_appointment_data_service_service__WEBPACK_IMPORTED_MODULE_6__["AppointmentDataServiceService"],
+            _service_doctor_service_service__WEBPACK_IMPORTED_MODULE_8__["DoctorServiceService"],
+            _service_search_data_service_service__WEBPACK_IMPORTED_MODULE_9__["SearchDataServiceService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]])
+    ], AppointmentCreateComponent);
+    return AppointmentCreateComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/appointment-view/appointment-view.component.css":
+/*!*****************************************************************!*\
+  !*** ./src/app/appointment-view/appointment-view.component.css ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#appointment {\n  font-family: Arial, Helvetica, sans-serif;\n  border-collapse: collapse;\n  width: 100%;\n}\n\n#appointment td, #appointment th {\n  border: 1px solid #ddd;\n  padding: 8px;\n}\n\n#appointment tr:nth-child(even){background-color: #f2f2f2;}\n\n#appointment tr:hover {background-color: #ddd;}\n\n#appointment th {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  background-color: #490f198a;\n  color: white;\n}\n\n#appointment{\n  font-family: Arial, Helvetica, sans-serif;\n  width: 100%;\n}\n\n#appointment  td {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  padding: 8px;\n\n}\n\n#appointmentHeader{\n  /*border: 7px solid*/\n}\n\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #a0706d;\n  border-color: #a0706d;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL2FwcG9pbnRtZW50LXZpZXcvYXBwb2ludG1lbnQtdmlldy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UseUNBQXlDO0VBQ3pDLHlCQUF5QjtFQUN6QixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxzQkFBc0I7RUFDdEIsWUFBWTtBQUNkOztBQUVBLGdDQUFnQyx5QkFBeUIsQ0FBQzs7QUFFMUQsdUJBQXVCLHNCQUFzQixDQUFDOztBQUU5QztFQUNFLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsZ0JBQWdCO0VBQ2hCLDJCQUEyQjtFQUMzQixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSx5Q0FBeUM7RUFDekMsV0FBVztBQUNiOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUNwQixnQkFBZ0I7RUFDaEIsWUFBWTs7QUFFZDs7QUFFQTtFQUNFLG9CQUFvQjtBQUN0Qjs7QUFLQTtFQUNFLFdBQVc7RUFDWCx5QkFBeUI7RUFDekIscUJBQXFCO0FBQ3ZCIiwiZmlsZSI6Ii4uL2FwcG9pbnRtZW50LXZpZXcvYXBwb2ludG1lbnQtdmlldy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2FwcG9pbnRtZW50IHtcbiAgZm9udC1mYW1pbHk6IEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7XG4gIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4jYXBwb2ludG1lbnQgdGQsICNhcHBvaW50bWVudCB0aCB7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNkZGQ7XG4gIHBhZGRpbmc6IDhweDtcbn1cblxuI2FwcG9pbnRtZW50IHRyOm50aC1jaGlsZChldmVuKXtiYWNrZ3JvdW5kLWNvbG9yOiAjZjJmMmYyO31cblxuI2FwcG9pbnRtZW50IHRyOmhvdmVyIHtiYWNrZ3JvdW5kLWNvbG9yOiAjZGRkO31cblxuI2FwcG9pbnRtZW50IHRoIHtcbiAgcGFkZGluZy10b3A6IDEycHg7XG4gIHBhZGRpbmctYm90dG9tOiAxMnB4O1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDkwZjE5OGE7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cblxuI2FwcG9pbnRtZW50e1xuICBmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbiNhcHBvaW50bWVudCAgdGQge1xuICBwYWRkaW5nLXRvcDogMTJweDtcbiAgcGFkZGluZy1ib3R0b206IDEycHg7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIHBhZGRpbmc6IDhweDtcblxufVxuXG4jYXBwb2ludG1lbnRIZWFkZXJ7XG4gIC8qYm9yZGVyOiA3cHggc29saWQqL1xufVxuXG5cblxuXG4uYnRuLXN1Y2Nlc3MuZGlzYWJsZWQsIC5idG4tc3VjY2VzczpkaXNhYmxlZCB7XG4gIGNvbG9yOiAjZmZmO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjYTA3MDZkO1xuICBib3JkZXItY29sb3I6ICNhMDcwNmQ7XG59XG5cbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/appointment-view/appointment-view.component.html":
+/*!******************************************************************!*\
+  !*** ./src/app/appointment-view/appointment-view.component.html ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <br>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div id=\"appointmentHeader\" class=\" container \">\n    <table id=\"appointment\" class=\"table table-striped\" [mfData]=\"appointmentData\"\n           #mf=\"mfDataTable\">\n      <thead>\n      <tr>\n        <th>\n          <mfDefaultSorter by=\"doctorName\">Doctor Name</mfDefaultSorter>\n        </th>\n        <th>\n          <mfDefaultSorter by=\"patientName\">Patient Name</mfDefaultSorter>\n        </th>\n        <th>\n          <mfDefaultSorter by=\"appointmentDate\">Appointment Date</mfDefaultSorter>\n        </th>\n        <th>\n          <mfDefaultSorter by=\"startTime\">Start Time</mfDefaultSorter>\n        </th>\n        <th>\n          <mfDefaultSorter by=\"endTime\">End Time</mfDefaultSorter>\n        </th>\n\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let appointment of mf.data\">\n        <td\n        >{{appointment?.doctor?.doctorName}} </td>\n        <td\n\n        >{{appointment?.patient?.firstName}} {{appointment?.patient?.lastName}} </td>\n        <td>{{appointment?.appointmentDate }} </td>\n        <td>{{appointment?.startTime  }} </td>\n        <td>{{appointment?.endTime}} </td>\n      </tr>\n      </tbody>\n    </table>\n  </div>\n  <br>\n  <br>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/appointment-view/appointment-view.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/appointment-view/appointment-view.component.ts ***!
+  \****************************************************************/
+/*! exports provided: AppointmentViewComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppointmentViewComponent", function() { return AppointmentViewComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_appointment_search_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service/appointment-search.service */ "./src/app/service/appointment-search.service.ts");
+/* harmony import */ var _model_AppointmentData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../model/AppointmentData */ "./src/app/model/AppointmentData.ts");
+/* harmony import */ var _model_DoctorData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../model/DoctorData */ "./src/app/model/DoctorData.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var AppointmentViewComponent = /** @class */ (function () {
+    function AppointmentViewComponent(appointmentSearchService) {
+        this.appointmentSearchService = appointmentSearchService;
+        this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
+        this.DATANOTFOUND = 'No Appointments Found for the Patient!';
+        this.appointmentData = [];
+        this.appointment = new _model_AppointmentData__WEBPACK_IMPORTED_MODULE_2__["AppointmentData"]();
+        this.doctor = new _model_DoctorData__WEBPACK_IMPORTED_MODULE_3__["DoctorData"]();
+    }
+    AppointmentViewComponent.prototype.ngOnInit = function () {
+        this.getAllAppointments();
+    };
+    AppointmentViewComponent.prototype.getAllAppointments = function () {
+        var _this = this;
+        this.showLoader();
+        this.appointmentData = [];
+        this.appointmentSearchService.getAllAppointments()
+            .subscribe(function (data) {
+            console.log(data);
+            if (data == null) {
+                _this.error = _this.DATANOTFOUND;
+            }
+            else {
+                for (var i = 0; i < data.length; i++) {
+                    _this.appointmentData.push(data[i]);
+                    _this.appointmentData[i].startTime = _this.appointmentData[i].startTime.slice(11);
+                    console.log(_this.appointmentData[i].startTime);
+                    // this.appointmentData[i].startTime = new Date( this.appointmentData[i].startTime);
+                    // console.log(this.appointmentData[i].appointmentDate);
+                    // consol    e.log (moment(this.appointmentData[i].startTime,'yyyy-MM-dd'));
+                    //  console.log( formatDate(this.appointmentData[i].startTime,'yyyy-MM-dd','en-us'));
+                    //  console.log(this.appointmentData[i].startTime);
+                }
+            }
+            _this.hideLoader();
+        }
+        // }
+        , function (error1) {
+            _this.error = _this.ERRORMESSAGE;
+            _this.hideLoader();
+        });
+    };
+    AppointmentViewComponent.prototype.hideLoader = function () {
+        document.getElementById('loadin').style.display = 'none';
+    };
+    AppointmentViewComponent.prototype.showLoader = function () {
+        document.getElementById('loadin').style.display = '';
+    };
+    AppointmentViewComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-appointment-view',
+            template: __webpack_require__(/*! ./appointment-view.component.html */ "./src/app/appointment-view/appointment-view.component.html"),
+            styles: [__webpack_require__(/*! ./appointment-view.component.css */ "./src/app/appointment-view/appointment-view.component.css")]
+        }),
+        __metadata("design:paramtypes", [_service_appointment_search_service__WEBPACK_IMPORTED_MODULE_1__["AppointmentSearchService"]])
+    ], AppointmentViewComponent);
+    return AppointmentViewComponent;
 }());
 
 
@@ -268,7 +1014,7 @@ var PatientHelper = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#loading{\r\n  position: absolute;\r\n  left: 50%;\r\n  top: 50%;\r\n  z-index: 1;\r\n  width: 150px;\r\n  height: 150px;\r\n  margin: -75px 0 0 -75px;\r\n  border: 16px solid #f3f3f3;\r\n  border-radius: 50%;\r\n  border-top: 16px solid #3498db;\r\n  width: 120px;\r\n  height: 120px;\r\n  -webkit-animation: spin 2s linear infinite;\r\n          animation: spin 2s linear infinite;\r\n}\r\n\r\n@-webkit-keyframes spin {\r\n  0% { transform: rotate(0deg); }\r\n  100% { transform: rotate(360deg); }\r\n}\r\n\r\n@keyframes spin {\r\n  0% { transform: rotate(0deg); }\r\n  100% { transform: rotate(360deg); }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9hZGVyLXNwaW4vbG9hZGVyLXNwaW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFtQjtFQUNuQixVQUFVO0VBQ1YsU0FBUztFQUNULFdBQVc7RUFDWCxhQUFhO0VBQ2IsY0FBYztFQUNkLHdCQUF3QjtFQUN4QiwyQkFBMkI7RUFDM0IsbUJBQW1CO0VBQ25CLCtCQUErQjtFQUMvQixhQUFhO0VBQ2IsY0FBYztFQUNkLDJDQUFtQztVQUFuQyxtQ0FBbUM7Q0FDcEM7O0FBRUQ7RUFDRSxLQUFLLHdCQUF3QixFQUFFO0VBQy9CLE9BQU8sMEJBQTBCLEVBQUU7Q0FDcEM7O0FBSEQ7RUFDRSxLQUFLLHdCQUF3QixFQUFFO0VBQy9CLE9BQU8sMEJBQTBCLEVBQUU7Q0FDcEMiLCJmaWxlIjoic3JjL2FwcC9sb2FkZXItc3Bpbi9sb2FkZXItc3Bpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2xvYWRpbmd7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGxlZnQ6IDUwJTtcclxuICB0b3A6IDUwJTtcclxuICB6LWluZGV4OiAxO1xyXG4gIHdpZHRoOiAxNTBweDtcclxuICBoZWlnaHQ6IDE1MHB4O1xyXG4gIG1hcmdpbjogLTc1cHggMCAwIC03NXB4O1xyXG4gIGJvcmRlcjogMTZweCBzb2xpZCAjZjNmM2YzO1xyXG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICBib3JkZXItdG9wOiAxNnB4IHNvbGlkICMzNDk4ZGI7XHJcbiAgd2lkdGg6IDEyMHB4O1xyXG4gIGhlaWdodDogMTIwcHg7XHJcbiAgYW5pbWF0aW9uOiBzcGluIDJzIGxpbmVhciBpbmZpbml0ZTtcclxufVxyXG5cclxuQGtleWZyYW1lcyBzcGluIHtcclxuICAwJSB7IHRyYW5zZm9ybTogcm90YXRlKDBkZWcpOyB9XHJcbiAgMTAwJSB7IHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IH1cclxufVxyXG4iXX0= */"
+module.exports = "#loading{\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  z-index: 1;\n  width: 150px;\n  height: 150px;\n  margin: -75px 0 0 -75px;\n  border: 16px solid #f3f3f3;\n  border-radius: 50%;\n  border-top: 16px solid #3498db;\n  width: 120px;\n  height: 120px;\n  -webkit-animation: spin 2s linear infinite;\n          animation: spin 2s linear infinite;\n}\n\n@-webkit-keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\n@keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL2xvYWRlci1zcGluL2xvYWRlci1zcGluLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBa0I7RUFDbEIsU0FBUztFQUNULFFBQVE7RUFDUixVQUFVO0VBQ1YsWUFBWTtFQUNaLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsMEJBQTBCO0VBQzFCLGtCQUFrQjtFQUNsQiw4QkFBOEI7RUFDOUIsWUFBWTtFQUNaLGFBQWE7RUFDYiwwQ0FBa0M7VUFBbEMsa0NBQWtDO0FBQ3BDOztBQUVBO0VBQ0UsS0FBSyx1QkFBdUIsRUFBRTtFQUM5QixPQUFPLHlCQUF5QixFQUFFO0FBQ3BDOztBQUhBO0VBQ0UsS0FBSyx1QkFBdUIsRUFBRTtFQUM5QixPQUFPLHlCQUF5QixFQUFFO0FBQ3BDIiwiZmlsZSI6Ii4uL2xvYWRlci1zcGluL2xvYWRlci1zcGluLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjbG9hZGluZ3tcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBsZWZ0OiA1MCU7XG4gIHRvcDogNTAlO1xuICB6LWluZGV4OiAxO1xuICB3aWR0aDogMTUwcHg7XG4gIGhlaWdodDogMTUwcHg7XG4gIG1hcmdpbjogLTc1cHggMCAwIC03NXB4O1xuICBib3JkZXI6IDE2cHggc29saWQgI2YzZjNmMztcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICBib3JkZXItdG9wOiAxNnB4IHNvbGlkICMzNDk4ZGI7XG4gIHdpZHRoOiAxMjBweDtcbiAgaGVpZ2h0OiAxMjBweDtcbiAgYW5pbWF0aW9uOiBzcGluIDJzIGxpbmVhciBpbmZpbml0ZTtcbn1cblxuQGtleWZyYW1lcyBzcGluIHtcbiAgMCUgeyB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTsgfVxuICAxMDAlIHsgdHJhbnNmb3JtOiByb3RhdGUoMzYwZGVnKTsgfVxufVxuIl19 */"
 
 /***/ }),
 
@@ -332,6 +1078,46 @@ var LoaderSpinComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/model/AppointmentData.ts":
+/*!******************************************!*\
+  !*** ./src/app/model/AppointmentData.ts ***!
+  \******************************************/
+/*! exports provided: AppointmentData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppointmentData", function() { return AppointmentData; });
+var AppointmentData = /** @class */ (function () {
+    function AppointmentData() {
+    }
+    return AppointmentData;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/DoctorData.ts":
+/*!*************************************!*\
+  !*** ./src/app/model/DoctorData.ts ***!
+  \*************************************/
+/*! exports provided: DoctorData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoctorData", function() { return DoctorData; });
+var DoctorData = /** @class */ (function () {
+    function DoctorData() {
+    }
+    return DoctorData;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/model/PatientData.ts":
 /*!**************************************!*\
   !*** ./src/app/model/PatientData.ts ***!
@@ -359,7 +1145,7 @@ var PatientData = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2Vub3Rmb3VuZC9wYWdlbm90Zm91bmQuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9wYWdlbm90Zm91bmQvcGFnZW5vdGZvdW5kLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -370,7 +1156,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  Page not Found\r\n</p>\r\n"
+module.exports = "<p>\n  Page not Found\n</p>\n"
 
 /***/ }),
 
@@ -422,7 +1208,7 @@ var PagenotfoundComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n.bg-primary{background-color: #a0706d !important}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1oZWFkZXIvcGF0aWVudC1oZWFkZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUVBLFlBQVksb0NBQW9DLENBQUMiLCJmaWxlIjoic3JjL2FwcC9wYXRpZW50LWhlYWRlci9wYXRpZW50LWhlYWRlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcblxyXG4uYmctcHJpbWFyeXtiYWNrZ3JvdW5kLWNvbG9yOiAjYTA3MDZkICFpbXBvcnRhbnR9XHJcblxyXG4iXX0= */"
+module.exports = "\n\n.bg-primary{background-color: #a0706d !important}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3BhdGllbnQtaGVhZGVyL3BhdGllbnQtaGVhZGVyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFFQSxZQUFZLG9DQUFvQyIsImZpbGUiOiIuLi9wYXRpZW50LWhlYWRlci9wYXRpZW50LWhlYWRlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG5cbi5iZy1wcmltYXJ5e2JhY2tncm91bmQtY29sb3I6ICNhMDcwNmQgIWltcG9ydGFudH1cblxuIl19 */"
 
 /***/ }),
 
@@ -433,7 +1219,7 @@ module.exports = "\r\n\r\n.bg-primary{background-color: #a0706d !important}\r\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div >\n  <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\n    <!--<h1 class=\"siteTitle\">-->\n      <!--{{ title }}-->\n    <!--</h1>-->\n  <!--</div>-->\n\n\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\" >\n    <!-- Links -->\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item\">\n        <a routerLink=\"../search\" class=\"nav-link\" routerLinkActive=\"active\">Patient Search </a>\n      </li>\n      <li class=\"nav-item\">\n        <a routerLink=\"../register\" class=\"nav-link\" routerLinkActive=\"active\">Patient Registration</a>\n      </li>\n    </ul>\n  </nav>\n  <!--<div style=\" text-align:center \">-->\n    <!--<img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\n  <!--</div>-->\n  <br><br>\n</div>\n"
+module.exports = "<div >\n  <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\n    <!--<h1 class=\"siteTitle\">-->\n      <!--{{ title }}-->\n    <!--</h1>-->\n  <!--</div>-->\n\n\n  <nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\" >\n    <!-- Links -->\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item\">\n        <a routerLink=\"../search\" class=\"nav-link\" routerLinkActive=\"active\">Patient Search </a>\n      </li>\n      <li class=\"nav-item\">\n        <a routerLink=\"../register\" class=\"nav-link\" routerLinkActive=\"active\">Patient Registration</a>\n      </li>\n      <li class=\"nav-item\">\n        <a routerLink=\"../appointment\" class=\"nav-link\" routerLinkActive=\"active\">Appointment View</a>\n      </li>\n\n    </ul>\n  </nav>\n  <!--<div style=\" text-align:center \">-->\n    <!--<img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\n  <!--</div>-->\n  <br><br>\n</div>\n"
 
 /***/ }),
 
@@ -486,7 +1272,7 @@ var PatientHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#visits {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n  border-collapse: collapse;\r\n  width: 100%;\r\n}\r\n\r\n#visits td, #visits th {\r\n  border: 1px solid #ddd;\r\n  padding: 8px;\r\n}\r\n\r\n#visits tr:nth-child(even){background-color: #f2f2f2;}\r\n\r\n#visits tr:hover {background-color: #ddd;}\r\n\r\n#visits th {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  background-color: #490f198a;\r\n  color: white;\r\n}\r\n\r\n#visitHeader{\r\n  font-family: Arial, Helvetica, sans-serif;\r\n  width: 100%;\r\n}\r\n\r\n#visitHeader  td {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  padding: 8px;\r\n\r\n}\r\n\r\n#mainVisitHeader{\r\n  /*border: 7px solid*/\r\n}\r\n\r\n#newVisit {\r\n\r\n\r\n}\r\n\r\n.btn-success.disabled, .btn-success:disabled {\r\n  color: #fff;\r\n  background-color: #a0706d;\r\n  border-color: #a0706d;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1oaXN0b3J5L3BhdGllbnQtaGlzdG9yeS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsMENBQTBDO0VBQzFDLDBCQUEwQjtFQUMxQixZQUFZO0NBQ2I7O0FBRUQ7RUFDRSx1QkFBdUI7RUFDdkIsYUFBYTtDQUNkOztBQUVELDJCQUEyQiwwQkFBMEIsQ0FBQzs7QUFFdEQsa0JBQWtCLHVCQUF1QixDQUFDOztBQUUxQztFQUNFLGtCQUFrQjtFQUNsQixxQkFBcUI7RUFDckIsaUJBQWlCO0VBQ2pCLDRCQUE0QjtFQUM1QixhQUFhO0NBQ2Q7O0FBRUQ7RUFDRSwwQ0FBMEM7RUFDMUMsWUFBWTtDQUNiOztBQUVEO0VBQ0Usa0JBQWtCO0VBQ2xCLHFCQUFxQjtFQUNyQixpQkFBaUI7RUFDakIsYUFBYTs7Q0FFZDs7QUFFRDtFQUNFLHFCQUFxQjtDQUN0Qjs7QUFHRDs7O0NBR0M7O0FBRUQ7RUFDRSxZQUFZO0VBQ1osMEJBQTBCO0VBQzFCLHNCQUFzQjtDQUN2QiIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtaGlzdG9yeS9wYXRpZW50LWhpc3RvcnkuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiN2aXNpdHMge1xyXG4gIGZvbnQtZmFtaWx5OiBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmO1xyXG4gIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbiN2aXNpdHMgdGQsICN2aXNpdHMgdGgge1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkICNkZGQ7XHJcbiAgcGFkZGluZzogOHB4O1xyXG59XHJcblxyXG4jdmlzaXRzIHRyOm50aC1jaGlsZChldmVuKXtiYWNrZ3JvdW5kLWNvbG9yOiAjZjJmMmYyO31cclxuXHJcbiN2aXNpdHMgdHI6aG92ZXIge2JhY2tncm91bmQtY29sb3I6ICNkZGQ7fVxyXG5cclxuI3Zpc2l0cyB0aCB7XHJcbiAgcGFkZGluZy10b3A6IDEycHg7XHJcbiAgcGFkZGluZy1ib3R0b206IDEycHg7XHJcbiAgdGV4dC1hbGlnbjogbGVmdDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDkwZjE5OGE7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG4jdmlzaXRIZWFkZXJ7XHJcbiAgZm9udC1mYW1pbHk6IEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbiN2aXNpdEhlYWRlciAgdGQge1xyXG4gIHBhZGRpbmctdG9wOiAxMnB4O1xyXG4gIHBhZGRpbmctYm90dG9tOiAxMnB4O1xyXG4gIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgcGFkZGluZzogOHB4O1xyXG5cclxufVxyXG5cclxuI21haW5WaXNpdEhlYWRlcntcclxuICAvKmJvcmRlcjogN3B4IHNvbGlkKi9cclxufVxyXG5cclxuXHJcbiNuZXdWaXNpdCB7XHJcblxyXG5cclxufVxyXG5cclxuLmJ0bi1zdWNjZXNzLmRpc2FibGVkLCAuYnRuLXN1Y2Nlc3M6ZGlzYWJsZWQge1xyXG4gIGNvbG9yOiAjZmZmO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNhMDcwNmQ7XHJcbiAgYm9yZGVyLWNvbG9yOiAjYTA3MDZkO1xyXG59XHJcblxyXG4iXX0= */"
+module.exports = "#visits {\n  font-family: Arial, Helvetica, sans-serif;\n  border-collapse: collapse;\n  width: 100%;\n}\n\n#visits td, #visits th {\n  border: 1px solid #ddd;\n  padding: 8px;\n}\n\n#visits tr:nth-child(even){background-color: #f2f2f2;}\n\n#visits tr:hover {background-color: #ddd;}\n\n#visits th {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  background-color: #490f198a;\n  color: white;\n}\n\n#visitHeader{\n  font-family: Arial, Helvetica, sans-serif;\n  width: 100%;\n}\n\n#visitHeader  td {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  padding: 8px;\n\n}\n\n#mainVisitHeader{\n  /*border: 7px solid*/\n}\n\n#newVisit {\n\n\n}\n\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #a0706d;\n  border-color: #a0706d;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3BhdGllbnQtaGlzdG9yeS9wYXRpZW50LWhpc3RvcnkuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHlDQUF5QztFQUN6Qyx5QkFBeUI7RUFDekIsV0FBVztBQUNiOztBQUVBO0VBQ0Usc0JBQXNCO0VBQ3RCLFlBQVk7QUFDZDs7QUFFQSwyQkFBMkIseUJBQXlCLENBQUM7O0FBRXJELGtCQUFrQixzQkFBc0IsQ0FBQzs7QUFFekM7RUFDRSxpQkFBaUI7RUFDakIsb0JBQW9CO0VBQ3BCLGdCQUFnQjtFQUNoQiwyQkFBMkI7RUFDM0IsWUFBWTtBQUNkOztBQUVBO0VBQ0UseUNBQXlDO0VBQ3pDLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsZ0JBQWdCO0VBQ2hCLFlBQVk7O0FBRWQ7O0FBRUE7RUFDRSxvQkFBb0I7QUFDdEI7O0FBR0E7OztBQUdBOztBQUVBO0VBQ0UsV0FBVztFQUNYLHlCQUF5QjtFQUN6QixxQkFBcUI7QUFDdkIiLCJmaWxlIjoiLi4vcGF0aWVudC1oaXN0b3J5L3BhdGllbnQtaGlzdG9yeS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI3Zpc2l0cyB7XG4gIGZvbnQtZmFtaWx5OiBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmO1xuICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlO1xuICB3aWR0aDogMTAwJTtcbn1cblxuI3Zpc2l0cyB0ZCwgI3Zpc2l0cyB0aCB7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNkZGQ7XG4gIHBhZGRpbmc6IDhweDtcbn1cblxuI3Zpc2l0cyB0cjpudGgtY2hpbGQoZXZlbil7YmFja2dyb3VuZC1jb2xvcjogI2YyZjJmMjt9XG5cbiN2aXNpdHMgdHI6aG92ZXIge2JhY2tncm91bmQtY29sb3I6ICNkZGQ7fVxuXG4jdmlzaXRzIHRoIHtcbiAgcGFkZGluZy10b3A6IDEycHg7XG4gIHBhZGRpbmctYm90dG9tOiAxMnB4O1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDkwZjE5OGE7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cblxuI3Zpc2l0SGVhZGVye1xuICBmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbiN2aXNpdEhlYWRlciAgdGQge1xuICBwYWRkaW5nLXRvcDogMTJweDtcbiAgcGFkZGluZy1ib3R0b206IDEycHg7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIHBhZGRpbmc6IDhweDtcblxufVxuXG4jbWFpblZpc2l0SGVhZGVye1xuICAvKmJvcmRlcjogN3B4IHNvbGlkKi9cbn1cblxuXG4jbmV3VmlzaXQge1xuXG5cbn1cblxuLmJ0bi1zdWNjZXNzLmRpc2FibGVkLCAuYnRuLXN1Y2Nlc3M6ZGlzYWJsZWQge1xuICBjb2xvcjogI2ZmZjtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2EwNzA2ZDtcbiAgYm9yZGVyLWNvbG9yOiAjYTA3MDZkO1xufVxuXG4iXX0= */"
 
 /***/ }),
 
@@ -497,7 +1283,7 @@ module.exports = "#visits {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n\r\n<app-patient-header></app-patient-header>\r\n\r\n<br>\r\n\r\n  <div id=\"loadin\">\r\n    <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n  <div id=\"mainVisitHeader\" class=\" container \">\r\n    <div id=\"newVisit\">\r\n    <label style=\"color: red\"> {{error}}</label>\r\n\r\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n      <br>\r\n      <div *ngIf=\"!newVisitFlag\">\r\n        <span>Please Click to Add a new Visit - </span>\r\n\r\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"addVisit()\">New Visit</button>\r\n        <!--      </a>-->\r\n      </div>\r\n  </div>\r\n\r\n  <div  *ngIf=\"error=='' && !newVisitFlag\">\r\n    <table id=\"visitHeader\">\r\n      <tr>\r\n        <td>Name : {{patientVisitData[0].patientEntity.firstName}}</td>\r\n        <td>DOB :  {{patientVisitData[0].patientEntity.firstName}}</td>\r\n        <td>Patient Id : {{patientVisitData[0].patientEntity.id}}</td>\r\n      </tr>\r\n\r\n    </table>\r\n<br>\r\n\r\n\r\n\r\n    <table id=\"visits\" class=\"table\">\r\n      <thead>\r\n      <tr>\r\n        <th>Visit Date</th>\r\n        <th>Symptoms</th>\r\n        <th>Prescription</th>\r\n        <th>FollowUp Date</th>\r\n        <th>Notes</th>\r\n      </tr>\r\n      </thead>\r\n      <tbody>\r\n      <tr *ngFor=\"let visit of patientVisitData\">\r\n        <td>{{visit.visitDate}} </td>\r\n        <td>{{visit.symptoms}} </td>\r\n        <td>{{visit.prescription}} </td>\r\n        <td >{{visit.followUpDate}} </td>\r\n        <td>{{visit.notes}} </td>\r\n      </tr>\r\n\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n\r\n    <div *ngIf=\"newVisitFlag && error==''\">\r\n      <form [formGroup]=\"visitFormData\"\r\n            (ngSubmit)=\"onSubmitVisit(visitFormData.value)\" novalidate>\r\n        <div>\r\n          <label>Symptoms:\r\n            <textarea type=\"text\"  formControlName=\"symptoms\" class=\"form-control\" rows=\"5\" cols=\"50\" placeholder=\"Fever,Cold ,Nausea etc...\"></textarea>\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>Prescription:\r\n            <textarea type=\"text\"  formControlName=\"prescription\"  class=\"form-control\" rows=\"5\" cols=\"50\" placeholder=\"paracetamol, ibuprofen etc\"></textarea>\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>Followup Days:\r\n            <input type=\"text\" formControlName=\"followUpDays\" class=\"form-control\" (keypress)=\"patientHelper.numberOnly($event)\" placeholder=\"7\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>Notes:\r\n            <textarea type=\"text\" formControlName=\"notes\" class=\"form-control\"  rows=\"3\" cols=\"50\" placeholder=\"Additiona Notes - Blood work,X-Ray needed, Referral to a speaciaist etc\">\r\n            </textarea>\r\n          </label>\r\n        </div>\r\n\r\n        <button type=\"submit\"\r\n                [disabled]=\"visitFormData.pristine || visitFormData.invalid\" class=\"btn btn-success\">\r\n          Submit\r\n        </button>\r\n\r\n      </form>\r\n  </div>\r\n</div>\r\n\r\n</div>\r\n"
+module.exports = "<div>\n\n<app-patient-header></app-patient-header>\n\n<br>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div id=\"mainVisitHeader\" class=\" container \">\n    <div id=\"newVisit\">\n    <label style=\"color: red\"> {{error}}</label>\n\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\n      <br>\n      <div *ngIf=\"!newVisitFlag\">\n        <span>Please Click to Add a new Visit - </span>\n\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"addVisit()\">New Visit</button>\n        <!--      </a>-->\n      </div>\n  </div>\n\n  <div  *ngIf=\"error=='' && !newVisitFlag\">\n    <table id=\"visitHeader\">\n      <tr>\n        <td>Name : {{patientVisitData[0].patientEntity.firstName}}</td>\n        <td>DOB :  {{patientVisitData[0].patientEntity.firstName}}</td>\n        <td>Patient Id : {{patientVisitData[0].patientEntity.id}}</td>\n      </tr>\n\n    </table>\n<br>\n\n\n\n    <table id=\"visits\" class=\"table\">\n      <thead>\n      <tr>\n        <th>Visit Date</th>\n        <th>Symptoms</th>\n        <th>Prescription</th>\n        <th>FollowUp Date</th>\n        <th>Notes</th>\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let visit of patientVisitData\">\n        <td>{{visit.visitDate}} </td>\n        <td>{{visit.symptoms}} </td>\n        <td>{{visit.prescription}} </td>\n        <td >{{visit.followUpDate}} </td>\n        <td>{{visit.notes}} </td>\n      </tr>\n\n      </tbody>\n    </table>\n  </div>\n\n    <div *ngIf=\"newVisitFlag && error==''\">\n      <form [formGroup]=\"visitFormData\"\n            (ngSubmit)=\"onSubmitVisit(visitFormData.value)\" novalidate>\n        <div>\n          <label>Symptoms:\n            <textarea type=\"text\"  formControlName=\"symptoms\" class=\"form-control\" rows=\"5\" cols=\"50\" placeholder=\"Fever,Cold ,Nausea etc...\"></textarea>\n          </label>\n        </div>\n\n        <div>\n          <label>Prescription:\n            <textarea type=\"text\"  formControlName=\"prescription\"  class=\"form-control\" rows=\"5\" cols=\"50\" placeholder=\"paracetamol, ibuprofen etc\"></textarea>\n          </label>\n        </div>\n\n        <div>\n          <label>Followup Days:\n            <input type=\"text\" formControlName=\"followUpDays\" class=\"form-control\" (keypress)=\"patientHelper.numberOnly($event)\" placeholder=\"7\">\n          </label>\n        </div>\n\n        <div>\n          <label>Notes:\n            <textarea type=\"text\" formControlName=\"notes\" class=\"form-control\"  rows=\"3\" cols=\"50\" placeholder=\"Additiona Notes - Blood work,X-Ray needed, Referral to a speaciaist etc\">\n            </textarea>\n          </label>\n        </div>\n\n        <button type=\"submit\"\n                [disabled]=\"visitFormData.pristine || visitFormData.invalid\" class=\"btn btn-success\">\n          Submit\n        </button>\n\n      </form>\n  </div>\n</div>\n\n</div>\n"
 
 /***/ }),
 
@@ -643,7 +1429,7 @@ var PatientHistoryComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/*.firstRow{*/\r\n/*  border-top: 2px solid black;*/\r\n/*  border-left: 2px solid black;*/\r\n/*  border-right: 2px solid black;*/\r\n/*}*/\r\n/*.secondRow{*/\r\n/*  border-style: solid;*/\r\n/*  border-width: 2px;*/\r\n/*}*/\r\n#printPage{\r\n  background-color: white;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1pbmZvLXByaW50L3BhdGllbnQtaW5mby1wcmludC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGNBQWM7QUFDZCxrQ0FBa0M7QUFDbEMsbUNBQW1DO0FBQ25DLG9DQUFvQztBQUNwQyxLQUFLO0FBQ0wsZUFBZTtBQUNmLDBCQUEwQjtBQUMxQix3QkFBd0I7QUFDeEIsS0FBSztBQUVMO0VBQ0Usd0JBQXdCO0NBQ3pCIiwiZmlsZSI6InNyYy9hcHAvcGF0aWVudC1pbmZvLXByaW50L3BhdGllbnQtaW5mby1wcmludC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyouZmlyc3RSb3d7Ki9cclxuLyogIGJvcmRlci10b3A6IDJweCBzb2xpZCBibGFjazsqL1xyXG4vKiAgYm9yZGVyLWxlZnQ6IDJweCBzb2xpZCBibGFjazsqL1xyXG4vKiAgYm9yZGVyLXJpZ2h0OiAycHggc29saWQgYmxhY2s7Ki9cclxuLyp9Ki9cclxuLyouc2Vjb25kUm93eyovXHJcbi8qICBib3JkZXItc3R5bGU6IHNvbGlkOyovXHJcbi8qICBib3JkZXItd2lkdGg6IDJweDsqL1xyXG4vKn0qL1xyXG5cclxuI3ByaW50UGFnZXtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxufVxyXG4iXX0= */"
+module.exports = "/*.firstRow{*/\n/*  border-top: 2px solid black;*/\n/*  border-left: 2px solid black;*/\n/*  border-right: 2px solid black;*/\n/*}*/\n/*.secondRow{*/\n/*  border-style: solid;*/\n/*  border-width: 2px;*/\n/*}*/\n#printPage{\n  background-color: white;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3BhdGllbnQtaW5mby1wcmludC9wYXRpZW50LWluZm8tcHJpbnQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxhQUFhO0FBQ2IsaUNBQWlDO0FBQ2pDLGtDQUFrQztBQUNsQyxtQ0FBbUM7QUFDbkMsSUFBSTtBQUNKLGNBQWM7QUFDZCx5QkFBeUI7QUFDekIsdUJBQXVCO0FBQ3ZCLElBQUk7QUFFSjtFQUNFLHVCQUF1QjtBQUN6QiIsImZpbGUiOiIuLi9wYXRpZW50LWluZm8tcHJpbnQvcGF0aWVudC1pbmZvLXByaW50LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKi5maXJzdFJvd3sqL1xuLyogIGJvcmRlci10b3A6IDJweCBzb2xpZCBibGFjazsqL1xuLyogIGJvcmRlci1sZWZ0OiAycHggc29saWQgYmxhY2s7Ki9cbi8qICBib3JkZXItcmlnaHQ6IDJweCBzb2xpZCBibGFjazsqL1xuLyp9Ki9cbi8qLnNlY29uZFJvd3sqL1xuLyogIGJvcmRlci1zdHlsZTogc29saWQ7Ki9cbi8qICBib3JkZXItd2lkdGg6IDJweDsqL1xuLyp9Ki9cblxuI3ByaW50UGFnZXtcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG59XG4iXX0= */"
 
 /***/ }),
 
@@ -654,7 +1440,7 @@ module.exports = "/*.firstRow{*/\r\n/*  border-top: 2px solid black;*/\r\n/*  bo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"printPage\" style=\"margin-top: 25%\">\r\n  <div class=\"container\">\r\n    <div class=\"row firstRow\">\r\n      <div class=\"col-sm-3\">\r\n        <label>Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.firstName + \" \" + searchData1.lastName}}\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"row firstRow\">\r\n      <div class=\"col-sm-3\">\r\n        <label>Contact:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.contact}}\r\n      </div>\r\n\r\n\r\n      <div class=\"col-sm-3\">\r\n        <label>Age:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.age}}\r\n      </div>\r\n\r\n    </div>\r\n    <div class=\"row secondRow\">\r\n      <div class=\"col-sm-3\">\r\n        <label>Height:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.height}}\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        <label>Weight:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.weight}}\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row \">\r\n      <div class=\"col-sm-3\">\r\n        <label>Consultant Doctor:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.doctorName}}\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        <label>Reference Number:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.id}}\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row \">\r\n      <div class=\"col-sm-3\">\r\n        <label>Gender:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.gender }}\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        <label>Visit Date:</label>\r\n      </div>\r\n      <div class=\"col-sm-3\">\r\n        {{searchData1.updatedAt}}\r\n      </div>\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n</div>\r\n\r\n\r\n"
+module.exports = "<div id=\"printPage\" style=\"margin-top: 25%\">\n  <div class=\"container\">\n    <div class=\"row firstRow\">\n      <div class=\"col-sm-3\">\n        <label>Name:</label>\n      </div>\n      <div class=\"col-sm-3\">\n        {{searchData1.firstName + \" \" + searchData1.lastName}}\n      </div>\n\n    </div>\n\n    <div class=\"row firstRow\">\n      <div class=\"col-sm-3\">\n        <label>Contact:</label>\n      </div>\n      <div class=\"col-sm-3\">\n        {{searchData1.contact}}\n      </div>\n\n\n      <div class=\"col-sm-3\">\n        <label>Age:</label>\n      </div>\n      <div class=\"col-sm-3\">\n        {{searchData1.age}}\n      </div>\n\n    </div>\n    <div class=\"row secondRow\">\n      <div class=\"col-sm-3\">\n        <label>Height:</label>\n      </div>\n      <div class=\"col-sm-3\">\n        {{searchData1.height}}\n      </div>\n      <div class=\"col-sm-3\">\n        <label>Weight:</label>\n      </div>\n      <div class=\"col-sm-3\">\n        {{searchData1.weight}}\n      </div>\n    </div>\n\n    <div class=\"row \">\n      <div class=\"col-sm-3\">\n        <label>Consultant Doctor:</label>\n      </div>\n      <div class=\"col-sm-3\">\n        {{searchData1.doctorName}}\n      </div>\n      <div class=\"col-sm-3\">\n        <label>Reference Number:</label>\n      </div>\n      <div class=\"col-sm-3\">\n        {{searchData1.id}}\n      </div>\n    </div>\n\n    <div class=\"row \">\n      <div class=\"col-sm-3\">\n        <label>Gender:</label>\n      </div>\n      <div class=\"col-sm-3\">\n        {{searchData1.gender }}\n      </div>\n      <div class=\"col-sm-3\">\n        <label>Visit Date:</label>\n      </div>\n      <div class=\"col-sm-3\">\n        {{searchData1.updatedAt}}\n      </div>\n    </div>\n\n\n\n  </div>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -724,7 +1510,7 @@ var PatientInfoPrintComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\ninput[type=number] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\ninput:invalid {\r\n  border: 2px dashed red;\r\n}\r\n\r\nselect {\r\n   width: 112%;\r\n}\r\n\r\n.btn-success.disabled, .btn-success:disabled {\r\n  color: #fff;\r\n  background-color: #a0706d;\r\n  border-color: #a0706d;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1yZWdpc3RyYXRpb24vcGF0aWVudC1yZWdpc3RyYXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQVk7RUFDWixtQkFBbUI7RUFDbkIsY0FBYztFQUNkLHVCQUF1QjtDQUN4Qjs7QUFFRDtFQUNFLFlBQVk7RUFDWixtQkFBbUI7RUFDbkIsY0FBYztFQUNkLHVCQUF1QjtDQUN4Qjs7QUFFRDtFQUNFLHVCQUF1QjtDQUN4Qjs7QUFFRDtHQUNHLFlBQVk7Q0FDZDs7QUFFRDtFQUNFLFlBQVk7RUFDWiwwQkFBMEI7RUFDMUIsc0JBQXNCO0NBQ3ZCIiwiZmlsZSI6InNyYy9hcHAvcGF0aWVudC1yZWdpc3RyYXRpb24vcGF0aWVudC1yZWdpc3RyYXRpb24uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImlucHV0W3R5cGU9dGV4dF0ge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHBhZGRpbmc6IDEycHggMjBweDtcclxuICBtYXJnaW46IDhweCAwO1xyXG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbn1cclxuXHJcbmlucHV0W3R5cGU9bnVtYmVyXSB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgcGFkZGluZzogMTJweCAyMHB4O1xyXG4gIG1hcmdpbjogOHB4IDA7XHJcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxufVxyXG5cclxuaW5wdXQ6aW52YWxpZCB7XHJcbiAgYm9yZGVyOiAycHggZGFzaGVkIHJlZDtcclxufVxyXG5cclxuc2VsZWN0IHtcclxuICAgd2lkdGg6IDExMiU7XHJcbn1cclxuXHJcbi5idG4tc3VjY2Vzcy5kaXNhYmxlZCwgLmJ0bi1zdWNjZXNzOmRpc2FibGVkIHtcclxuICBjb2xvcjogI2ZmZjtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjYTA3MDZkO1xyXG4gIGJvcmRlci1jb2xvcjogI2EwNzA2ZDtcclxufVxyXG4iXX0= */"
+module.exports = "input[type=text] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n\ninput[type=number] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  box-sizing: border-box;\n}\n\ninput:invalid {\n  border: 2px dashed red;\n}\n\nselect {\n   width: 112%;\n}\n\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #a0706d;\n  border-color: #a0706d;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3BhdGllbnQtcmVnaXN0cmF0aW9uL3BhdGllbnQtcmVnaXN0cmF0aW9uLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFXO0VBQ1gsa0JBQWtCO0VBQ2xCLGFBQWE7RUFDYixzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsa0JBQWtCO0VBQ2xCLGFBQWE7RUFDYixzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7O0FBRUE7R0FDRyxXQUFXO0FBQ2Q7O0FBRUE7RUFDRSxXQUFXO0VBQ1gseUJBQXlCO0VBQ3pCLHFCQUFxQjtBQUN2QiIsImZpbGUiOiIuLi9wYXRpZW50LXJlZ2lzdHJhdGlvbi9wYXRpZW50LXJlZ2lzdHJhdGlvbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW5wdXRbdHlwZT10ZXh0XSB7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nOiAxMnB4IDIwcHg7XG4gIG1hcmdpbjogOHB4IDA7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG59XG5cbmlucHV0W3R5cGU9bnVtYmVyXSB7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nOiAxMnB4IDIwcHg7XG4gIG1hcmdpbjogOHB4IDA7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG59XG5cbmlucHV0OmludmFsaWQge1xuICBib3JkZXI6IDJweCBkYXNoZWQgcmVkO1xufVxuXG5zZWxlY3Qge1xuICAgd2lkdGg6IDExMiU7XG59XG5cbi5idG4tc3VjY2Vzcy5kaXNhYmxlZCwgLmJ0bi1zdWNjZXNzOmRpc2FibGVkIHtcbiAgY29sb3I6ICNmZmY7XG4gIGJhY2tncm91bmQtY29sb3I6ICNhMDcwNmQ7XG4gIGJvcmRlci1jb2xvcjogI2EwNzA2ZDtcbn1cbiJdfQ== */"
 
 /***/ }),
 
@@ -735,7 +1521,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n\r\n  <app-patient-header></app-patient-header>\r\n\r\n  <div id=\"loadin\">\r\n    <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n\r\n  <div class=\"container\">\r\n    <!--<div  style=\"background-color: mintcream\">-->\r\n    <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\r\n    <!--<h1>-->\r\n    <!--{{ title }}!-->\r\n    <!--</h1>-->\r\n    <!--<img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\r\n    <!--</div>-->\r\n\r\n    <div *ngIf=\"show && processing\"> Registration Completed! Patient Id : {{patientIdCreated}}\r\n      <button (click)=\"addNewPatientAgain()\"> Click here to Add a new Patient</button>\r\n    </div>\r\n\r\n    <div *ngIf=\"error !== '' \">\r\n      <p style=\"color: red\"> {{error}} </p>\r\n    </div>\r\n    <div *ngIf=\"!show && error === '' && !processing\">\r\n      <p><i> Note: ( All fields marked with * are required.) </i></p>\r\n      <form [formGroup]=\"patientFormData\" (ngSubmit)=\"onSubmit(patientFormData.value)\" novalidate>\r\n\r\n        <div>\r\n          <label>\r\n           First Name *:\r\n\r\n            <input id=\"firstName\" type=\"text\" formControlName=\"firstName\" class=\"form-control\" required=\"\" placeholder=\"Jon\">\r\n\r\n            <div *ngIf=\"patientFormData.controls['firstName'].invalid && (patientFormData.controls['firstName'].dirty\r\n             || patientFormData.controls['firstName'].touched)\" class=\"alert alert-danger\">\r\n              <div *ngIf=\"patientFormData.controls['firstName'].errors.required\">\r\n                First Name is required.\r\n              </div>\r\n            </div>\r\n          </label>\r\n        </div>\r\n        <!--<div *ngIf=\"firstName.errors.required\"> First Name is required</div>-->\r\n        <div>\r\n          <label>\r\n            Last Name:\r\n            <input type=\"text\" formControlName=\"lastName\" class=\"form-control\" placeholder=\"Doe\">\r\n          </label>\r\n        </div>\r\n\r\n        <div></div>\r\n        <div>\r\n          <label>\r\n            Age:\r\n            <input type=\"text\" (keypress)=\"patientHelper.numberOnly($event)\" formControlName=\"age\" required class=\"form-control\" placeholder=\"33\" maxlength=\"3\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Date Of Birth *:\r\n            <div class=\"form-row\">\r\n              <div class=\"form-group  col-4\">\r\n\r\n                <select name=\"birthDate\" id=\"birthDate\" formControlName=\"birthDate\" class=\"form-control\"  required>\r\n\r\n                  <option *ngFor=\"let dd of totalDatesOfBirth\" [value]=\"dd\" >{{dd}}</option>\r\n                </select>\r\n\r\n              </div>\r\n              <div class=\"form-group  col-4\">\r\n\r\n\r\n                <select name=\"birthMonth\" id=\"birthMonth\" formControlName=\"birthMonth\" class=\"form-control\" required>\r\n\r\n                  <option *ngFor=\"let mm of totalMonthOfBirth\" [value]=\"mm\">{{mm}}</option>\r\n                </select>\r\n              </div>\r\n                <div class=\"form-group  col-4\">\r\n                  <select  id=\"birthYear\" formControlName=\"birthYear\" class=\"form-control\" required>\r\n                    <option *ngFor=\"let obj of totalDatesOfYear\" value=\"{{obj}}\">{{obj}}</option>\r\n                  </select>\r\n\r\n\r\n                </div>\r\n              </div>\r\n            <div class=\"form-row\">\r\n              <div class=\"form-group  col-4\">\r\n               Date\r\n              </div>\r\n              <div class=\"form-group  col-4\">\r\n                Month\r\n              </div>\r\n              <div class=\"form-group  col-4\">\r\n                Year\r\n              </div>\r\n            </div>\r\n          </label>\r\n\r\n          <!--<div *ngIf=\"patientFormData.controls['firstName'].invalid && (patientFormData.controls['firstName'].dirty-->\r\n             <!--|| patientFormData.controls['firstName'].touched)\" class=\"alert alert-danger\">-->\r\n            <!--<div *ngIf=\"patientFormData.controls['firstName'].errors.required\">-->\r\n              <!--First Name is required.-->\r\n            <!--</div>-->\r\n\r\n          <div *ngIf=\"patientFormData.controls['birthDate'].invalid && (patientFormData.controls['birthDate'].dirty|| patientFormData.controls['birthDate'].touched)\" class=\"alert alert-danger\">\r\n            <div *ngIf=\"patientFormData.controls['birthDate'].errors.required\r\n                        || patientFormData.controls['birthMonth'].errors.required\r\n                          || patientFormData.controls['birthYear'].errors.required\">\r\n             Date is required!\r\n            </div>\r\n          </div>\r\n\r\n          <div *ngIf=\"patientFormData.controls['birthMonth'].invalid && (patientFormData.controls['firstName'].dirty\r\n             || patientFormData.controls['birthMonth'].touched)\" class=\"alert alert-danger\">\r\n            <div *ngIf=\"patientFormData.controls['birthMonth'].errors.required\">\r\n              Month is required.\r\n            </div>\r\n          </div>\r\n\r\n            <div *ngIf=\"patientFormData.controls['birthYear'].invalid && (patientFormData.controls['firstName'].dirty\r\n             || patientFormData.controls['birthYear'].touched)\" class=\"alert alert-danger\">\r\n              <div *ngIf=\"patientFormData.controls['birthYear'].errors.required\">\r\n                Year is required.\r\n              </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            <P>Gender:</P>\r\n            <input type=\"radio\" id=\"male\" formControlName=\"gender\" value=\"male\">\r\n            <label for=\"male\">Male</label><br>\r\n            <input type=\"radio\" id=\"female\" formControlName=\"gender\" value=\"female\">\r\n            <label for=\"female\">Female</label><br>\r\n            <input type=\"radio\" id=\"other\" formControlName=\"gender\" value=\"other\">\r\n            <label for=\"other\">Other</label>\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Address:\r\n            <input type=\"text\" formControlName=\"address\" class=\"form-control\" placeholder=\"1212 Rajendra Nagar\" >\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            City:\r\n            <input type=\"text\" formControlName=\"city\" class=\"form-control\" placeholder=\"Jaipur\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            State:\r\n            <input type=\"text\" formControlName=\"state\" class=\"form-control\" placeholder=\"Rajashthan\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            ZipCode:\r\n            <input type=\"text\" formControlName=\"zipCode\" (keypress)=\"patientHelper.numberOnly($event)\" class=\"form-control\" placeholder=\"302001\" maxlength=\"6\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Contact *:\r\n            <input type=\"text\" formControlName=\"contact\" (keypress)=\"patientHelper.numberOnly($event)\" required class=\"form-control\" maxlength=\"15\" placeholder=\"919545864800\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Emeregency Contact:\r\n            <input type=\"text\" formControlName=\"emergencyContact\" (keypress)=\"patientHelper.numberOnly($event)\" class=\"form-control\" maxlength=\"15\" placeholder=\"919545864800\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Care of:\r\n            <input type=\"text\" formControlName=\"careOf\" class=\"form-control\" placeholder=\"Sri Ravi Jain\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Email:\r\n            <input type=\"email\" formControlName=\"email\" class=\"form-control\" placeholder=\"abc@gmail.com\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Personal Identification Type:\r\n            <select name=\"personalIdType\" id=\"personalIdType\" formControlName=\"personalIdType\" class=\"form-control\"  >\r\n              <option value=\"\"></option>\r\n              <option value=\"2\">Aadhar Card</option>\r\n              <option value=\"3\">Driving License</option>\r\n              <option value=\"4\">Passport</option>\r\n              <option value=\"5\">Voter Id</option>\r\n              <option value=\"6\">Pan Card</option>\r\n            </select>\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label *ngIf=\"patientFormData.getRawValue().personalIdType!= ''\">\r\n            Personal Identification:\r\n            <input type=\"text\" formControlName=\"personalId\" class=\"form-control\" placeholder=\"AT1234\" >\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Weight(Kg):\r\n            <input type=\"text\" formControlName=\"weight\" (keypress)=\"patientHelper.numberOnly($event)\" class=\"form-control\" maxlength=\"3\" placeholder=\"72\">\r\n          </label>\r\n        </div>\r\n\r\n        <div>\r\n          <label>\r\n            Height(Centimeter):\r\n            <input type=\"text\" formControlName=\"height\" class=\"form-control\" maxlength=\"3\" placeholder=\"174\" (keypress)=\"patientHelper.numberOnly($event)\">\r\n          </label>\r\n        </div>\r\n\r\n\r\n        <div>\r\n          <label>\r\n            Doctor Name:\r\n            <select name=\"doctorName\" id=\"doctorName\" formControlName=\"doctorName\" class=\"form-control\">\r\n              <option value=\"None\"></option>\r\n              <option value=\"Dr. Siddhart Jain\">Dr. Siddhart Jain</option>\r\n              <option value=\"Dr. Poonam Jain\">Dr. Poonam Jain</option>\r\n            </select>\r\n          </label>\r\n        </div>\r\n\r\n\r\n\r\n\r\n        <button type=\"submit\"\r\n                [disabled]=\"patientFormData.pristine || patientFormData.invalid\" class=\"btn btn-success\">\r\n          Submit\r\n        </button>\r\n        <!--<button class=\"button\" type=\"submit\">Submit</button>-->\r\n\r\n      </form>\r\n\r\n      <!--</div>-->\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n\n  <div class=\"container\">\n    <!--<div  style=\"background-color: mintcream\">-->\n    <!--<div style=\"text-align:center\" xmlns=\"http://www.w3.org/1999/html\">-->\n    <!--<h1>-->\n    <!--{{ title }}!-->\n    <!--</h1>-->\n    <!--<img width=\"300\" alt=\"Angular Logo\" src=\"../assets/patient-image.jpeg\">-->\n    <!--</div>-->\n\n    <div *ngIf=\"show && processing\"> Registration Completed! Patient Id : {{patientIdCreated}}\n      <button (click)=\"addNewPatientAgain()\"> Click here to Add a new Patient</button>\n    </div>\n\n    <div *ngIf=\"error !== '' \">\n      <p style=\"color: red\"> {{error}} </p>\n    </div>\n    <div *ngIf=\"!show && error === '' && !processing\">\n      <p><i> Note: ( All fields marked with * are required.) </i></p>\n      <form [formGroup]=\"patientFormData\" (ngSubmit)=\"onSubmit(patientFormData.value)\" novalidate>\n\n        <div>\n          <label>\n           First Name *:\n\n            <input id=\"firstName\" type=\"text\" formControlName=\"firstName\" class=\"form-control\" required=\"\" placeholder=\"Jon\">\n\n            <div *ngIf=\"patientFormData.controls['firstName'].invalid && (patientFormData.controls['firstName'].dirty\n             || patientFormData.controls['firstName'].touched)\" class=\"alert alert-danger\">\n              <div *ngIf=\"patientFormData.controls['firstName'].errors.required\">\n                First Name is required.\n              </div>\n            </div>\n          </label>\n        </div>\n        <!--<div *ngIf=\"firstName.errors.required\"> First Name is required</div>-->\n        <div>\n          <label>\n            Last Name:\n            <input type=\"text\" formControlName=\"lastName\" class=\"form-control\" placeholder=\"Doe\">\n          </label>\n        </div>\n\n        <div></div>\n        <div>\n          <label>\n            Age:\n            <input type=\"text\" (keypress)=\"patientHelper.numberOnly($event)\" formControlName=\"age\" required class=\"form-control\" placeholder=\"33\" maxlength=\"3\">\n          </label>\n        </div>\n\n        <div>\n          <label>\n            Date Of Birth *:\n            <div class=\"form-row\">\n              <div class=\"form-group  col-4\">\n\n                <select name=\"birthDate\" id=\"birthDate\" formControlName=\"birthDate\" class=\"form-control\"  required>\n\n                  <option *ngFor=\"let dd of totalDatesOfBirth\" [value]=\"dd\" >{{dd}}</option>\n                </select>\n\n              </div>\n              <div class=\"form-group  col-4\">\n\n\n                <select name=\"birthMonth\" id=\"birthMonth\" formControlName=\"birthMonth\" class=\"form-control\" required>\n\n                  <option *ngFor=\"let mm of totalMonthOfBirth\" [value]=\"mm\">{{mm}}</option>\n                </select>\n              </div>\n                <div class=\"form-group  col-4\">\n                  <select  id=\"birthYear\" formControlName=\"birthYear\" class=\"form-control\" required>\n                    <option *ngFor=\"let obj of totalDatesOfYear\" value=\"{{obj}}\">{{obj}}</option>\n                  </select>\n\n\n                </div>\n              </div>\n            <div class=\"form-row\">\n              <div class=\"form-group  col-4\">\n               Date\n              </div>\n              <div class=\"form-group  col-4\">\n                Month\n              </div>\n              <div class=\"form-group  col-4\">\n                Year\n              </div>\n            </div>\n          </label>\n\n          <!--<div *ngIf=\"patientFormData.controls['firstName'].invalid && (patientFormData.controls['firstName'].dirty-->\n             <!--|| patientFormData.controls['firstName'].touched)\" class=\"alert alert-danger\">-->\n            <!--<div *ngIf=\"patientFormData.controls['firstName'].errors.required\">-->\n              <!--First Name is required.-->\n            <!--</div>-->\n\n          <div *ngIf=\"patientFormData.controls['birthDate'].invalid && (patientFormData.controls['birthDate'].dirty|| patientFormData.controls['birthDate'].touched)\" class=\"alert alert-danger\">\n            <div *ngIf=\"patientFormData.controls['birthDate'].errors.required\n                        || patientFormData.controls['birthMonth'].errors.required\n                          || patientFormData.controls['birthYear'].errors.required\">\n             Date is required!\n            </div>\n          </div>\n\n          <div *ngIf=\"patientFormData.controls['birthMonth'].invalid && (patientFormData.controls['firstName'].dirty\n             || patientFormData.controls['birthMonth'].touched)\" class=\"alert alert-danger\">\n            <div *ngIf=\"patientFormData.controls['birthMonth'].errors.required\">\n              Month is required.\n            </div>\n          </div>\n\n            <div *ngIf=\"patientFormData.controls['birthYear'].invalid && (patientFormData.controls['firstName'].dirty\n             || patientFormData.controls['birthYear'].touched)\" class=\"alert alert-danger\">\n              <div *ngIf=\"patientFormData.controls['birthYear'].errors.required\">\n                Year is required.\n              </div>\n            </div>\n        </div>\n\n        <div>\n          <label>\n            <P>Gender:</P>\n            <input type=\"radio\" id=\"male\" formControlName=\"gender\" value=\"male\">\n            <label for=\"male\">Male</label><br>\n            <input type=\"radio\" id=\"female\" formControlName=\"gender\" value=\"female\">\n            <label for=\"female\">Female</label><br>\n            <input type=\"radio\" id=\"other\" formControlName=\"gender\" value=\"other\">\n            <label for=\"other\">Other</label>\n          </label>\n        </div>\n\n        <div>\n          <label>\n            Address:\n            <input type=\"text\" formControlName=\"address\" class=\"form-control\" placeholder=\"1212 Rajendra Nagar\" >\n          </label>\n        </div>\n\n        <div>\n          <label>\n            City:\n            <input type=\"text\" formControlName=\"city\" class=\"form-control\" placeholder=\"Jaipur\">\n          </label>\n        </div>\n\n        <div>\n          <label>\n            State:\n            <input type=\"text\" formControlName=\"state\" class=\"form-control\" placeholder=\"Rajashthan\">\n          </label>\n        </div>\n\n        <div>\n          <label>\n            ZipCode:\n            <input type=\"text\" formControlName=\"zipCode\" (keypress)=\"patientHelper.numberOnly($event)\" class=\"form-control\" placeholder=\"302001\" maxlength=\"6\">\n          </label>\n        </div>\n\n        <div>\n          <label>\n            Contact *:\n            <input type=\"text\" formControlName=\"contact\" (keypress)=\"patientHelper.numberOnly($event)\" required class=\"form-control\" maxlength=\"15\" placeholder=\"919545864800\">\n          </label>\n        </div>\n\n        <div>\n          <label>\n            Emeregency Contact:\n            <input type=\"text\" formControlName=\"emergencyContact\" (keypress)=\"patientHelper.numberOnly($event)\" class=\"form-control\" maxlength=\"15\" placeholder=\"919545864800\">\n          </label>\n        </div>\n\n        <div>\n          <label>\n            Care of:\n            <input type=\"text\" formControlName=\"careOf\" class=\"form-control\" placeholder=\"Sri Ravi Jain\">\n          </label>\n        </div>\n\n        <div>\n          <label>\n            Email:\n            <input type=\"email\" formControlName=\"email\" class=\"form-control\" placeholder=\"abc@gmail.com\">\n          </label>\n        </div>\n\n        <div>\n          <label>\n            Personal Identification Type:\n            <select name=\"personalIdType\" id=\"personalIdType\" formControlName=\"personalIdType\" class=\"form-control\"  >\n              <option value=\"\"></option>\n              <option value=\"2\">Aadhar Card</option>\n              <option value=\"3\">Driving License</option>\n              <option value=\"4\">Passport</option>\n              <option value=\"5\">Voter Id</option>\n              <option value=\"6\">Pan Card</option>\n            </select>\n          </label>\n        </div>\n\n        <div>\n          <label *ngIf=\"patientFormData.getRawValue().personalIdType!= ''\">\n            Personal Identification:\n            <input type=\"text\" formControlName=\"personalId\" class=\"form-control\" placeholder=\"AT1234\" >\n          </label>\n        </div>\n\n        <div>\n          <label>\n            Weight(Kg):\n            <input type=\"text\" formControlName=\"weight\" (keypress)=\"patientHelper.numberOnly($event)\" class=\"form-control\" maxlength=\"3\" placeholder=\"72\">\n          </label>\n        </div>\n\n        <div>\n          <label>\n            Height(Centimeter):\n            <input type=\"text\" formControlName=\"height\" class=\"form-control\" maxlength=\"3\" placeholder=\"174\" (keypress)=\"patientHelper.numberOnly($event)\">\n          </label>\n        </div>\n\n\n        <div>\n          <label>\n            Doctor Name:\n            <select name=\"doctorName\" id=\"doctorName\" formControlName=\"doctorName\" class=\"form-control\">\n              <option value=\"None\"></option>\n              <option value=\"Dr. Siddhart Jain\">Dr. Siddhart Jain</option>\n              <option value=\"Dr. Poonam Jain\">Dr. Poonam Jain</option>\n            </select>\n          </label>\n        </div>\n\n\n\n\n        <button type=\"submit\"\n                [disabled]=\"patientFormData.pristine || patientFormData.invalid\" class=\"btn btn-success\">\n          Submit\n        </button>\n        <!--<button class=\"button\" type=\"submit\">Submit</button>-->\n\n      </form>\n\n      <!--</div>-->\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -882,7 +1668,7 @@ var PatientRegistrationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtc2VhcmNoL3BhdGllbnQtc2VhcmNoLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9wYXRpZW50LXNlYXJjaC9wYXRpZW50LXNlYXJjaC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -893,7 +1679,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n\r\n  <app-patient-header></app-patient-header>\r\n\r\n  <div id=\"loadin\">\r\n    <app-loader-spin></app-loader-spin>\r\n  </div>\r\n\r\n  <div class=\"container\" *ngIf=\"!processing\">\r\n    <!--<div class=\"row\">-->\r\n    <!--<div class=\"col-sm-2\">-->\r\n    <!--<label for=\"firstName\">First Name:</label>-->\r\n    <!--</div>-->\r\n    <!--<div class=\"col-sm-3\">-->\r\n    <!--<input type=\"text\" id=\"firstName\">-->\r\n    <!--</div>-->\r\n    <!--<div class=\"col-sm-2\">-->\r\n    <!--<label for=\"lastName\">Last name:</label>-->\r\n    <!--</div>-->\r\n    <!--<div class=\"col-sm-4\">-->\r\n    <!--<input type=\"text\" id=\"lastName\">-->\r\n    <!--</div>-->\r\n    <!--</div>-->\r\n    <div class=\"row\">\r\n      <label style=\"color: red\"> {{error}}</label>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Patient ID:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\" placeholder=\"1\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">First Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"firstName\" id=\"firstName\" placeholder=\"Don\">\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Last Name:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"lastName\" id=\"lastName\" placeholder=\"Joe\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Contact Number:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"contact\" id=\"contact\" (keypress)=\"patientHelper.numberOnly($event)\"\r\n               placeholder=\"919545864822\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"patientId\">Personal Id:</label>\r\n      </div>\r\n      <div class=\"col-sm-4\">\r\n        <input type=\"text\" [(ngModel)]=\"personalId\" id=\"personalId\" placeholder=\"Aadhar,DL etc\">\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <label for=\"birthDate\"> Date Of Birth(DD-MM-YYYY):</label>\r\n      </div>\r\n\r\n      <div class=\" col-4\">\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-2\">\r\n            <select name=\"birthDate\" id=\"birthDate\" [(ngModel)]=\"birthDate\">\r\n\r\n              <option *ngFor=\"let dd of totalDatesOfBirth\" [value]=\"dd\">{{dd}}</option>\r\n            </select>\r\n\r\n          </div>\r\n          <div class=\" col-sm-2\">\r\n\r\n\r\n            <select name=\"birthMonth\" id=\"birthMonth\" [(ngModel)]=\"birthMonth\">\r\n\r\n              <option *ngFor=\"let mm of totalMonthOfBirth\" [value]=\"mm\">{{mm}}</option>\r\n            </select>\r\n          </div>\r\n          <div class=\" col-sm-2\">\r\n            <select id=\"birthYear\" [(ngModel)]=\"birthYear\">\r\n              <option *ngFor=\"let obj of totalDatesOfYear\" [value]=\"obj\">{{obj}}</option>\r\n            </select>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <!--<div class=\"row\">-->\r\n      <!--<div class=\"col-sm-2\">-->\r\n\r\n      <!--</div>-->\r\n\r\n      <!--<div class=\"col-sm-4\">-->\r\n        <!--<div class=\"row\">-->\r\n          <!--<div class=\" col-2\">-->\r\n            <!--Date-->\r\n          <!--</div>-->\r\n          <!--<div class=\"  col-2\">-->\r\n            <!--Month-->\r\n          <!--</div>-->\r\n          <!--<div class=\"  col-2\">-->\r\n            <!--Year-->\r\n          <!--</div>-->\r\n        <!--</div>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-4\">\r\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\r\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\">Search</button>\r\n        <!--      </a>-->\r\n      </div>\r\n    </div>\r\n\r\n    <div></div>\r\n\r\n  </div>\r\n\r\n  <div class=\"container\">\r\n    <div class=\"row\" *ngIf=\"multiple\">\r\n      <div class=\"col-sm-2\">\r\n        <table class=\"table table-striped\" [mfData]=\"data\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"5\">\r\n          <thead>\r\n          <tr>\r\n            <th style=\"width: 10%\">\r\n              <mfDefaultSorter by=\"id\"> Id</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"firstName\">First Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"lastName\">Last Name</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Contact</mfDefaultSorter>\r\n            </th>\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"dateOfBirth\">Date Of Birth</mfDefaultSorter>\r\n              <!--<br>-->\r\n              <span style=\"font-size: 9px\"> (YYYY-MM-DD) </span>\r\n            </th>\r\n\r\n            <th style=\"width: 30%\">\r\n              <mfDefaultSorter by=\"contact\">Personal Identification</mfDefaultSorter>\r\n            </th>\r\n          </tr>\r\n          </thead>\r\n          <tbody>\r\n          <tr *ngFor=\"let item of mf.data\">\r\n            <td>{{item.id}}</td>\r\n            <td>{{item.firstName}}</td>\r\n            <td>{{item.lastName}}</td>\r\n            <td>{{item.contact}}</td>\r\n            <td>{{item.dateOfBirth}}</td>\r\n            <td>{{item.personalId}}</td>\r\n            <td>\r\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"printPage(item)\">Print</button>\r\n            </td>\r\n            <td>\r\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"viewHistory(item)\">Visit History</button>\r\n            </td>\r\n\r\n          </tr>\r\n          </tbody>\r\n          <tfoot>\r\n          <tr>\r\n            <td colspan=\"4\">\r\n              <mfBootstrapPaginator [rowsOnPageSet]=\"[5,10,25]\"></mfBootstrapPaginator>\r\n            </td>\r\n          </tr>\r\n          </tfoot>\r\n        </table>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>\r\n"
+module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div class=\"container\" *ngIf=\"!processing\">\n    <!--<div class=\"row\">-->\n    <!--<div class=\"col-sm-2\">-->\n    <!--<label for=\"firstName\">First Name:</label>-->\n    <!--</div>-->\n    <!--<div class=\"col-sm-3\">-->\n    <!--<input type=\"text\" id=\"firstName\">-->\n    <!--</div>-->\n    <!--<div class=\"col-sm-2\">-->\n    <!--<label for=\"lastName\">Last name:</label>-->\n    <!--</div>-->\n    <!--<div class=\"col-sm-4\">-->\n    <!--<input type=\"text\" id=\"lastName\">-->\n    <!--</div>-->\n    <!--</div>-->\n    <div class=\"row\">\n      <label style=\"color: red\"> {{error}}</label>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"patientId\">Patient ID:</label>\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\" placeholder=\"1\">\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"patientId\">First Name:</label>\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" [(ngModel)]=\"firstName\" id=\"firstName\" placeholder=\"Don\">\n      </div>\n    </div>\n\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"patientId\">Last Name:</label>\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" [(ngModel)]=\"lastName\" id=\"lastName\" placeholder=\"Joe\">\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"patientId\">Contact Number:</label>\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" [(ngModel)]=\"contact\" id=\"contact\" (keypress)=\"patientHelper.numberOnly($event)\"\n               placeholder=\"919545864822\">\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"patientId\">Personal Id:</label>\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" [(ngModel)]=\"personalId\" id=\"personalId\" placeholder=\"Aadhar,DL etc\">\n      </div>\n    </div>\n\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"birthDate\"> Date Of Birth(DD-MM-YYYY):</label>\n      </div>\n\n      <div class=\" col-4\">\n        <div class=\"row\">\n          <div class=\"col-sm-2\">\n            <select name=\"birthDate\" id=\"birthDate\" [(ngModel)]=\"birthDate\">\n\n              <option *ngFor=\"let dd of totalDatesOfBirth\" [value]=\"dd\">{{dd}}</option>\n            </select>\n\n          </div>\n          <div class=\" col-sm-2\">\n\n\n            <select name=\"birthMonth\" id=\"birthMonth\" [(ngModel)]=\"birthMonth\">\n\n              <option *ngFor=\"let mm of totalMonthOfBirth\" [value]=\"mm\">{{mm}}</option>\n            </select>\n          </div>\n          <div class=\" col-sm-2\">\n            <select id=\"birthYear\" [(ngModel)]=\"birthYear\">\n              <option *ngFor=\"let obj of totalDatesOfYear\" [value]=\"obj\">{{obj}}</option>\n            </select>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <!--<div class=\"row\">-->\n      <!--<div class=\"col-sm-2\">-->\n\n      <!--</div>-->\n\n      <!--<div class=\"col-sm-4\">-->\n        <!--<div class=\"row\">-->\n          <!--<div class=\" col-2\">-->\n            <!--Date-->\n          <!--</div>-->\n          <!--<div class=\"  col-2\">-->\n            <!--Month-->\n          <!--</div>-->\n          <!--<div class=\"  col-2\">-->\n            <!--Year-->\n          <!--</div>-->\n        <!--</div>-->\n      <!--</div>-->\n    <!--</div>-->\n\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\">Search</button>\n        <!--      </a>-->\n      </div>\n    </div>\n\n    <div></div>\n\n  </div>\n\n  <div class=\"container\">\n    <div class=\"row\" *ngIf=\"multiple\">\n      <div class=\"col-sm-2\">\n        <table class=\"table table-striped\" [mfData]=\"data\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"5\">\n          <thead>\n          <tr>\n            <th style=\"width: 10%\">\n              <mfDefaultSorter by=\"id\"> Id</mfDefaultSorter>\n            </th>\n            <th style=\"width: 30%\">\n              <mfDefaultSorter by=\"firstName\">First Name</mfDefaultSorter>\n            </th>\n            <th style=\"width: 30%\">\n              <mfDefaultSorter by=\"lastName\">Last Name</mfDefaultSorter>\n            </th>\n            <th style=\"width: 30%\">\n              <mfDefaultSorter by=\"contact\">Contact</mfDefaultSorter>\n            </th>\n            <th style=\"width: 30%\">\n              <mfDefaultSorter by=\"dateOfBirth\">Date Of Birth</mfDefaultSorter>\n              <!--<br>-->\n              <span style=\"font-size: 9px\"> (YYYY-MM-DD) </span>\n            </th>\n\n            <th style=\"width: 30%\">\n              <mfDefaultSorter by=\"contact\">Personal Identification</mfDefaultSorter>\n            </th>\n          </tr>\n          </thead>\n          <tbody>\n          <tr *ngFor=\"let item of mf.data\">\n            <td>{{item.id}}</td>\n            <td>{{item.firstName}}</td>\n            <td>{{item.lastName}}</td>\n            <td>{{item.contact}}</td>\n            <td>{{item.dateOfBirth}}</td>\n            <td>{{item.personalId}}</td>\n            <td>\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"printPage(item)\">Print</button>\n            </td>\n            <td>\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"viewHistory(item)\">Visit History</button>\n            </td>\n            <td>\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"createAppointment(item)\">Create Appointment</button>\n            </td>\n\n          </tr>\n          </tbody>\n          <tfoot>\n          <tr>\n            <td colspan=\"4\">\n              <mfBootstrapPaginator [rowsOnPageSet]=\"[5,10,25]\"></mfBootstrapPaginator>\n            </td>\n          </tr>\n          </tfoot>\n        </table>\n      </div>\n    </div>\n  </div>\n\n\n</div>\n"
 
 /***/ }),
 
@@ -949,7 +1735,7 @@ var PatientSearchComponent = /** @class */ (function () {
         this.totalMonthOfBirth = this.patientHelper.createMonthOfBirth();
         this.totalDatesOfYear = this.patientHelper.creatYearOfBirthArray();
     };
-    // populateSearchData(): PatientData {
+    // populateSearchData(): AppointmentData {
     //   this.data.firstName = 'Test Patient First Name';
     //   this.data.lastName = 'Test Patient last Name';
     //   return this.data;
@@ -1016,6 +1802,10 @@ var PatientSearchComponent = /** @class */ (function () {
         this.searchDataService.setSearchData(data);
         this.router.navigate(['history']);
     };
+    PatientSearchComponent.prototype.createAppointment = function (data) {
+        this.searchDataService.setSearchData(data);
+        this.router.navigate(['appointment-create']);
+    };
     PatientSearchComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-patient-search',
@@ -1027,6 +1817,172 @@ var PatientSearchComponent = /** @class */ (function () {
             _service_search_service__WEBPACK_IMPORTED_MODULE_3__["SearchService"]])
     ], PatientSearchComponent);
     return PatientSearchComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/appointment-data-service.service.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/service/appointment-data-service.service.ts ***!
+  \*************************************************************/
+/*! exports provided: AppointmentDataServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppointmentDataServiceService", function() { return AppointmentDataServiceService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _model_AppointmentData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../model/AppointmentData */ "./src/app/model/AppointmentData.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AppointmentDataServiceService = /** @class */ (function () {
+    function AppointmentDataServiceService() {
+        this._appointmentConfirmation = new _model_AppointmentData__WEBPACK_IMPORTED_MODULE_1__["AppointmentData"]();
+    }
+    Object.defineProperty(AppointmentDataServiceService.prototype, "appointmentConfirmation", {
+        get: function () {
+            return this._appointmentConfirmation;
+        },
+        set: function (value) {
+            this._appointmentConfirmation = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    AppointmentDataServiceService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [])
+    ], AppointmentDataServiceService);
+    return AppointmentDataServiceService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/appointment-search.service.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/service/appointment-search.service.ts ***!
+  \*******************************************************/
+/*! exports provided: AppointmentSearchService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppointmentSearchService", function() { return AppointmentSearchService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AppointmentSearchService = /** @class */ (function () {
+    function AppointmentSearchService(http) {
+        this.http = http;
+        this.patientApiAppointmentUrl = '/patient/v1/appointments';
+    }
+    AppointmentSearchService.prototype.getAllAppointments = function () {
+        var any = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            any[_i] = arguments[_i];
+        }
+        var url = this.patientApiAppointmentUrl;
+        var paramValues = ['doctorName=', 'appointmentDate='];
+        var len = 0;
+        var i;
+        for (i = 0; i < arguments.length; i++) {
+            if (arguments[i] !== undefined && arguments[i] !== '' && arguments[i] !== null) {
+                len++;
+                if (len === 0) {
+                    url = url;
+                }
+                if (len === 1) {
+                    url = url + '?' + paramValues[i] + arguments[i];
+                }
+                else if (len > 1) {
+                    url = url + '&' + paramValues[i] + arguments[i];
+                }
+            }
+        }
+        console.log(url);
+        return this.http.get(url);
+    };
+    AppointmentSearchService.prototype.createAppointment = function (appointment) {
+        var url = this.patientApiAppointmentUrl;
+        return this.http.post(url, appointment);
+    };
+    AppointmentSearchService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], AppointmentSearchService);
+    return AppointmentSearchService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/doctor-service.service.ts":
+/*!***************************************************!*\
+  !*** ./src/app/service/doctor-service.service.ts ***!
+  \***************************************************/
+/*! exports provided: DoctorServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoctorServiceService", function() { return DoctorServiceService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var DoctorServiceService = /** @class */ (function () {
+    function DoctorServiceService(http) {
+        this.http = http;
+        this.doctorApiUrl = '/doctor/v1';
+    }
+    DoctorServiceService.prototype.searchAllDoctors = function () {
+        var url = this.doctorApiUrl + "/doctors";
+        return this.http.get(url);
+    };
+    DoctorServiceService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], DoctorServiceService);
+    return DoctorServiceService;
 }());
 
 
@@ -1307,7 +2263,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\P2855416\Documents\git\personal\patient-portal-app\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/sjain/git/patient-portal-app/src/main.ts */"./src/main.ts");
 
 
 /***/ })
