@@ -60,7 +60,7 @@ public class PatientEntity {
   @Column(name = "UPDATED_AT")
   private String updatedAt;
 
-  @OneToOne(fetch = FetchType.LAZY)
+  @OneToOne()
   @JoinColumn(name = "personal_id_type")
   private PersonalIdentificationEntity personalIdentificationEntity;
 

@@ -22,7 +22,7 @@
       </div>
   </div>
 
-  <div  *ngIf="error=='' && !newVisitFlag">
+  <div  *ngIf="error=='' && !newVisitFlag && !initialVisitFlag">
     <table id="visitHeader">
       <tr>
         <td>Name : {{patientVisitData[0].patientEntity.firstName}}</td>
@@ -60,7 +60,7 @@
 
     <div *ngIf="newVisitFlag && error==''">
       <form [formGroup]="visitFormData"
-            (ngSubmit)="onSubmitVisit(visitFormData.value)" novalidate>
+            (ngSubmit)="onSubmitVisit()" novalidate>
         <div>
           <label>Symptoms:
             <textarea type="text"  formControlName="symptoms" class="form-control" rows="5" cols="50" placeholder="Fever,Cold ,Nausea etc..."></textarea>

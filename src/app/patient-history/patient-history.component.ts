@@ -21,6 +21,7 @@ export class PatientHistoryComponent implements OnInit {
   ERRORMESSAGE= 'System is Temporary unavailable, Please Try Again!';
   DATANOTFOUND= 'No Visits Found for the Patient!';
   newVisitFlag: boolean ;
+  initialVisitFlag: boolean ;
   visitFormData :  FormGroup;
   patientHelper: PatientHelper;
 
@@ -33,6 +34,7 @@ export class PatientHistoryComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.newVisitFlag = false;
     this.getPatientVisit();
   }
 
@@ -57,6 +59,7 @@ export class PatientHistoryComponent implements OnInit {
   }
 
   getPatientVisit() {
+    this.initialVisitFlag= true;
     this.showLoader();
    const searchData1 = this.getPatientDataFromSearch();
     this.patientId = Number(searchData1.id) ;
@@ -74,6 +77,7 @@ export class PatientHistoryComponent implements OnInit {
             this.patientVisitData.push(data[i]);
           }
         }
+        this.initialVisitFlag = false;
         this.hideLoader();
       }
       // }
