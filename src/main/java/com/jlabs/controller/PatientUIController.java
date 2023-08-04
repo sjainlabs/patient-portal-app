@@ -48,7 +48,21 @@ public class PatientUIController {
 
   @GetMapping("/history")
   public ModelAndView history( ) {
-    ModelAndView mav = new ModelAndView("search");
+    ModelAndView mav = new ModelAndView("index");
+    mav.addObject("version", "0.1");
+    return mav;
+  }
+
+  @GetMapping("/appointment")
+  public ModelAndView appointment( ) {
+    ModelAndView mav = new ModelAndView("index");
+    mav.addObject("version", "0.1");
+    return mav;
+  }
+
+  @GetMapping("/appointment-create")
+  public ModelAndView appointmentCreate( ) {
+    ModelAndView mav = new ModelAndView("index");
     mav.addObject("version", "0.1");
     return mav;
   }

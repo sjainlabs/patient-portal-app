@@ -1,3 +1,4 @@
+/Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/service/DoctorService.java
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/model/Patient.java
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/config/SwaggerConfig.java
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/controller/PatientController.java
@@ -10,6 +11,7 @@
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/persistence/AppointmentPersistence.java
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/persistence/entity/PatientEntity.java
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/service/transform/PatientEntityMapper.java
+/Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/persistence/DoctorPersistence.java
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/service/VisitService.java
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/controller/PatientUIController.java
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/persistence/repository/AppointmentRepository.java
@@ -19,7 +21,10 @@
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/model/Doctor.java
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/persistence/repository/PatientRepository.java
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/service/PatientService.java
+/Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/service/transform/DoctorEntityMapper.java
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/model/Appointment.java
+/Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/controller/DoctorController.java
+/Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/persistence/repository/DoctorRepository.java
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/persistence/entity/PersonalIdentificationEntity.java
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/persistence/entity/VisitEntity.java
 /Users/sjain/git/patient-portal-app/src/main/java/com/jlabs/model/Visit.java

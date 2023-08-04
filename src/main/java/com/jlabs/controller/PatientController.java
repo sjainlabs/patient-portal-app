@@ -1,11 +1,13 @@
 package com.jlabs.controller;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.jlabs.model.Doctor;
 import com.jlabs.model.Patient;
 import com.jlabs.model.Appointment;
 import com.jlabs.model.Visit;
 import com.jlabs.persistence.entity.VisitEntity;
 import com.jlabs.service.AppointmentService;
+import com.jlabs.service.DoctorService;
 import com.jlabs.service.PatientService;
 import com.jlabs.service.VisitService;
 import lombok.extern.slf4j.Slf4j;
@@ -38,6 +40,9 @@ public class PatientController {
 
   @Autowired
   AppointmentService appointmentService;
+
+  @Autowired
+  DoctorService doctorService;
 
   @PostMapping
   @ResponseBody
@@ -116,5 +121,13 @@ public class PatientController {
     log.info("Get Appointment by Doctor id: {}", doctorId);
     List<Appointment> appointmentsList = appointmentService.getAppointmentsByDoctorId(doctorId);
     return new ResponseEntity<>(appointmentsList, HttpStatus.OK);
+  }
+
+  @GetMapping("/doctors")
+  @ResponseBody
+  public ResponseEntity<Optional> getAllDoctors(){
+    log.info("Get all Doctors");
+    Optional<List<Doctor>> doctorList = doctorService.getAllDoctors();
+    return new ResponseEntity<>(doctorList, HttpStatus.OK);
   }
 }

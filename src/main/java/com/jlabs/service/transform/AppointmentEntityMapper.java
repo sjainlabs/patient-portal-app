@@ -29,13 +29,4 @@ public interface AppointmentEntityMapper {
   @Mapping(source="patientEntity.id", target="patient.id")
   @Mapping(source="doctorEntity.doctorId", target="doctor.doctorId")
   Appointment AppointmentEntityToAppointment(AppointmentEntity appointmentEntity);
-
-//  @BeforeMapping
-//  default void convertAppointmentTimeFromUTC( AppointmentEntity appointmentEntity) {
-//    final ZonedDateTime appointmentDateSource = appointmentEntity.getAppointmentDate();
-//    final ZoneId defaultZoneId = ZonedDateTime.now().getZone();
-//    final ZonedDateTime appointmentDateToDefaultZone = appointmentDateSource.withZoneSameInstant(defaultZoneId);
-//    appointmentEntity.setAppointmentDate(appointmentDateToDefaultZone);
-//
-//  }
 }

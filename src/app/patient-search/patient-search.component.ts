@@ -52,7 +52,7 @@ export class PatientSearchComponent implements OnInit {
     this.totalDatesOfYear = this.patientHelper.creatYearOfBirthArray();
   }
 
-  // populateSearchData(): PatientData {
+  // populateSearchData(): AppointmentData {
   //   this.data.firstName = 'Test Patient First Name';
   //   this.data.lastName = 'Test Patient last Name';
   //   return this.data;
@@ -130,6 +130,11 @@ export class PatientSearchComponent implements OnInit {
   viewHistory(data) {
     this.searchDataService.setSearchData(data);
     this.router.navigate(['history']);
+  }
+
+  createAppointment(data) {
+    this.searchDataService.setSearchData(data);
+    this.router.navigate(['appointment-create']);
   }
 
 }
