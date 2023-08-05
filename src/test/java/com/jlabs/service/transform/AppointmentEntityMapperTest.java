@@ -24,26 +24,26 @@
 // @Test
 // void convertAppointmentTimeToUTCTest() {
 //    Appointment appointment = new Appointment();
-//    final ZonedDateTime zonedDateTime = ZonedDateTime.parse("2022-03-21T00:00:00-06:00");
-//    appointment.setAppointmentDate(LocalDate.from(zonedDateTime));
-//    final ZonedDateTime appointmentDate = ZonedDateTime.from(appointment.getAppointmentDate());
+//    final LocalDate localDate = LocalDate.parse("2022-03-21");
+//    appointment.setAppointmentDate(LocalDate.from(localDate));
+//    final LocalDate appointmentDate = LocalDate.from(appointment.getAppointmentDate());
 //    log.info(appointmentDate.toString());
 ////    appointmentEntityMapper.convertAppointmentTimeToUTC(appointment);
 //    final ZonedDateTime appointmentDateConverted = ZonedDateTime.from(appointment.getAppointmentDate());
 //    log.info(appointmentDateConverted.toString());
 //  }
 //
-// @Test
-//  void convertAppointmentTimeFromUTC() {
-//    AppointmentEntity appointmentEntity = new AppointmentEntity();
-//    final ZonedDateTime zonedDateTime = ZonedDateTime.parse("2022-03-21T06:00Z[UTC]");
-//    appointmentEntity.setAppointmentDate(LocalDate.from(zonedDateTime));
-//    final ZonedDateTime appointmentDate = ZonedDateTime.from(appointmentEntity.getAppointmentDate());
-//    log.info(appointmentDate.toString());
-////    appointmentEntityMapper.convertAppointmentTimeFromUTC(appointmentEntity);
-//    final ZonedDateTime appointmentDateConverted = ZonedDateTime.from(appointmentEntity.getAppointmentDate());
-//    log.info(appointmentDateConverted.toString());
-//
-//
-//  }
+//// @Test
+////  void convertAppointmentTimeFromUTC() {
+////    AppointmentEntity appointmentEntity = new AppointmentEntity();
+////    final ZonedDateTime zonedDateTime = ZonedDateTime.parse("2022-03-21T06:00Z[UTC]");
+////    appointmentEntity.setAppointmentDate(LocalDate.from(zonedDateTime));
+////    final ZonedDateTime appointmentDate = ZonedDateTime.from(appointmentEntity.getAppointmentDate());
+////    log.info(appointmentDate.toString());
+//////    appointmentEntityMapper.convertAppointmentTimeFromUTC(appointmentEntity);
+////    final ZonedDateTime appointmentDateConverted = ZonedDateTime.from(appointmentEntity.getAppointmentDate());
+////    log.info(appointmentDateConverted.toString());
+////
+////
+////  }
 //}

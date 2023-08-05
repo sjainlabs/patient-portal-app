@@ -21,4 +21,9 @@ public interface AppointmentRepository extends JpaRepository<AppointmentEntity, 
   @Query("select appointment from AppointmentEntity appointment where ( :doctorName is null or appointment.doctorEntity.doctorName= :doctorName" +
     " or :appointmentDate is null or appointment.appointmentDate= :appointmentDate)")
   public List<AppointmentEntity> findAppointmentByDoctorNameOrAppointmentDate(@Param("doctorName") String doctorName,@Param("appointmentDate") LocalDate appointmentDate);
+
+  @Query("select appointment from AppointmentEntity appointment where ( :doctorName is null and appointment.doctorEntity.doctorName= :doctorName" +
+    " or :appointmentDate is null or appointment.appointmentDate= :appointmentDate)")
+  public List<AppointmentEntity> findAppointmentByDoctorNameAndAppointmentDate(@Param("doctorName") String doctorName,@Param("appointmentDate") LocalDate appointmentDate);
+
 }

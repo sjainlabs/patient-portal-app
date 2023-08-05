@@ -102,7 +102,7 @@ public class PatientController {
 
   @GetMapping("/appointments")
   @ResponseBody
-  public ResponseEntity<Optional> getPatientAppointment(@Param("doctorName") String doctorName, @Param("appointmentDate") String appointmentDate ){
+  public ResponseEntity<Optional> getPatientAppointment(@RequestParam(value = "doctorName",required = false) String doctorName, @RequestParam(value = "appointmentDate",required = false) String appointmentDate ){
     Optional<List<Appointment>> patientAppointments = appointmentService.getAppointments(doctorName, appointmentDate);
     return new ResponseEntity<>(patientAppointments, HttpStatus.OK);
   }

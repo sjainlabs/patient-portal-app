@@ -33,7 +33,7 @@
     <div class="row">
       <div class="col-sm-2">
         <!--      <a routerLink="print" class="nav-link">-->
-        <button type="submit" class="btn btn-primary" (click)="searchAppointment(doctorName,appointmentDate,hoursSlot1)" title="Search For Available Appointment">Search</button>
+        <button type="submit" class="btn btn-primary" (click)="searchAppointment(doctorSelected,appointmentDate,hoursSlot1)" title="Search For Available Appointment">Search</button>
         <!--      </a>-->
       </div>
     </div>
@@ -47,9 +47,9 @@
 
       <div>
 <!--        <div class="row"> Date: {{appointmentDate}}</div>-->
-        <div class="row">
-          <div *ngFor="let dateRange of hoursSlot1">
-            <div class="col-sm-2" *ngIf="appointmentFound!==true">
+        <div class="row" *ngIf="appointmentSearched===true">
+          <div *ngFor="let dateRange of hoursSlot1" >
+            <div class="col-sm-2" >
             <button title="Book Appointment" type="submit" class="btn btn-primary"  (click)="bookAppointment(appointmentDate, dateRange)">{{dateRange}}  </button>
             <label  style="background-color: white">   </label>
             <label  style="background-color: white">   </label>

@@ -19,6 +19,7 @@ export class AppointmentCreateComponent implements OnInit {
   doctorName: string;
   appointmentDate: string;
   appointmentFound: boolean = false;
+  appointmentSearched: boolean = false;
   error;
   ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
   DATANOTFOUND = 'No Appointments Found for the Patient!';
@@ -96,9 +97,10 @@ export class AppointmentCreateComponent implements OnInit {
     this.appointmentWindow1();
     this.showLoader();
     this.appointmentData = [];
-    this.appointmentSearchService.getAllAppointments(doctorName, appointmentDate)
+    this.appointmentSearchService.getAllAppointments(doctorName.doctorName, appointmentDate)
       .subscribe(data => {
           console.log(data);
+          this.appointmentSearched=true;
           if (data == null) {
             this.error = this.DATANOTFOUND;
           } else {

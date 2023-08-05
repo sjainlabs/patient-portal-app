@@ -4,12 +4,14 @@ import com.jlabs.model.Appointment;
 import com.jlabs.persistence.AppointmentPersistence;
 import com.jlabs.persistence.entity.AppointmentEntity;
 import com.jlabs.service.transform.AppointmentEntityMapper;
+//import jdk.nashorn.internal.runtime.regexp.joni.constants.OPCode;
 import lombok.extern.slf4j.Slf4j;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -24,17 +26,12 @@ public class AppointmentService {
 
   public Optional<List<Appointment>> getAppointments(String doctorName, String appointmentDate){
     Optional<List<AppointmentEntity>> patientAppointments = Optional.empty();
-    LocalDate appointmentDateParsed = null;
     if(doctorName == null && appointmentDate == null){
        patientAppointments = Optional.ofNullable(appointmentPersistence.getAllAppointments());
     }
     else{
-      if(appointmentDate!=null){
-         appointmentDateParsed = LocalDate.parse(appointmentDate);
-
-      }      patientAppointments = Optional.ofNullable(appointmentPersistence.getAppointmentByDoctorNameOrAppointmentDate(doctorName, appointmentDateParsed));
+      patientAppointments = Optional.ofNullable(appointmentPersistence.getAppointmentByDoctorNameAndAppointmentDate(doctorName, LocalDate.parse(appointmentDate)));
     }
-
     List<Appointment> appointmentsList = new ArrayList<>();
     if(!patientAppointments.get().isEmpty()) {
       log.info("Retrieved all appointments: {}" , patientAppointments);
