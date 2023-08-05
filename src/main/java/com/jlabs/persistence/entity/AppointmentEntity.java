@@ -5,7 +5,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.time.ZonedDateTime;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -20,13 +21,22 @@ public class AppointmentEntity {
   private int appointmentId;
 
   @Column(name = "appointment_date")
-  private ZonedDateTime appointmentDate;
+  private LocalDate appointmentDate;
 
-  @OneToOne(cascade = CascadeType.ALL)
+  @Column(name = "start_time")
+  private LocalDateTime startTime;
+
+  @Column(name = "end_time")
+  private LocalDateTime endTime;
+
+  @Column(name = "time_zone")
+  private String timeZone;
+
+  @OneToOne(cascade = CascadeType.MERGE)
   @JoinColumn(name = "doctor_id")
   private DoctorEntity doctorEntity;
 
-  @OneToOne(cascade = CascadeType.ALL)
+  @OneToOne(cascade = CascadeType.MERGE)
   @JoinColumn(name = "patient_id")
   private PatientEntity patientEntity;
 }

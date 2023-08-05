@@ -1,0 +1,81 @@
+<div>
+
+  <app-patient-header></app-patient-header>
+
+  <br>
+
+  <div id="loadin">
+    <app-loader-spin></app-loader-spin>
+  </div>
+
+  <div id="appointmentHeader" class=" container ">
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="doctorName">Doctor Name:</label>
+      </div>
+      <div class="col-sm-2">
+        <select id="doctorName" name="doctorName" [(ngModel)]="doctorSelected">
+          <option  *ngFor="let doctor of doctorList" [ngValue]="doctor" >{{doctor.doctorName}}</option>
+<!--          <option value="Dr Poonam Jain">Dr Poonam Jain</option>-->
+        </select>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <label for="appointmentDate">Appointment Date:</label>
+        </div>
+        <div class="col-sm-2">
+          <input type="date" [(ngModel)]="appointmentDate" id="appointmentDate" placeholder="DD/MM/YY" [min]="currentDate">
+        </div>
+      </div>
+
+
+    <div class="row">
+      <div class="col-sm-2">
+        <!--      <a routerLink="print" class="nav-link">-->
+        <button type="submit" class="btn btn-primary" (click)="searchAppointment(doctorSelected,appointmentDate,hoursSlot1)" title="Search For Available Appointment">Search</button>
+        <!--      </a>-->
+      </div>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+
+    <div class="container appointment" >
+
+      <div>
+<!--        <div class="row"> Date: {{appointmentDate}}</div>-->
+        <div class="row" *ngIf="appointmentFound===true">
+          <div *ngFor="let dateRange of hoursSlot1" >
+            <div class="col-sm-2" >
+            <button title="Book Appointment" type="submit" class="btn btn-primary"  (click)="bookAppointment(appointmentDate, dateRange)">{{dateRange}}  </button>
+            <label  style="background-color: white">   </label>
+            <label  style="background-color: white">   </label>
+            </div>
+
+          </div>
+        </div>
+        <!--<div class="row"> Range 12 PM - 4 PM</div>-->
+        <!--<div class="row">-->
+          <!--<div *ngFor="let dateRange of hoursSlot2">-->
+            <!--<label style="background-color: green">{{dateRange}} </label>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="row"> Range 4 PM - 8 PM</div>-->
+        <!--<div class="row">-->
+          <!--<div *ngFor="let dateRange of hoursSlot3">-->
+            <!--<label style="background-color: green">{{dateRange}} </label>-->
+          <!--</div>-->
+        <!--</div>-->
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+

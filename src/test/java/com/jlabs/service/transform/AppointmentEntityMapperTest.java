@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 
 @Slf4j
@@ -24,11 +25,11 @@ class AppointmentEntityMapperTest {
  void convertAppointmentTimeToUTCTest() {
     Appointment appointment = new Appointment();
     final ZonedDateTime zonedDateTime = ZonedDateTime.parse("2022-03-21T00:00:00-06:00");
-    appointment.setAppointmentDate(zonedDateTime);
-    final ZonedDateTime appointmentDate = appointment.getAppointmentDate();
+    appointment.setAppointmentDate(LocalDate.from(zonedDateTime));
+    final ZonedDateTime appointmentDate = ZonedDateTime.from(appointment.getAppointmentDate());
     log.info(appointmentDate.toString());
 //    appointmentEntityMapper.convertAppointmentTimeToUTC(appointment);
-    final ZonedDateTime appointmentDateConverted = appointment.getAppointmentDate();
+    final ZonedDateTime appointmentDateConverted = ZonedDateTime.from(appointment.getAppointmentDate());
     log.info(appointmentDateConverted.toString());
   }
 
@@ -36,11 +37,11 @@ class AppointmentEntityMapperTest {
   void convertAppointmentTimeFromUTC() {
     AppointmentEntity appointmentEntity = new AppointmentEntity();
     final ZonedDateTime zonedDateTime = ZonedDateTime.parse("2022-03-21T06:00Z[UTC]");
-    appointmentEntity.setAppointmentDate(zonedDateTime);
-    final ZonedDateTime appointmentDate = appointmentEntity.getAppointmentDate();
+    appointmentEntity.setAppointmentDate(LocalDate.from(zonedDateTime));
+    final ZonedDateTime appointmentDate = ZonedDateTime.from(appointmentEntity.getAppointmentDate());
     log.info(appointmentDate.toString());
 //    appointmentEntityMapper.convertAppointmentTimeFromUTC(appointmentEntity);
-    final ZonedDateTime appointmentDateConverted = appointmentEntity.getAppointmentDate();
+    final ZonedDateTime appointmentDateConverted = ZonedDateTime.from(appointmentEntity.getAppointmentDate());
     log.info(appointmentDateConverted.toString());
 
 

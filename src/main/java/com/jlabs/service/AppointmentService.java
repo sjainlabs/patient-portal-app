@@ -10,6 +10,7 @@ import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +30,7 @@ public class AppointmentService {
        patientAppointments = Optional.ofNullable(appointmentPersistence.getAllAppointments());
     }
     else{
-      patientAppointments = Optional.ofNullable(appointmentPersistence.getAppointmentByDoctorNameOrAppointmentDate(doctorName,ZonedDateTime.parse(appointmentDate)));
+      patientAppointments = Optional.ofNullable(appointmentPersistence.getAppointmentByDoctorNameOrAppointmentDate(doctorName, LocalDate.parse(appointmentDate)));
     }
     List<Appointment> appointmentsList = new ArrayList<>();
     if(!patientAppointments.get().isEmpty()) {

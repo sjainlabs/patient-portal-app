@@ -132,4 +132,9 @@ export class PatientSearchComponent implements OnInit {
     this.router.navigate(['history']);
   }
 
+  createAppointment(data) {
+    this.searchDataService.setSearchData(data);
+    this.router.navigate(['appointment-create']);
+  }
+
 }
