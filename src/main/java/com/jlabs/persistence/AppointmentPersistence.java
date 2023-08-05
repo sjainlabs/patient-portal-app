@@ -48,4 +48,10 @@ public class AppointmentPersistence {
     log.debug("Retrieve appointment Entity by doctorName Or AppointmentDate: {}" , appointmentsEntityList);
     return appointmentsEntityList;
   }
+
+  public List<AppointmentEntity> getAppointmentByDoctorNameAndAppointmentDate(String doctorName, LocalDate appointmentDate){
+    List<AppointmentEntity> appointmentsEntityList = appointmentRepository.findAppointmentByDoctorNameAndAppointmentDate(doctorName,appointmentDate);
+    log.debug("Retrieve appointment Entity by doctorName Or AppointmentDate: {}" , appointmentsEntityList);
+    return appointmentsEntityList;
+  }
 }

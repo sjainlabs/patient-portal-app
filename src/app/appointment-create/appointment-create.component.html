@@ -47,7 +47,7 @@
 
       <div>
 <!--        <div class="row"> Date: {{appointmentDate}}</div>-->
-        <div class="row" *ngIf="appointmentFound===true">
+        <div class="row" *ngIf="appointmentSearched===true">
           <div *ngFor="let dateRange of hoursSlot1" >
             <div class="col-sm-2" >
             <button title="Book Appointment" type="submit" class="btn btn-primary"  (click)="bookAppointment(appointmentDate, dateRange)">{{dateRange}}  </button>

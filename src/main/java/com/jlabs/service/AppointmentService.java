@@ -30,7 +30,7 @@ public class AppointmentService {
        patientAppointments = Optional.ofNullable(appointmentPersistence.getAllAppointments());
     }
     else{
-      patientAppointments = Optional.ofNullable(appointmentPersistence.getAppointmentByDoctorNameOrAppointmentDate(doctorName, LocalDate.parse(appointmentDate)));
+      patientAppointments = Optional.ofNullable(appointmentPersistence.getAppointmentByDoctorNameAndAppointmentDate(doctorName, LocalDate.parse(appointmentDate)));
     }
     List<Appointment> appointmentsList = new ArrayList<>();
     if(!patientAppointments.get().isEmpty()) {
