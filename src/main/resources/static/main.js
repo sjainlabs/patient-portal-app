@@ -1482,8 +1482,10 @@ var PatientInfoPrintComponent = /** @class */ (function () {
         this.getSearch();
     };
     PatientInfoPrintComponent.prototype.getSearch = function () {
-        var searchData = this.searchDataService.getSearchData();
-        this.searchData1 = searchData;
+        // const searchData = this.searchDataService.getSearchData();
+        var patient_search_state = JSON.parse(localStorage.getItem('patient-search-state'));
+        this.searchData1 = patient_search_state;
+        localStorage.setItem('patient-search-state', '');
         // this.firstName = searchData.firstName;
         // this.lastName = searchData.lastName;
         // this.age = searchData.age;
@@ -1798,7 +1800,11 @@ var PatientSearchComponent = /** @class */ (function () {
     PatientSearchComponent.prototype.printPage = function (data) {
         this.searchDataService.setSearchData(data);
         this.hideLoader();
-        this.router.navigate(['print']);
+        localStorage.setItem('patient-search-state', JSON.stringify(data));
+        this.router.navigate([]).then(function (result) {
+            window.open('print', '_blank');
+        });
+        // this.router.navigate(['print']);
     };
     PatientSearchComponent.prototype.viewHistory = function (data) {
         this.searchDataService.setSearchData(data);

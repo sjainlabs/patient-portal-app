@@ -124,7 +124,11 @@ export class PatientSearchComponent implements OnInit {
   printPage(data) {
     this.searchDataService.setSearchData(data);
     this.hideLoader();
-    this.router.navigate(['print']);
+    localStorage.setItem('patient-search-state', JSON.stringify(data));
+    this.router.navigate([]).then((result) => {
+      window.open('print', '_blank');
+    });
+    // this.router.navigate(['print']);
   }
 
   viewHistory(data) {
