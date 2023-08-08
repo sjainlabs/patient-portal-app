@@ -113,7 +113,7 @@ export class AppointmentCreateComponent implements OnInit {
             }
             if (data.length > 0) {
               // let startTime = this.appointmentData[i].startTime.slice(11);
-              let hoursSlotFiltered =  hourslot.filter(o1 => !data.some(o2 =>  appointmentDate + " " + o1 === o2.startTime));
+              const hoursSlotFiltered =  this.hoursSlot1.filter(o1 => !data.some(o2 =>  appointmentDate + " " + o1 === o2.startTime));
               console.log("hoursSlotFiltered" + hoursSlotFiltered);
               this.hoursSlot1 = hoursSlotFiltered;
               this.appointmentFound = true;
