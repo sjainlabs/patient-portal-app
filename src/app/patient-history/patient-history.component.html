@@ -26,14 +26,166 @@
     <table id="visitHeader">
       <tr>
         <td>Name : {{patientVisitData[0].patientEntity.firstName}}</td>
-        <td>DOB :  {{patientVisitData[0].patientEntity.firstName}}</td>
+        <td>DOB :  {{patientVisitData[0].patientEntity.dateOfBirth}}</td>
         <td>Patient Id : {{patientVisitData[0].patientEntity.id}}</td>
       </tr>
 
     </table>
 <br>
 
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button"
+                    data-toggle="collapse" data-target="#collapseOne"
+                    (click)="isVitalsCollapsed = !isVitalsCollapsed"
+                    [attr.aria-expanded]="!isVitalsCollapsed" aria-controls="collapseOne">
+        Vitals
+      </button>
+          </h5>
+        </div>
+    <div id="collapseExample" [ngbCollapse]="isVitalsCollapsed">
+      <div class="card">
+        <div class="card-body">
 
+
+<!--          <div  class="tooltip">-->
+          <img src="assets/icons8-edit.gif" (click)="editVitals()" style="float:right " title="edit me"/>
+<!--          <span class="tooltiptext">Click me to Edit</span>-->
+<!--          </div>-->
+<!--          <i class="fas fa-edit fa-sm " (click)="editVitals()" title="Edit an item" >-->
+<!--            <span class="tooltiptext">Click me to Edit</span>-->
+<!--          </i>-->
+          <form  [formGroup]="vitalsFormData"  (ngSubmit)="onSubmitVitals()"  >
+          <div>
+            <label>Blood Pressure:
+              <input type="text" id="bloodPressure" name="bloodPressure" formControlName="bloodPressure"  class="form-control"  placeholder="130/60" [readonly]="isVitalsReadOnly">
+            </label>
+          </div>
+
+          <div>
+            <label>Temperature:
+              <input type="text" id="temperature" name="temperature" formControlName="temperature" class="form-control" placeholder="98˚C" [readonly]="isVitalsReadOnly">
+            </label>
+          </div>
+
+            <div>
+              <label>Weight:
+                <input type="text" id="weight" name="weight" formControlName="weight" class="form-control" placeholder="70kg" [readonly]="isVitalsReadOnly">
+              </label>
+            </div>
+
+            <div>
+              <label>Height:
+                <input type="text" id="height" name="height" formControlName="height" class="form-control" placeholder="" [readonly]="isVitalsReadOnly">
+              </label>
+            </div>
+
+            <div>
+              <label>BMI:
+                <input type="text" id="bmi" name="bmi" formControlName="bmi" class="form-control" placeholder="" [readonly]="isVitalsReadOnly">
+              </label>
+            </div>
+
+            <div>
+            <label>Oxygen Saturation:
+              <input type="text" id="O2Saturation" name="O2Saturation" class="form-control" formControlName="O2Saturation" placeholder="90%" [readonly]="isVitalsReadOnly">
+            </label>
+          </div>
+
+            <div>
+              <label>Pulse:
+                <input type="text" id="pulse" name="pulse" formControlName="pulse" class="form-control" placeholder="72" [readonly]="isVitalsReadOnly">
+              </label>
+            </div>
+
+            <button type="submit"
+                    [disabled]="vitalsFormData.pristine || vitalsFormData.invalid" class="btn btn-success">
+              Save
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="accordionNurseNotes">
+      <div class="card">
+        <div class="card-header" id="headingOneNurseNotes">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button"
+                    data-toggle="collapse" data-target="#collapseOne"
+                    (click)="isNurseNotesCollapsed = !isNurseNotesCollapsed"
+                    [attr.aria-expanded]="!isNurseNotesCollapsed" aria-controls="collapseOne">
+              Nurse Notes
+            </button>
+          </h5>
+        </div>
+        <div id="collapseNurseNotes" [ngbCollapse]="isNurseNotesCollapsed">
+          <div class="card">
+            <div class="card-body">
+
+
+              <!--          <div  class="tooltip">-->
+              <img src="assets/icons8-edit.gif" (click)="editNurseNotes()" style="float:right " title="edit me"/>
+              <!--          <span class="tooltiptext">Click me to Edit</span>-->
+              <!--          </div>-->
+              <!--          <i class="fas fa-edit fa-sm " (click)="editVitals()" title="Edit an item" >-->
+              <!--            <span class="tooltiptext">Click me to Edit</span>-->
+              <!--          </i>-->
+              <form [formGroup]="nurseNotesFormData" (ngSubmit)="onSubmitNurseNotes()"  >
+                <div>
+                  <label>Known Allergies:
+                    <input type="text" id="allergies" name="allergies" formControlName="allergies"  class="form-control"  placeholder="Any Known Allergies like Polen" [readonly]="isNurseNotesReadOnly">
+                  </label>
+                </div>
+
+                <div>
+                  <label>Referral From :
+                    <input type="text" id="referredFrom" name="referredFrom" formControlName="referredFrom" class="form-control" placeholder="Referred from Hospital/Doctor" [readonly]="isNurseNotesReadOnly">
+                  </label>
+                </div>
+
+                <div>
+                  <label>Current Medication:
+                    <input type="text" id="currentMedication" name="currentMedication" formControlName="currentMedication" class="form-control" placeholder="Ongoing or Current Medication" [readonly]="isNurseNotesReadOnly">
+                  </label>
+                </div>
+
+                <div>
+                  <label>Current Concern:
+                    <input type="text" id="currentConcern" name="currentConcern" formControlName="currentConcern" class="form-control" placeholder="Fever , Headeache etc" [readonly]="isNurseNotesReadOnly">
+                  </label>
+                </div>
+
+                <div>
+                  <label>Reason For Visit:
+                    <input type="text" id="reasonForVisit" name="reasonForVisit" formControlName="reasonForVisit" class="form-control" placeholder="Routice Checkup, Follow-up etc" [readonly]="isNurseNotesReadOnly">
+                  </label>
+                </div>
+
+                <div>
+                  <label>Additional Notes:
+                    <input type="text" id="additonalNurseNotes" name="additonalNurseNotes" formControlName="additonalNurseNotes" class="form-control" placeholder="" [readonly]="isNurseNotesReadOnly">
+                  </label>
+                </div>
+
+
+
+                <button type="submit"
+                        [disabled]="nurseNotesFormData.pristine || nurseNotesFormData.invalid" class="btn btn-success">
+                  Save
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
 
     <table id="visits" class="table">
       <thead>
@@ -59,17 +211,31 @@
   </div>
 
     <div *ngIf="newVisitFlag && error==''">
-      <form [formGroup]="visitFormData"
-            (ngSubmit)="onSubmitVisit(visitFormData.value)" novalidate>
+      <form  [formGroup]="visitFormData"
+            (ngSubmit)="onSubmitVisit(visitFormData.value)" >
+
+
         <div>
-          <label>Symptoms:
-            <textarea type="text"  formControlName="symptoms" class="form-control" rows="5" cols="50" placeholder="Fever,Cold ,Nausea etc..."></textarea>
+          <label>Symptoms * :
+            <textarea type="text" id="symptoms" name="symptoms" formControlName="symptoms" required class="form-control" rows="5" cols="50" placeholder="Fever,Cold ,Nausea etc..." ></textarea>
           </label>
+          <div *ngIf="visitFormData.controls['symptoms'].invalid && (visitFormData.controls['symptoms'].dirty
+             || visitFormData.controls['symptoms'].touched)" class="alert alert-danger">
+            <div *ngIf="visitFormData.controls['symptoms'].errors.required">
+              Symptoms  is required.
+            </div>
+          </div>
         </div>
 
         <div>
-          <label>Prescription:
-            <textarea type="text"  formControlName="prescription"  class="form-control" rows="5" cols="50" placeholder="paracetamol, ibuprofen etc"></textarea>
+          <label>Prescription *:
+            <textarea type="text" id="prescription" name="prescription"  formControlName="prescription"  required class="form-control" rows="5" cols="50" placeholder="paracetamol, ibuprofen etc" ></textarea>
+            <div *ngIf="visitFormData.controls['prescription'].invalid && (visitFormData.controls['prescription'].dirty
+             || visitFormData.controls['prescription'].touched)" class="alert alert-danger">
+              <div *ngIf="visitFormData.controls['prescription'].errors.required">
+                prescription  is required.
+              </div>
+            </div>
           </label>
         </div>
 

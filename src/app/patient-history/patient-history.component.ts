@@ -15,7 +15,7 @@ import {PatientHelper} from "../helper/PatientHelper";
 })
 export class PatientHistoryComponent implements OnInit {
   searchData1;
-  patientVisitData: VisitData[];
+  patientVisitData: VisitData[]=[];
   patientId: number;
   error;
   ERRORMESSAGE= 'System is Temporary unavailable, Please Try Again!';
@@ -23,24 +23,65 @@ export class PatientHistoryComponent implements OnInit {
   newVisitFlag: boolean ;
   visitFormData :  FormGroup;
   patientHelper: PatientHelper;
+  isVitalsCollapsed = true;
+  isNurseNotesCollapsed = true;
+  isVitalsReadOnly: boolean;
+  isNurseNotesReadOnly: boolean;
+  vitalsFormData: FormGroup;
+  nurseNotesFormData: FormGroup;
 
   constructor(private searchDataService: SearchDataServiceService,
               private patientVisitSearchService: PatientVisitSearchService,
               private fb: FormBuilder) {
     this.patientId=1;
     this.createForm();
+    this.createFormVitals();
+    this.createFormNurseNotes();
     this.patientHelper = new PatientHelper();
+    this.isVitalsReadOnly = true;
+    this.isNurseNotesReadOnly = true;
   }
 
-  ngOnInit() {
+  ngAfterContentInit(){
     this.getPatientVisit();
   }
 
+  ngOnInit() {
+
+  }
+
+  createFormVitals() {
+    this.vitalsFormData = this.fb.group({
+      bloodPressure: new FormControl(''),
+      temperature: new FormControl(''),
+      weight: new FormControl(''),
+      bmi: new FormControl(''),
+      height: new FormControl(''),
+      O2Saturation: new FormControl(''),
+      pulse: new FormControl(''),
+
+
+    });
+  }
+
+  createFormNurseNotes() {
+    this.nurseNotesFormData = this.fb.group({
+      allergies: new FormControl(''),
+      referredFrom: new FormControl(''),
+      currentMedication: new FormControl(''),
+      currentConcern: new FormControl(''),
+      reasonForVisit: new FormControl(''),
+      additonalNurseNotes: new FormControl('')
+
+    });
+  }
+
+
   createForm() {
     this.visitFormData = this.fb.group({
-      symptoms: new FormControl(''),
-      prescription: new FormControl(''),
-      age: new FormControl(''),
+      symptoms: new FormControl('',Validators.required),
+      prescription: new FormControl('',Validators.required),
+
       followUpDays: new FormControl(''),
       notes: new FormControl('')
 
@@ -122,5 +163,30 @@ export class PatientHistoryComponent implements OnInit {
         this.hideLoader();
       }
       );
+  }
+
+  editVitals() {
+    this.isVitalsReadOnly = false;
+  }
+
+  editNurseNotes() {
+    this.isNurseNotesReadOnly = false;
+  }
+
+  onSubmitVitals() {
+    this.showLoader();
+    console.log(this.vitalsFormData.value);
+    this.isVitalsReadOnly=true;
+    this.isVitalsCollapsed=true;
+    this.hideLoader();
+  }
+
+  onSubmitNurseNotes() {
+    this.showLoader();
+    console.log(this.nurseNotesFormData.value);
+    this.isNurseNotesReadOnly=true;
+    this.isNurseNotesCollapsed=true;
+    this.hideLoader();
+
   }
 }

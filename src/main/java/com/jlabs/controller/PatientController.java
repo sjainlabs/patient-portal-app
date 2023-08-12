@@ -94,8 +94,8 @@ public class PatientController {
   @PostMapping("/visit")
   @ResponseBody
   public ResponseEntity<String> createVisitInfo(@RequestBody Visit visit) {
-    log.info("patient request");
-    log.debug("patient request {}", visit);
+    log.info("Visit request");
+    log.debug("Visit request {}", visit);
     final String visit1 = visitService.createVisit(visit);
     return new ResponseEntity<>(visit1, HttpStatus.OK);
   }
