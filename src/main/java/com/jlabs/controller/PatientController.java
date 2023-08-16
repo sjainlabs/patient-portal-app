@@ -1,25 +1,19 @@
 package com.jlabs.controller;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.jlabs.model.Doctor;
-import com.jlabs.model.Patient;
-import com.jlabs.model.Appointment;
-import com.jlabs.model.Visit;
+import com.jlabs.model.*;
+import com.jlabs.persistence.entity.CurrentMedicalEntity;
 import com.jlabs.persistence.entity.VisitEntity;
-import com.jlabs.service.AppointmentService;
-import com.jlabs.service.DoctorService;
-import com.jlabs.service.PatientService;
-import com.jlabs.service.VisitService;
+import com.jlabs.persistence.entity.VitalsEntity;
+import com.jlabs.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,6 +31,12 @@ public class PatientController {
 
   @Autowired
   VisitService visitService;
+
+  @Autowired
+  VitalService vitalService;
+
+  @Autowired
+  CurrentMedicalService currentMedicalService;
 
   @Autowired
   AppointmentService appointmentService;
@@ -98,6 +98,38 @@ public class PatientController {
     log.debug("Visit request {}", visit);
     final String visit1 = visitService.createVisit(visit);
     return new ResponseEntity<>(visit1, HttpStatus.OK);
+  }
+
+  @GetMapping("/vital")
+  @ResponseBody
+  public ResponseEntity<Optional> getVitalMedicalInfo(@RequestParam(value = "patientId", required = false) int patientId) {
+    final Optional<List<VitalsEntity>> vitalsMedicalEntities = vitalService.getVitalMedical(patientId);
+    return new ResponseEntity<>(vitalsMedicalEntities, HttpStatus.OK);
+  }
+
+  @PostMapping("/vital")
+  @ResponseBody
+  public ResponseEntity<String> createVitalMedicalInfo(@RequestBody Vital vital) {
+    log.info("Vital-Medical request");
+    log.debug("Vital-Medical request {}", vital);
+    final String vitalMedical1 = vitalService.createVitalMedical(vital);
+    return new ResponseEntity<>(vitalMedical1, HttpStatus.OK);
+  }
+
+  @GetMapping("/current-medical")
+  @ResponseBody
+  public ResponseEntity<Optional> getCurrenMedicalInfo(@RequestParam(value = "patientId", required = false) int patientId) {
+    final Optional<List<CurrentMedicalEntity>> currentMedicalEntities = currentMedicalService.getCurrentMedical(patientId);
+    return new ResponseEntity<>(currentMedicalEntities, HttpStatus.OK);
+  }
+
+  @PostMapping("/current-medical")
+  @ResponseBody
+  public ResponseEntity<String> createCurrentMedicalInfo(@RequestBody CurrentMedical currentMedical) {
+    log.info("Current-Medical request");
+    log.debug("Current-Medical request {}", currentMedical);
+    final String medicalServiceCurrentMedical = currentMedicalService.createCurrentMedical(currentMedical);
+    return new ResponseEntity<>(medicalServiceCurrentMedical, HttpStatus.OK);
   }
 
   @GetMapping("/appointments")
