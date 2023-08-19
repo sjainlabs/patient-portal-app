@@ -24,7 +24,7 @@ export class PatientHistoryComponent implements OnInit {
   error;
   vitalError;
   ERRORMESSAGE= 'System is Temporary unavailable, Please Try Again!';
-  DATANOTFOUND= 'No Visits Found for the Patient!';
+  DATANOTFOUND= 'No Dr. Consult Found for the Patient!';
   newVisitFlag: boolean ;
   visitFormData :  FormGroup;
   patientHelper: PatientHelper;
