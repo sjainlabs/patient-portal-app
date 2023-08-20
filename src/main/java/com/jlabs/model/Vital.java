@@ -16,7 +16,7 @@ public class Vital {
     private String weight;
     private String bmi;
     private String height;
-    private String O2Saturation;
+    private String o2Saturation;
     private String pulse;
 
 

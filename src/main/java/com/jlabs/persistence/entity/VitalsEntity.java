@@ -33,8 +33,8 @@ public class VitalsEntity {
   private String bmi;
   @Column(name = "HEIGHT")
   private String height;
-  @Column(name = "O2Saturation")
-  private String O2Saturation;
+  @Column(name = "O2_Saturation")
+  private String o2Saturation;
   @Column(name = "PULSE")
   private String pulse;
   @Column(name="CREATED_AT",updatable = false)

@@ -72,7 +72,7 @@ export class PatientHistoryComponent implements OnInit {
       weight: new FormControl(''),
       bmi: new FormControl(''),
       height: new FormControl(''),
-      O2Saturation: new FormControl(''),
+      o2Saturation: new FormControl(''),
       pulse: new FormControl(''),
 
 
