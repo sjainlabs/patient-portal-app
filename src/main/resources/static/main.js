@@ -1107,6 +1107,33 @@ var AppointmentData = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/model/CurrentMedicalData.ts":
+/*!*********************************************!*\
+  !*** ./src/app/model/CurrentMedicalData.ts ***!
+  \*********************************************/
+/*! exports provided: CurrentMedicalData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CurrentMedicalData", function() { return CurrentMedicalData; });
+var CurrentMedicalData = /** @class */ (function () {
+    function CurrentMedicalData(patient, allergies, referredFrom, currentMedication, currentConcern, reasonForVisit, additionalNurseNotes) {
+        this.patient = patient;
+        this.allergies = allergies;
+        this.referredFrom = referredFrom;
+        this.currentMedication = currentMedication;
+        this.currentConcern = currentConcern;
+        this.reasonForVisit = reasonForVisit;
+        this.additionalNurseNotes = additionalNurseNotes;
+    }
+    return CurrentMedicalData;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/model/DoctorData.ts":
 /*!*************************************!*\
   !*** ./src/app/model/DoctorData.ts ***!
@@ -1141,6 +1168,34 @@ var PatientData = /** @class */ (function () {
     function PatientData() {
     }
     return PatientData;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/VitalData.ts":
+/*!************************************!*\
+  !*** ./src/app/model/VitalData.ts ***!
+  \************************************/
+/*! exports provided: VitalData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VitalData", function() { return VitalData; });
+var VitalData = /** @class */ (function () {
+    function VitalData(patient, bloodPressure, temperature, weight, bmi, height, O2Saturation, pulse) {
+        this.patient = patient;
+        this.bloodPressure = bloodPressure;
+        this.temperature = temperature;
+        this.weight = weight;
+        this.bmi = bmi;
+        this.height = height;
+        this.O2Saturation = O2Saturation;
+        this.pulse = pulse;
+    }
+    return VitalData;
 }());
 
 
@@ -1292,7 +1347,7 @@ module.exports = "#visits {\n  font-family: Arial, Helvetica, sans-serif;\n  bor
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n\n<app-patient-header></app-patient-header>\n\n<br>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div id=\"mainVisitHeader\" class=\" container \">\n    <div id=\"newVisit\">\n    <label style=\"color: red\"> {{error}}</label>\n\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\n      <br>\n      <div *ngIf=\"!newVisitFlag\">\n        <span>Please Click to Add a new Dr. Consult Visit- </span>\n\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"addVisit()\">Consultation </button>\n        <!--      </a>-->\n      </div>\n  </div>\n\n  <div  *ngIf=\"error=='' && !newVisitFlag\">\n    <table id=\"visitHeader\">\n      <tr>\n        <td>Name : {{patientVisitData[0].patientEntity.firstName}}</td>\n        <td>DOB :  {{patientVisitData[0].patientEntity.dateOfBirth}}</td>\n        <td>Patient Id : {{patientVisitData[0].patientEntity.id}}</td>\n      </tr>\n\n    </table>\n<br>\n\n\n\n    <div class=\"p-2\">\n      <div class=\"card\">\n        <div class=\"card-header\" (click)=\"isVitalsCollapsed=!isVitalsCollapsed\" [attr.aria-expanded]=\"!isVitalsCollapsed\"\n             aria-controls=\"collapseExample1\">\n          Vital\n        </div>\n        <div #collapse=\"ngbCollapse\" [(ngbCollapse)]=\"isVitalsCollapsed\">\n          <div class=\"card-body\">\n            <form  [formGroup]=\"vitalsFormData\"  (ngSubmit)=\"onSubmitVitals()\"  >\n              <div>\n                <label>Blood Pressure:\n                  <input type=\"text\" id=\"bloodPressure\" name=\"bloodPressure\" formControlName=\"bloodPressure\" class=\"form-control\" placeholder=\"130/60\" [value]=\"patientVitalData[0].bloodPressure\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>Temperature:\n                  <input type=\"text\" id=\"temperature\" name=\"temperature\" formControlName=\"temperature\" class=\"form-control\" placeholder=\"98˚C\" [value]=\"patientVitalData[0].temperature\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>Weight:\n                  <input type=\"text\" id=\"weight\" name=\"weight\" formControlName=\"weight\" class=\"form-control\" placeholder=\"70kg\" [value]=\"patientVitalData[0].weight\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>Height:\n                  <input type=\"text\" id=\"height\" name=\"height\" formControlName=\"height\" class=\"form-control\" placeholder=\"\" [value]=\"patientVitalData[0].height\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>BMI:\n                  <input type=\"text\" id=\"bmi\" name=\"bmi\" formControlName=\"bmi\" class=\"form-control\" placeholder=\"\" [value]=\"patientVitalData[0].bmi\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>Oxygen Saturation:\n                  <input type=\"text\" id=\"O2Saturation\" name=\"O2Saturation\" class=\"form-control\" formControlName=\"O2Saturation\" placeholder=\"90%\" [value]=\"patientVitalData[0].O2Saturation\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>Pulse:\n                  <input type=\"text\" id=\"pulse\" name=\"pulse\" formControlName=\"pulse\" class=\"form-control\" placeholder=\"72\" [value]=\"patientVitalData[0].pulse\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <button type=\"submit\"\n                      [disabled]=\"vitalsFormData.pristine || vitalsFormData.invalid\" class=\"btn btn-success\">\n                Save\n              </button>\n            </form>\n\n          </div>\n        </div>\n      </div>\n\n      <Br>\n      <div class=\"card\">\n        <div class=\"card-header\" (click)=\"isNurseNotesCollapsed=!isNurseNotesCollapsed\"\n             [attr.aria-expanded]=\"!isNurseNotesCollapsed\"\n             aria-controls=\"collapseExample2\">\n          Nurse Notes\n        </div>\n        <div #collapse=\"ngbCollapse\" [ngbCollapse]=\"isNurseNotesCollapsed\">\n          <div class=\"card-body\">\n              <img src=\"assets/icons8-edit.gif\" (click)=\"editNurseNotes()\" style=\"float:right \" title=\"edit me\"/>\n              <form [formGroup]=\"nurseNotesFormData\" (ngSubmit)=\"onSubmitNurseNotes()\"  >\n                <div>\n                  <label>Known Allergies:\n                    <input type=\"text\" id=\"allergies\" name=\"allergies\" formControlName=\"allergies\" class=\"form-control\" placeholder=\"Any Known Allergies like Pollen\" [value]=\"currentMedicalData[0].allergies\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n                <div>\n                  <label>Referral From :\n                    <input type=\"text\" id=\"referredFrom\" name=\"referredFrom\" formControlName=\"referredFrom\" class=\"form-control\" placeholder=\"Referred from Hospital/Doctor\" [value]=\"currentMedicalData[0].referredFrom\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n                <div>\n                  <label>Current Medication:\n                    <input type=\"text\" id=\"currentMedication\" name=\"currentMedication\" formControlName=\"currentMedication\" class=\"form-control\" placeholder=\"Ongoing or Current Medication\" [value]=\"currentMedicalData[0].currentMedication\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n                <div>\n                  <label>Current Concern:\n                    <input type=\"text\" id=\"currentConcern\" name=\"currentConcern\" formControlName=\"currentConcern\" class=\"form-control\" placeholder=\"Fever , Headache etc\" [value]=\"currentMedicalData[0].currentConcern\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n                <div>\n                  <label>Reason For Visit:\n                    <input type=\"text\" id=\"reasonForVisit\" name=\"reasonForVisit\" formControlName=\"reasonForVisit\" class=\"form-control\" placeholder=\"Routine Checkup, Follow-up etc\" [value]=\"currentMedicalData[0].reasonForVisit\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n                <div>\n                  <label>Additional Notes:\n                    <input type=\"text\" id=\"additionalNurseNotes\" name=\"additionalNurseNotes\" formControlName=\"additionalNurseNotes\" class=\"form-control\" placeholder=\"\" [value]=\"currentMedicalData[0].reasonForVisit\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n\n\n                <button type=\"submit\"\n                        [disabled]=\"nurseNotesFormData.pristine || nurseNotesFormData.invalid\" class=\"btn btn-success\">\n                  Save\n                </button>\n              </form>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <br>\n\n    <table id=\"visits\" class=\"table\">\n      <thead>\n      <tr>\n        <th>Visit Date</th>\n        <th>Symptoms</th>\n        <th>Prescription</th>\n        <th>FollowUp Date</th>\n        <th>Notes</th>\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let visit of patientVisitData\">\n        <td>{{visit.visitDate}} </td>\n        <td>{{visit.symptoms}} </td>\n        <td>{{visit.prescription}} </td>\n        <td >{{visit.followUpDate}} </td>\n        <td>{{visit.notes}} </td>\n      </tr>\n\n      </tbody>\n    </table>\n  </div>\n\n\n    <div *ngIf=\"newVisitFlag && error==''\">\n      <form  [formGroup]=\"visitFormData\"\n            (ngSubmit)=\"onSubmitVisit(visitFormData.value)\" >\n\n\n        <div>\n          <label>Symptoms * :\n            <textarea type=\"text\" id=\"symptoms\" name=\"symptoms\" formControlName=\"symptoms\" required class=\"form-control\" rows=\"5\" cols=\"50\" placeholder=\"Fever,Cold ,Nausea etc...\" ></textarea>\n          </label>\n          <div *ngIf=\"visitFormData.controls['symptoms'].invalid && (visitFormData.controls['symptoms'].dirty\n             || visitFormData.controls['symptoms'].touched)\" class=\"alert alert-danger\">\n            <div *ngIf=\"visitFormData.controls['symptoms'].errors.required\">\n              Symptoms  is required.\n            </div>\n          </div>\n        </div>\n\n        <div>\n          <label>Prescription *:\n            <textarea type=\"text\" id=\"prescription\" name=\"prescription\"  formControlName=\"prescription\"  required class=\"form-control\" rows=\"5\" cols=\"50\" placeholder=\"paracetamol, ibuprofen etc\" ></textarea>\n            <div *ngIf=\"visitFormData.controls['prescription'].invalid && (visitFormData.controls['prescription'].dirty\n             || visitFormData.controls['prescription'].touched)\" class=\"alert alert-danger\">\n              <div *ngIf=\"visitFormData.controls['prescription'].errors.required\">\n                prescription  is required.\n              </div>\n            </div>\n          </label>\n        </div>\n\n        <div>\n          <label>Followup Days:\n            <input type=\"text\" formControlName=\"followUpDays\" class=\"form-control\" (keypress)=\"patientHelper.numberOnly($event)\" placeholder=\"7\">\n          </label>\n        </div>\n\n        <div>\n          <label>Notes:\n            <textarea type=\"text\" formControlName=\"notes\" class=\"form-control\"  rows=\"3\" cols=\"50\" placeholder=\"Additiona Notes - Blood work,X-Ray needed, Referral to a speaciaist etc\">\n            </textarea>\n          </label>\n        </div>\n\n        <button type=\"submit\"\n                [disabled]=\"visitFormData.pristine || visitFormData.invalid\" class=\"btn btn-success\">\n          Submit\n        </button>\n\n      </form>\n  </div>\n</div>\n\n\n"
+module.exports = "<div>\n\n<app-patient-header></app-patient-header>\n\n<br>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div id=\"mainVisitHeader\" class=\" container \">\n    <div id=\"newVisit\">\n    <label style=\"color: red\"> {{error}}</label>\n\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\n      <br>\n      <div *ngIf=\"!newVisitFlag\">\n        <span>Please Click to Add a new Dr. Consult Visit- </span>\n\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"addVisit()\">Consultation </button>\n        <!--      </a>-->\n      </div>\n  </div>\n\n  <div  >\n    <table id=\"visitHeader\">\n      <tr>\n        <td>Name : {{ searchData1.firstName }}</td>\n        <td>DOB :  {{searchData1.dateOfBirth}}</td>\n        <td>Patient Id : {{searchData1.id}}</td>\n      </tr>\n\n    </table>\n  </div>\n<br>\n\n\n\n    <div class=\"p-2\">\n      <div class=\"card\">\n        <div class=\"card-header\" (click)=\"isVitalsCollapsed=!isVitalsCollapsed\" [attr.aria-expanded]=\"!isVitalsCollapsed\"\n             aria-controls=\"collapseExample1\">\n          Vital\n        </div>\n        <div  #collapse=\"ngbCollapse\" [(ngbCollapse)]=\"isVitalsCollapsed\">\n          <div class=\"card-body\">\n            <img src=\"assets/icons8-edit.gif\" (click)=\"editVitals()\" style=\"float:right \" title=\"edit me\"/>\n            <form  [formGroup]=\"vitalsFormData\"  (ngSubmit)=\"onSubmitVitals()\"  >\n              <div>\n                <label>Blood Pressure:\n                  <input type=\"text\" id=\"bloodPressure\" name=\"bloodPressure\" formControlName=\"bloodPressure\" class=\"form-control\" placeholder=\"130/60\" [value]=\"patientVitalData.bloodPressure\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>Temperature:\n                  <input type=\"text\" id=\"temperature\" name=\"temperature\" formControlName=\"temperature\" class=\"form-control\" placeholder=\"98˚C\" [value]=\"patientVitalData.temperature\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>Weight:\n                  <input type=\"text\" id=\"weight\" name=\"weight\" formControlName=\"weight\" class=\"form-control\" placeholder=\"70kg\" [value]=\"patientVitalData.weight\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>Height:\n                  <input type=\"text\" id=\"height\" name=\"height\" formControlName=\"height\" class=\"form-control\" placeholder=\"\" [value]=\"patientVitalData.height\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>BMI:\n                  <input type=\"text\" id=\"bmi\" name=\"bmi\" formControlName=\"bmi\" class=\"form-control\" placeholder=\"\" [value]=\"patientVitalData.bmi\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>Oxygen Saturation:\n                  <input type=\"text\" id=\"O2Saturation\" name=\"O2Saturation\" class=\"form-control\" formControlName=\"O2Saturation\" placeholder=\"90%\" [value]=\"patientVitalData.O2Saturation\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>Pulse:\n                  <input type=\"text\" id=\"pulse\" name=\"pulse\" formControlName=\"pulse\" class=\"form-control\" placeholder=\"72\" [value]=\"patientVitalData.pulse\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <button type=\"submit\"\n                      [disabled]=\"vitalsFormData.pristine || vitalsFormData.invalid\" class=\"btn btn-success\">\n                Save\n              </button>\n            </form>\n\n          </div>\n        </div>\n      </div>\n\n      <Br>\n      <div class=\"card\">\n        <div class=\"card-header\" (click)=\"isNurseNotesCollapsed=!isNurseNotesCollapsed\"\n             [attr.aria-expanded]=\"!isNurseNotesCollapsed\"\n             aria-controls=\"collapseExample2\">\n          Nurse Notes\n        </div>\n        <div #collapse=\"ngbCollapse\" [(ngbCollapse)]=\"isNurseNotesCollapsed\">\n          <div class=\"card-body\">\n              <img src=\"assets/icons8-edit.gif\" (click)=\"editNurseNotes()\" style=\"float:right \" title=\"edit me\"/>\n              <form [formGroup]=\"nurseNotesFormData\" (ngSubmit)=\"onSubmitNurseNotes()\"  >\n                <div>\n                  <label>Known Allergies:\n                    <input type=\"text\" id=\"allergies\" name=\"allergies\" formControlName=\"allergies\" class=\"form-control\" placeholder=\"Any Known Allergies like Pollen\" [value]=\"currentMedicalData.allergies\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n                <div>\n                  <label>Referral From :\n                    <input type=\"text\" id=\"referredFrom\" name=\"referredFrom\" formControlName=\"referredFrom\" class=\"form-control\" placeholder=\"Referred from Hospital/Doctor\" [value]=\"currentMedicalData.referredFrom\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n                <div>\n                  <label>Current Medication:\n                    <input type=\"text\" id=\"currentMedication\" name=\"currentMedication\" formControlName=\"currentMedication\" class=\"form-control\" placeholder=\"Ongoing or Current Medication\" [value]=\"currentMedicalData.currentMedication\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n                <div>\n                  <label>Current Concern:\n                    <input type=\"text\" id=\"currentConcern\" name=\"currentConcern\" formControlName=\"currentConcern\" class=\"form-control\" placeholder=\"Fever , Headache etc\" [value]=\"currentMedicalData.currentConcern\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n                <div>\n                  <label>Reason For Visit:\n                    <input type=\"text\" id=\"reasonForVisit\" name=\"reasonForVisit\" formControlName=\"reasonForVisit\" class=\"form-control\" placeholder=\"Routine Checkup, Follow-up etc\" [value]=\"currentMedicalData.reasonForVisit\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n                <div>\n                  <label>Additional Notes:\n                    <input type=\"text\" id=\"additionalNurseNotes\" name=\"additionalNurseNotes\" formControlName=\"additionalNurseNotes\" class=\"form-control\" placeholder=\"\" [value]=\"currentMedicalData.reasonForVisit\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n\n\n                <button type=\"submit\"\n                        [disabled]=\"nurseNotesFormData.pristine || nurseNotesFormData.invalid\" class=\"btn btn-success\">\n                  Save\n                </button>\n              </form>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <br>\n\n    <div  *ngIf=\"error=='' && !newVisitFlag\">\n    <table id=\"visits\" class=\"table\" >\n      <thead>\n      <tr>\n        <th>Visit Date</th>\n        <th>Symptoms</th>\n        <th>Prescription</th>\n        <th>FollowUp Date</th>\n        <th>Notes</th>\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let visit of patientVisitData\">\n        <td>{{visit.visitDate}} </td>\n        <td>{{visit.symptoms}} </td>\n        <td>{{visit.prescription}} </td>\n        <td >{{visit.followUpDate}} </td>\n        <td>{{visit.notes}} </td>\n      </tr>\n\n      </tbody>\n    </table>\n    </div>\n  </div>\n\n\n    <div *ngIf=\"newVisitFlag && error==''\">\n      <form  [formGroup]=\"visitFormData\"\n            (ngSubmit)=\"onSubmitVisit(visitFormData.value)\" >\n\n\n        <div>\n          <label>Symptoms * :\n            <textarea type=\"text\" id=\"symptoms\" name=\"symptoms\" formControlName=\"symptoms\" required class=\"form-control\" rows=\"5\" cols=\"50\" placeholder=\"Fever,Cold ,Nausea etc...\" ></textarea>\n          </label>\n          <div *ngIf=\"visitFormData.controls['symptoms'].invalid && (visitFormData.controls['symptoms'].dirty\n             || visitFormData.controls['symptoms'].touched)\" class=\"alert alert-danger\">\n            <div *ngIf=\"visitFormData.controls['symptoms'].errors.required\">\n              Symptoms  is required.\n            </div>\n          </div>\n        </div>\n\n        <div>\n          <label>Prescription *:\n            <textarea type=\"text\" id=\"prescription\" name=\"prescription\"  formControlName=\"prescription\"  required class=\"form-control\" rows=\"5\" cols=\"50\" placeholder=\"paracetamol, ibuprofen etc\" ></textarea>\n            <div *ngIf=\"visitFormData.controls['prescription'].invalid && (visitFormData.controls['prescription'].dirty\n             || visitFormData.controls['prescription'].touched)\" class=\"alert alert-danger\">\n              <div *ngIf=\"visitFormData.controls['prescription'].errors.required\">\n                prescription  is required.\n              </div>\n            </div>\n          </label>\n        </div>\n\n        <div>\n          <label>Followup Days:\n            <input type=\"text\" formControlName=\"followUpDays\" class=\"form-control\" (keypress)=\"patientHelper.numberOnly($event)\" placeholder=\"7\">\n          </label>\n        </div>\n\n        <div>\n          <label>Notes:\n            <textarea type=\"text\" formControlName=\"notes\" class=\"form-control\"  rows=\"3\" cols=\"50\" placeholder=\"Additiona Notes - Blood work,X-Ray needed, Referral to a speaciaist etc\">\n            </textarea>\n          </label>\n        </div>\n\n        <button type=\"submit\"\n                [disabled]=\"visitFormData.pristine || visitFormData.invalid\" class=\"btn btn-success\">\n          Submit\n        </button>\n\n      </form>\n  </div>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -1312,8 +1367,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _service_patient_visit_search_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/patient-visit-search.service */ "./src/app/service/patient-visit-search.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _helper_PatientHelper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helper/PatientHelper */ "./src/app/helper/PatientHelper.ts");
-/* harmony import */ var _service_vital_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../service/vital.service */ "./src/app/service/vital.service.ts");
-/* harmony import */ var _service_current_medical_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../service/current-medical.service */ "./src/app/service/current-medical.service.ts");
+/* harmony import */ var _model_VitalData__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../model/VitalData */ "./src/app/model/VitalData.ts");
+/* harmony import */ var _model_CurrentMedicalData__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../model/CurrentMedicalData */ "./src/app/model/CurrentMedicalData.ts");
+/* harmony import */ var _service_vital_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../service/vital.service */ "./src/app/service/vital.service.ts");
+/* harmony import */ var _service_current_medical_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../service/current-medical.service */ "./src/app/service/current-medical.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1331,6 +1388,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var PatientHistoryComponent = /** @class */ (function () {
     function PatientHistoryComponent(searchDataService, patientVisitSearchService, vitalService, currentMedicalService, fb) {
         this.searchDataService = searchDataService;
@@ -1339,10 +1398,8 @@ var PatientHistoryComponent = /** @class */ (function () {
         this.currentMedicalService = currentMedicalService;
         this.fb = fb;
         this.patientVisitData = [];
-        this.patientVitalData = [];
-        this.currentMedicalData = [];
         this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
-        this.DATANOTFOUND = 'No Dr. Consult Found for the Patient!';
+        this.DATANOTFOUND = 'Past Dr. Consult - Not Found for the Patient!';
         this.isVitalsCollapsed = true;
         this.isNurseNotesCollapsed = true;
         this.isCollapsed = false;
@@ -1354,8 +1411,8 @@ var PatientHistoryComponent = /** @class */ (function () {
         this.patientHelper = new _helper_PatientHelper__WEBPACK_IMPORTED_MODULE_5__["PatientHelper"]();
         this.isVitalsReadOnly = true;
         this.isNurseNotesReadOnly = true;
-        var searchData1 = this.getPatientDataFromSearch();
-        this.patientId = Number(searchData1.id);
+        this.searchData1 = this.getPatientDataFromSearch();
+        this.patientId = Number(this.searchData1.id);
     }
     PatientHistoryComponent.prototype.ngAfterContentInit = function () {
         this.getPatientVisit();
@@ -1461,7 +1518,7 @@ var PatientHistoryComponent = /** @class */ (function () {
         this.showLoader();
         console.log("in getPatientMedicalVital");
         var patientId = Number(this.patientId);
-        this.patientVitalData = [];
+        this.patientVitalData = new _model_VitalData__WEBPACK_IMPORTED_MODULE_6__["VitalData"](null, "", "", "", "", "", "", "");
         this.vitalError = '';
         this.vitalService.searchVitalForPatientId(patientId)
             .subscribe(function (dataVital) {
@@ -1470,9 +1527,9 @@ var PatientHistoryComponent = /** @class */ (function () {
                 _this.vitalError = _this.DATANOTFOUND;
             }
             else {
-                for (var i = 0; i < dataVital.length; i++) {
-                    _this.patientVitalData.push(dataVital[i]);
-                }
+                // for (let i = 0; i < dataVital.length; i++) {
+                _this.patientVitalData = (dataVital[0]);
+                // }
             }
             _this.hideLoader();
         }
@@ -1488,7 +1545,7 @@ var PatientHistoryComponent = /** @class */ (function () {
         this.showLoader();
         console.log("in getPatientCurrentMedical");
         var patientId = Number(this.patientId);
-        this.currentMedicalData = [];
+        this.currentMedicalData = new _model_CurrentMedicalData__WEBPACK_IMPORTED_MODULE_7__["CurrentMedicalData"](null, "", "", "", "", "", "");
         this.vitalError = '';
         this.currentMedicalService.searchCurrentMedicalForPatientId(patientId)
             .subscribe(function (dataCurrentMedical) {
@@ -1497,9 +1554,9 @@ var PatientHistoryComponent = /** @class */ (function () {
                 _this.vitalError = _this.DATANOTFOUND;
             }
             else {
-                for (var i = 0; i < dataCurrentMedical.length; i++) {
-                    _this.currentMedicalData.push(dataCurrentMedical[i]);
-                }
+                // for (let i = 0; i < dataCurrentMedical.length; i++) {
+                _this.currentMedicalData = dataCurrentMedical[0];
+                // }
             }
             _this.hideLoader();
         }
@@ -1511,10 +1568,10 @@ var PatientHistoryComponent = /** @class */ (function () {
         ;
     };
     PatientHistoryComponent.prototype.editVitals = function () {
-        this.isVitalsReadOnly = false;
+        this.isVitalsReadOnly = !this.isVitalsReadOnly;
     };
     PatientHistoryComponent.prototype.editNurseNotes = function () {
-        this.isNurseNotesReadOnly = false;
+        this.isNurseNotesReadOnly = !this.isNurseNotesReadOnly;
     };
     PatientHistoryComponent.prototype.onSubmitVitals = function () {
         this.showLoader();
@@ -1566,8 +1623,8 @@ var PatientHistoryComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_service_search_data_service_service__WEBPACK_IMPORTED_MODULE_1__["SearchDataServiceService"],
             _service_patient_visit_search_service__WEBPACK_IMPORTED_MODULE_3__["PatientVisitSearchService"],
-            _service_vital_service__WEBPACK_IMPORTED_MODULE_6__["VitalService"],
-            _service_current_medical_service__WEBPACK_IMPORTED_MODULE_7__["CurrentMedicalService"],
+            _service_vital_service__WEBPACK_IMPORTED_MODULE_8__["VitalService"],
+            _service_current_medical_service__WEBPACK_IMPORTED_MODULE_9__["CurrentMedicalService"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"]])
     ], PatientHistoryComponent);
     return PatientHistoryComponent;
@@ -1876,7 +1933,7 @@ var PatientSearchComponent = /** @class */ (function () {
         this.searchDataService = searchDataService;
         this.searchService = searchService;
         this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
-        this.DATANOTFOUND = 'Data Not Found - One or the other Search Criteria entered is not correct or the Patient needs to be Registered!';
+        this.DATANOTFOUND = 'Patient Registration is Not Found or a Search Criteria entered is not correct!';
         this.Mandatory = "One of the below field is mandatory";
         this.totalDatesOfBirth = [];
         this.totalMonthOfBirth = [];

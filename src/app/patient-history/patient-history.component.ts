@@ -16,20 +16,20 @@ import {CurrentMedicalService} from "../service/current-medical.service";
   styleUrls: ['./patient-history.component.css']
 })
 export class PatientHistoryComponent implements OnInit {
-  searchData1;
+  searchData1: PatientData;
   patientVisitData: VisitData[]=[];
-  patientVitalData: VitalData[]=[];
-  currentMedicalData: CurrentMedicalData[]=[];
+  patientVitalData: VitalData;
+  currentMedicalData: CurrentMedicalData;
   patientId: number;
   error;
   vitalError;
   ERRORMESSAGE= 'System is Temporary unavailable, Please Try Again!';
-  DATANOTFOUND= 'No Dr. Consult Found for the Patient!';
+  DATANOTFOUND= 'Past Dr. Consult - Not Found for the Patient!';
   newVisitFlag: boolean ;
   visitFormData :  FormGroup;
   patientHelper: PatientHelper;
-  isVitalsCollapsed = true;
-  isNurseNotesCollapsed = true;
+  isVitalsCollapsed :boolean = true;
+  isNurseNotesCollapsed : boolean = true;
   isVitalsReadOnly: boolean;
   isNurseNotesReadOnly: boolean;
   vitalsFormData: FormGroup;
@@ -49,8 +49,8 @@ export class PatientHistoryComponent implements OnInit {
     this.patientHelper = new PatientHelper();
     this.isVitalsReadOnly = true;
     this.isNurseNotesReadOnly = true;
-    const searchData1 = this.getPatientDataFromSearch();
-    this.patientId = Number(searchData1.id) ;
+    this.searchData1 = this.getPatientDataFromSearch();
+    this.patientId = Number(this.searchData1.id) ;
 
   }
 
@@ -183,7 +183,7 @@ export class PatientHistoryComponent implements OnInit {
     this.showLoader();
     console.log("in getPatientMedicalVital" );
     const patientId = Number(this.patientId) ;
-    this.patientVitalData=[];
+    this.patientVitalData= new VitalData(null,"","","","","","","");
     this.vitalError='';
     this.vitalService.searchVitalForPatientId(patientId)
       .subscribe(dataVital => {
@@ -192,9 +192,9 @@ export class PatientHistoryComponent implements OnInit {
             this.vitalError = this.DATANOTFOUND;
           }
           else{
-            for (let i = 0; i < dataVital.length; i++) {
-              this.patientVitalData.push(dataVital[i]);
-            }
+            // for (let i = 0; i < dataVital.length; i++) {
+              this.patientVitalData = (dataVital[0]);
+            // }
           }
           this.hideLoader();
         }
@@ -213,7 +213,7 @@ export class PatientHistoryComponent implements OnInit {
     this.showLoader();
     console.log("in getPatientCurrentMedical" );
     const patientId = Number(this.patientId) ;
-    this.currentMedicalData=[];
+    this.currentMedicalData= new CurrentMedicalData(null,"","","","","","");
     this.vitalError='';
     this.currentMedicalService.searchCurrentMedicalForPatientId(patientId)
       .subscribe(dataCurrentMedical => {
@@ -222,9 +222,9 @@ export class PatientHistoryComponent implements OnInit {
             this.vitalError = this.DATANOTFOUND;
           }
           else{
-            for (let i = 0; i < dataCurrentMedical.length; i++) {
-              this.currentMedicalData.push(dataCurrentMedical[i]);
-            }
+            // for (let i = 0; i < dataCurrentMedical.length; i++) {
+              this.currentMedicalData =dataCurrentMedical[0];
+            // }
           }
           this.hideLoader();
         }
@@ -240,11 +240,11 @@ export class PatientHistoryComponent implements OnInit {
   }
 
   editVitals() {
-    this.isVitalsReadOnly = false;
+    this.isVitalsReadOnly = !this.isVitalsReadOnly ;
   }
 
   editNurseNotes() {
-    this.isNurseNotesReadOnly = false;
+    this.isNurseNotesReadOnly = !this.isNurseNotesReadOnly;
   }
 
   onSubmitVitals() {
