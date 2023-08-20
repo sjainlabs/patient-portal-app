@@ -26,7 +26,7 @@ export class PatientSearchComponent implements OnInit {
   multiple: boolean;
   error;
   ERRORMESSAGE= 'System is Temporary unavailable, Please Try Again!';
-  DATANOTFOUND= 'Data Not Found - One or the other Search Criteria entered is not correct!';
+  DATANOTFOUND= 'Patient Registration is Not Found or a Search Criteria entered is not correct!';
   Mandatory = "One of the below field is mandatory";
   totalDatesOfBirth=[];
   totalMonthOfBirth=[];

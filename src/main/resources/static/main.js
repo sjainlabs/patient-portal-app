@@ -415,12 +415,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
 /* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/esm5/core.es5.js");
 /* harmony import */ var angular2_datetimepicker__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! angular2-datetimepicker */ "./node_modules/angular2-datetimepicker/index.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var angular2_fontawesome__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! angular2-fontawesome */ "./node_modules/angular2-fontawesome/angular2-fontawesome.js");
+/* harmony import */ var angular2_fontawesome__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(angular2_fontawesome__WEBPACK_IMPORTED_MODULE_22__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -470,6 +475,7 @@ var AppModule = /** @class */ (function () {
                 _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_18__["MatDatepickerModule"],
                 _angular_material_core__WEBPACK_IMPORTED_MODULE_19__["MatNativeDateModule"],
                 angular2_datetimepicker__WEBPACK_IMPORTED_MODULE_20__["AngularDateTimePickerModule"],
+                angular2_fontawesome__WEBPACK_IMPORTED_MODULE_22__["Angular2FontawesomeModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forRoot([
                     {
                         path: 'register',
@@ -533,7 +539,8 @@ var AppModule = /** @class */ (function () {
                     },
                     { path: '', redirectTo: '/search', pathMatch: 'full' },
                     { path: '**', component: _pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_10__["PagenotfoundComponent"] },
-                ])
+                ]),
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_21__["NgbModule"].forRoot()
             ],
             providers: [_angular_material_datepicker__WEBPACK_IMPORTED_MODULE_18__["MatDatepickerModule"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
@@ -642,7 +649,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <br>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div id=\"appointmentHeader\" class=\" container \">\n    <div>\n      <h3> Schedule new appointment</h3>\n      <hr>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"doctorName\">Doctor Name:</label>\n      </div>\n      <div class=\"col-sm-2\">\n        <select id=\"doctorName\" name=\"doctorName\" [(ngModel)]=\"doctorSelected\">\n          <option  *ngFor=\"let doctor of doctorList\" [ngValue]=\"doctor\" >{{doctor.doctorName}}</option>\n<!--          <option value=\"Dr Poonam Jain\">Dr Poonam Jain</option>-->\n        </select>\n      </div>\n    </div>\n      <div class=\"row\">\n        <div class=\"col-sm-2\">\n          <label for=\"appointmentDate\">Appointment Date:</label>\n        </div>\n        <div class=\"col-sm-2\">\n          <input type=\"date\" [(ngModel)]=\"appointmentDate\" id=\"appointmentDate\" placeholder=\"DD/MM/YY\" [min]=\"currentDate\">\n        </div>\n      </div>\n\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\"></div>\n      <div class=\"col-sm-2\">\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchAppointment(doctorSelected,appointmentDate,hoursSlot1)\" title=\"Search For Available Appointment\">Search</button>\n        <!--      </a>-->\n      </div>\n    </div>\n\n  </div>\n\n  <br>\n  <br>\n\n    <div class=\"container appointment\" >\n\n      <div>\n<!--        <div class=\"row\"> Date: {{appointmentDate}}</div>-->\n        <div class=\"row\" *ngIf=\"appointmentSearched===true\">\n          <div *ngFor=\"let dateRange of hoursSlot1\" >\n            <div class=\"col-sm-2\" >\n            <button title=\"Book Appointment\" type=\"submit\" class=\"btn btn-primary\"  (click)=\"bookAppointment(appointmentDate, dateRange)\">{{dateRange}}  </button>\n            <label  style=\"background-color: white\">   </label>\n            <label  style=\"background-color: white\">   </label>\n            </div>\n\n          </div>\n        </div>\n        <!--<div class=\"row\"> Range 12 PM - 4 PM</div>-->\n        <!--<div class=\"row\">-->\n          <!--<div *ngFor=\"let dateRange of hoursSlot2\">-->\n            <!--<label style=\"background-color: green\">{{dateRange}} </label>-->\n          <!--</div>-->\n        <!--</div>-->\n\n        <!--<div class=\"row\"> Range 4 PM - 8 PM</div>-->\n        <!--<div class=\"row\">-->\n          <!--<div *ngFor=\"let dateRange of hoursSlot3\">-->\n            <!--<label style=\"background-color: green\">{{dateRange}} </label>-->\n          <!--</div>-->\n        <!--</div>-->\n\n\n      </div>\n\n\n    </div>\n\n  <div class=\"container\">\n    <h3> View all appointments </h3>\n    <hr>\n  </div>\n\n  </div>\n\n"
+module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <br>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div id=\"appointmentHeader\" class=\" container \">\n    <div>\n      <h3> Schedule new appointment</h3>\n      <hr>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"doctorName\">Doctor Name:</label>\n      </div>\n      <div class=\"col-sm-2\">\n        <select id=\"doctorName\" name=\"doctorName\" [(ngModel)]=\"doctorSelected\">\n          <option  *ngFor=\"let doctor of doctorList\" [ngValue]=\"doctor\" >{{doctor.doctorName}}</option>\n<!--          <option value=\"Dr Poonam Jain\">Dr Poonam Jain</option>-->\n        </select>\n      </div>\n    </div>\n      <div class=\"row\">\n        <div class=\"col-sm-2\">\n          <label for=\"appointmentDate\">Appointment Date:</label>\n        </div>\n        <div class=\"col-sm-2\">\n          <input type=\"date\" [(ngModel)]=\"appointmentDate\" id=\"appointmentDate\" placeholder=\"DD/MM/YY\" [min]=\"currentDate\">\n        </div>\n      </div>\n\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\"></div>\n      <div class=\"col-sm-2\">\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchAppointment(doctorSelected,appointmentDate,hoursSlot1)\" title=\"Search For Available Appointment\">Search</button>\n        <!--      </a>-->\n      </div>\n    </div>\n\n  </div>\n\n  <br>\n  <br>\n\n    <div class=\"container appointment\" >\n\n      <div>\n<!--        <div class=\"row\"> Date: {{appointmentDate}}</div>-->\n        <div class=\"row\" *ngIf=\"appointmentSearched===true\">\n          <div *ngFor=\"let dateRange of hoursSlot1\" >\n            <div class=\"col-sm-2\" >\n            <button title=\"Book Appointment\" type=\"submit\" class=\"btn btn-primary\"  (click)=\"bookAppointment(appointmentDate, dateRange)\">{{dateRange}}  </button>\n            <label  style=\"background-color: white\">   </label>\n            <label  style=\"background-color: white\">   </label>\n            </div>\n\n          </div>\n        </div>\n        <!--<div class=\"row\"> Range 12 PM - 4 PM</div>-->\n        <!--<div class=\"row\">-->\n          <!--<div *ngFor=\"let dateRange of hoursSlot2\">-->\n            <!--<label style=\"background-color: green\">{{dateRange}} </label>-->\n          <!--</div>-->\n        <!--</div>-->\n\n        <!--<div class=\"row\"> Range 4 PM - 8 PM</div>-->\n        <!--<div class=\"row\">-->\n          <!--<div *ngFor=\"let dateRange of hoursSlot3\">-->\n            <!--<label style=\"background-color: green\">{{dateRange}} </label>-->\n          <!--</div>-->\n        <!--</div>-->\n\n\n      </div>\n\n\n    </div>\n\n  <div class=\"container\">\n    <h3> View all appointments </h3>\n    <hr>\n    <p>{{this.getPatientDataFromSearch().firstName}}</p>\n    <p>{{this.getPatientDataFromSearch().lastName}}</p>\n    <p>{{this.getPatientDataFromSearch().doctorName}}</p>\n    <p>{{this.appointmentData[0].appointmentDate}}</p>\n    <p>{{this.appointmentData[0].startTime}}</p>\n    <p>{{this.appointmentData[0].endTime}}</p>\n  </div>\n\n  </div>\n\n"
 
 /***/ }),
 
@@ -1016,7 +1023,7 @@ var PatientHelper = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#loading{\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  z-index: 1;\n  width: 150px;\n  height: 150px;\n  margin: -75px 0 0 -75px;\n  border: 16px solid #f3f3f3;\n  border-radius: 50%;\n  border-top: 16px solid #3498db;\n  width: 120px;\n  height: 120px;\n  -webkit-animation: spin 2s linear infinite;\n          animation: spin 2s linear infinite;\n}\n\n@-webkit-keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\n@keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9hZGVyLXNwaW4vbG9hZGVyLXNwaW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsUUFBUTtFQUNSLFVBQVU7RUFDVixZQUFZO0VBQ1osYUFBYTtFQUNiLHVCQUF1QjtFQUN2QiwwQkFBMEI7RUFDMUIsa0JBQWtCO0VBQ2xCLDhCQUE4QjtFQUM5QixZQUFZO0VBQ1osYUFBYTtFQUNiLDBDQUFrQztVQUFsQyxrQ0FBa0M7QUFDcEM7O0FBRUE7RUFDRSxLQUFLLHVCQUF1QixFQUFFO0VBQzlCLE9BQU8seUJBQXlCLEVBQUU7QUFDcEM7O0FBSEE7RUFDRSxLQUFLLHVCQUF1QixFQUFFO0VBQzlCLE9BQU8seUJBQXlCLEVBQUU7QUFDcEMiLCJmaWxlIjoic3JjL2FwcC9sb2FkZXItc3Bpbi9sb2FkZXItc3Bpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2xvYWRpbmd7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogNTAlO1xuICB0b3A6IDUwJTtcbiAgei1pbmRleDogMTtcbiAgd2lkdGg6IDE1MHB4O1xuICBoZWlnaHQ6IDE1MHB4O1xuICBtYXJnaW46IC03NXB4IDAgMCAtNzVweDtcbiAgYm9yZGVyOiAxNnB4IHNvbGlkICNmM2YzZjM7XG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgYm9yZGVyLXRvcDogMTZweCBzb2xpZCAjMzQ5OGRiO1xuICB3aWR0aDogMTIwcHg7XG4gIGhlaWdodDogMTIwcHg7XG4gIGFuaW1hdGlvbjogc3BpbiAycyBsaW5lYXIgaW5maW5pdGU7XG59XG5cbkBrZXlmcmFtZXMgc3BpbiB7XG4gIDAlIHsgdHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7IH1cbiAgMTAwJSB7IHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IH1cbn1cbiJdfQ== */"
+module.exports = "#loading{\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  z-index: 1;\n  width: 150px;\n  height: 150px;\n  margin: -75px 0 0 -75px;\n  border: 16px solid #f3f3f3;\n  border-radius: 50%;\n  border-top: 16px solid #3498db;\n  width: 120px;\n  height: 120px;\n  animation: spin 2s linear infinite;\n}\n\n@keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9hZGVyLXNwaW4vbG9hZGVyLXNwaW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsUUFBUTtFQUNSLFVBQVU7RUFDVixZQUFZO0VBQ1osYUFBYTtFQUNiLHVCQUF1QjtFQUN2QiwwQkFBMEI7RUFDMUIsa0JBQWtCO0VBQ2xCLDhCQUE4QjtFQUM5QixZQUFZO0VBQ1osYUFBYTtFQUNiLGtDQUFrQztBQUNwQzs7QUFFQTtFQUNFLEtBQUssdUJBQXVCLEVBQUU7RUFDOUIsT0FBTyx5QkFBeUIsRUFBRTtBQUNwQyIsImZpbGUiOiJzcmMvYXBwL2xvYWRlci1zcGluL2xvYWRlci1zcGluLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjbG9hZGluZ3tcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBsZWZ0OiA1MCU7XG4gIHRvcDogNTAlO1xuICB6LWluZGV4OiAxO1xuICB3aWR0aDogMTUwcHg7XG4gIGhlaWdodDogMTUwcHg7XG4gIG1hcmdpbjogLTc1cHggMCAwIC03NXB4O1xuICBib3JkZXI6IDE2cHggc29saWQgI2YzZjNmMztcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICBib3JkZXItdG9wOiAxNnB4IHNvbGlkICMzNDk4ZGI7XG4gIHdpZHRoOiAxMjBweDtcbiAgaGVpZ2h0OiAxMjBweDtcbiAgYW5pbWF0aW9uOiBzcGluIDJzIGxpbmVhciBpbmZpbml0ZTtcbn1cblxuQGtleWZyYW1lcyBzcGluIHtcbiAgMCUgeyB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTsgfVxuICAxMDAlIHsgdHJhbnNmb3JtOiByb3RhdGUoMzYwZGVnKTsgfVxufVxuIl19 */"
 
 /***/ }),
 
@@ -1100,6 +1107,33 @@ var AppointmentData = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/model/CurrentMedicalData.ts":
+/*!*********************************************!*\
+  !*** ./src/app/model/CurrentMedicalData.ts ***!
+  \*********************************************/
+/*! exports provided: CurrentMedicalData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CurrentMedicalData", function() { return CurrentMedicalData; });
+var CurrentMedicalData = /** @class */ (function () {
+    function CurrentMedicalData(patient, allergies, referredFrom, currentMedication, currentConcern, reasonForVisit, additionalNurseNotes) {
+        this.patient = patient;
+        this.allergies = allergies;
+        this.referredFrom = referredFrom;
+        this.currentMedication = currentMedication;
+        this.currentConcern = currentConcern;
+        this.reasonForVisit = reasonForVisit;
+        this.additionalNurseNotes = additionalNurseNotes;
+    }
+    return CurrentMedicalData;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/model/DoctorData.ts":
 /*!*************************************!*\
   !*** ./src/app/model/DoctorData.ts ***!
@@ -1134,6 +1168,34 @@ var PatientData = /** @class */ (function () {
     function PatientData() {
     }
     return PatientData;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/VitalData.ts":
+/*!************************************!*\
+  !*** ./src/app/model/VitalData.ts ***!
+  \************************************/
+/*! exports provided: VitalData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VitalData", function() { return VitalData; });
+var VitalData = /** @class */ (function () {
+    function VitalData(patient, bloodPressure, temperature, weight, bmi, height, o2Saturation, pulse) {
+        this.patient = patient;
+        this.bloodPressure = bloodPressure;
+        this.temperature = temperature;
+        this.weight = weight;
+        this.bmi = bmi;
+        this.height = height;
+        this.o2Saturation = o2Saturation;
+        this.pulse = pulse;
+    }
+    return VitalData;
 }());
 
 
@@ -1274,7 +1336,7 @@ var PatientHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#visits {\n  font-family: Arial, Helvetica, sans-serif;\n  border-collapse: collapse;\n  width: 100%;\n}\n\n#visits td, #visits th {\n  border: 1px solid #ddd;\n  padding: 8px;\n}\n\n#visits tr:nth-child(even){background-color: #f2f2f2;}\n\n#visits tr:hover {background-color: #ddd;}\n\n#visits th {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  background-color: #490f198a;\n  color: white;\n}\n\n#visitHeader{\n  font-family: Arial, Helvetica, sans-serif;\n  width: 100%;\n}\n\n#visitHeader  td {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  padding: 8px;\n\n}\n\n#mainVisitHeader{\n  /*border: 7px solid*/\n}\n\n#newVisit {\n\n\n}\n\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #a0706d;\n  border-color: #a0706d;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1oaXN0b3J5L3BhdGllbnQtaGlzdG9yeS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UseUNBQXlDO0VBQ3pDLHlCQUF5QjtFQUN6QixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxzQkFBc0I7RUFDdEIsWUFBWTtBQUNkOztBQUVBLDJCQUEyQix5QkFBeUIsQ0FBQzs7QUFFckQsa0JBQWtCLHNCQUFzQixDQUFDOztBQUV6QztFQUNFLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsZ0JBQWdCO0VBQ2hCLDJCQUEyQjtFQUMzQixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSx5Q0FBeUM7RUFDekMsV0FBVztBQUNiOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUNwQixnQkFBZ0I7RUFDaEIsWUFBWTs7QUFFZDs7QUFFQTtFQUNFLG9CQUFvQjtBQUN0Qjs7QUFHQTs7O0FBR0E7O0FBRUE7RUFDRSxXQUFXO0VBQ1gseUJBQXlCO0VBQ3pCLHFCQUFxQjtBQUN2QiIsImZpbGUiOiJzcmMvYXBwL3BhdGllbnQtaGlzdG9yeS9wYXRpZW50LWhpc3RvcnkuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiN2aXNpdHMge1xuICBmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjtcbiAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbiN2aXNpdHMgdGQsICN2aXNpdHMgdGgge1xuICBib3JkZXI6IDFweCBzb2xpZCAjZGRkO1xuICBwYWRkaW5nOiA4cHg7XG59XG5cbiN2aXNpdHMgdHI6bnRoLWNoaWxkKGV2ZW4pe2JhY2tncm91bmQtY29sb3I6ICNmMmYyZjI7fVxuXG4jdmlzaXRzIHRyOmhvdmVyIHtiYWNrZ3JvdW5kLWNvbG9yOiAjZGRkO31cblxuI3Zpc2l0cyB0aCB7XG4gIHBhZGRpbmctdG9wOiAxMnB4O1xuICBwYWRkaW5nLWJvdHRvbTogMTJweDtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzQ5MGYxOThhO1xuICBjb2xvcjogd2hpdGU7XG59XG5cbiN2aXNpdEhlYWRlcntcbiAgZm9udC1mYW1pbHk6IEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4jdmlzaXRIZWFkZXIgIHRkIHtcbiAgcGFkZGluZy10b3A6IDEycHg7XG4gIHBhZGRpbmctYm90dG9tOiAxMnB4O1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBwYWRkaW5nOiA4cHg7XG5cbn1cblxuI21haW5WaXNpdEhlYWRlcntcbiAgLypib3JkZXI6IDdweCBzb2xpZCovXG59XG5cblxuI25ld1Zpc2l0IHtcblxuXG59XG5cbi5idG4tc3VjY2Vzcy5kaXNhYmxlZCwgLmJ0bi1zdWNjZXNzOmRpc2FibGVkIHtcbiAgY29sb3I6ICNmZmY7XG4gIGJhY2tncm91bmQtY29sb3I6ICNhMDcwNmQ7XG4gIGJvcmRlci1jb2xvcjogI2EwNzA2ZDtcbn1cblxuIl19 */"
+module.exports = "#visits {\n  font-family: Arial, Helvetica, sans-serif;\n  border-collapse: collapse;\n  width: 100%;\n}\n\n#visits td, #visits th {\n  border: 1px solid #ddd;\n  padding: 8px;\n}\n\n#visits tr:nth-child(even){background-color: #f2f2f2;}\n\n#visits tr:hover {background-color: #ddd;}\n\n#visits th {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  background-color: #490f198a;\n  color: white;\n}\n\n#visitHeader{\n  font-family: Arial, Helvetica, sans-serif;\n  width: 100%;\n}\n\n#visitHeader  td {\n  padding-top: 12px;\n  padding-bottom: 12px;\n  text-align: left;\n  padding: 8px;\n\n}\n\n#mainVisitHeader{\n  /*border: 7px solid*/\n}\n\n#newVisit {\n\n\n}\n\n.btn-success.disabled, .btn-success:disabled {\n  color: #fff;\n  background-color: #a0706d;\n  border-color: #a0706d;\n}\n\n.btn-link {\n  font-weight: 400;\n  color: #55245E;\n  text-decoration: none;\n}\n\n.btn-link:hover {\n  color: #0056b3;\n  text-decoration: underline;\n}\n\ntextarea :invalid {\n  border: 2px dashed red;\n}\n\n.tooltip {\n  position: relative;\n  display: inline-block;\n  border-bottom: 1px dotted black;\n}\n\n.tooltip .tooltiptext {\n  visibility: hidden;\n  width: 120px;\n  background-color: black;\n  color: #fff;\n  text-align: center;\n  border-radius: 6px;\n  padding: 5px 0;\n  position: absolute;\n  z-index: 1;\n  top: -5px;\n  left: 110%;\n}\n\n.tooltip .tooltiptext::after {\n  content: \"\";\n  position: absolute;\n  top: 50%;\n  right: 100%;\n  margin-top: -5px;\n  border-width: 5px;\n  border-style: solid;\n  border-color: transparent black transparent transparent;\n}\n\n.tooltip:hover .tooltiptext {\n  visibility: visible;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF0aWVudC1oaXN0b3J5L3BhdGllbnQtaGlzdG9yeS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UseUNBQXlDO0VBQ3pDLHlCQUF5QjtFQUN6QixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxzQkFBc0I7RUFDdEIsWUFBWTtBQUNkOztBQUVBLDJCQUEyQix5QkFBeUIsQ0FBQzs7QUFFckQsa0JBQWtCLHNCQUFzQixDQUFDOztBQUV6QztFQUNFLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsZ0JBQWdCO0VBQ2hCLDJCQUEyQjtFQUMzQixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSx5Q0FBeUM7RUFDekMsV0FBVztBQUNiOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUNwQixnQkFBZ0I7RUFDaEIsWUFBWTs7QUFFZDs7QUFFQTtFQUNFLG9CQUFvQjtBQUN0Qjs7QUFHQTs7O0FBR0E7O0FBRUE7RUFDRSxXQUFXO0VBQ1gseUJBQXlCO0VBQ3pCLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixjQUFjO0VBQ2QscUJBQXFCO0FBQ3ZCOztBQUVBO0VBQ0UsY0FBYztFQUNkLDBCQUEwQjtBQUM1Qjs7QUFJQTtFQUNFLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixxQkFBcUI7RUFDckIsK0JBQStCO0FBQ2pDOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLFlBQVk7RUFDWix1QkFBdUI7RUFDdkIsV0FBVztFQUNYLGtCQUFrQjtFQUNsQixrQkFBa0I7RUFDbEIsY0FBYztFQUNkLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsU0FBUztFQUNULFVBQVU7QUFDWjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsUUFBUTtFQUNSLFdBQVc7RUFDWCxnQkFBZ0I7RUFDaEIsaUJBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQix1REFBdUQ7QUFDekQ7O0FBQ0E7RUFDRSxtQkFBbUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9wYXRpZW50LWhpc3RvcnkvcGF0aWVudC1oaXN0b3J5LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjdmlzaXRzIHtcbiAgZm9udC1mYW1pbHk6IEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7XG4gIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4jdmlzaXRzIHRkLCAjdmlzaXRzIHRoIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2RkZDtcbiAgcGFkZGluZzogOHB4O1xufVxuXG4jdmlzaXRzIHRyOm50aC1jaGlsZChldmVuKXtiYWNrZ3JvdW5kLWNvbG9yOiAjZjJmMmYyO31cblxuI3Zpc2l0cyB0cjpob3ZlciB7YmFja2dyb3VuZC1jb2xvcjogI2RkZDt9XG5cbiN2aXNpdHMgdGgge1xuICBwYWRkaW5nLXRvcDogMTJweDtcbiAgcGFkZGluZy1ib3R0b206IDEycHg7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIGJhY2tncm91bmQtY29sb3I6ICM0OTBmMTk4YTtcbiAgY29sb3I6IHdoaXRlO1xufVxuXG4jdmlzaXRIZWFkZXJ7XG4gIGZvbnQtZmFtaWx5OiBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmO1xuICB3aWR0aDogMTAwJTtcbn1cblxuI3Zpc2l0SGVhZGVyICB0ZCB7XG4gIHBhZGRpbmctdG9wOiAxMnB4O1xuICBwYWRkaW5nLWJvdHRvbTogMTJweDtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgcGFkZGluZzogOHB4O1xuXG59XG5cbiNtYWluVmlzaXRIZWFkZXJ7XG4gIC8qYm9yZGVyOiA3cHggc29saWQqL1xufVxuXG5cbiNuZXdWaXNpdCB7XG5cblxufVxuXG4uYnRuLXN1Y2Nlc3MuZGlzYWJsZWQsIC5idG4tc3VjY2VzczpkaXNhYmxlZCB7XG4gIGNvbG9yOiAjZmZmO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjYTA3MDZkO1xuICBib3JkZXItY29sb3I6ICNhMDcwNmQ7XG59XG5cbi5idG4tbGluayB7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG4gIGNvbG9yOiAjNTUyNDVFO1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG5cbi5idG4tbGluazpob3ZlciB7XG4gIGNvbG9yOiAjMDA1NmIzO1xuICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbn1cblxuXG5cbnRleHRhcmVhIDppbnZhbGlkIHtcbiAgYm9yZGVyOiAycHggZGFzaGVkIHJlZDtcbn1cblxuLnRvb2x0aXAge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgYm9yZGVyLWJvdHRvbTogMXB4IGRvdHRlZCBibGFjaztcbn1cblxuLnRvb2x0aXAgLnRvb2x0aXB0ZXh0IHtcbiAgdmlzaWJpbGl0eTogaGlkZGVuO1xuICB3aWR0aDogMTIwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xuICBjb2xvcjogI2ZmZjtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBib3JkZXItcmFkaXVzOiA2cHg7XG4gIHBhZGRpbmc6IDVweCAwO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHotaW5kZXg6IDE7XG4gIHRvcDogLTVweDtcbiAgbGVmdDogMTEwJTtcbn1cblxuLnRvb2x0aXAgLnRvb2x0aXB0ZXh0OjphZnRlciB7XG4gIGNvbnRlbnQ6IFwiXCI7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiA1MCU7XG4gIHJpZ2h0OiAxMDAlO1xuICBtYXJnaW4tdG9wOiAtNXB4O1xuICBib3JkZXItd2lkdGg6IDVweDtcbiAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcbiAgYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudCBibGFjayB0cmFuc3BhcmVudCB0cmFuc3BhcmVudDtcbn1cbi50b29sdGlwOmhvdmVyIC50b29sdGlwdGV4dCB7XG4gIHZpc2liaWxpdHk6IHZpc2libGU7XG59XG4iXX0= */"
 
 /***/ }),
 
@@ -1285,7 +1347,7 @@ module.exports = "#visits {\n  font-family: Arial, Helvetica, sans-serif;\n  bor
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n\n<app-patient-header></app-patient-header>\n\n<br>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div id=\"mainVisitHeader\" class=\" container \">\n    <div id=\"newVisit\">\n    <label style=\"color: red\"> {{error}}</label>\n\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\n      <br>\n      <div *ngIf=\"!newVisitFlag\">\n        <span>Please Click to Add a new Visit - </span>\n\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"addVisit()\">New Visit</button>\n        <!--      </a>-->\n      </div>\n  </div>\n\n  <div  *ngIf=\"error=='' && !newVisitFlag\">\n    <table id=\"visitHeader\">\n      <tr>\n        <td>Name : {{patientVisitData[0].patientEntity.firstName}}</td>\n        <td>DOB :  {{patientVisitData[0].patientEntity.firstName}}</td>\n        <td>Patient Id : {{patientVisitData[0].patientEntity.id}}</td>\n      </tr>\n\n    </table>\n<br>\n\n\n\n    <table id=\"visits\" class=\"table\">\n      <thead>\n      <tr>\n        <th>Visit Date</th>\n        <th>Symptoms</th>\n        <th>Prescription</th>\n        <th>FollowUp Date</th>\n        <th>Notes</th>\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let visit of patientVisitData\">\n        <td>{{visit.visitDate}} </td>\n        <td>{{visit.symptoms}} </td>\n        <td>{{visit.prescription}} </td>\n        <td >{{visit.followUpDate}} </td>\n        <td>{{visit.notes}} </td>\n      </tr>\n\n      </tbody>\n    </table>\n  </div>\n\n    <div *ngIf=\"newVisitFlag && error==''\">\n      <form [formGroup]=\"visitFormData\"\n            (ngSubmit)=\"onSubmitVisit(visitFormData.value)\" novalidate>\n        <div>\n          <label>Symptoms:\n            <textarea type=\"text\"  formControlName=\"symptoms\" class=\"form-control\" rows=\"5\" cols=\"50\" placeholder=\"Fever,Cold ,Nausea etc...\"></textarea>\n          </label>\n        </div>\n\n        <div>\n          <label>Prescription:\n            <textarea type=\"text\"  formControlName=\"prescription\"  class=\"form-control\" rows=\"5\" cols=\"50\" placeholder=\"paracetamol, ibuprofen etc\"></textarea>\n          </label>\n        </div>\n\n        <div>\n          <label>Followup Days:\n            <input type=\"text\" formControlName=\"followUpDays\" class=\"form-control\" (keypress)=\"patientHelper.numberOnly($event)\" placeholder=\"7\">\n          </label>\n        </div>\n\n        <div>\n          <label>Notes:\n            <textarea type=\"text\" formControlName=\"notes\" class=\"form-control\"  rows=\"3\" cols=\"50\" placeholder=\"Additiona Notes - Blood work,X-Ray needed, Referral to a speaciaist etc\">\n            </textarea>\n          </label>\n        </div>\n\n        <button type=\"submit\"\n                [disabled]=\"visitFormData.pristine || visitFormData.invalid\" class=\"btn btn-success\">\n          Submit\n        </button>\n\n      </form>\n  </div>\n</div>\n\n</div>\n"
+module.exports = "<div>\n\n<app-patient-header></app-patient-header>\n\n<br>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div id=\"mainVisitHeader\" class=\" container \">\n    <div id=\"newVisit\">\n    <label style=\"color: red\"> {{error}}</label>\n\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\n      <br>\n      <div *ngIf=\"!newVisitFlag\">\n        <span>Please Click to Add a new Dr. Consult Visit- </span>\n\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"addVisit()\">Consultation </button>\n        <!--      </a>-->\n      </div>\n  </div>\n\n  <div  >\n    <table id=\"visitHeader\">\n      <tr>\n        <td>Name : {{ searchData1.firstName }}</td>\n        <td>DOB :  {{searchData1.dateOfBirth}}</td>\n        <td>Patient Id : {{searchData1.id}}</td>\n      </tr>\n\n    </table>\n  </div>\n<br>\n\n\n\n    <div class=\"p-2\">\n      <div class=\"card\">\n        <div class=\"card-header\" (click)=\"isVitalsCollapsed=!isVitalsCollapsed\" [attr.aria-expanded]=\"!isVitalsCollapsed\"\n             aria-controls=\"collapseExample1\">\n          Vital\n        </div>\n        <div  #collapse=\"ngbCollapse\" [(ngbCollapse)]=\"isVitalsCollapsed\">\n          <div class=\"card-body\">\n            <img src=\"assets/icons8-edit.gif\" (click)=\"editVitals()\" style=\"float:right \" title=\"edit me\"/>\n            <form  [formGroup]=\"vitalsFormData\"  (ngSubmit)=\"onSubmitVitals()\"  >\n              <div>\n                <label>Blood Pressure:\n                  <input type=\"text\" id=\"bloodPressure\" name=\"bloodPressure\" formControlName=\"bloodPressure\" class=\"form-control\" placeholder=\"130/60\" [value]=\"patientVitalData.bloodPressure\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>Temperature:\n                  <input type=\"text\" id=\"temperature\" name=\"temperature\" formControlName=\"temperature\" class=\"form-control\" placeholder=\"98˚C\" [value]=\"patientVitalData.temperature\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>Weight:\n                  <input type=\"text\" id=\"weight\" name=\"weight\" formControlName=\"weight\" class=\"form-control\" placeholder=\"70kg\" [value]=\"patientVitalData.weight\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>Height:\n                  <input type=\"text\" id=\"height\" name=\"height\" formControlName=\"height\" class=\"form-control\" placeholder=\"\" [value]=\"patientVitalData.height\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>BMI:\n                  <input type=\"text\" id=\"bmi\" name=\"bmi\" formControlName=\"bmi\" class=\"form-control\" placeholder=\"\" [value]=\"patientVitalData.bmi\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>Oxygen Saturation:\n                  <input type=\"text\" id=\"o2Saturation\" name=\"o2Saturation\" class=\"form-control\" formControlName=\"o2Saturation\" placeholder=\"90%\" [value]=\"patientVitalData.o2Saturation\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <div>\n                <label>Pulse:\n                  <input type=\"text\" id=\"pulse\" name=\"pulse\" formControlName=\"pulse\" class=\"form-control\" placeholder=\"72\" [value]=\"patientVitalData.pulse\" [readonly]=\"isVitalsReadOnly\">\n                </label>\n              </div>\n\n              <button type=\"submit\"\n                      [disabled]=\"vitalsFormData.pristine || vitalsFormData.invalid\" class=\"btn btn-success\">\n                Save\n              </button>\n            </form>\n\n          </div>\n        </div>\n      </div>\n\n      <Br>\n      <div class=\"card\">\n        <div class=\"card-header\" (click)=\"isNurseNotesCollapsed=!isNurseNotesCollapsed\"\n             [attr.aria-expanded]=\"!isNurseNotesCollapsed\"\n             aria-controls=\"collapseExample2\">\n          Nurse Notes\n        </div>\n        <div #collapse=\"ngbCollapse\" [(ngbCollapse)]=\"isNurseNotesCollapsed\">\n          <div class=\"card-body\">\n              <img src=\"assets/icons8-edit.gif\" (click)=\"editNurseNotes()\" style=\"float:right \" title=\"edit me\"/>\n              <form [formGroup]=\"nurseNotesFormData\" (ngSubmit)=\"onSubmitNurseNotes()\"  >\n                <div>\n                  <label>Known Allergies:\n                    <input type=\"text\" id=\"allergies\" name=\"allergies\" formControlName=\"allergies\" class=\"form-control\" placeholder=\"Any Known Allergies like Pollen\" [value]=\"currentMedicalData.allergies\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n                <div>\n                  <label>Referral From :\n                    <input type=\"text\" id=\"referredFrom\" name=\"referredFrom\" formControlName=\"referredFrom\" class=\"form-control\" placeholder=\"Referred from Hospital/Doctor\" [value]=\"currentMedicalData.referredFrom\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n                <div>\n                  <label>Current Medication:\n                    <input type=\"text\" id=\"currentMedication\" name=\"currentMedication\" formControlName=\"currentMedication\" class=\"form-control\" placeholder=\"Ongoing or Current Medication\" [value]=\"currentMedicalData.currentMedication\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n                <div>\n                  <label>Current Concern:\n                    <input type=\"text\" id=\"currentConcern\" name=\"currentConcern\" formControlName=\"currentConcern\" class=\"form-control\" placeholder=\"Fever , Headache etc\" [value]=\"currentMedicalData.currentConcern\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n                <div>\n                  <label>Reason For Visit:\n                    <input type=\"text\" id=\"reasonForVisit\" name=\"reasonForVisit\" formControlName=\"reasonForVisit\" class=\"form-control\" placeholder=\"Routine Checkup, Follow-up etc\" [value]=\"currentMedicalData.reasonForVisit\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n                <div>\n                  <label>Additional Notes:\n                    <input type=\"text\" id=\"additionalNurseNotes\" name=\"additionalNurseNotes\" formControlName=\"additionalNurseNotes\" class=\"form-control\" placeholder=\"\" [value]=\"currentMedicalData.reasonForVisit\" [readonly]=\"isNurseNotesReadOnly\">\n                  </label>\n                </div>\n\n\n\n                <button type=\"submit\"\n                        [disabled]=\"nurseNotesFormData.pristine || nurseNotesFormData.invalid\" class=\"btn btn-success\">\n                  Save\n                </button>\n              </form>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <br>\n\n    <div  *ngIf=\"error=='' && !newVisitFlag\">\n    <table id=\"visits\" class=\"table\" >\n      <thead>\n      <tr>\n        <th>Visit Date</th>\n        <th>Symptoms</th>\n        <th>Prescription</th>\n        <th>FollowUp Date</th>\n        <th>Notes</th>\n      </tr>\n      </thead>\n      <tbody>\n      <tr *ngFor=\"let visit of patientVisitData\">\n        <td>{{visit.visitDate}} </td>\n        <td>{{visit.symptoms}} </td>\n        <td>{{visit.prescription}} </td>\n        <td >{{visit.followUpDate}} </td>\n        <td>{{visit.notes}} </td>\n      </tr>\n\n      </tbody>\n    </table>\n    </div>\n  </div>\n\n\n    <div *ngIf=\"newVisitFlag && error==''\">\n      <form  [formGroup]=\"visitFormData\"\n            (ngSubmit)=\"onSubmitVisit(visitFormData.value)\" >\n\n\n        <div>\n          <label>Symptoms * :\n            <textarea type=\"text\" id=\"symptoms\" name=\"symptoms\" formControlName=\"symptoms\" required class=\"form-control\" rows=\"5\" cols=\"50\" placeholder=\"Fever,Cold ,Nausea etc...\" ></textarea>\n          </label>\n          <div *ngIf=\"visitFormData.controls['symptoms'].invalid && (visitFormData.controls['symptoms'].dirty\n             || visitFormData.controls['symptoms'].touched)\" class=\"alert alert-danger\">\n            <div *ngIf=\"visitFormData.controls['symptoms'].errors.required\">\n              Symptoms  is required.\n            </div>\n          </div>\n        </div>\n\n        <div>\n          <label>Prescription *:\n            <textarea type=\"text\" id=\"prescription\" name=\"prescription\"  formControlName=\"prescription\"  required class=\"form-control\" rows=\"5\" cols=\"50\" placeholder=\"paracetamol, ibuprofen etc\" ></textarea>\n            <div *ngIf=\"visitFormData.controls['prescription'].invalid && (visitFormData.controls['prescription'].dirty\n             || visitFormData.controls['prescription'].touched)\" class=\"alert alert-danger\">\n              <div *ngIf=\"visitFormData.controls['prescription'].errors.required\">\n                prescription  is required.\n              </div>\n            </div>\n          </label>\n        </div>\n\n        <div>\n          <label>Followup Days:\n            <input type=\"text\" formControlName=\"followUpDays\" class=\"form-control\" (keypress)=\"patientHelper.numberOnly($event)\" placeholder=\"7\">\n          </label>\n        </div>\n\n        <div>\n          <label>Notes:\n            <textarea type=\"text\" formControlName=\"notes\" class=\"form-control\"  rows=\"3\" cols=\"50\" placeholder=\"Additiona Notes - Blood work,X-Ray needed, Referral to a speaciaist etc\">\n            </textarea>\n          </label>\n        </div>\n\n        <button type=\"submit\"\n                [disabled]=\"visitFormData.pristine || visitFormData.invalid\" class=\"btn btn-success\">\n          Submit\n        </button>\n\n      </form>\n  </div>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -1305,6 +1367,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _service_patient_visit_search_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/patient-visit-search.service */ "./src/app/service/patient-visit-search.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _helper_PatientHelper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helper/PatientHelper */ "./src/app/helper/PatientHelper.ts");
+/* harmony import */ var _model_VitalData__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../model/VitalData */ "./src/app/model/VitalData.ts");
+/* harmony import */ var _model_CurrentMedicalData__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../model/CurrentMedicalData */ "./src/app/model/CurrentMedicalData.ts");
+/* harmony import */ var _service_vital_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../service/vital.service */ "./src/app/service/vital.service.ts");
+/* harmony import */ var _service_current_medical_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../service/current-medical.service */ "./src/app/service/current-medical.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1320,25 +1386,67 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
+
 var PatientHistoryComponent = /** @class */ (function () {
-    function PatientHistoryComponent(searchDataService, patientVisitSearchService, fb) {
+    function PatientHistoryComponent(searchDataService, patientVisitSearchService, vitalService, currentMedicalService, fb) {
         this.searchDataService = searchDataService;
         this.patientVisitSearchService = patientVisitSearchService;
+        this.vitalService = vitalService;
+        this.currentMedicalService = currentMedicalService;
         this.fb = fb;
+        this.patientVisitData = [];
         this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
-        this.DATANOTFOUND = 'No Visits Found for the Patient!';
+        this.DATANOTFOUND = 'Past Dr. Consult - Not Found for the Patient!';
+        this.isVitalsCollapsed = true;
+        this.isNurseNotesCollapsed = true;
+        this.isCollapsed = false;
+        this.isCollapsed1 = false;
         this.patientId = 1;
         this.createForm();
+        this.createFormVitals();
+        this.createFormNurseNotes();
         this.patientHelper = new _helper_PatientHelper__WEBPACK_IMPORTED_MODULE_5__["PatientHelper"]();
+        this.isVitalsReadOnly = true;
+        this.isNurseNotesReadOnly = true;
+        this.searchData1 = this.getPatientDataFromSearch();
+        this.patientId = Number(this.searchData1.id);
     }
-    PatientHistoryComponent.prototype.ngOnInit = function () {
+    PatientHistoryComponent.prototype.ngAfterContentInit = function () {
         this.getPatientVisit();
+        this.getPatientVital();
+        this.getPatientCurrentMedical();
+        console.log("called getPatientMedicalVital");
+    };
+    PatientHistoryComponent.prototype.ngOnInit = function () {
+    };
+    PatientHistoryComponent.prototype.createFormVitals = function () {
+        this.vitalsFormData = this.fb.group({
+            bloodPressure: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            temperature: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            weight: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            bmi: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            height: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            o2Saturation: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            pulse: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+        });
+    };
+    PatientHistoryComponent.prototype.createFormNurseNotes = function () {
+        this.nurseNotesFormData = this.fb.group({
+            allergies: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            referredFrom: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            currentMedication: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            currentConcern: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            reasonForVisit: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            additionalNurseNotes: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('')
+        });
     };
     PatientHistoryComponent.prototype.createForm = function () {
         this.visitFormData = this.fb.group({
-            symptoms: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
-            prescription: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
-            age: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
+            symptoms: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required),
+            prescription: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required),
             followUpDays: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](''),
             notes: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('')
         });
@@ -1354,9 +1462,7 @@ var PatientHistoryComponent = /** @class */ (function () {
     PatientHistoryComponent.prototype.getPatientVisit = function () {
         var _this = this;
         this.showLoader();
-        var searchData1 = this.getPatientDataFromSearch();
-        this.patientId = Number(searchData1.id);
-        var patientId = Number(searchData1.id);
+        var patientId = this.patientId;
         this.patientVisitData = [];
         this.error = '';
         this.patientVisitSearchService.searchVisitForPatientId(patientId)
@@ -1407,6 +1513,108 @@ var PatientHistoryComponent = /** @class */ (function () {
             _this.hideLoader();
         });
     };
+    PatientHistoryComponent.prototype.getPatientVital = function () {
+        var _this = this;
+        this.showLoader();
+        console.log("in getPatientMedicalVital");
+        var patientId = Number(this.patientId);
+        this.patientVitalData = new _model_VitalData__WEBPACK_IMPORTED_MODULE_6__["VitalData"](null, "", "", "", "", "", "", "");
+        this.vitalError = '';
+        this.vitalService.searchVitalForPatientId(patientId)
+            .subscribe(function (dataVital) {
+            console.log(dataVital);
+            if (dataVital == null) {
+                _this.vitalError = _this.DATANOTFOUND;
+            }
+            else {
+                // for (let i = 0; i < dataVital.length; i++) {
+                _this.patientVitalData = (dataVital[0]);
+                // }
+            }
+            _this.hideLoader();
+        }
+        // }
+        , function (error1) {
+            _this.vitalError = _this.ERRORMESSAGE;
+            _this.hideLoader();
+        });
+        ;
+    };
+    PatientHistoryComponent.prototype.getPatientCurrentMedical = function () {
+        var _this = this;
+        this.showLoader();
+        console.log("in getPatientCurrentMedical");
+        var patientId = Number(this.patientId);
+        this.currentMedicalData = new _model_CurrentMedicalData__WEBPACK_IMPORTED_MODULE_7__["CurrentMedicalData"](null, "", "", "", "", "", "");
+        this.vitalError = '';
+        this.currentMedicalService.searchCurrentMedicalForPatientId(patientId)
+            .subscribe(function (dataCurrentMedical) {
+            console.log(dataCurrentMedical);
+            if (dataCurrentMedical == null) {
+                _this.vitalError = _this.DATANOTFOUND;
+            }
+            else {
+                // for (let i = 0; i < dataCurrentMedical.length; i++) {
+                _this.currentMedicalData = dataCurrentMedical[0];
+                // }
+            }
+            _this.hideLoader();
+        }
+        // }
+        , function (error1) {
+            _this.vitalError = _this.ERRORMESSAGE;
+            _this.hideLoader();
+        });
+        ;
+    };
+    PatientHistoryComponent.prototype.editVitals = function () {
+        this.isVitalsReadOnly = !this.isVitalsReadOnly;
+    };
+    PatientHistoryComponent.prototype.editNurseNotes = function () {
+        this.isNurseNotesReadOnly = !this.isNurseNotesReadOnly;
+    };
+    PatientHistoryComponent.prototype.onSubmitVitals = function () {
+        this.showLoader();
+        console.log(this.vitalsFormData.value);
+        this.isVitalsReadOnly = true;
+        this.isVitalsCollapsed = true;
+        this.addVital(this.vitalsFormData.value);
+    };
+    PatientHistoryComponent.prototype.onSubmitNurseNotes = function () {
+        this.showLoader();
+        console.log(this.nurseNotesFormData.value);
+        this.isNurseNotesReadOnly = true;
+        this.isNurseNotesCollapsed = true;
+        this.addCurrentMedical(this.nurseNotesFormData.value);
+    };
+    PatientHistoryComponent.prototype.addVital = function (dataValue) {
+        var _this = this;
+        var patient = new _model_PatientData__WEBPACK_IMPORTED_MODULE_2__["PatientData"]();
+        patient.id = this.patientId.toString();
+        this.vitalService.addVitalForPatient(dataValue, patient)
+            .subscribe(function (s) {
+            console.log(s);
+            _this.hideLoader();
+        }, function (error1) {
+            _this.error = _this.ERRORMESSAGE;
+            _this.hideLoader();
+        });
+        this.hideLoader();
+    };
+    PatientHistoryComponent.prototype.addCurrentMedical = function (dataValue) {
+        var _this = this;
+        var patient = new _model_PatientData__WEBPACK_IMPORTED_MODULE_2__["PatientData"]();
+        patient.id = this.patientId.toString();
+        this.currentMedicalService.addCurrentMedicalForPatient(dataValue, patient)
+            .subscribe(function (s) {
+            console.log(s);
+            _this.hideLoader();
+        }, function (error1) {
+            _this.error = _this.ERRORMESSAGE;
+            _this.hideLoader();
+        });
+        this.hideLoader();
+    };
     PatientHistoryComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-patient-history',
@@ -1415,6 +1623,8 @@ var PatientHistoryComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_service_search_data_service_service__WEBPACK_IMPORTED_MODULE_1__["SearchDataServiceService"],
             _service_patient_visit_search_service__WEBPACK_IMPORTED_MODULE_3__["PatientVisitSearchService"],
+            _service_vital_service__WEBPACK_IMPORTED_MODULE_8__["VitalService"],
+            _service_current_medical_service__WEBPACK_IMPORTED_MODULE_9__["CurrentMedicalService"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"]])
     ], PatientHistoryComponent);
     return PatientHistoryComponent;
@@ -1683,7 +1893,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div class=\"container\" *ngIf=\"!processing\">\n    <!--<div class=\"row\">-->\n    <!--<div class=\"col-sm-2\">-->\n    <!--<label for=\"firstName\">First Name:</label>-->\n    <!--</div>-->\n    <!--<div class=\"col-sm-3\">-->\n    <!--<input type=\"text\" id=\"firstName\">-->\n    <!--</div>-->\n    <!--<div class=\"col-sm-2\">-->\n    <!--<label for=\"lastName\">Last name:</label>-->\n    <!--</div>-->\n    <!--<div class=\"col-sm-4\">-->\n    <!--<input type=\"text\" id=\"lastName\">-->\n    <!--</div>-->\n    <!--</div>-->\n    <div class=\"row\">\n      <label style=\"color: red\"> {{error}}</label>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"patientId\">Patient ID:</label>\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\" placeholder=\"1\">\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"patientId\">First Name:</label>\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" [(ngModel)]=\"firstName\" id=\"firstName\" placeholder=\"Don\">\n      </div>\n    </div>\n\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"patientId\">Last Name:</label>\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" [(ngModel)]=\"lastName\" id=\"lastName\" placeholder=\"Joe\">\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"patientId\">Contact Number:</label>\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" [(ngModel)]=\"contact\" id=\"contact\" (keypress)=\"patientHelper.numberOnly($event)\"\n               placeholder=\"919545864822\">\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"patientId\">Personal Id:</label>\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" [(ngModel)]=\"personalId\" id=\"personalId\" placeholder=\"Aadhar,DL etc\">\n      </div>\n    </div>\n\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"birthDate\"> Date Of Birth(DD-MM-YYYY):</label>\n      </div>\n\n      <div class=\" col-4\">\n        <div class=\"row\">\n          <div class=\"col-sm-2\">\n            <select name=\"birthDate\" id=\"birthDate\" [(ngModel)]=\"birthDate\">\n\n              <option *ngFor=\"let dd of totalDatesOfBirth\" [value]=\"dd\">{{dd}}</option>\n            </select>\n\n          </div>\n          <div class=\" col-sm-2\">\n\n\n            <select name=\"birthMonth\" id=\"birthMonth\" [(ngModel)]=\"birthMonth\">\n\n              <option *ngFor=\"let mm of totalMonthOfBirth\" [value]=\"mm\">{{mm}}</option>\n            </select>\n          </div>\n          <div class=\" col-sm-2\">\n            <select id=\"birthYear\" [(ngModel)]=\"birthYear\">\n              <option *ngFor=\"let obj of totalDatesOfYear\" [value]=\"obj\">{{obj}}</option>\n            </select>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <!--<div class=\"row\">-->\n      <!--<div class=\"col-sm-2\">-->\n\n      <!--</div>-->\n\n      <!--<div class=\"col-sm-4\">-->\n        <!--<div class=\"row\">-->\n          <!--<div class=\" col-2\">-->\n            <!--Date-->\n          <!--</div>-->\n          <!--<div class=\"  col-2\">-->\n            <!--Month-->\n          <!--</div>-->\n          <!--<div class=\"  col-2\">-->\n            <!--Year-->\n          <!--</div>-->\n        <!--</div>-->\n      <!--</div>-->\n    <!--</div>-->\n\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\">Search</button>\n        <!--      </a>-->\n      </div>\n    </div>\n\n    <div></div>\n\n  </div>\n\n  <div class=\"container\">\n    <div class=\"row\" *ngIf=\"multiple\">\n      <div class=\"col-sm-2\">\n        <table class=\"table table-striped\" [mfData]=\"data\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"5\">\n          <thead>\n          <tr>\n            <th style=\"width: 10%\">\n              <mfDefaultSorter by=\"id\"> Id</mfDefaultSorter>\n            </th>\n            <th style=\"width: 30%\">\n              <mfDefaultSorter by=\"firstName\">First Name</mfDefaultSorter>\n            </th>\n            <th style=\"width: 30%\">\n              <mfDefaultSorter by=\"lastName\">Last Name</mfDefaultSorter>\n            </th>\n            <th style=\"width: 30%\">\n              <mfDefaultSorter by=\"contact\">Contact</mfDefaultSorter>\n            </th>\n            <th style=\"width: 30%\">\n              <mfDefaultSorter by=\"dateOfBirth\">Date Of Birth</mfDefaultSorter>\n              <!--<br>-->\n              <span style=\"font-size: 9px\"> (YYYY-MM-DD) </span>\n            </th>\n\n            <th style=\"width: 30%\">\n              <mfDefaultSorter by=\"contact\">Personal Identification</mfDefaultSorter>\n            </th>\n          </tr>\n          </thead>\n          <tbody>\n          <tr *ngFor=\"let item of mf.data\">\n            <td>{{item.id}}</td>\n            <td>{{item.firstName}}</td>\n            <td>{{item.lastName}}</td>\n            <td>{{item.contact}}</td>\n            <td>{{item.dateOfBirth}}</td>\n            <td>{{item.personalId}}</td>\n            <td>\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"printPage(item)\">Print</button>\n            </td>\n            <td>\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"viewHistory(item)\">Visit</button>\n            </td>\n            <td>\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"createAppointment(item)\">Appointment</button>\n            </td>\n\n          </tr>\n          </tbody>\n          <tfoot>\n          <tr>\n            <td colspan=\"4\">\n              <mfBootstrapPaginator [rowsOnPageSet]=\"[5,10,25]\"></mfBootstrapPaginator>\n            </td>\n          </tr>\n          </tfoot>\n        </table>\n      </div>\n    </div>\n  </div>\n\n\n</div>\n"
+module.exports = "<div>\n\n  <app-patient-header></app-patient-header>\n\n  <div id=\"loadin\">\n    <app-loader-spin></app-loader-spin>\n  </div>\n\n  <div class=\"container\" *ngIf=\"!processing\">\n    <!--<div class=\"row\">-->\n    <!--<div class=\"col-sm-2\">-->\n    <!--<label for=\"firstName\">First Name:</label>-->\n    <!--</div>-->\n    <!--<div class=\"col-sm-3\">-->\n    <!--<input type=\"text\" id=\"firstName\">-->\n    <!--</div>-->\n    <!--<div class=\"col-sm-2\">-->\n    <!--<label for=\"lastName\">Last name:</label>-->\n    <!--</div>-->\n    <!--<div class=\"col-sm-4\">-->\n    <!--<input type=\"text\" id=\"lastName\">-->\n    <!--</div>-->\n    <!--</div>-->\n    <div class=\"row\">\n      <label style=\"color: red\"> {{error}}</label>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"patientId\">Patient ID:</label>\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" [(ngModel)]=\"patientId\" id=\"patientId\" placeholder=\"1\">\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"patientId\">First Name:</label>\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" [(ngModel)]=\"firstName\" id=\"firstName\" placeholder=\"Don\">\n      </div>\n    </div>\n\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"patientId\">Last Name:</label>\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" [(ngModel)]=\"lastName\" id=\"lastName\" placeholder=\"Joe\">\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"patientId\">Contact Number:</label>\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" [(ngModel)]=\"contact\" id=\"contact\" (keypress)=\"patientHelper.numberOnly($event)\"\n               placeholder=\"919545864822\">\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"patientId\">Personal Id:</label>\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" [(ngModel)]=\"personalId\" id=\"personalId\" placeholder=\"Aadhar,DL etc\">\n      </div>\n    </div>\n\n\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <label for=\"birthDate\"> Date Of Birth(DD-MM-YYYY):</label>\n      </div>\n\n      <div class=\" col-4\">\n        <div class=\"row\">\n          <div class=\"col-sm-2\">\n            <select name=\"birthDate\" id=\"birthDate\" [(ngModel)]=\"birthDate\">\n\n              <option *ngFor=\"let dd of totalDatesOfBirth\" [value]=\"dd\">{{dd}}</option>\n            </select>\n\n          </div>\n          <div class=\" col-sm-2\">\n\n\n            <select name=\"birthMonth\" id=\"birthMonth\" [(ngModel)]=\"birthMonth\">\n\n              <option *ngFor=\"let mm of totalMonthOfBirth\" [value]=\"mm\">{{mm}}</option>\n            </select>\n          </div>\n          <div class=\" col-sm-2\">\n            <select id=\"birthYear\" [(ngModel)]=\"birthYear\">\n              <option *ngFor=\"let obj of totalDatesOfYear\" [value]=\"obj\">{{obj}}</option>\n            </select>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <!--<div class=\"row\">-->\n      <!--<div class=\"col-sm-2\">-->\n\n      <!--</div>-->\n\n      <!--<div class=\"col-sm-4\">-->\n        <!--<div class=\"row\">-->\n          <!--<div class=\" col-2\">-->\n            <!--Date-->\n          <!--</div>-->\n          <!--<div class=\"  col-2\">-->\n            <!--Month-->\n          <!--</div>-->\n          <!--<div class=\"  col-2\">-->\n            <!--Year-->\n          <!--</div>-->\n        <!--</div>-->\n      <!--</div>-->\n    <!--</div>-->\n\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <!--      <a routerLink=\"print\" class=\"nav-link\">-->\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"searchPatientData()\">Search</button>\n        <!--      </a>-->\n      </div>\n    </div>\n\n    <div></div>\n\n  </div>\n\n  <div class=\"container\">\n    <div class=\"row\" *ngIf=\"multiple\">\n      <div class=\"col-sm-2\">\n        <table class=\"table table-striped\" [mfData]=\"data\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"5\">\n          <thead>\n          <tr>\n            <th style=\"width: 10%\">\n              <mfDefaultSorter by=\"id\"> Id</mfDefaultSorter>\n            </th>\n            <th style=\"width: 30%\">\n              <mfDefaultSorter by=\"firstName\">First Name</mfDefaultSorter>\n            </th>\n            <th style=\"width: 30%\">\n              <mfDefaultSorter by=\"lastName\">Last Name</mfDefaultSorter>\n            </th>\n            <th style=\"width: 30%\">\n              <mfDefaultSorter by=\"contact\">Contact</mfDefaultSorter>\n            </th>\n            <th style=\"width: 30%\">\n              <mfDefaultSorter by=\"dateOfBirth\">Date Of Birth</mfDefaultSorter>\n              <!--<br>-->\n              <span style=\"font-size: 9px\"> (YYYY-MM-DD) </span>\n            </th>\n\n            <th style=\"width: 30%\">\n              <mfDefaultSorter by=\"contact\">Personal Identification</mfDefaultSorter>\n            </th>\n          </tr>\n          </thead>\n          <tbody>\n          <tr *ngFor=\"let item of mf.data\">\n            <td>{{item.id}}</td>\n            <td>{{item.firstName}}</td>\n            <td>{{item.lastName}}</td>\n            <td>{{item.contact}}</td>\n            <td>{{item.dateOfBirth}}</td>\n            <td>{{item.personalId}}</td>\n            <td>\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"printPage(item)\">Print</button>\n            </td>\n            <td>\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"createAppointment(item)\">Appointment</button>\n            </td>\n            <td>\n              <button type=\"button\" class=\"btn btn-primary\" (click)=\"viewHistory(item)\">Visit</button>\n            </td>\n\n\n          </tr>\n          </tbody>\n          <tfoot>\n          <tr>\n            <td colspan=\"4\">\n              <mfBootstrapPaginator [rowsOnPageSet]=\"[5,10,25]\"></mfBootstrapPaginator>\n            </td>\n          </tr>\n          </tfoot>\n        </table>\n      </div>\n    </div>\n  </div>\n\n\n</div>\n"
 
 /***/ }),
 
@@ -1723,7 +1933,7 @@ var PatientSearchComponent = /** @class */ (function () {
         this.searchDataService = searchDataService;
         this.searchService = searchService;
         this.ERRORMESSAGE = 'System is Temporary unavailable, Please Try Again!';
-        this.DATANOTFOUND = 'Data Not Found - One or the other Search Criteria entered is not correct!';
+        this.DATANOTFOUND = 'Patient Registration is Not Found or a Search Criteria entered is not correct!';
         this.Mandatory = "One of the below field is mandatory";
         this.totalDatesOfBirth = [];
         this.totalMonthOfBirth = [];
@@ -1946,6 +2156,57 @@ var AppointmentSearchService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], AppointmentSearchService);
     return AppointmentSearchService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/current-medical.service.ts":
+/*!****************************************************!*\
+  !*** ./src/app/service/current-medical.service.ts ***!
+  \****************************************************/
+/*! exports provided: CurrentMedicalService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CurrentMedicalService", function() { return CurrentMedicalService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CurrentMedicalService = /** @class */ (function () {
+    function CurrentMedicalService(http) {
+        this.http = http;
+        this.currentMedicalUrl = '/patient/v1/current-medical';
+    }
+    CurrentMedicalService.prototype.searchCurrentMedicalForPatientId = function (id) {
+        var url = this.currentMedicalUrl;
+        url = url + '?patientId=' + id;
+        return this.http.get(url);
+    };
+    CurrentMedicalService.prototype.addCurrentMedicalForPatient = function (currentMedicalData, patient) {
+        currentMedicalData.patient = patient;
+        var url = this.currentMedicalUrl;
+        return this.http.post(url, currentMedicalData);
+    };
+    CurrentMedicalService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], CurrentMedicalService);
+    return CurrentMedicalService;
 }());
 
 
@@ -2204,6 +2465,57 @@ var SearchService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], SearchService);
     return SearchService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/vital.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/service/vital.service.ts ***!
+  \******************************************/
+/*! exports provided: VitalService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VitalService", function() { return VitalService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var VitalService = /** @class */ (function () {
+    function VitalService(http) {
+        this.http = http;
+        this.patientApiVitalUrl = '/patient/v1/vital';
+    }
+    VitalService.prototype.searchVitalForPatientId = function (id) {
+        var url = this.patientApiVitalUrl;
+        url = url + '?patientId=' + id;
+        return this.http.get(url);
+    };
+    VitalService.prototype.addVitalForPatient = function (vitalData, patient) {
+        vitalData.patient = patient;
+        var url = this.patientApiVitalUrl;
+        return this.http.post(url, vitalData);
+    };
+    VitalService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], VitalService);
+    return VitalService;
 }());
 
 

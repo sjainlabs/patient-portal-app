@@ -20,6 +20,8 @@ import { AppointmentConfirmationComponent } from './appointment-confirmation/app
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {AngularDateTimePickerModule} from "angular2-datetimepicker";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {Angular2FontawesomeModule} from "angular2-fontawesome";
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import {AngularDateTimePickerModule} from "angular2-datetimepicker";
     MatDatepickerModule,
     MatNativeDateModule,
     AngularDateTimePickerModule,
+    Angular2FontawesomeModule,
     RouterModule.forRoot([
 
       {
@@ -111,7 +114,8 @@ import {AngularDateTimePickerModule} from "angular2-datetimepicker";
       },
       {path: '', redirectTo: '/search', pathMatch: 'full'}, // redirect to `first-component`
       {path: '**', component: PagenotfoundComponent},
-    ])
+    ]),
+    NgbModule.forRoot()
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]

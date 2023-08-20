@@ -85,6 +85,12 @@
   <div class="container">
     <h3> View all appointments </h3>
     <hr>
+    <p>{{this.getPatientDataFromSearch().firstName}}</p>
+    <p>{{this.getPatientDataFromSearch().lastName}}</p>
+    <p>{{this.getPatientDataFromSearch().doctorName}}</p>
+    <p>{{this.appointmentData[0].appointmentDate}}</p>
+    <p>{{this.appointmentData[0].startTime}}</p>
+    <p>{{this.appointmentData[0].endTime}}</p>
   </div>
 
   </div>
