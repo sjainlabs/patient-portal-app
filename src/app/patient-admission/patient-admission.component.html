@@ -1,0 +1,23 @@
+<div>
+
+  <app-patient-header></app-patient-header>
+
+  <div id="loadin">
+    <app-loader-spin></app-loader-spin>
+  </div>
+
+
+  <div class="container">
+    <div>
+      <label>
+       Department:
+        <div>
+          <select id="department" formControlName="department" class="form-control" required>
+            <option *ngFor="let dept of departments" value="{{dept}}">{{dept}}</option>
+          </select>
+        </div>
+      </label>
+    </div>
+  </div>
+
+</div>

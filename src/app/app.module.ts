@@ -22,6 +22,7 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {AngularDateTimePickerModule} from "angular2-datetimepicker";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {Angular2FontawesomeModule} from "angular2-fontawesome";
+import { PatientAdmissionComponent } from './patient-admission/patient-admission.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {Angular2FontawesomeModule} from "angular2-fontawesome";
     AppointmentViewComponent,
     AppointmentCreateComponent,
     AppointmentConfirmationComponent,
+    PatientAdmissionComponent,
     // PatientHelper
   ],
   imports: [

@@ -19,6 +19,12 @@ public class DoctorEntity {
   private String doctorName;
   @Column(name = "personal_id")
   private String personalId;
+  @Column(name = "speciality")
+  private String speciality;
+  @Column(name = "experience")
+  private String experience;
+  @Column(name = "contact")
+  private String contact;
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "personal_id_type")
   private PersonalIdentificationEntity personalIdentificationEntity;
